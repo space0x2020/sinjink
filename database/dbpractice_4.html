@@ -1,0 +1,329 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 4</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B04_01" onclick="disppage(4, 1);" value="演習４－１" />
+    <input type="button" id="B04_02" onclick="disppage(4, 2);" value="演習４－２" />
+    <input type="button" id="B04_03" onclick="disppage(4, 3);" value="演習４－３" />
+    <input type="button" id="B04_04" onclick="disppage(4, 4);" value="演習４－４" />
+    <input type="button" id="B04_05" onclick="disppage(4, 5);" value="演習４－５" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap04_01"  class="chap">
+      <h4>演習４－１</h4>
+      <div class="quiz">
+        社員表から、部署コードが '0003' である行を抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap04_01_a01')" value="解説" /></p>
+      <div id="chap04_01_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_01_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_01_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署コードが '0003'である→抽出条件として部署コード列の値が '0003'</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>where 部署コード = '0003'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_01_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_01_a03" style="display:none;">
+        <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表 where 部署コード = '0003'</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_01_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap04_01_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 where 部署コード = '0003';
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap04_02" class="chap">
+      <h4>演習４－２</h4>
+      <div class="quiz">
+        社員表から、給与が20万台の行を抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap04_02_a01')" value="解説" /></p>
+      <div id="chap04_02_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_02_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_02_a02" style="display:none;">
+        <p class="sqlp1">[2] 給与が20万台 → 抽出条件として給与列の値が 200000以上300000未満</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>where 給与 &gt;= 200000 and 給与 &lt; 300000</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_02_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_02_a03" style="display:none;">
+        <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表 where 給与 &gt;= 200000 and 給与 &lt; 300000</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_02_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap04_02_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 where 給与 &gt;= 200000 and 給与 &lt; 300000;
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap04_03" class="chap">
+      <h4>演習４－３</h4>
+      <div class="quiz">
+        社員表と部署表を部署コードで結合し、社員番号、社員名、部署名を抽出しなさい。列見出しは、番号、氏名、所属とすること。</div>
+      <p><input type="button" onclick="detailson('chap04_03_a01')" value="解説" /></p>
+      <div id="chap04_03_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表と部署表を結合。社員表を s、部署表を b と別名をつける。</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表 s join 部署表 b</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_03_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_03_a02" style="display:none;">
+        <p class="sqlp1">[2] 社員表と部署表を部署コードで結合</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 s join 部署表 b <u>on s.部署コード = b.部署コード</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_03_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_03_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員番号、社員名、部署名を抽出</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select s.社員番号,  s.社員名,　b.部署名</u> from …</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_03_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap04_03_a04" style="display:none;">
+        <p class="sqlp1">[4] 列見出しは、番号、氏名、所属とする</p>
+        <div class="plist3"><pre class="f"><code>→ select s.社員番号 <u>as "番号"</u>, s.社員名 <u>as "氏名"</u>, b.部署名 <u>as "所属"</u><br />from 社員表 s join 部署表 b on s.部署コード = b.部署コード</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_03_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap04_03_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select s.社員番号 as "番号", s.社員名 as "氏名" , b.部署名 as "所属"
+-# from 社員表 s join 部署表 b on s.部署コード = b.部署コード;
+
+  番号  |   氏名   |  所属
+--------+----------+--------
+ 000001 | 山田一郎 | 営業部
+ 000002 | 鈴木花子 | 総務部
+ 000003 | 佐藤三郎 | 開発部
+ 000004 | 田中良子 | 開発部
+ 000005 | 高橋五郎 | 総務部
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap04_04" class="chap">
+      <h4>演習４－４</h4>
+      <div class="quiz">
+        社員表と部署表から、部署名が「総務部」である人の社員番号、社員名、部署コードを抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap04_04_a01')" value="解説" /></p>
+      <div id="chap04_04_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表と部署表から→社員表と部署表を結合(社員表を s、部署表を b として)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表 s join 部署表 b on s.部署コード = b.部署コード</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_04_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_04_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署名が「総務部」→抽出条件として 部署表．部署名 = '総務部'</p>
+        <div class="plist3"><pre class="f"><code>from 社員表 s join 部署表 b on s.部署コード = b.部署コード<br />→ <u>where b.部署名 = '総務部'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_04_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_04_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員番号、社員名、部署コードを抽出</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select s.社員番号, s.社員名, s.部署コード</u><br />from 社員表 s join 部署表 b on s.部署コード = b.部署コード<br />where b.部署名 = '総務部'</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_04_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap04_04_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select s.社員番号, s.社員名, s.部署コード
+-# from 社員表 s join 部署表 b on s.部署コード = b.部署コード
+-# where b.部署名 = '総務部';
+
+ 社員番号 |  社員名  | 部署コード
+----------+----------+------------
+ 000002   | 鈴木花子 | 0001
+ 000005   | 高橋五郎 | 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap04_05" class="chap">
+      <h4>演習４－５</h4>
+      <div class="quiz">
+        社員表から、生年月日が 1970年1月1日 以降の人を抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap04_05_a01')" value="解説" /></p>
+      <div id="chap04_05_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_05_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_05_a02" style="display:none;">
+        <p class="sqlp1">[2] 生年月日が1970年1月1日以降→抽出条件として、生年月日列の値が 1970/01/01 以上</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>where 生年月日 &gt;= '1970/01/01'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_05_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_05_a03" style="display:none;">
+        <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表 where 生年月日 &gt;= '1970/01/01'</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_05_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap04_05_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 where 生年月日 &gt;= '1970/01/01';
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

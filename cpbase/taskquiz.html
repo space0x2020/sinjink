@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TASK</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+タスク例題<br />
+<input type="button" id="B03_01" onclick="disppage(3, 1);" value="1" />
+</div>
+
+<div id="cpbase03_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 例題</h3></div>
+<div class="pagebody">
+<div class="reidai">
+五つのタスクを単体で実行した場合のCPU(処理装置)とI/O(入出力装置)の処理時間は，表のとおりである。優先度"高"のタスクとどのタスクを組み合わせれば，組み合わせたタスクが同時に実行を開始してから，両方のタスクの実行が終了するまでの間のCPUの遊休時間をゼロにできるか。ここで，各タスクが使用する入出力装置は異なるものであり，並行して動作し，OSのオーバヘッドは無視できるものとする。
+<table class="tbl">
+<tr>
+  <th></th>
+  <th class="pad_s_ball thcolor">タスク</th>
+  <th class="pad_s_ball thcolor">優先度</th>
+  <th class="pad_s_ball thcolor">単独実行時の動作順序と処理時間 (ミリ秒) </th></tr>
+<tr>
+  <td></td>
+  <td class="pad_s_ball c">A</td>
+  <td class="pad_s_ball c">高</td>
+  <td class="pad_s_ball c">CPU(3) → I/O(3) → CPU(3) → I/O(3) → CPU(2)</td></tr>
+<tr>
+  <td class="pad_s_ball c">ア</td>
+  <td class="pad_s_ball c">B</td>
+  <td class="pad_s_ball c">低</td>
+  <td class="pad_s_ball c">CPU(2) → I/O(5) → CPU(2) → I/O(2) → CPU(3)</td></tr>
+<tr>
+  <td class="pad_s_ball c">イ</td>
+  <td class="pad_s_ball c">C</td>
+  <td class="pad_s_ball c">低</td>
+  <td class="pad_s_ball c">CPU(3) → I/O(2) → CPU(2) → I/O(3) → CPU(2)</td></tr>
+<tr>
+  <td class="pad_s_ball c">ウ</td>
+  <td class="pad_s_ball c">D</td>
+  <td class="pad_s_ball c">低</td>
+  <td class="pad_s_ball c">CPU(3) → I/O(2) → CPU(3) → I/O(1) → CPU(4)</td></tr>
+<tr>
+  <td class="pad_s_ball c">エ</td>
+  <td class="pad_s_ball c">E</td>
+  <td class="pad_s_ball c">低</td>
+  <td class="pad_s_ball c">CPU(3) → I/O(4) → CPU(2) → I/O(5) → CPU(2)</td></tr>
+</table>
+</div><!-- reidai -->
+<a class="style1" href="http://www.fe-siken.com/kakomon/14_aki/q30.html">
+基本情報技術者 平成14年秋期 午前問30
+</a>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SRAM DRAM CACHE</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+SRAM DRAM キャッシュ<br />
+<input type="button" id="B01_01" onclick="disppage(1, 1);" value="1" />
+<input type="button" id="B01_02" onclick="disppage(1, 2);" value="2" />
+</div>
+
+
+<div id="cpbasesramdram01_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] SRAMとDRAM</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <th class="pad_s_ball thcolor">種類</th>
+    <th class="pad_s_ball thcolor">アクセス速度</th>
+    <th class="pad_s_ball thcolor">容量</th>
+    <th class="pad_s_ball thcolor">価格</th>
+    <th class="pad_s_ball thcolor">構造</th></tr>
+  <tr>
+    <td class="pad_s_ball">SRAM</td>
+    <td class="pad_s_ball">速い</td>
+    <td class="pad_s_ball">大容量化難しい</td>
+    <td class="pad_s_ball">高価</td>
+    <td class="pad_s_ball">フリップフロップ回路</td></tr>
+  <tr>
+    <td class="pad_s_ball">DRAM</td>
+    <td class="pad_s_ball">遅い</td>
+    <td class="pad_s_ball">大容量化可能</td>
+    <td class="pad_s_ball">安価</td>
+    <td class="pad_s_ball">コンデンサ</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasesramdram01_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] キャッシュ</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" viewBox="0 0 700 280">
+<g id="cachememory" text-anchor="middle">
+  <text class="ff" x="100" y="18">CPU</text>
+  <rect class="ff" x="0" y="20" width="200" height="200" />
+  <rect class="ff" x="30" y="30" width="140" height="50" />
+  <text class="ff" x="100" y="50">演算装置</text>
+  <text class="ff" x="100" y="70">制御装置</text>
+  <rect class="ff" x="20" y="160" width="170" height="50" />
+  <text class="ff" x="100" y="180">キャッシュメモリ</text>
+  <text class="ff" x="100" y="200">(高速なSRAM)</text>
+  <text class="ff" x="400" y="18">メインメモリ(低速なDRAM)</text>
+  <rect class="ff" x="300" y="20" width="200" height="200" />
+  <text class="ff" x="400" y="100">情報</text>
+  <text class="ff" x="400" y="120">(プログラムとデータ)</text>
+  <line class="ff sw4" x1="172" y1="45" x2="290" y2="45" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(300, 45)"></use>
+  <line class="ff sw4" x1="300" y1="65" x2="180" y2="65" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(170, 65),rotate(180)"></use>
+  <line class="ff sw4" x1="250" y1="65" x2="250" y2="185" />
+  <line class="ff sw4" x1="250" y1="185" x2="210" y2="185" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(200, 185),rotate(180)"></use>
+  <line class="ff sw4" x1="100" y1="160" x2="100" y2="90" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(100, 80),rotate(-90)"></use>
+  <text class="ff" x="250" y="30">(1)</text>
+  <text class="ff" x="210" y="210" text-anchor="start">(2) 400n</text>
+  <text class="ff" x="210" y="230" text-anchor="start">(1 - ヒット率)</text>
+  <text class="ff" x="110" y="110" text-anchor="start">(3) 40n</text>
+  <text class="ff" x="110" y="130" text-anchor="start">(ヒット率)</text>
+</g>
+</svg>
+<p class="bplist1">
+(1) 目的の情報メモリに取りにいく</p>
+<p class="bplist1">
+(2) メモリから制御装置や演算装置へ読み込まれる。<br />
+  このとき同時にキャシュメモリへもコピーされる。
+</p>
+<p class="bplist1">
+(3) 同じデータが必要になったときは、キャシュメモリから読み出す。
+</p>
+<p />
+<p class="plist" style="margin-top:3em;"><u>ヒット率：目的の情報が運よくキャシュメモリの中に記憶されている確率</u>
+</p>
+<p />
+<p class="bplist1" style="margin-top:2em;">
+実効アクセス時間(平均アクセス時間)<br />
+　　= キャッシュメモリのアクセス時間×ヒット率  + 主記憶のアクセス時間×(１ － ヒット率）
+</p>
+<p class="plist1" style="margin-top:2em;">
+平均アクセス時間 = 40n × 0.8  +  400 ×　0.2  = 112n
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbasesramdram", "cpbasesramdramsub");
+</script>
+</body>
+</html>

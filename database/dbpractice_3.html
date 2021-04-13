@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 3</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B03_01" onclick="disppage(3, 1);" value="演習３－１" />
+    <input type="button" id="B03_02" onclick="disppage(3, 2);" value="演習３－２" />
+    <input type="button" id="B03_03" onclick="disppage(3, 3);" value="演習３－３" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap03_01" class="chap">
+    <h4>演習３－１</h4>
+    <div class="quiz">
+      データベースシステムにおいて、複数のトランザクション処理プログラムが同一データベースを同時に更新する場合、論理的な矛盾を生じさせないために用いる手法はどれか。
+    <p class="selectlist">ア　正規化　　　　イ　整合性制約　　　ウ　データ中心設計　　　　エ　排他制御</p>
+    </div>
+    <p><input type="button" onclick="detailson('chap03_01_a01')" value="解説" /></p>
+    <div id="chap03_01_a01" style="display:none;">
+      <p class="anslist">正解：エ</p>
+      <p class="anslist">ア　正規化　　　　イ　整合性制約　　　ウ　データ中心設計 →設計</p>
+    </div>
+  </div>
+  <div id="chap03_02" class="chap">
+    <h4>演習３－２</h4>
+    <div class="quiz">
+      データベースに対する更新処理を行うプログラム内でのコミット/ロールバック処理について、正しい記述はどれか。
+      <p class="selectlist">ア　コミット処理は、1回の更新処理が終了する都度行うのが原則であり、1レコードずつ100回の更新を行うプログラムであれば、100回のコミット処理が必要となる。</p>
+      <p class="selectlist">イ　コミット処理は、プログラムの正常終了時にデータベース管理システムが自動的に行うものであり、プログラム内で明示的に実行しない方がよい。</p>
+      <p class="selectlist">ウ　プログラムが異常終了した際、ロールバック処理を行うと、直前のコミット処理以降の更新が破棄される。</p>
+      <p class="selectlist">エ　プログラムが異常終了した場合には、ロールバック処理を行う前にコミット処理を行うことによって、データベースをプログラム開始前の状態に戻すことができる。</p>
+    </div>
+    <p><input type="button" onclick="detailson('chap03_02_a01')" value="解説" /></p>
+    <div id="chap03_02_a01" style="display:none;">
+      <p class="anslist">正解：ウ</p>
+    </div>
+  </div>
+  <div id="chap03_03" class="chap">
+    <h4>演習３－３</h4>
+    <div class="quiz">
+      データベースの排他制御に関する記述のうち、適切なものはどれか。
+      <p class="selectlist">ア　あるプログラムによって共有ロックがかけられている資源に対して、別のプログラムから共有ロックをかけることは可能である。</p>
+      <p class="selectlist">イ　あるプログラムによって占有ロックがかけられている資源に対して、別のプログラムから共有ロックをかけることは可能である。</p>
+      <p class="selectlist">ウ　あるプログラムによって共有ロックがかけられている資源に対して、別のプログラムから占有ロックをかけることは可能である。</p>
+      <p class="selectlist">エ　あるプログラムによって占有ロックがかけられている資源に対して、別のプログラムから占有ロックをかけることは可能である。</p>
+    </div>
+    <p><input type="button" onclick="detailson('chap03_03_a01')" value="解説" /></p>
+    <div id="chap03_03_a01" style="display:none;">
+      <table class="tbl">
+      <thead>
+        <tr>
+          <th class="pad_s_ball thcolor">T1/T2</th>
+          <th class="pad_s_ball thcolor">共有ロック</th>
+          <th class="pad_s_ball thcolor">排他ロック</th></tr>
+      </thead>
+      <tbody class="c">
+        <tr>
+          <td class="pad_s_ball">共有ロック(S)</td>
+          <td class="pad_s_ball">○ ア</td>
+          <td class="pad_s_ball">× ウ</td></tr>
+        <tr>
+          <td class="pad_s_ball">排他ロック(X)</td>
+          <td class="pad_s_ball">× イ</td>
+          <td class="pad_s_ball">× エ</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div id="chap03_3_2" style="display:none;">
+      <p class="anslist">正解：ア</p>
+    </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

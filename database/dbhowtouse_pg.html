@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DB How to use psql</title>
+</head>
+<body>
+
+<ul>
+<li><a href="#startpsql">psqlの起動方法</a></li>
+<li><a href="#exitpsql">psqlの終了方法</a></li>
+<li><a href="#execsql">SQL文の実行</a></li>
+<li><a href="#dispnull">NULLの表示</a></li>
+<li><a href="#desctable">テーブル定義の参照</a></li>
+<li><a href="#usertables">そのユーザが持つテーブル参照</a></li>
+<li><a href="#includefile">SQLファイルの指定による実行</a></li>
+<li><a href="#psqlprompt">psqlのプロンプトについて</a></li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="startpsql"></a>psqlの起動方法</h2>
+<ol>
+<li>「スタート」→「PostgreSQL 9.6」→「SQL Shell (psql)」をクリックします。「SQL Shell (psql)」ウィンドウが表示されます。</li>
+<li>
+<p>「SQL Shell (psql)」ウィンドウが表示されたら、パスワード以外はそのまま&lt;ENTER&gt;キーを押します。パスワードは「tiger」を入力し&lt;ENTER&gt;キーを押します。</p>
+<pre class="terminal">Server [localhost]:      ←&lt;ENTER&gt;
+[postgres]:              ←&lt;ENTER&gt;
+Port [5432]:             ←&lt;ENTER&gt;
+[postgres]:              ←&lt;ENTER&gt;
+Encoding [SJIS]:         ←&lt;ENTER&gt;
+postgres のパスワード:   ←tiger &lt;ENTER&gt; (パスワードは画面に表示されません。)
+psql (9.6.2)
+"help" でヘルプを表示します.
+ 
+postgres=#               ←psqlのプロンプト
+</pre>
+</li>
+</ol>
+
+<h2 style="background-color: lightblue;"><a name="exitpsql"></a>psqlの終了方法</h2>
+<ul>
+<li>psqlのプロンプト上で、\q を入力します。
+<pre class="terminal">postgres=# \q           ← \q &lt;ENTER&gt;
+続行するには何かキーを押してください．．．  ←&lt;ENTER&gt;
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="execsql"></a>SQL文の実行</h2>
+<ul>
+<li>psqlでは、SQL文の後ろにセミコロン(;)を付けます。(以降、&lt;ENTER&gt;は省略します。)
+<pre class="terminal">postgres=# select * from dept;    ←最後に ; を付ける。
+  deptno |   dname    |   loc
+ --------+------------+----------
+      10 | ACCOUNTING | NEW YORK
+      20 | RESEARCH   | DALLAS
+      30 | SALES      | CHICAGO
+      40 | OPERATIONS | BOSTON
+ (4 行)
+
+postgres=#
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="dispnull"></a>NULLの表示</h2>
+<ul>
+<li>psqlで、null を表示するには、
+<pre style="border-style: solid;" border-width:1="" 2=""> \pset null '任意の文字'
+</pre>
+とすることによりnullが指定文字で表示されます。
+<pre class="terminal">postgres=# \pset null '?'
+postgres=# select * from emp where mgr is null;
+ empno | ename |    job    | mgr |  hiredate  |   sal   | comm | deptno
+ ------+-------+-----------+-----+------------+---------+------+--------
+  7839 | KING  | PRESIDENT |   ? | 1981-11-17 | 5000.00 |    ? |     10
+</pre>
+</li>
+</ul>
+<h2 style="background-color: lightblue;"><a name="desctable"></a>テーブル定義の参照</h2>
+<ul>
+<li>表の定義を参照するには、
+<pre style="border-style: solid; border-width: 1;"> \d 表名
+</pre>
+とします。
+<pre class="terminal">postgres=# \d dept
+           テーブル "public.dept"
+    列   |          型           |  修飾語
+ --------+-----------------------+----------
+  deptno | integer               | not null
+  dname  | character varying(14) |
+  loc    | character varying(13) |
+ インデックス:
+     "pk_dept" PRIMARY KEY, btree (deptno)
+ 参照元：
+     TABLE "emp" CONSTRAINT "fk_emp" FOREIGN KEY (deptno) REFERENCES dept(deptno)
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="usertables"></a>そのユーザが持つテーブル参照</h2>
+<ul>
+<li>そのユーザが持つテーブル一覧を参照するには、
+<pre style="border-style: solid; border-width: 1;"> \d
+</pre>
+とします。
+<pre class="terminal">postgres=# \d
+            リレーションの一覧
+ スキーマ |   名前   |    型    |  所有者
+----------+----------+----------+----------
+ public   | dept     | テーブル | postgres
+ public   | emp      | テーブル | postgres
+ public   | 社員表   | テーブル | postgres
+ public   | 部署表   | テーブル | postgres
+(4 行)
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="includefile"></a>SQLファイルの指定による実行</h2>
+<ul>
+<li>SQL文が記載されたファイルを指定して、SQLを実行するには、
+<pre style="border-style: solid; border-width: 1;"> \i ファイル名
+</pre>
+とします。
+<pre class="terminal">postgres=# \i tmp.sql
+ deptno |   dname    |   loc
+--------+------------+----------
+     10 | ACCOUNTING | NEW YORK
+     20 | RESEARCH   | DALLAS
+     30 | SALES      | CHICAGO
+     40 | OPERATIONS | BOSTON
+(4 行)
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="psqlprompt"></a>psqlのプロンプトについて</h2>
+<ul>
+<li>今回のpsqlでは、プロンプトは、
+<pre style="border-style: solid; border-width: 1;"> データベース名 + '=' + '#'
+</pre>
+となっています(PROMPT1)。</li>
+<li>セミコロン(;)を付けずに&lt;ENTER&gt;で改行すると、
+<pre style="border-style: solid; border-width: 1;"> データベース名 + '-' または'*' または '(' + '#'
+</pre>
+となり(PROMPT2)、文が継続していることを示します。
+<pre class="terminal">postgres=# select *		← PROMPT1
+postgres-# from dept;		← PROMPT2
+ deptno |   dname    |   loc
+--------+------------+----------
+     10 | ACCOUNTING | NEW YORK
+     20 | RESEARCH   | DALLAS
+     30 | SALES      | CHICAGO
+     40 | OPERATIONS | BOSTON
+(4 行)
+</pre>
+</li>
+</ul>
+
+</body>
+</html>

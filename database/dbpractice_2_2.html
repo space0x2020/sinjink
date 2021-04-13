@@ -1,0 +1,446 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 2-2</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B02_04" onclick="disppage(2, 4);" value="演習２－４" />
+    <input type="button" id="B02_05" onclick="disppage(2, 5);" value="演習２－５" />
+    <input type="button" id="B02_06" onclick="disppage(2, 6);" value="演習２－６" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap02_04" class="chap">
+      <h4>演習２－４</h4>
+      <div class="quiz">
+        Ｅ－Ｒモデルに関する記述として、適当なものはどれか。
+        <p class="selectlist">ア　Ｅ－Ｒモデルは、幾つかの特定のＤＢＭＳを扱うことができるように考えられたＤＢＭＳ依存のデータモデルである。</p>
+        <p class="selectlist">イ　エンティティとして定義できるものは、取引先や商品など実体のあるもので、発注・受注・納品などの抽象的な概念は定義できない。</p>
+        <p class="selectlist">ウ　エンティティに対しては、“属性”が存在するが、関連には存在しない。</p>
+        <p class="selectlist">エ　関連はエンティティ間の結びつきを示すものなので、二つのエンティティ間に複数の関係が存在してもよい。</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_04_a01')" value="解説" /></p>
+      <div id="chap02_04_a01" style="display:none;">
+        <p class="anslist">×　ア　概念データモデルを図式表現するたものもの。DBM非依存。</p>
+        <p class="anslist">×　イ　法的、論理的存在、「契約」「納品：などの事象を定義できる。</p>
+        <p class="anslist">×　ウ　関連にも属性は存在する。</p>
+        <p class="anslist">○　エ</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="700" height="150" viewBox="0 0 700 150">
+          <g id="zu2_4" transform="translate(50,50)">
+            <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="40" y="22" text-anchor="middle" font-size="20" stroke="white">顧客</text>
+            <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="360" y="22" text-anchor="middle" font-size="20" stroke="white">注文</text>
+            <line x1="80" y1="10" x2="320" y2="10" stroke="white" stroke-width="1" />
+            <text x="200" y="7" text-anchor="middle" font-size="18" stroke="white">注文</text>
+            <line x1="80" y1="20" x2="320" y2="20" stroke="white" stroke-width="1" />
+            <text x="200" y="37" text-anchor="middle" font-size="18" stroke="white">配送</text>
+            <text x="250" y="57" text-anchor="middle" font-size="18" stroke="white">属性：配送日時</text>
+          </g>
+        </svg>
+      </div>
+  </div>
+  <div id="chap02_05" class="chap">
+      <h4>演習２－５</h4>
+      <div class="quiz">
+        関係データベースのスキーマ（データ構造）を設計する際に、次のE-R図で示されるような、m対n対応の構造は避ける方がよいとされる。その理由はどれか。<br />
+        <svg xmlns="http://www.w3.org/2000/svg" width="700" height="50" viewBox="0 0 700 50">
+          <defs>
+          <g id="zu2_5">
+            <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="40" y="22" text-anchor="middle" font-size="20" stroke="white">顧客</text>
+            <text x="90" y="15" font-size="14" stroke="white">m</text>
+            <text x="300" y="15" font-size="14" stroke="white">n</text>
+            <line x1="80" y1="15" x2="160" y2="15" stroke="white" stroke-width="1" />
+            <path d="M 160 15 L200 0 240 15 200 30 Z" stroke="white" stroke-width="1" fill="none" />
+            <text x="200" y="22" text-anchor="middle" font-size="20" stroke="white">注文</text>
+            <line x1="240" y1="15" x2="320" y2="15" stroke="white" stroke-width="1" />
+            <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="360" y="22" text-anchor="middle" font-size="20" stroke="white">商品</text>
+          </g>
+          </defs>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_5" transform="translate(160, 10)"></use>
+        </svg>
+        <p class="selectlist">ア　顧客情報と商品情報の結合（join）操作ができなくなる。</p>
+        <p class="selectlist">イ　顧客情報と商品情報を繰り返し記録しなければならなくなり、データの重複が生じる。</p>
+        <p class="selectlist">ウ　顧客情報の単独登録ができなくなり、注文情報を消去すると、顧客の情報が同時に失われることがある。</p>
+        <p class="selectlist">エ　顧客情報又は商品情報に対して、新たなエンティティとの関連付け（relationship）ができなくなる。</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_05_a01')" value="解説" /></p>
+      <div id="chap02_05_a01" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_5" transform="translate(160, 0)"></use>
+          <text x="20" y="70" font-size="20" stroke="white">インスタンス</text>
+          <g id="zu2_6_2" transform="translate(160,60)">
+          <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="40" y="22" text-anchor="middle" font-size="20" stroke="white">Aさん</text>
+          <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="360" y="22" text-anchor="middle" font-size="20" stroke="white">のり</text>
+          <rect x="0" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="40" y="122" text-anchor="middle" font-size="20" stroke="white">Bさん</text>
+          <rect x="320" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="360" y="122" text-anchor="middle" font-size="20" stroke="white">封筒</text>
+          <line x1="80" y1="15" x2="320" y2="15" stroke="white" stroke-width="1" />
+          <text x="200" y="12" text-anchor="middle" font-size="20" stroke="white">Aさんがのりを注文</text>
+          <line x1="80" y1="15" x2="320" y2="115" stroke="white" stroke-width="1" />
+          <text x="200" y="67" text-anchor="middle" font-size="20" stroke="white">Aさんが封筒を注文</text>
+          <line x1="80" y1="115" x2="320" y2="115" stroke="white" stroke-width="1" />
+          <text x="200" y="117" text-anchor="middle" font-size="20" stroke="white">Bさんが封筒を注文</text>
+
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_05_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap02_05_a02" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <text x="20" y="70" font-size="20" stroke="white">関係</text>
+          <g id="zu2_6_2" transform="translate(160, 0)">
+          <rect x="0" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="40" y="62" font-size="20" text-anchor="middle" text-decoration="underline">T001</text>
+          <rect x="80" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="120" y="62" font-size="20" text-anchor="middle">Aさん</text>
+          <rect x="0" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="40" y="92" font-size="20" text-anchor="middle" text-decoration="underline">T010</text>
+          <rect x="80" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="120" y="92" font-size="20" text-anchor="middle">Bさん</text>
+
+          <rect x="320" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="360" y="62" font-size="20" text-anchor="middle" text-decoration="underline">B215</text>
+          <rect x="400" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="440" y="62" font-size="20" text-anchor="middle">のり</text>
+          <rect x="320" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="360" y="92" font-size="20" text-anchor="middle" text-decoration="underline">B120</text>
+          <rect x="400" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="440" y="92" font-size="20" text-anchor="middle">封筒</text>
+
+          <text x="20" y="130" font-size="20" stroke="white">どちらかに、顧客と商品の関連を持たざるを得ない。</text>
+          <text x="20" y="160" font-size="20" stroke="white">どちらかに、他方を参照する外部キーが必要。</text>
+          </g>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_05_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap02_05_a03" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <text x="20" y="30" font-size="20" stroke="white">関係</text>
+          <defs>
+          <g id="zu2_5_2">
+            <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="40" y="22" font-size="20" text-anchor="middle" text-decoration="underline">T001</text>
+            <rect x="80" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="purple" />
+            <text x="120" y="22" font-size="20" text-anchor="middle" stroke="white">B215</text>
+            <rect x="160" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="200" y="22" font-size="20" text-anchor="middle">Aさん</text>
+            <rect x="0" y="30" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="40" y="52" font-size="20" text-anchor="middle" text-decoration="underline">T001</text>
+            <rect x="80" y="30" width="80" height="30" stroke="white" stroke-width="1" fill="purple" />
+            <text x="120" y="52" font-size="20" text-anchor="middle" stroke="white">B120</text>
+            <rect x="160" y="30" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="200" y="52" font-size="20" text-anchor="middle">Aさん</text>
+            <rect x="0" y="60" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="40" y="82" font-size="20" text-anchor="middle" text-decoration="underline">T010</text>
+            <rect x="80" y="60" width="80" height="30" stroke="white" stroke-width="1" fill="purple" />
+            <text x="120" y="82" font-size="20" text-anchor="middle" stroke="white">B120</text>
+            <rect x="160" y="60" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="200" y="82" font-size="20" text-anchor="middle">Bさん</text>
+
+            <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="360" y="22" font-size="20" text-anchor="middle" text-decoration="underline">B215</text>
+            <rect x="400" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="440" y="22" font-size="20" text-anchor="middle">のり</text>
+            <rect x="320" y="30" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="360" y="52" font-size="20" text-anchor="middle" text-decoration="underline">B120</text>
+            <rect x="400" y="30" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+            <text x="440" y="52" font-size="20" text-anchor="middle">封筒</text>
+
+            <line x1="240" y1="15" x2="320" y2="15" stroke="white" stroke-width="1" />
+            <line x1="240" y1="45" x2="320" y2="45" stroke="white" stroke-width="1" />
+            <line x1="240" y1="75" x2="320" y2="45" stroke="white" stroke-width="1" />
+          </g>
+          </defs>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_5_2" transform="translate(160, 0)"></use>
+          <g transform="translate(160, 110)">
+            <text x="0" y="0" font-size="20" stroke="white">顧客表の主キーは、「顧客番号、商品番号」となる。 </text>
+            <text x="0" y="30" font-size="20" stroke="white">顧客表にデータを登録するには、顧客番号と商品番号が</text>
+            <text x="0" y="55" font-size="20" stroke="white">必要となり、注文していない顧客の登録ができない。 </text>
+          </g>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_05_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap02_05_a04" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <text x="20" y="30" font-size="20" stroke="white">関係</text>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_5_2" transform="translate(160, 0)"></use>
+          <g transform="translate(160, 60)">
+            <rect x="0" y="0" width="240" height="30" stroke="red" stroke-width="2" fill="none" />
+          </g>
+          <g transform="translate(160, 110)">
+          <text x="0" y="0" font-size="20" stroke="white">例えば、この例において、「Bさんが封筒を注文」を取り消すと、</text>
+          <text x="0" y="25" font-size="20" stroke="white">Bさんの顧客情報も削除されてしまう。</text>
+          </g>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_05_a05')" value="正解" /></p>
+      </div>
+      <div id="chap02_05_a05" style="display:none;">
+        <p style="padding-left:1em;text-indent:-1em;">ウ　顧客情報の単独登録ができなくなり、注文情報を消去すると、顧客の情報が同時に失われることがある。</p>
+      </div>
+  </div>
+  <div id="chap02_06" class="chap">
+      <h4>演習２－６</h4>
+      <div class="quiz">
+        顧客は一般に複数の銀行に預金するものとして、顧客と銀行の関連を、Ｅ－Ｒ図で次のように表現する。このＥ－Ｒモデルを関係データベースで“銀行”表、“預金”表、“顧客”表と表現したときの記述として、正しいものはどれか。<br />
+        <svg xmlns="http://www.w3.org/2000/svg" width="700" height="50" viewBox="0 0 700 50">
+          <defs>
+          <g id="zu2_6">
+            <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="40" y="22" text-anchor="middle" font-size="20" stroke="white">銀行</text>
+            <line x1="80" y1="15" x2="160" y2="15" stroke="white" stroke-width="1" />
+            <path d="M 160 15 L200 0 240 15 200 30 Z" stroke="white" stroke-width="1" fill="none" />
+            <text x="200" y="22" text-anchor="middle" font-size="20" stroke="white">預金</text>
+            <line x1="240" y1="15" x2="320" y2="15" stroke="white" stroke-width="1" />
+            <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+            <text x="360" y="22" text-anchor="middle" font-size="20" stroke="white">顧客</text>
+          </g>
+          </defs>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_6" transform="translate(160, 10)"></use>
+        </svg>
+        <p class="selectlist">ア　“銀行”表と“預金”表のカーディナリティは多対１である。</p>
+        <p class="selectlist">イ　“銀行”表に参照制約のあるキーはない。</p>
+        <p class="selectlist">ウ　“預金”表と“顧客”表のカーディナリティは１対多である。</p>
+        <p class="selectlist">エ　“預金”表には二つ以上の外部キーがある。</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_06_a01')" value="解説" /></p>
+      <div id="chap02_06_a01" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zu2_6" transform="translate(160, 0)"></use>
+          <text x="20" y="70" font-size="20" stroke="white">インスタンス</text>
+          <g id="zu2_6_2" transform="translate(160,60)">
+          <rect x="0" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="40" y="22" text-anchor="middle" font-size="20" stroke="white">X銀行</text>
+          <rect x="320" y="0" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="360" y="22" text-anchor="middle" font-size="20" stroke="white">Aさん</text>
+          <rect x="0" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="40" y="122" text-anchor="middle" font-size="20" stroke="white">Y銀行</text>
+          <rect x="320" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="none" />
+          <text x="360" y="122" text-anchor="middle" font-size="20" stroke="white">Bさん</text>
+
+          <line x1="80" y1="15" x2="110" y2="15" stroke="white" stroke-width="1" />
+          <line x1="290" y1="15" x2="320" y2="15" stroke="white" stroke-width="1" />
+          <text x="200" y="22" text-anchor="middle" font-size="20" stroke="white">X銀行にAさんが預金</text>
+          <line x1="110" y1="30" x2="160" y2="30" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          <line x1="180" y1="30" x2="230" y2="30" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          <line x1="80" y1="15" x2="110" y2="65" stroke="white" stroke-width="1" />
+          <line x1="290" y1="65" x2="320" y2="115" stroke="white" stroke-width="1" />
+          <text x="200" y="72" text-anchor="middle" font-size="20" stroke="white">X銀行にBさんが預金</text>
+          <line x1="110" y1="80" x2="160" y2="80" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          <line x1="180" y1="80" x2="230" y2="80" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          <line x1="80" y1="115" x2="110" y2="115" stroke="white" stroke-width="1" />
+          <line x1="290" y1="115" x2="320" y2="115" stroke="white" stroke-width="1" />
+          <text x="200" y="122" text-anchor="middle" font-size="20" stroke="white">Y銀行にBさんが預金</text>
+          <line x1="110" y1="130" x2="160" y2="130" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          <line x1="180" y1="130" x2="230" y2="130" stroke="white" stroke-width="1"  stroke-dasharray="4,4"/>
+          </g>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_06_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap02_06_a02" style="display:none;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="700" height="240" viewBox="0 0 700 240">
+          <defs>
+            <marker id="arrow1" refX="0" refY="2" markerWidth="4" markerHeight="4" orient="auto">
+                <path d="M 0,0 V 4 L4,2 Z" fill="white"></path>
+            </marker>
+          </defs>
+          <text x="20" y="70" font-size="20" stroke="white">関係</text>
+          <g id="zu2_6_2" transform="translate(160, 70)">
+          <text x="0" y="0" font-size="20" stroke="white">銀行表</text>
+          <rect x="0" y="10" width="80" height="30" stroke="white" stroke-width="1" fill="#666699" />
+          <text x="40" y="32" font-size="20" text-anchor="middle" stroke="white" text-decoration="underline">銀行名</text>
+          <rect x="0" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="40" y="62" font-size="20" text-anchor="middle">X銀行</text>
+          <rect x="0" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="40" y="92" font-size="20" text-anchor="middle">Y銀行</text>
+          <line x1="130" y1="55" x2="80" y2="55" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <line x1="130" y1="85" x2="80" y2="55" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <line x1="130" y1="115" x2="80" y2="85" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <text x="130" y="0" font-size="20" stroke="white">預金表</text>
+          <rect x="130" y="10" width="80" height="30" stroke="white" stroke-width="1" fill="#666699" />
+          <text x="170" y="32" font-size="20" text-anchor="middle" stroke="white" text-decoration="underline">銀行名</text>
+          <rect x="130" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="170" y="62" font-size="20" text-anchor="middle">X銀行</text>
+          <rect x="130" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="170" y="92" font-size="20" text-anchor="middle">X銀行</text>
+          <rect x="130" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="170" y="122" font-size="20" text-anchor="middle">Y銀行</text>
+          <rect x="210" y="10" width="80" height="30" stroke="white" stroke-width="1" fill="#666699" />
+          <text x="250" y="32" font-size="20" text-anchor="middle" stroke="white" text-decoration="underline">顧客名</text>
+          <rect x="210" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="250" y="62" font-size="20" text-anchor="middle">Aさん</text>
+          <rect x="210" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="250" y="92" font-size="20" text-anchor="middle">Bさん</text>
+          <rect x="210" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="250" y="122" font-size="20" text-anchor="middle">Bさん</text>
+          <rect x="290" y="10" width="80" height="30" stroke="white" stroke-width="1" fill="#666699" />
+          <text x="330" y="32" font-size="20" text-anchor="middle" stroke="white">預金高</text>
+          <rect x="290" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="330" y="62" font-size="20" text-anchor="middle">100000</text>
+          <rect x="290" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="330" y="92" font-size="20" text-anchor="middle">120000</text>
+          <rect x="290" y="100" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="330" y="122" font-size="20" text-anchor="middle">200000</text>
+          <line x1="370" y1="55" x2="420" y2="55" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <line x1="370" y1="85" x2="420" y2="85" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <line x1="370" y1="115" x2="420" y2="85" stroke="white" stroke-width="1" marker-end="url(#arrow1)"/>
+          <text x="420" y="0" font-size="20" stroke="white">顧客表</text>
+          <rect x="420" y="10" width="80" height="30" stroke="white" stroke-width="1" fill="#666699" />
+          <text x="460" y="32" font-size="20" text-anchor="middle" stroke="white" text-decoration="underline">顧客名</text>
+          <rect x="420" y="40" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="460" y="62" font-size="20" text-anchor="middle">Aさん</text>
+          <rect x="420" y="70" width="80" height="30" stroke="white" stroke-width="1" fill="lightgray" />
+          <text x="460" y="92" font-size="20" text-anchor="middle">Bさん</text>
+
+          <text x="80" y="160" font-size="20" stroke="white">１対多</text>
+          <text x="380" y="160" font-size="20" stroke="white">多対１</text>
+          </g>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_06_a03')" value="正解" /></p>
+      </div>
+      <div id="chap02_06_a03" style="display:none;">
+        <p class="anslist">×　ア　“銀行”表と“預金”表のカーディナリティは多対１である。→ １対多</p>
+        <p class="anslist">×　イ　“銀行”表に参照制約のあるキーはない。                → 銀行名</p>
+        <p class="anslist">×　ウ　“預金”表と“顧客”表のカーディナリティは１対多である。→ 多対１</p>
+        <p class="anslist">○　エ　“預金”表には二つ以上の外部キーがある。</p>
+      </div>
+  </div>
+
+
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

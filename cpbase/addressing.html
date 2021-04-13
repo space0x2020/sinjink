@@ -1,0 +1,207 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Addressing</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+アドレス指定方法<br />
+<input type="button" id="B03_01" onclick="disppage(3, 1);" value="1" />
+<input type="button" id="B03_02" onclick="disppage(3, 2);" value="2" />
+<input type="button" id="B03_03" onclick="disppage(3, 3);" value="3" />
+<input type="button" id="B03_04" onclick="disppage(3, 4);" value="4" />
+</div>
+
+
+<div id="cpbase03_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] アドレス指定方式（アドレッシング）</h3></div>
+<div class="pagebody">
+<p class="plist">・アドレス指定方式</p>
+<p class="plist2">- 直接アドレス指定</p>
+<p class="plist2">- 指標アドレス指定(インデックスアドレス指定)</p>
+<p class="plist2">- 間接アドレス指定</p>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s vat">アドレッシング：</td>
+    <td class="pad_s">実際に参照するメモリのアドレスを演算などを行い求めること。</td></tr>
+  <tr>
+    <td class="pad_s vat">実効アドレス：</td>
+    <td class="pad_s">演算で求まった実際に参照するメモリのアドレス</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase03_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 直接アドレス指定方式</h3></div>
+<div class="pagebody">
+<p class="plist">アドレス部の値が実効アドレス</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_12_1" text-anchor="middle">
+    <text class="ff" x="0" y="45" text-anchor="start">命令</text>
+    <rect class="ff" x="40" y="30" width="80" height="20" />
+    <text class="ff" x="80" y="20">命令部</text>
+    <rect class="ff" x="120" y="30" width="120" height="20" />
+    <text class="ff" x="180" y="20">アドレス部</text>
+    <text class="ff" x="180" y="45">100</text>
+
+    <text class="ff" x="500" y="100" text-anchor="start">主記憶アドレス</text>
+    <rect class="ff" x="400" y="110" width="140" height="210" />
+    <text class="ff" x="560" y="130" text-anchor="start">0番地</text>
+    <line class="ff" x1="400" y1="140" x2="540" y2="140" />
+    <text class="ff" x="560" y="160" text-anchor="start">1番地</text>
+    <line class="ff" x1="400" y1="170" x2="540" y2="170" />
+    <text class="ff" x="560" y="190" text-anchor="start">2番地</text>
+    <line class="ff" x1="400" y1="200" x2="540" y2="200" />
+    <text class="ff" x="560" y="220" text-anchor="start">3番地</text>
+    <text class="ff" x="560" y="250" text-anchor="start" writing-mode="tb">…</text>
+    <line class="ff" x1="400" y1="260" x2="540" y2="260" />
+    <text class="ff" x="560" y="280" text-anchor="start">100番地</text>
+    <text class="ff" x="560" y="310" text-anchor="start" writing-mode="tb">…</text>
+    <text class="ff" x="470" y="280">処理対象データ</text>
+    <path class="ff" d="M380 230 Q 430 215 470 230  Q 510 245 560 230" />
+    <path class="ff" d="M380 235 Q 430 220 470 235  Q 510 250 560 235" />
+    <line class="ff" x1="400" y1="290" x2="540" y2="290" />
+    <line class="ff" x1="180" y1="50" x2="400" y2="274" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(400, 274),rotate(45)"></use>
+    <path class="ff act" d="M135 250 Q 130 250 130 245 V 225 Q 130 220 135 220 H 230 L 275 145 240 220 H 265 Q 270 220 270 225 V 245 Q 270 250 265 250 z" />
+    <text class="ff" x="200" y="240">実効アドレス</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase03_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 指標アドレス指定方式 (H19秋18)</h3></div>
+<div class="pagebody">
+<p class="plist">アドレス部の値にインデックスレジスタの値を加えた値が実効アドレス</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_13_1" text-anchor="middle">
+    <text class="ff" x="0" y="45" text-anchor="start">命令</text>
+    <rect class="ff" x="40" y="30" width="80" height="20" />
+    <text class="ff" x="80" y="20">命令部</text>
+    <rect class="ff" x="120" y="30" width="120" height="20" />
+    <text class="ff" x="180" y="20">レジスタ番号</text>
+    <text class="ff" x="180" y="45">2</text>
+    <rect class="ff" x="240" y="30" width="120" height="20" />
+    <text class="ff" x="300" y="20">アドレス定数</text>
+    <text class="ff" x="300" y="45">100</text>
+    <text class="ff" x="420" y="20" text-anchor="start">基底アドレス</text>
+    <line class="ff" x1="420" y1="15" x2="360" y2="40" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(360, 40),rotate(157)"></use>
+
+    <text class="ff" x="500" y="100" text-anchor="start">主記憶アドレス</text>
+    <rect class="ff" x="400" y="110" width="140" height="210" />
+    <text class="ff" x="560" y="130" text-anchor="start">0番地</text>
+    <line class="ff" x1="400" y1="140" x2="540" y2="140" />
+    <text class="ff" x="560" y="160" text-anchor="start">1番地</text>
+    <line class="ff" x1="400" y1="170" x2="540" y2="170" />
+    <text class="ff" x="560" y="190" text-anchor="start">2番地</text>
+    <line class="ff" x1="400" y1="200" x2="540" y2="200" />
+    <text class="ff" x="560" y="220" text-anchor="start">3番地</text>
+    <text class="ff" x="560" y="250" text-anchor="start" writing-mode="tb">…</text>
+    <line class="ff" x1="400" y1="260" x2="540" y2="260" />
+    <text class="ff" x="560" y="280" text-anchor="start">150番地</text>
+    <text class="ff" x="560" y="310" text-anchor="start" writing-mode="tb">…</text>
+    <text class="ff" x="470" y="280">処理対象データ</text>
+    <path class="ff" d="M380 230 Q 430 215 470 230  Q 510 245 560 230" />
+    <path class="ff" d="M380 235 Q 430 220 470 235  Q 510 250 560 235" />
+    <line class="ff" x1="400" y1="290" x2="540" y2="290" />
+    <rect class="ff" x="120" y="200" width="80" height="120" />
+    <line class="ff" x1="120" y1="230" x2="200" y2="230" />
+    <line class="ff" x1="120" y1="260" x2="200" y2="260" />
+    <text class="ff" x="160" y="280">50</text>
+    <line class="ff" x1="120" y1="290" x2="200" y2="290" />
+    <text class="ff" x="115" y="220" text-anchor="end">0</text>
+    <text class="ff" x="115" y="250" text-anchor="end">1</text>
+    <text class="ff" x="115" y="280" text-anchor="end">2</text>
+    <text class="ff" x="115" y="310" text-anchor="end">3</text>
+    <path class="ff d" d="M180 40 180 80 H 5 V 274 H 100" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(100, 274)"></use>
+    <text class="ff" x="10" y="155" text-anchor="start">レジスタ番号</text>
+    <line class="ff" x1="300" y1="50" x2="300" y2="264" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(300, 264),rotate(90)"></use>
+    <circle class="ff" cx="300" cy="274" r="10" />
+    <text class="ff" x="300" y="279">＋</text>
+    <line class="ff" x1="200" y1="274" x2="290" y2="274" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(290, 274)"></use>
+    <line class="ff" x1="310" y1="274" x2="400" y2="274" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(400, 274)"></use>
+    <text class="ff" x="310" y="266" text-anchor="start" style="fill:red">100 + 50</text>
+    <path class="ff act" d="M235 340 Q 230 340 230 335 V 315 Q 230 310 235 310 H 330 L 355 274 340 310 H 365 Q 370 310 370 315 V 335 Q 370 340 365 340z" />
+    <text class="ff" x="300" y="330">実効アドレス</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase03_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 間接アドレス指定方式</h3></div>
+<div class="pagebody">
+<p class="plist">アドレス部に指定されているアドレスの場所にある値が実効アドレス</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_14" text-anchor="middle">
+    <rect class="ff" x="40" y="130" width="80" height="30" />
+    <text class="ff" x="80" y="120">命令部</text>
+    <rect class="ff" x="120" y="130" width="120" height="30" />
+    <text class="ff" x="180" y="120">アドレス部</text>
+    <text class="ff" x="180" y="150">20</text>
+  
+    <text class="ff" x="510" y="120">主記憶</text>
+    <rect class="ff" x="440" y="130" width="140" height="30" />
+    <text class="ff" x="510" y="145" writing-mode="tb">…</text>
+    <rect class="ff" x="440" y="160" width="140" height="30" />
+    <rect class="ff" x="440" y="190" width="140" height="30" />
+    <text class="ff" x="510" y="210">25</text>
+    <rect class="ff" x="440" y="220" width="140" height="30" />
+    <text class="ff" x="510" y="235" writing-mode="tb">…</text>
+    <rect class="ff" x="440" y="250" width="140" height="30" />
+    <rect class="ff" x="440" y="280" width="140" height="30" />
+    <text class="ff" x="510" y="300">処理対象データ</text>
+    <rect class="ff" x="440" y="310" width="140" height="30" />
+    <text class="ff" x="510" y="325" writing-mode="tb">…</text>
+    <path class="ff" d="M440 400 V 340 H 580 V 400 Q 540 420 510 400 Q 480 380 440 400 z" />
+    <text class="ff" x="380" y="120">アドレス</text>
+    <text class="ff" x="380" y="210">20</text>
+    <text class="ff" x="380" y="300">25</text>
+
+    <circle class="ffw" cx="210" cy="145" r="5" />
+    <path class="ff" d="M210 145 Q 210 205 270 205 H 360" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(360, 205)"></use>
+    <circle class="ffw" cx="540" cy="205" r="5" />
+    <path class="ff" d="M540 205 Q540 235 510 235 H 340 A 30 30 0 1 0 340 295 H 360" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(360, 295)"></use>
+    <path class="ff act" d="M435 40 Q 430 40 430 35 V 15 Q 430 10 435 10 H 565 Q 570 10 570 15 V 35 Q 570 40 565 40 H 540 L 520 195 530 40 z" />
+    <text class="ff" x="500" y="30">実効アドレス</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

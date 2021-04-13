@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>BNF</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+BNF<br />
+<input type="button" id="B07_01" onclick="disppage(7, 1);" value="1" />
+<input type="button" id="B07_02" onclick="disppage(7, 2);" value="2" />
+</div>
+
+
+<div id="cpbase07_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] BNF</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="240" viewBox="0 0 700 240">
+  <g id="f7_19">
+    <text class="ff ll" x="100" y="30" text-anchor="middle"><命令文></text>
+    <text class="ff ll" x="40" y="90" text-anchor="middle"><動詞></text>
+    <text class="ff ll" x="160" y="90" text-anchor="middle"><目的語></text>
+    <text class="ff ll" x="40" y="150" text-anchor="middle">love</text>
+    <text class="ff ll" x="160" y="150" text-anchor="middle">me</text>
+    <text class="ff ll" x="280" y="30">非終端記号</text>
+    <text class="ff ll" x="280" y="90">非終端記号</text>
+    <text class="ff ll" x="280" y="150">終端記号</text>
+    <line class="ff" x1="100" y1="30" x2="100" y2="50" />
+    <line class="ff" x1="40" y1="50" x2="160" y2="50" />
+    <line class="ff" x1="40" y1="70" x2="40" y2="50" />
+    <line class="ff" x1="160" y1="70" x2="160" y2="50" />
+    <line class="ff" x1="40" y1="100" x2="40" y2="130" />
+    <line class="ff" x1="160" y1="100" x2="160" y2="130" />
+  </g>
+</svg>
+<p class="plist1">&lt;命令文&gt; ::= &lt;動詞&gt;     &lt;目的語&gt;</p>
+<p class="plist1">&lt;動詞&gt;     ::= help | love</p>
+<p class="plist1">&lt;目的語&gt; ::= me | him  |  her</p>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] BNF 演習問題</h3></div>
+<div class="pagebody">
+<p class="plist1">&lt;数値&gt; :: = &lt;数字列&gt; | &lt;数字列&gt;E&lt;数字列&gt; | &lt;数字列&gt;E&lt;符号&gt;&lt;数字列&gt;</p>
+<p class="plist1">&lt;数字列&gt; :: = &lt;数字&gt; | &lt;数字列&lt;&lt;数字&gt;</p>
+<p class="plist1">&lt;数字&gt; :: = 0|1|2|3|4|5|6|7|8|9</p>
+<p class="plist1">&lt;符号&gt; :: = +|-</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="160" viewBox="0 0 720 160">
+  <g id="f7_20" transform="translate(10,30)">
+    <rect class="ff" x="0" y="0" width="710" height="100" stroke-dasharray="4.4" />
+    <text class="ff ll" x="50" y="30" text-anchor="middle">数値</text>
+    <line class="ff" x1="50" y1="40" x2="50" y2="60" />
+    <text class="ff ll" x="50" y="90" text-anchor="middle">数字列</text>
+
+    <text class="ff ll" x="260" y="30" text-anchor="middle">数値</text>
+    <text class="ff ll" x="180" y="90" text-anchor="middle">数字列</text>
+    <text class="ff ll" x="260" y="90" text-anchor="middle">E</text>
+    <text class="ff ll" x="340" y="90" text-anchor="middle">数字列</text>
+    <line class="ff" x1="260" y1="40" x2="260" y2="70" />
+    <line class="ff" x1="180" y1="70" x2="180" y2="50" />
+    <line class="ff" x1="340" y1="70" x2="340" y2="50" />
+    <line class="ff" x1="180" y1="50" x2="340" y2="50" />
+
+    <text class="ff ll" x="570" y="30" text-anchor="middle">数値</text>
+    <text class="ff ll" x="480" y="90" text-anchor="middle">数字列</text>
+    <text class="ff ll" x="540" y="90" text-anchor="middle">E</text>
+    <text class="ff ll" x="580" y="90" text-anchor="middle">符号</text>
+    <text class="ff ll" x="660" y="90" text-anchor="middle">数字列</text>
+    <line class="ff" x1="570" y1="40" x2="570" y2="50" />
+    <line class="ff" x1="480" y1="70" x2="480" y2="50" />
+    <line class="ff" x1="540" y1="70" x2="540" y2="50" />
+    <line class="ff" x1="580" y1="70" x2="580" y2="50" />
+    <line class="ff" x1="660" y1="70" x2="660" y2="50" />
+    <line class="ff" x1="480" y1="50" x2="660" y2="50" />
+  </g>
+</svg>
+<table class="tbl" cellpadding="5">
+<tbody>
+  <tr>
+    <td class="pad_s" width="40">ア</td>
+    <td class="pad_s" width="120">-12</td>
+    <td class="pad_s l30">&lt;符号&gt;&lt;数字列&gt;</td></tr>
+  <tr>
+    <td class="pad_s"><u>イ</u></td>
+    <td class="pad_s">12E-10</td>
+    <td class="pad_s l30">&lt;数字列&gt;E&lt;符号&gt;&lt;数字列&gt;</td></tr>
+  <tr>
+    <td class="pad_s">ウ</td>
+    <td class="pad_s">+12E-10</td>
+    <td class="pad_s l30">&lt;符号&gt;&lt;数字列&gt;E&lt;符号&gt;&lt;数字列&gt;</td></tr>
+  <tr>
+    <td class="pad_s">エ</td>
+    <td class="pad_s">+12E10</td>
+    <td class="pad_s l30">&lt;符号&gt;&lt;数字列&gt;E&lt;数字列&gt;</td></tr>
+</tbody>
+</table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

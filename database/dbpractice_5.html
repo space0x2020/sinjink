@@ -1,0 +1,389 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 5</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B05_01" onclick="disppage(5, 1);" value="演習５－１" />
+    <input type="button" id="B05_02" onclick="disppage(5, 2);" value="演習５－２" />
+    <input type="button" id="B05_03" onclick="disppage(5, 3);" value="演習５－３" />
+    <input type="button" id="B05_04" onclick="disppage(5, 4);" value="演習５－４" />
+    <input type="button" id="B05_05" onclick="disppage(5, 5);" value="演習５－５" />
+    <input type="button" id="B05_06" onclick="disppage(5, 6);" value="演習５－６" />
+    <input type="button" id="B05_07" onclick="disppage(5, 7);" value="演習５－７" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap05_01" class="chap">
+      <h4>演習５－１</h4>
+      <div class="quiz">
+        社員表を、給与の大きい順に並べ替えなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_01_a01')" value="解説" /></p>
+      <div id="chap05_01_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_01_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_01_a02" style="display:none;">
+        <p class="sqlp1">[2] 列の指定がないので全列とする</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_01_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap05_01_a03" style="display:none;">
+        <p class="sqlp1">[3] 給与の大きい順に並べ替える</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select * from 社員表 order by 給与 desc</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_01_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap05_01_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 order by 給与 desc;
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | 0001
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_02" class="chap">
+      <h4>演習５－２</h4>
+      <div class="quiz">
+        社員表から部署コードを抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_02_a01')" value="解説" /></p>
+      <div id="chap05_02_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_02_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_02_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署コードを抽出</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select 部署コード</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_02_a03')" value="実行例" /></p>
+      </div>
+      <div id="chap05_02_a03" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select 部署コード from 社員表;
+
+ 部署コード
+------------
+ 0002
+ 0001
+ 0003
+ 0003
+ 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_03" class="chap">
+      <h4>演習５－３</h4>
+      <div class="quiz">
+        社員表から部署コードを重複行を削除して抽出しなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_03_a01')" value="解説" /></p>
+      <div id="chap05_03_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_03_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_03_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署コードを重複行を削除して抽出</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select distinct 部署コード</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_03_a03')" value="実行例" /></p>
+      </div>
+      <div id="chap05_03_a03" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select distinct 部署コード from 社員表;
+
+ 部署コード
+------------
+ 0001
+ 0002
+ 0003
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_04" class="chap">
+      <h4>演習５－４</h4>
+      <div class="quiz">
+        社員表から、給与の合計と平均を求めなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_04_a01')" value="解説" /></p>
+      <div id="chap05_04_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_04_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_04_a02" style="display:none;">
+        <p class="sqlp1">[2] 給与の合計と平均を求める</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select sum(給与), avg(給与)</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_04_a03')" value="実行例" /></p>
+      </div>
+      <div id="chap05_04_a03" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select sum(給与), avg(給与) from 社員表;
+
+   sum   |         avg
+---------+---------------------
+ 1410000 | 282000.000000000000
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_05" class="chap">
+      <h4>演習５－５</h4>
+      <div class="quiz">
+        社員表から部署の人数が一人である部署コードを求めなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_05_a01')" value="解説" /></p>
+      <div id="chap05_05_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_05_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_05_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署の人数が→部署ごとにグルーピング</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>group by 部署コード</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_05_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap05_05_a03" style="display:none;">
+        <p class="sqlp1">[3] 部署の人数が一人→部署ごとの人数(カウント)が１ </p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 group by 部署コード <u>having count(*) = 1</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_05_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap05_05_a04" style="display:none;">
+        <p class="sqlp1">[4] 部署コードを求めなさい</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select 部署コード</u> from 社員表 group by 部署コード having count(*) = 1</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_05_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap05_05_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select 部署コード from 社員表 group by 部署コード having count(*) = 1;
+
+ 部署コード
+------------
+ 0002
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_06" class="chap">
+      <h4>演習５－６</h4>
+      <div class="quiz">
+        社員表から給与の一番多い人を求めなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_06_a01')" value="解説" /></p>
+      <div id="chap05_06_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_06_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_06_a02" style="display:none;">
+        <p class="sqlp1">[2] 給与の一番多い人を求める</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表 where 給与 = <u>社員表の給与列の最大値</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_06_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap05_06_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員表の給与列の最大値を求めるSQL文は、</p>
+        <div class="plist3"><pre class="f"><code>→ select max(給与) from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_06_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap05_06_a04" style="display:none;">
+        <p class="sqlp1">[4] [2]と[3]を合わせて</p>
+        <div class="plist3"><pre class="f"><code>→ select * from 社員表 where 給与 = <u>(select max(給与) from 社員表)</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_06_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap05_06_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 where 給与 = (select max(給与) from 社員表);
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap05_07" class="chap">
+      <h4>演習５－７</h4>
+      <div class="quiz">
+        社員表を、年齢の若い順に並べ替えなさい。</div>
+      <p><input type="button" onclick="detailson('chap05_07_a01')" value="解説" /></p>
+      <div id="chap05_07_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_07_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap05_07_a02" style="display:none;">
+        <p class="sqlp1">[2] 列の指定がないので全列とする</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_07_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap05_07_a03" style="display:none;">
+        <p class="sqlp1">[3] 年齢の若い順に並べ替える→生年月日の大きい順 </p>
+        <div class="plist3"><pre class="f"><code>→ select * from 社員表 <u>order by 生年月日 desc</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap05_07_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap05_07_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 order by 生年月日 desc;
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | 0001
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+</code></pre>
+        </div>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

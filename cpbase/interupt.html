@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Interrupt</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+割り込み<br />
+<input type="button" id="B03_01" onclick="disppage(3, 1);" value="1" />
+<input type="button" id="B03_02" onclick="disppage(3, 2);" value="2" />
+</div>
+
+
+<div id="cpbase03_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 割り込み6</h3></div>
+<div class="pagebody">
+<p class="plist">現在実行中のプログラムを中断し、一時的に別にプログラムに切り換えて、その処理が終わったら再び元プログラムに戻る仕組み</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="400" viewBox="0 0 700 400">
+  <g id="f3_09">
+    <line class="ff" x1="10" y1="150" x2="10" y2="280" />
+    <line class="ff" x1="5" y1="270" x2="500" y2="270" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(500, 270)"></use>
+    <text class="ff s" x="400" y="290">時間の経過</text>
+    <rect x="10" y="170" width="150" height="30" fill="lightgray" />
+    <text x="85" y="190" text-anchor="middle" font-size="18" >書類作成</text>
+    <rect x="160" y="170" width="150" height="30" fill="white" stroke-dasharray="3,3" stroke="black" />
+    <text x="235" y="190" text-anchor="middle" font-size="18" >中断</text>
+    <rect x="310" y="170" width="150" height="30" fill="lightgray" />
+    <text x="385" y="190" text-anchor="middle" font-size="18" >書類作成</text>
+    <rect x="160" y="230" width="150" height="30" fill="lightgray" />
+    <text x="235" y="250" text-anchor="middle" font-size="18" >電話対応</text>
+    <line class="ff" x1="160" y1="200" x2="160" y2="230" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(160, 230),rotate(90)"></use>
+    <text class="ff s" x="170" y="220">割込み</text>
+    <line class="ff" x1="310" y1="230" x2="310" y2="200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(310, 200),rotate(-90)"></use>
+    <text class="ff s" x="320" y="220">復帰</text>
+
+    <path class="ff" d="M150 95 Q 150 90 155 90 H275 Q 280 90 280 95 V 135 Q 280 140 275 140 H 230 L 160 170 200 140 H 155 Q 150 140 150 135 z" />
+    <text class="ff s" x="160" y="110">電話が鳴った！</text>
+    <text class="ff s" x="160" y="130">(割込み要因)</text>
+
+    <rect class="ff" x="160" y="20" width="200" height="30" />
+    <text class="ff s" x="260" y="40" text-anchor="middle">PSW(プログラム状態語)</text>
+    <line class="ff sw2" x1="160" y1="88" x2="180" y2="50" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(180, 50),rotate(-62)"></use>
+    <line class="ff sw2" x1="290" y1="50" x2="310" y2="120" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(310, 120),rotate(74)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase03_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 割り込み(2)</h3></div>
+<div class="pagebody">
+<p class="plist"><u>内部割込みと外部割込み</u></p>
+<p class="bplist1">- 内部割込み（ソフトウェア割込み）は、プログラムの動作によって割込みが発生するもの。例；「ゼロ除算」</p>
+<p class="bplist1">- 外部割込み(ハードウェア割込み）は、ハードウェアの動作によって発生するもの</p>
+<p />
+<p class="plist"><u>優先順位</u></p>
+<p class="plist1">割り込み要因が複数ある場合、通常は優先順位（プライオリティ）があり、割り込みコントローラが処理すべき要因を決定します。低優先順位の割り込み要求は保留されます。</p>
+<p class="plist1">優先順位の最も高い要因に対する処理が終わると、次の優先順位（その時点では最高優先順位）の要因に対する処理をします。</p>
+<p />
+<p class="plist"><u>参考</u></p>
+<p class="plist1">
+https://support.renesas.com/hc/ja/articles/211564587-FAQ-1008807-%E5%89%B2%E3%82%8A%E8%BE%BC%E3%81%BF-Interrupt-
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

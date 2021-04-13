@@ -1,0 +1,1090 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>CPU Cycle</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+CPU 明細サイクル<br />
+<input type="button" id="B03_01" onclick="disppage(3, 1);" value="1" />
+<input type="button" id="B03_02" onclick="disppage(3, 2);" value="2" />
+<input type="button" id="B03_03" onclick="disppage(3, 3);" value="3" />
+<input type="button" id="B03_04" onclick="disppage(3, 4);" value="4" />
+<input type="button" id="B03_05" onclick="disppage(3, 5);" value="5" />
+<input type="button" id="B03_06" onclick="disppage(3, 6);" value="6" />
+<input type="button" id="B03_07" onclick="disppage(3, 7);" value="7" />
+</div>
+
+<div id="cpbasecpucycle03_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 命令のサイクル  p.95</h3></div>
+<div class="pagebody">
+<p class="plist">・CPUの命令</p>
+<p class="plist1">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">「～～せよ</td>
+    <td class="pad_s">……を」</td></tr>
+  <tr>
+    <td class="pad_s bt" style="border-color:green;"><span style="color:green;">オペコード</span></td>
+    <td class="pad_s bt" style="border-color:orange;"><span style="color:orange;">オペランド</span></td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">・命令のサイクル</p>
+<p class="bplist1">(1) オペコードのフェッチ</p>
+<p class="bplist1">(2) オペコードの解読</p>
+<p class="bplist1">(3) オペランドのアドレス計算</p>
+<p class="bplist1">(4) オペランドの読み出し</p>
+<p class="bplist1">(5) 命令の実行</p>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecpucycle03_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 命令のサイクル</h3></div>
+<div class="pagebody">
+<input type="button" id="B03_02_01" onclick="dispsubpage(3, 2, 1);" value="(1)" />
+<input type="button" id="B03_02_02" onclick="dispsubpage(3, 2, 2);" value="(2)" />
+<input type="button" id="B03_02_03" onclick="dispsubpage(3, 2, 3);" value="(3)" />
+<input type="button" id="B03_02_04" onclick="dispsubpage(3, 2, 4);" value="(4)" />
+<input type="button" id="B03_02_05" onclick="dispsubpage(3, 2, 5);" value="(5)" />
+<input type="button" id="B03_02_06" onclick="dispsubpage(3, 2, 6);" value="(6)" />
+<input type="button" id="B03_02_07" onclick="dispsubpage(3, 2, 7);" value="(7)" />
+<input type="button" id="B03_02_08" onclick="dispsubpage(3, 2, 8);" value="(8)" />
+<div id="cpbasecpucyclesub03_02_01" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <defs>
+    <g id="person">
+      <ellipse class="ff" cx="20" cy="20" rx="14" ry="10" />
+      <circle class="ff" cx="14" cy="17" r="2" />
+      <circle class="ff" cx="26" cy="17" r="2" />
+      <path class="ff" d="M14 22 Q 20 26 26 22" />
+      <line class="ff" x1="20" y1="30" x2="20" y2="60" />
+      <line class="ff" x1="5" y1="35" x2="20" y2="45" />
+      <line class="ff" x1="20" y1="45" x2="45" y2="35" />
+      <line class="ff" x1="20" y1="60" x2="10" y2="80" />
+      <line class="ff" x1="20" y1="60" x2="40" y2="80" />
+    </g>
+    <g id="person_color">
+      <ellipse class="ff act" cx="20" cy="20" rx="14" ry="10" />
+      <circle class="ff act" cx="14" cy="17" r="2" />
+      <circle class="ff act" cx="26" cy="17" r="2" />
+      <path class="ff act" d="M14 22 Q 20 26 26 22" />
+      <line class="ff act" x1="20" y1="30" x2="20" y2="60" />
+      <line class="ff act" x1="5" y1="35" x2="20" y2="45" />
+      <line class="ff act" x1="20" y1="45" x2="45" y2="35" />
+      <line class="ff act" x1="20" y1="60" x2="10" y2="80" />
+      <line class="ff act" x1="20" y1="60" x2="40" y2="80" />
+    </g>
+    <g id="f03_fig_base" text-anchor="middle">
+      <text class="ff" x="40" y="75">メモリ</text>
+      <rect class="ff" x="0" y="90" width="80" height="270" />
+      <line class="ff" x1="0" y1="120" x2="80" y2="120" />
+      <line class="ff" x1="0" y1="150" x2="80" y2="150" />
+      <line class="ff" x1="0" y1="180" x2="80" y2="180" />
+      <line class="ff" x1="0" y1="210" x2="80" y2="210" />
+      <line class="ff" x1="0" y1="240" x2="80" y2="240" />
+      <line class="ff" x1="0" y1="270" x2="80" y2="270" />
+      <line class="ff" x1="0" y1="300" x2="80" y2="300" />
+      <line class="ff" x1="0" y1="330" x2="80" y2="330" />
+      <text class="ff" x="40" y="140">命令１</text>
+      <text class="ff" x="40" y="170">命令２</text>
+      <text class="ff" x="40" y="200">命令３</text>
+      <text class="ff" x="40" y="230">命令４</text>
+      <text class="ff" x="40" y="260">命令５</text>
+      <text class="ff" x="40" y="290">データ１</text>
+      <text class="ff" x="40" y="320">データ２</text>
+      <text class="ff" x="40" y="350">．．．</text>
+      <text class="ff" x="200" y="125">フェッチ</text>
+      <text class="ff" x="200" y="145">担当</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(180, 150)"></use>
+      <circle class="ff" cx="200" cy="280" r="15" />
+      <text class="ff" x="290" y="125">解読</text>
+      <text class="ff" x="290" y="145">担当</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(270, 150)"></use>
+      <circle class="ff" cx="290" cy="280" r="15" />
+      <text class="ff" x="380" y="125">アドレス</text>
+      <text class="ff" x="380" y="145">計算担当</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(360, 150)"></use>
+      <circle class="ff" cx="380" cy="280" r="15" />
+      <text class="ff" x="470" y="125">オペランド</text>
+      <text class="ff" x="470" y="145">読出担当</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(450, 150)"></use>
+      <circle class="ff" cx="470" cy="280" r="15" />
+      <text class="ff" x="560" y="125">実行</text>
+      <text class="ff" x="560" y="145">担当</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(540, 150)"></use>
+      <circle class="ff" cx="560" cy="280" r="15" />
+
+      <path class="ff" d="M170 295 Q 150 280 170 265 H 590 Q 610 280 590 295 z" />
+      <text class="ff" x="380" y="315">ベルトコンベア</text>
+      <path class="ff" d="M140 100 V330 H 620 V 100" />
+      <line class="ff" x1="120" y1="105" x2="380" y2="60" />
+      <line class="ff" x1="380" y1="60" x2="650" y2="105" />
+      <text class="ff ll" x="380" y="50">CPU</text>
+    </g>
+  </defs>
+  <g id="f0_02_1">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_02" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30">→</td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_2" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令１</text>
+    <g id="cpbasecpucycle03_02_2_02" transform="translate(80, 135),rotate(48)">
+      <line class="act sw2" x1="0" y1="0" x2="135" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(135, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_03" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_3" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="210" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_04" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(3) オペランドのアドレス計算</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f0_02_4" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="380" y="125">アドレス</text>
+    <text class="ff act" x="380" y="145">計算担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(360, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="350" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="380" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="300" y1="250" x2="345" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(350, 250)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_05" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(4) オペランドの読み出し</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_5" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="470" y="125">オペランド</text>
+    <text class="ff act" x="470" y="145">読出担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(450, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="440" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="470" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="390" y1="250" x2="435" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(440, 250)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_06" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(5) 命令の実行</b></td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_6" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="560" y="125">実行</text>
+    <text class="ff act" x="560" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(540, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="530" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="560" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="480" y1="250" x2="525" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(530, 250)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_07" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30">→</td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_7" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令２</text>
+    <g id="cpbasecpucycle03_02_2_03" transform="translate(80, 165),rotate(37)">
+      <line class="act sw2" x1="0" y1="0" x2="120" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(120, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_02_08" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_02_8" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令２</text>
+    <line class="act sw2" x1="210" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+  </g>
+</svg>
+</div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecpucycle03_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 余白</h3></div>
+<div class="pagebody">
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecpucycle03_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 命令サイクル</h3></div>
+<div class="pagebody">
+<input type="button" id="B03_04_01" onclick="dispsubpage(3, 4, 1);" value="(1)" />
+<input type="button" id="B03_04_02" onclick="dispsubpage(3, 4, 2);" value="(2)" />
+<input type="button" id="B03_04_03" onclick="dispsubpage(3, 4, 3);" value="(3)" />
+<input type="button" id="B03_04_04" onclick="dispsubpage(3, 4, 4);" value="(4)" />
+<input type="button" id="B03_04_05" onclick="dispsubpage(3, 4, 5);" value="(5)" />
+<input type="button" id="B03_04_06" onclick="dispsubpage(3, 4, 6);" value="(6)" />
+<input type="button" id="B03_04_07" onclick="dispsubpage(3, 4, 7);" value="(7)" />
+<input type="button" id="B03_04_08" onclick="dispsubpage(3, 4, 8);" value="(8)" />
+<div id="cpbasecpucyclesub03_04_01" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <defs>
+    <g id="f3_04_base" text-anchor="middle">
+     <rect x="0" y="60" width="290" height="360" rx="20" ry="20" stroke="blue" fill="lightskyblue" />
+     <rect x="20" y="120" width="120" height="120" rx="10" ry="10" stroke="white" fill="lightblue" />
+     <text x="80" y="180" font-size="16" fill="black">制御装置</text>
+     <rect x="20" y="260" width="120" height="120" rx="10" ry="10" stroke="white" fill="lightblue" />
+     <text x="80" y="315" font-size="16" fill="black">演算装置</text>
+     <rect x="120" y="50" width="50" height="20" rx="5" ry="5" stroke="white" fill="white" />
+     <text x="145" y="66" font-size="16" fill="black">CPU</text>
+     <rect x="150" y="100" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="117" font-size="16" fill="white">PR:0020</text>
+     <rect x="150" y="125" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="142" font-size="16" fill="white">SP</text>
+     <rect x="150" y="150" width="60" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="180" y="167" font-size="16" fill="white">FR</text>
+     <rect x="150" y="200" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="217" font-size="16" fill="white">GR0</text>
+     <rect x="150" y="225" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="242" font-size="16" fill="white">GR1</text>
+     <rect x="150" y="250" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="267" font-size="16" fill="white">GR2</text>
+     <rect x="150" y="275" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="292" font-size="16" fill="white">GR3</text>
+     <rect x="150" y="300" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="317" font-size="16" fill="white">GR4</text>
+     <rect x="150" y="325" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="342" font-size="16" fill="white">GR5</text>
+     <rect x="150" y="350" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="367" font-size="16" fill="white">GR6</text>
+     <rect x="150" y="375" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="392" font-size="16" fill="white">GR7</text>
+
+     <rect x="480" y="70" width="100" height="20" rx="5" ry="5" stroke="white" fill="white" />
+     <text x="530" y="85" font-size="16" fill="black">メインメモリ</text>
+     <rect x="370" y="100" width="250" height="25" fill="#C0504D" />
+     <line x1="440" y1="100" x2="440" y2="125" stroke="white" />
+     <line x1="510" y1="100" x2="510" y2="125" stroke="white" />
+     <text x="405" y="118" font-size="16" fill="white">アドレス</text>
+     <text x="475" y="118" font-size="16" fill="white">値</text>
+     <text x="565" y="118" font-size="16" fill="white">意味</text>
+
+     <rect x="370" y="125" width="250" height="25" stroke="white" fill="#E8D0D0" />
+     <text x="405" y="143" font-size="16" fill="black">0020</text>
+     <text x="475" y="143" font-size="16" fill="black">1128</text>
+     <text x="515" y="143" text-anchor="start" font-size="16" fill="black">LD GR1,40</text>
+     <rect x="370" y="150" width="250" height="25" stroke="white" fill="#F4E9E9" />
+     <text x="405" y="168" font-size="16" fill="black">0021</text>
+     <text x="475" y="168" font-size="16" fill="black">2164</text>
+     <text x="515" y="168" text-anchor="start" font-size="16" fill="black">ADDAGR1,100</text>
+     <rect x="370" y="175" width="250" height="25" stroke="white" fill="#E8D0D0" />
+     <text x="405" y="193" font-size="16" fill="black">0022</text>
+     <text x="475" y="193" font-size="16" fill="black">312A</text>
+     <text x="515" y="193" text-anchor="start" font-size="16" fill="black">ST GR1,42</text>
+     <rect x="370" y="200" width="250" height="25" stroke="white" fill="#F4E9E9" />
+     <text x="405" y="218" font-size="16" fill="black">0023</text>
+     <text x="475" y="218" font-size="16" fill="black">8100</text>
+     <text x="515" y="218" text-anchor="start" font-size="16" fill="black">RET</text>
+     <rect x="370" y="225" width="250" height="25" stroke="white" fill="#E8D0D0" />
+     <text x="405" y="243" font-size="16" fill="black">0024</text>
+     <rect x="370" y="250" width="250" height="25" stroke="white" fill="#F4E9E9" />
+     <text x="405" y="268" font-size="16" fill="black">0025</text>
+     <rect x="370" y="275" width="250" height="25" stroke="white" fill="#E8D0D0" />
+     <text x="405" y="293" font-size="16" fill="black">0026</text>
+     <rect x="370" y="300" width="250" height="25" stroke="white" fill="#F4E9E9" />
+     <text x="405" y="318" font-size="16" fill="black">0027</text>
+     <rect x="370" y="325" width="250" height="25" stroke="white" fill="#E8D0D0" />
+     <text x="405" y="343" font-size="16" fill="black">0028</text>
+     <text x="475" y="343" font-size="16" fill="black">0012</text>
+     <rect x="370" y="350" width="250" height="25" stroke="white" fill="#F4E9E9" />
+     <text x="405" y="368" font-size="16" fill="black">0029</text>
+     <line x1="440" y1="125" x2="440" y2="375" stroke="white" />
+     <line x1="510" y1="125" x2="510" y2="375" stroke="white" />
+
+     <path d="M290 95 H 300 V 20 H 420 V 100 H 390 V 50 H 330 V 125 H 290 z" fill="#C3D69B" /> 
+     <text x="360" y="40" font-size="18" fill="black">アドレスバス</text>
+     <path d="M290 180 H 330 V 390 H 460 V 375 H 490 V 420 H300 V 210 H 290 z" fill="#FAC090" />
+     <text x="390" y="410" font-size="18" fill="black">データバス</text>
+     <path d="M290 140 H 345 V 113 H  370" stroke="blue" stroke-width="5" fill="none" />
+     <text x="330" y="160" font-size="18" fill="white">制御信号</text>
+    </g>
+  </defs>
+  <g id="f3_04_1">
+    <text x="0" y="20" fill="white">・命令サイクル</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_02" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_2">
+    <text class="ff" x="0" y="20">(1) 命令のフェッチ-1</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <text x="210" y="117" text-anchor="middle" font-size="16" fill="white">PR:<tspan fill="red">0020</tspan></text>
+    <path class="act" d="M270 110 H 315 V 35 H405 V 100" stroke-width="3" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D_act" transform="translate(405, 100)"></use>
+    <text x="350" y="100" font-size="18" fill="white" text-decoration="overline">RD</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_03" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_3">
+    <text class="ff" x="0" y="20">(1) 命令のフェッチ-2</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <text x="210" y="117" text-anchor="middle" font-size="16" fill="white">PR:<tspan fill="red">0020</tspan></text>
+    <path d="M270 110 H 315 V 35 H405 V 100" stroke="white" stroke-width="3" fill="none" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(405, 100)"></use>
+    <text x="350" y="100" font-size="18" fill="white" text-decoration="overline">RD</text>
+    <rect x="380" y="128" width="50" height="19" rx="4" ry="4" stroke="red" stroke-width="4" fill="none" />
+    <rect x="450" y="128" width="50" height="19" rx="4" ry="4" stroke="red" stroke-width="4" fill="none" />
+    <rect x="20" y="183" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="200" text-anchor="middle" font-size="16" fill="white">IR:1128</text>
+    <path class="act" d="M475 147 V 405 H 315 V 195 H 140" stroke-width="3" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L_act" transform="translate(140, 195)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_04" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_4">
+    <text class="ff" x="0" y="20">(2) 命令のデコード(解読)</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <rect x="20" y="183" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="200" text-anchor="middle" font-size="16" fill="white">IR:1128</text>
+    <path d="M70 207 V 215 H 60 L 80 220 100 215 H 90 V 207 z" stroke="blue" fill="red" />
+    <rect x="20" y="220" width="120" height="24" rx="5" ry="5" stroke="blue" fill="white" />
+    <text x="80" y="237" text-anchor="middle" font-size="16" fill="black">LD GR1,40</text>
+    <text x="120" y="257" text-anchor="middle" font-size="16" fill="black">(0x28)</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_05" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_5">
+    <text class="ff" x="0" y="20">(3) オペランドのアドレス計算
+</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <rect x="20" y="183" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="200" text-anchor="middle" font-size="16" fill="white">IR:1128</text>
+    <path d="M70 207 V 215 H 60 L 80 220 100 215 H 90 V 207 z" stroke="blue" fill="red" />
+    <rect x="20" y="220" width="120" height="24" rx="5" ry="5" stroke="blue" fill="white" />
+    <text x="80" y="237" text-anchor="middle" font-size="16" fill="black">LD GR1,<tspan fill="red">40</tspan></text>
+    <text x="120" y="257" text-anchor="middle" font-size="16" fill="red">(0x28)</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_06" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_6">
+    <text x="0" y="20" font-size="18" fill="white">(4) オペランドの読み出し-1</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <rect x="20" y="183" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="200" text-anchor="middle" font-size="16" fill="white">IR:1128</text>
+    <path d="M70 207 V 215 H 60 L 80 220 100 215 H 90 V 207 z" stroke="blue" fill="red" />
+    <rect x="20" y="220" width="120" height="24" rx="5" ry="5" stroke="blue" fill="white" />
+    <text x="80" y="237" text-anchor="middle" font-size="16" fill="black">LD GR1,<tspan fill="red">40<tspan></text>
+    <text x="120" y="257" text-anchor="middle" font-size="16" fill="red">(0x28)</text>
+    <path class="act" d="M115 232 270 110" stroke-width="3" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(270, 110),rotate(-38)"></use>
+    <path class="act" d="M270 110 H 315 V 35 H405 V 100" stroke-width="3" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D_act" transform="translate(405, 100)"></use>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_07" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_7">
+    <text class="ff" x="0" y="20">(4) オペランドの読み出し-2</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <rect x="20" y="183" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="200" text-anchor="middle" font-size="16" fill="white">IR:1128</text>
+    <path d="M70 207 V 215 H 60 L 80 220 100 215 H 90 V 207 z" stroke="blue" fill="red" />
+    <rect x="20" y="220" width="120" height="24" rx="5" ry="5" stroke="blue" fill="white" />
+    <text x="80" y="237" text-anchor="middle" font-size="16" fill="black">LD GR1,<tspan fill="red">40<tspan></text>
+    <text x="120" y="257" text-anchor="middle" font-size="16" fill="red">(0x28)</text>
+    <path d="M115 232 270 110" stroke="white" stroke-width="3" fill="none" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(270, 110),rotate(-38)"></use>
+    <path d="M270 110 H 315 V 35 H405 V 100" stroke="white" stroke-width="3" fill="none" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(405, 100)"></use>
+    <rect x="20" y="320" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="337" text-anchor="middle" font-size="16" fill="white">0012</text>
+    <path class="act" d="M475 347 V 405 H 315 V 195 H 145 V 332 H 120" stroke-width="3" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(120, 332),rotate(180)"></use>
+    <rect x="380" y="328" width="50" height="19" rx="4" ry="4" stroke="red" stroke-width="4" fill="none" />
+    <rect x="450" y="328" width="50" height="19" rx="4" ry="4" stroke="red" stroke-width="4" fill="none" />
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_04_08" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_04_8">
+    <text x="0" y="20" font-size="18" fill="white">(5) 命令の実行</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f3_04_base"></use>
+    <rect x="20" y="320" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+    <text x="80" y="337" text-anchor="middle" font-size="16" fill="yellow">0012</text>
+     <rect x="150" y="225" width="120" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="210" y="242" text-anchor="middle" font-size="16" fill="white">GR1:<tspan fill="yellow">0012</tspan></text>
+     <rect x="150" y="150" width="60" height="24" rx="5" ry="5" stroke="white" fill="blue" />
+     <text x="180" y="167" text-anchor="middle" font-size="16" fill="white">FR:000</text>
+     <g id="cpbasecpucyle_03_04_20" transform="translate(120,330),rotate(-45)">
+       <line class="act" x1="0" y1="0" x2="110" y2="0" stroke-width="3" />
+       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(120, 0)"></use>
+     </g>
+     <g id="cpbasecpucyle_03_04_21" transform="translate(120,330),rotate(-66)">
+       <line class="act" x1="0" y1="0" x2="175" y2="0" stroke-width="3" />
+       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(175, 0)"></use>
+     </g>
+  </g>
+</svg>
+</div>
+</div><!-- page -->
+</div><!-- pagebody -->
+
+
+<div id="cpbasecpucycle03_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 余白</h3></div>
+<div class="pagebody">
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecpucycle03_06" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[6] CPUの内部構造</h3></div>
+<div class="pagebody">
+<a class="style1" href="http://www.sugilab.net/jk/joho-kiki/1401/1401-2-A.jpg" target="blank">http://www.sugilab.net/jk/joho-kiki/1401/1401-2-A.jpg</a>
+<br />
+<img src="1401-2-A.jpg" />
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecpucycle03_07" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[7] 命令のサイクル(1'')</h3></div>
+<div class="pagebody">
+<input type="button" id="B03_07_01" onclick="dispsubpage(3, 7, 1);" value="(1)" />
+<input type="button" id="B03_07_02" onclick="dispsubpage(3, 7, 2);" value="(2)" />
+<input type="button" id="B03_07_03" onclick="dispsubpage(3, 7, 3);" value="(3)" />
+<input type="button" id="B03_07_04" onclick="dispsubpage(3, 7, 4);" value="(4)" />
+<input type="button" id="B03_07_05" onclick="dispsubpage(3, 7, 5);" value="(5)" />
+<input type="button" id="B03_07_06" onclick="dispsubpage(3, 7, 6);" value="(6)" />
+<input type="button" id="B03_07_07" onclick="dispsubpage(3, 7, 7);" value="(7)" />
+
+<div id="cpbasecpucyclesub03_07_01" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30">→</td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_1" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令１</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 135),rotate(48)">
+      <line class="act sw2" x1="0" y1="0" x2="135" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(135, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_02" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s">(1) オペコードのフェッチ</td></tr>
+  <tr>
+    <td class="pad_s">→</td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_2" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="210" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+    <path class="act" d="M200 110 L 205 70 A 30 30 0 1 1 225 73 z" fill="white" />
+    <text class="act" x="218" y="50">暇</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_03" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30">→</td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(2) オペコードの解読</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_3" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令１</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 135),rotate(48)">
+      <line class="act sw2" x1="0" y1="0" x2="135" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(135, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_04" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(3) オペランドのアドレス計算</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_4" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="230" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令２</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 165),rotate(38)">
+      <line class="act sw2" x1="0" y1="0" x2="114" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(114, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_05" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(3) オペランドのアドレス計算</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(4) オペランドの読み出し</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_5" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <text class="ff act" x="380" y="125">アドレス</text>
+    <text class="ff act" x="380" y="145">計算担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(360, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <rect class="ff actf" x="0" y="180" width="80" height="30" />
+    <text class="ff" x="40" y="200" fill="black">命令３</text>
+    <rect class="ff actf" x="350" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="380" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="300" y1="250" x2="345" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(350, 250)"></use>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令２</text>
+    <line class="act sw2" x1="230" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令３</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 195),rotate(24)">
+      <line class="act sw2" x1="0" y1="0" x2="98" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(98, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_06" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(3) オペランドのアドレス計算</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(4) オペランドの読み出し</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">(5) 命令の実行</td></tr>
+<?tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_6" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <text class="ff act" x="380" y="125">アドレス</text>
+    <text class="ff act" x="380" y="145">計算担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(360, 150)"></use>
+    <text class="ff act" x="470" y="125">オペランド</text>
+    <text class="ff act" x="470" y="145">読出担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(450, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <rect class="ff actf" x="0" y="180" width="80" height="30" />
+    <text class="ff" x="40" y="200" fill="black">命令３</text>
+    <rect class="ff actf" x="0" y="210" width="80" height="30" />
+    <text class="ff" x="40" y="230" fill="black">命令４</text>
+    <rect class="ff actf" x="440" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="470" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="390" y1="250" x2="435" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(440, 250)"></use>
+    <rect class="ff actf" x="350" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="380" y="255" fill="black">命令２</text>
+    <line class="act sw2" x1="300" y1="250" x2="345" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(350, 250)"></use>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令３</text>
+    <line class="act sw2" x1="230" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令４</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 225),rotate(6)">
+      <line class="act sw2" x1="0" y1="0" x2="90" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(90, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasecpucyclesub03_07_07" style="display:none;">
+<font size="4">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" width="30"></td>
+    <td class="pad_s act"><b>(1) オペコードのフェッチ</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(2) オペコードの解読</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(3) オペランドのアドレス計算</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(4) オペランドの読み出し</b></td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s act"><b>(5) 命令の実行</b></td></tr>
+</tbody>
+</table>
+</font>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <g id="f3_07_7" text-anchor="middle">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f03_fig_base" transform="translate(0, 0)"></use>
+    <text class="ff act" x="200" y="125">フェッチ</text>
+    <text class="ff act" x="200" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(180, 150)"></use>
+    <text class="ff act" x="290" y="125">解読</text>
+    <text class="ff act" x="290" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(270, 150)"></use>
+    <text class="ff act" x="380" y="125">アドレス</text>
+    <text class="ff act" x="380" y="145">計算担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(360, 150)"></use>
+    <text class="ff act" x="470" y="125">オペランド</text>
+    <text class="ff act" x="470" y="145">読出担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(450, 150)"></use>
+    <text class="ff act" x="560" y="125">実行</text>
+    <text class="ff act" x="560" y="145">担当</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person_color" transform="translate(540, 150)"></use>
+    <rect class="ff actf" x="0" y="120" width="80" height="30" />
+    <text class="ff" x="40" y="140" fill="black">命令１</text>
+    <rect class="ff actf" x="0" y="150" width="80" height="30" />
+    <text class="ff" x="40" y="170" fill="black">命令２</text>
+    <rect class="ff actf" x="0" y="180" width="80" height="30" />
+    <text class="ff" x="40" y="200" fill="black">命令３</text>
+    <rect class="ff actf" x="0" y="210" width="80" height="30" />
+    <text class="ff" x="40" y="230" fill="black">命令４</text>
+    <rect class="ff actf" x="0" y="240" width="80" height="30" />
+    <text class="ff" x="40" y="260" fill="black">命令５</text>
+    <rect class="ff actf" x="530" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="560" y="255" fill="black">命令１</text>
+    <line class="act sw2" x1="480" y1="250" x2="525" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(530, 250)"></use>
+    <rect class="ff actf" x="440" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="470" y="255" fill="black">命令２</text>
+    <line class="act sw2" x1="390" y1="250" x2="435" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(440, 250)"></use>
+    <rect class="ff actf" x="350" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="380" y="255" fill="black">命令３</text>
+    <line class="act sw2" x1="300" y1="250" x2="345" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(350, 250)"></use>
+    <rect class="ff actf" x="260" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="290" y="255" fill="black">命令４</text>
+    <line class="act sw2" x1="230" y1="250" x2="255" y2="250" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(260, 250)"></use>
+    <rect class="ff actf" x="170" y="235" width="60" height="28" stroke="black" />
+    <text class="ff" x="200" y="255" fill="black">命令５</text>
+    <g id="cpbasecpucycle03_07_2_02" transform="translate(80, 255),rotate(-12)">
+      <line class="act sw2" x1="0" y1="0" x2="92" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(92, 0)"></use>
+    </g>
+  </g>
+</svg>
+</div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbasecpucycle", "cpbasecpucyclesub");
+</script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 2-1</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B02_01" onclick="disppage(2, 1);" value="演習２－１" />
+    <input type="button" id="B02_02" onclick="disppage(2, 2);" value="演習２－２" />
+    <input type="button" id="B02_03" onclick="disppage(2, 3);" value="演習２－３" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap02_01" class="chap">
+      <h4>演習２－１</h4>
+      <div class="quiz">
+        関係データベースにおいて、第１正規形、第2正規形、第3正規形と、正規化を進めることによって得られる効果はどれか。
+
+        <p class="selectlist">ア　データベースの参照性能をより向上させることができる。</p>
+        <p class="selectlist">イ　データベースの冗長性と矛盾を避けることができる。</p>
+        <p class="selectlist">ウ　データベースのセキュリティを高めることができる。</p>
+        <p class="selectlist">エ　テーブルの数を減らすことができる。</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_01_a01')" value="解説" /></p>
+      <div id="chap02_01_a01" style="display:none;">
+        <p class="anslist">正解：イ</p>
+      </div>
+  </div>
+  <div id="chap02_02" class="chap">
+      <h4>演習２－２</h4>
+      <div class="quiz">
+        A、B、C、D、Eは、ある関係Rの属性集合の部分集合であり、関数従属A→BC、CD→Eが成り立つ。これらの関数従属から導かれる関数従属はどれか。ここで、XYはXとYの和集合を示す。
+        <p class="selectlist">ア　A→E　　　　イ　AD→E　　　　ウ　C→E　　　　エ　D→E</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_02_a01')" value="解説" /></p>
+      <div id="chap02_02_a01" style="display:none;">
+        <pre class="f plist">
+        A　→ BC
+              CD　→ E
+        </pre>
+        <p><input type="button" onclick="detailson('chap02_02_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap02_02_a02" style="display:none;">
+        <pre class="f plist">
+        増加律：
+        A<span style="color:red;">D</span>　→ BC<span style="color:red;">D</span>
+               <span style="color:red;">B</span>CD　→ <span style="color:red;">B</span>E
+        </pre>
+        <p><input type="button" onclick="detailson('chap02_02_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap02_02_a03" style="display:none;">
+        <pre class="f plist">
+        推移律：
+        AD　→ BCD　→ BE
+        </pre>
+        <p><input type="button" onclick="detailson('chap02_02_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap02_02_a04" style="display:none;">
+        <pre class="f plist">
+        分解律：
+        AD　→ BE
+        </pre>
+        <p><input type="button" onclick="detailson('chap02_02_a05')" value="(5)" /></p>
+      </div>
+      <div id="chap02_02_a05" style="display:none;">
+        <pre class="f plist">
+        AD　→ B
+        AD　→ E
+        </pre>
+        <p><input type="button" onclick="detailson('chap02_02_a06')" value="正解" /></p>
+      </div>
+      <div id="chap02_02_a06" style="display:none;">
+        <p class="anslist">正解：イ</p>
+      </div>
+    </div>
+    <div id="chap02_03" style="display:none;">
+      <h4>演習２－３</h4>
+        <div class="quiz">
+         ”技能記録”表を第３正規形に正規化したものはどれか。ここで、下線部は主キーを表す。<br />
+<p style="padding-left:3em;">技能記録（従業員番号、従業員氏名、｛技能コード、技能名、技能経験年数｝）</p>
+<right>（｛｝は繰り返しを表す）</right>
+          <p>
+          <table class="tbl" style="border:none;">
+            <tbody>
+              <tr>
+                <td class="pad_s nball">ア</td>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball">従業員氏名</td>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能名</td>
+                <td class="pad_s_ball">技能経験年数</td></tr>
+            </tbody>
+          </table>
+          </p>
+          <p>
+          <table class="tbl" class="nball">
+            <tbody>
+              <tr>
+                <td class="pad_s nball vat" rowspan="2">イ</td>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball">従業員氏名</td>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能経験年数</td></tr>
+              <tr>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能名</td></tr>
+            </tbody>
+          </table>
+          </p>
+          <p>
+          <table class="tbl" class="nball">
+            <tbody>
+              <tr>
+                <td class="pad_s nball vat" rowspan="3">ウ</td>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能経験年数</td></tr>
+              <tr>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball">従業員氏名</td></tr>
+              <tr>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能名</td></tr>
+            </tbody>
+          </table>
+          </p>
+          <p>
+          <table class="tbl" class="nball">
+            <tbody>
+              <tr>
+                <td class="pad_s nball vat" rowspan="3">エ</td>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball"><u>技能コード</u></td></tr>
+              <tr>
+                <td class="pad_s_ball"><u>従業員番号</u></td>
+                <td class="pad_s_ball">従業員氏名</td>
+                <td class="pad_s_ball">技能経験年数</td></tr>
+              <tr>
+                <td class="pad_s_ball"><u>技能コード</u></td>
+                <td class="pad_s_ball">技能名</td></tr>
+            </tbody>
+          </table>
+          </p>
+      </div>
+      <p><input type="button" onclick="detailson('chap02_03_a01')" value="解説" /></p>
+      <div id="chap02_03_a01" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="40" viewBox="0 0 780 40">
+          <text x="50" y="22" font-size="16" stroke="white">技能記録（従業員番号，従業員氏名，｛技能コード，技能名，技能経験年数｝）</text>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap02_03_a02" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="40" viewBox="0 0 780 40">
+          <text x="440" y="22" font-size="16" stroke="yellow">繰り返し項目の排除のため分割</text>
+          <line x1="240" y1="0" x2="120" y2="30" stroke="yellow" stroke-width="2" marker-end="url(#arrow1)"/>
+          <line x1="400" y1="0" x2="400" y2="30" stroke="yellow" stroke-width="2" marker-end="url(#arrow1)"/>
+          <defs>
+            <marker id="arrow1" refX="0" refY="2" markerWidth="4" markerHeight="4" orient="auto">
+                <path d="M 0,0 V 4 L4,2 Z" fill="white"></path>
+            </marker>
+          </defs>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap02_03_a03" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="40" viewBox="0 0 780 40">
+          <defs>
+          <g id="fig_02_3_3_empid">
+            <rect x="0" y="0" width="100" height="30" stroke="white" stroke-width="1" fill="none"/>
+            <text x="50" y="22" text-anchor="middle" font-size="16" stroke="white" text-decoration="underline">従業員番号</text>
+          </g>
+          </defs>
+          <defs>
+          <g id="fig_02_3_3_empname">
+            <rect x="0" y="0" width="100" height="30" stroke="white" stroke-width="1" fill="none"/>
+            <text x="50" y="22" text-anchor="middle" font-size="16" stroke="white">従業員氏名</text>
+          </defs>
+          <defs>
+          <g id="fig_02_3_3_gcode">
+            <rect x="0" y="0" width="100" height="30" stroke="white" stroke-width="1" fill="none"/>
+            <text x="50" y="22" text-anchor="middle" font-size="16" stroke="white" text-decoration="underline">技能コード</text>
+          </g>
+          </defs>
+          <defs>
+          <g id="fig_02_3_3_gname">
+            <rect x="0" y="0" width="100" height="30" stroke="white" stroke-width="1" fill="none"/>
+            <text x="50" y="22" text-anchor="middle" font-size="16" stroke="white">技能名</text>
+          </g>
+          </defs>
+          <defs>
+          <g id="fig_02_3_3_gnensu">
+            <rect x="0" y="0" width="120" height="30" stroke="white" stroke-width="1" fill="none"/>
+            <text x="60" y="22" text-anchor="middle" font-size="16" stroke="white">技能経験年数</text>
+          </g>
+          </defs>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empid" transform="translate(0, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empname" transform="translate(100, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gcode" transform="translate(320, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gname" transform="translate(420, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gnensu" transform="translate(520, 10)"></use>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap02_03_a04" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="70" viewBox="0 0 780 70">
+          <text x="400" y="37" font-size="16" stroke="yellow">誰の情報かを識別するため従業員番号を追加</text>
+          <text x="400" y="67" font-size="16" stroke="yellow">主キー設定</text>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a05')" value="(5)" /></p>
+      </div>
+      <div id="chap02_03_a05" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="40" viewBox="0 0 780 40">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empid" transform="translate(0, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empname" transform="translate(100, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empid" transform="translate(220, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gcode" transform="translate(320, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gname" transform="translate(420, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gnensu" transform="translate(520, 10)"></use>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a06')" value="(6)" /></p>
+      </div>
+      <div id="chap02_03_a06" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="45" viewBox="0 0 780 45">
+          <text x="400" y="37" font-size="16" stroke="yellow">部分関数従属排除のため分割 </text>
+          <path d="M 320 0 Q 320 10 330 10 L 410 10 Q 420 10 420 15 Q 420 10 430 10 L 510 10 Q 520 10 520 0" stroke="yellow" stroke-width="2" fill="none" />
+          <line x1="420" y1="15" x2="340" y2="40" stroke="yellow" stroke-width="2" marker-end="url(#arrow1)"/>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a07')" value="(7)" /></p>
+      </div>
+      <div id="chap02_03_a07" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="780" height="70" viewBox="0 0 780 70">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empid" transform="translate(0, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empname" transform="translate(100, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gcode" transform="translate(220, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gname" transform="translate(320, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_empid" transform="translate(440, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gcode" transform="translate(540, 10)"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fig_02_3_3_gnensu" transform="translate(640, 10)"></use>
+        </svg>
+        <p><input type="button" onclick="detailson('chap02_03_a08')" value="正解" /></p>
+      </div>
+      <div id="chap02_03_a08" style="display:none;">
+        <p class="anslist">正解：ウ</p>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

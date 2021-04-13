@@ -1,0 +1,513 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 6</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B06_01" onclick="disppage(6, 1);" value="演習６－１" />
+    <input type="button" id="B06_02" onclick="disppage(6, 2);" value="演習６－２" />
+    <input type="button" id="B06_03" onclick="disppage(6, 3);" value="演習６－３" />
+    <input type="button" id="B06_04" onclick="disppage(6, 4);" value="演習６－４" />
+    <input type="button" id="B06_05" onclick="disppage(6, 5);" value="演習６－５" />
+    <input type="button" id="B06_06" onclick="disppage(6, 6);" value="演習６－６" />
+    <input type="button" id="B06_07" onclick="disppage(6, 7);" value="演習６－７" />
+    <input type="button" id="B06_08" onclick="disppage(6, 8);" value="演習６－８" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap06_01" class="chap">
+      <h4>演習６－１</h4>
+      <div class="quiz">
+         社員表に次のデータを挿入しなさい。
+        <p>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">社員番号</th>
+              <th class="pad_s_ball thcolor">社員名</th>
+              <th class="pad_s_ball thcolor">性別</th>
+              <th class="pad_s_ball thcolor">生年月日</th>
+              <th class="pad_s_ball thcolor">給与</th>
+              <th class="pad_s_ball thcolor">部署コード</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">'000006'</td>
+              <td class="pad_s_ball">'小泉　純'</td>
+              <td class="pad_s_ball">'男'</td>
+              <td class="pad_s_ball">'1978/01/18'</td>
+              <td class="pad_s_ball">500000</td>
+              <td class="pad_s_ball">null</td></tr>
+            <tr>
+              <td class="pad_s_ball">'000007'</td>
+              <td class="pad_s_ball">'鈴木花子'</td>
+              <td class="pad_s_ball">'女'</td>
+              <td class="pad_s_ball">'1986/05/03'</td>
+              <td class="pad_s_ball">280000</td>
+              <td class="pad_s_ball">null</td></tr>
+          </tbody>
+        </table>
+        </p>
+      </div>
+      <p><input type="button" onclick="detailson('chap06_01_a01')" value="実行例" /></p>
+      <div id="chap06_01_a01" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# insert into 社員表 (社員番号, 社員名, 性別, 生年月日, 給与, 部署コード)
+-#   values('000006', '小泉　純', '男', '1978/01/18',  500000, null);
+=# insert into 社員表 (社員番号, 社員名, 性別, 生年月日, 給与, 部署コード)
+-#   values('000007', '鈴木花子', '女', '1988/05/03', 280000, null);
+
+※確認
+=# select * from 社員表;
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | 0001
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+ 000006   | 小泉　純 | 男    | 1978-01-18 | 500000 |
+ 000007   | 鈴木花子 | 女    | 1988-05-03 | 280000 |
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_02" class="chap">
+      <h4>演習６－２</h4>
+      <div class="quiz">
+       社員表から、部署コードが NULL である人を抽出しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_02_a01')" value="解説" /></p>
+      <div id="chap06_02_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_02_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_02_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署コードがNULLである人</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>where 部署コード is null</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_02_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_02_a03" style="display:none;">
+        <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表 where 部署コード is null</code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_02_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap06_02_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select * from 社員表 where 部署コード is null;
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000006   | 小泉　純 | 男    | 1978-01-18 | 500000 |
+ 000007   | 鈴木花子 | 女    | 1988-05-03 | 280000 |
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_03" class="chap">
+      <h4>演習６－３</h4>
+      <div class="quiz">
+        生年月日が '1970/01/01' 以降の人を若い順に抽出しなさい。抽出する列は、社員番号、社員名、部署名、生年月日とする。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_03_a01')" value="解説" /></p>
+      <div id="chap06_03_a01" style="display:none;">
+        <p class="sqlp1">[1] 部署表の部署名があるので、社員表と部署表を結合 (社員表を s、部署表を b)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表 s join 部署表 b on s.部署コード = b.部署コード</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_03_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_03_a02" style="display:none;">
+        <p class="sqlp1">[2] 生年月日が1970/01/01以降 →抽出条件として生年月日が1970/01/01以上</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 s join 部署表 b on s.部署コード = b.部署コード<br />     <u>where s.生年月日 &gt;= '1970/01/01'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_03_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_03_a03" style="display:none;">
+        <p class="sqlp1">[3] 抽出する列は、社員番号、社員名、部署名、生年月日</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select s.社員番号, s.社員名, b.部署名, s.生年月日</u><br />    from 社員表 s join 部署表 b on s.部署コード = b.部署コード<br />     where s.生年月日 &gt;= '1970/01/01'</code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_03_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap06_03_a04" style="display:none;">
+        <p class="sqlp1">[4] 若い順</p>
+        <div class="plist3"><pre class="f"><code>→ select s.社員番号, s.社員名, b.部署名, s.生年月日<br />    from 社員表 s join 部署表 b on s.部署コード = b.部署コード<br />     where s.生年月日 &gt;= '1970/01/01'<br />      <u>order by s.生年月日 desc</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_03_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap06_03_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select s.社員番号, s.社員名, b.部署コード, s.生年月日
+-# from 社員表 s join 部署表 b on s.部署コード = b.部署コード
+-# where s.生年月日 &gt;= '1970/01/01' order by s.生年月日 desc;
+
+ 社員番号 |  社員名  | 部署コード |  生年月日
+----------+----------+------------+------------
+ 000005   | 高橋五郎 | 0001       | 1982-11-06
+ 000004   | 田中良子 | 0003       | 1978-01-18 ←小泉 純さん、鈴木花子さんがいない！
+</code></pre>
+        </div>
+        <p><input type="button" onclick="detailson('chap06_03_a06')" value="(5)" /></p>
+      </div>
+      <div id="chap06_03_a06" style="display:none;">
+        <p class="sqlp1">[5] 外結合</p>
+        <div class="plist3"><pre class="f"><code>→ select s.社員番号, s.社員名, b.部署名, s.生年月日<br />    from 社員表 s <span style="color:red;">left outer</span>join 部署表 b on s.部署コード = b.部署コード<br />     where s.生年月日 &gt;= '1970/01/01'<br />      <u>order by s.生年月日 desc</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_03_a07')" value="実行例" /></p>
+      </div>
+      <div id="chap06_03_a07" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select s.社員番号, s.社員名, b.部署コード, s.生年月日
+-# from 社員表 s left outer join 部署表 b
+-# on s.部署コード = b.部署コード
+-# where s.生年月日 &gt;= '1970/01/01' order by s.生年月日 desc;
+
+ 社員番号 |  社員名  | 部署コード |  生年月日
+----------+----------+------------+------------
+ 000007   | 鈴木花子 |            | 1988-05-03
+ 000005   | 高橋五郎 | 0001       | 1982-11-06
+ 000004   | 田中良子 | 0003       | 1978-01-18
+ 000006   | 小泉　純 |            | 1978-01-18
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_04" class="chap">
+      <h4>演習６－４</h4>
+      <div class="quiz">
+        社員表から同姓同名の社員名を抽出しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_04_a01')" value="解説" /></p>
+      <div id="chap06_04_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_04_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_04_a02" style="display:none;">
+        <p class="sqlp1">[2] 同姓同名であるので、社員名でグループ化し2行以上であれば同じ社員名の人がいる。</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員表 <u>group by 社員名 having count(*) > 1 </u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_04_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_04_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員名を抽出</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select 社員名</u> from 社員表 group by 社員名 having count(*) &gt; 1</code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_04_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap06_04_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# select 社員名 from 社員表 group by 社員名 having count(*) &gt; 1;
+
+  社員名
+----------
+ 鈴木花子
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_05" class="chap">
+      <h4>演習６－５</h4>
+      <div class="quiz">
+        社員表の小泉　純さん(社員番号：000006)  の部署コードを 0001 に更新しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_05_a01')" value="解説" /></p>
+      <div id="chap06_05_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表を更新</p>
+        <div class="plist3"><pre class="f"><code>→ <u>update 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_05_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_05_a02" style="display:none;">
+        <p class="sqlp1">[2] 部署コードを0001</p>
+        <div class="plist3"><pre class="f"><code>→ update 社員表 <u>set 部署コード = '0001'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_05_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_05_a03" style="display:none;">
+        <p class="sqlp1">[3] 小泉　純さん(社員番号：000006)の部署コードを更新</p>
+        <div class="plist3"><pre class="f"><code>→ update 社員表 set 部署コード = '0001' <u>where 社員番号 = '000006'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_05_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap06_05_a04" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# update 社員表 set 部署コード = '0001' where 社員番号 = '000006';
+
+確認：
+
+=# select * from 社員表 where 社員番号 = '000006';
+
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000006   | 小泉　純 | 男    | 1978-01-18 | 500000 | 0001
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_06" class="chap">
+      <h4>演習６－６</h4>
+      <div class="quiz">
+        社員表の小泉　純さん(社員番号：000006) の行を削除しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_06_a01')" value="解説" /></p>
+      <div id="chap06_06_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表のレコードを削除</p>
+        <div class="plist3"><pre class="f"><code>→ <u>delete from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_06_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_06_a02" style="display:none;">
+        <p class="sqlp1">[2] 社員番号000006のレコードを削除</p>
+        <div class="plist3"><pre class="f"><code>→ delete from 社員表 <u>where 社員番号 = '000006'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_06_a03')" value="実行例" /></p>
+      </div>
+      <div id="chap06_06_a03" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# delete from 社員表 where 社員番号 = '000006';
+
+確認：
+
+=# select * from 社員表;
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | 0001
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
+ 000007   | 鈴木花子 | 女    | 1988-05-03 | 280000 |
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_07" class="chap">
+      <h4>演習６－７</h4>
+      <div class="quiz">
+        トランザクションを開始し、社員表で鈴木花子さん（社員番号:000002)の部署コードを‘確認した後、0002'に変更し、結果を確認しなさい。<br />rollbackを実行し、鈴木花子さんの部署コードがどうなったかを確認しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_07_a01')" value="解説" /></p>
+      <div id="chap06_07_a01" style="display:none;">
+        <p class="sqlp1">[1] トランザクション開始</p>
+        <div class="plist3"><pre class="f"><code>→ begin</code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_07_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_07_a02" style="display:none;">
+        <p class="sqlp1">[2] 社員表の部署コードを'0002'へ変更</p>
+        <div class="plist3"><pre class="f"><code>→ update 社員表 <u>set 部署コード  = '0002'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_07_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_07_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員番号'000002'の部署コードを'0002'へ変更</p>
+        <div class="plist3"><pre class="f"><code>→ update 社員表 set 部署コード  = '0002' <u>where 社員番号 = '000002'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_07_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap06_07_a04" style="display:none;">
+        <p class="sqlp1">[4] ト ランザクションをロールバック</p>
+        <div class="plist3"><pre class="f"><code>→ <u>rollback</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_07_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap06_07_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# begin;
+=# update 社員表 set 部署コード = '0002' where 社員番号 = '000002';
+=# select * from 社員表 where 社員番号 = '000002';
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | <span style="color:red;"><b>0002</b></span>
+
+=# rollback;
+
+=# select * from 社員表 where 社員番号 = '000002';
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000002   | 鈴木花子 | 女    | 1956-07-18 | 320000 | <span style="color:red;"><b>0001</b></span>
+</code></pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap06_08" class="chap">
+      <h4>演習６－８</h4>
+      <div class="quiz">
+        トランザクションを開始し、社員表の鈴木花子さんの行を削除、commitを実行し、社員表を確認しなさい。
+      </div>
+      <p><input type="button" onclick="detailson('chap06_08_a01')" value="解説" /></p>
+      <div id="chap06_08_a01" style="display:none;">
+        <p class="sqlp1">[1] トランザクション開始</p>
+        <div class="plist3"><pre class="f"><code>→ begin</code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_08_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap06_08_a02" style="display:none;">
+        <p class="sqlp1">[2] 社員表のレコードを削除</p>
+        <div class="plist3"><pre class="f"><code>→ <u>delete from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_08_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap06_08_a03" style="display:none;">
+        <p class="sqlp1">[3] 鈴木花子さんのレコードを削除</p>
+        <div class="plist3"><pre class="f"><code>→ delete from 社員表 <u>where 社員名 = '鈴木花子'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_08_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap06_08_a04" style="display:none;">
+        <p class="sqlp1">[4] コミット</p>
+        <div class="plist3"><pre class="f"><code>→ <u>commit</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap06_08_a05')" value="実行例" /></p>
+      </div>
+      <div id="chap06_08_a05" style="display:none;">
+        <p class="sqlp1">実行例：</p>
+        <div class="codelist">
+<pre class="f"><code>
+=# begin;
+=# delete from 社員表 where 社員名 = '鈴木花子';
+=# commit;
+
+確認：
+
+=# select * from 社員表;
+ 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
+----------+----------+-------+------------+--------+------------
+ 000001   | 山田一郎 | 男    | 1950-03-25 | 350000 | 0002
+ 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
+ 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003 鈴木花子さん2人とも
+ 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001 削除されている。
+</code></pre>
+        </div>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

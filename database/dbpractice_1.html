@@ -1,0 +1,285 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 1</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B01_01" onclick="disppage(1, 1);" value="演習１－１" />
+    <input type="button" id="B01_02" onclick="disppage(1, 2);" value="演習１－２" />
+    <input type="button" id="B01_03" onclick="disppage(1, 3);" value="演習１－３" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap01_01" class="chap">
+      <h4>演習１－１</h4>
+      <div class="quiz">
+        関係演算の射影に関する記述として、適切なものはどれか。
+        <p class="selectlist">ア　表の中から与えられた条件を満足する組を選んで、新しい表を作る。</p>
+        <p class="selectlist">イ　表の中から所定の属性だけを抜き出して、新しい表を作る。</p>
+        <p class="selectlist">ウ　二つの表に共通に存在する組を抜き出して、新しい表を作る。</p>
+        <p class="selectlist">エ　二つの表の組から条件に合致した組同士を結合して、新しい表を作る。</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap01_01_a01')" value="解説" /></p>
+      <div id="chap01_01_a01" style="display:none;">
+        <p class="anslist">×　ア　選択</p>
+        <p class="anslist">○　イ　射影</p>
+        <p class="anslist">×　ウ　積</p>
+        <p class="anslist">×　エ　結合</p>
+      </div>
+  </div>
+  <div id="chap01_02" class="chap">
+      <h4>演習１－２</h4>
+      <div class="quiz">
+        次の受注表と単価表を使って受注一覧表を作成する。使用する関係データベースの論理演算（関係演算）はどれか。
+        <div>
+        <table class="tbl" style="float:left;margin-right:30px;">
+          <caption style="text-align:left;">受注表</caption>
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">商品番号</th>
+              <th class="pad_s_ball thcolor">受注数</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">S010</td>
+              <td class="pad_s_ball">300</td></tr>
+            <tr>
+              <td class="pad_s_ball">S045</td>
+              <td class="pad_s_ball">280</td></tr>
+          </tbody>
+        </table>
+        <table class="tbl">
+          <caption style="text-align:left;">単価表</caption>
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">商品番号</th>
+              <th class="pad_s_ball thcolor">商品名</th>
+              <th class="pad_s_ball thcolor">販売単価</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">S010</td>
+              <td class="pad_s_ball">商品A</td>
+              <td class="pad_s_ball">7,500</td></tr>
+            <tr>
+              <td class="pad_s_ball">S045</td>
+              <td class="pad_s_ball">商品B</td>
+              <td class="pad_s_ball">8,400</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div>
+        <p>
+        <table class="tbl">
+          <caption style="text-align:left;">受注一覧表</caption>
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">商品番号</th>
+              <th class="pad_s_ball thcolor">商品名</th>
+              <th class="pad_s_ball thcolor">受注数</th>
+              <th class="pad_s_ball thcolor">販売単価</th>
+              <th class="pad_s_ball thcolor">販売金額</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">S010</td>
+              <td class="pad_s_ball">商品Ａ</td>
+              <td class="pad_s_ball">300</td>
+              <td class="pad_s_ball">7,500</td>
+              <td class="pad_s_ball">2,250,000</td></tr>
+            <tr>
+              <td class="pad_s_ball">S045</td>
+              <td class="pad_s_ball">商品Ｂ</td>
+              <td class="pad_s_ball">280</td>
+              <td class="pad_s_ball">8,400</td>
+              <td class="pad_s_ball">2,352,000</td></tr>
+          </tbody>
+        </table>
+        </p>
+        <p class="selectlist">ア　結合　　　　イ　選択　　　　ウ　投影　　　　エ　直積</p>
+        </div>
+      </div>
+      <p><input type="button" onclick="detailson('chap01_02_a01')" value="解説" /></p>
+      <div id="chap01_02_a01" style="display:none;">
+        <p class="anslist">正解：ア</p>
+      </div>
+  </div>
+  <div id="chap01_03" class="chap">
+      <h4>演習１－３</h4>
+      <div class="quiz">
+        事務室が複数の建物に分散している会社で、パソコンの設置場所を管理するデータベースを作ることになった。”資産”表、”部屋”表、”建物”表を作成し、各表の関連付けを行った。新規にデータを入力する場合は、参照される表のデータが先に存在している必要がある。各表へのデータの入力順序として、適切なものはどれか。ここで、各表の下線部の項目は、主キー又は外部キーである。
+
+        <p>
+        <table class="tbl">
+          <caption style="text-align:left;">資産</caption>
+          <tbody>
+            <tr>
+              <td class="pad_s_ball"><u>パソコン番号</u></td>
+              <td class="pad_s_ball"><u>建物番号</u></td>
+              <td class="pad_s_ball"><u>部屋番号</u></td>
+              <td class="pad_s_ball">機種名</td></tr>
+          </tbody>
+        </table></p>
+        <p>
+        <table class="tbl">
+          <caption style="text-align:left;">部屋</caption>
+          <tbody>
+            <tr>
+              <td class="pad_s_ball"><u>建物番号</u></td>
+              <td class="pad_s_ball"><u>部屋番号</u></td>
+              <td class="pad_s_ball">部屋名</td></tr>
+          </tbody>
+        </table></p>
+        <p>
+        <table class="tbl">
+          <caption style="text-align:left;">建物</caption>
+          <tbody>
+            <tr>
+              <td class="pad_s_ball"><u>建物番号</u></td>
+              <td class="pad_s_ball">建物名</td></tr>
+          </tbody>
+        </table></p>
+        <p class="selectlist">ア　”資産”表　→　”建物"表　→　”部屋”表</p>
+        <p class="selectlist">イ　”建物”表　→　”部屋”表　→　”資産"表</p>
+        <p class="selectlist">ウ　”部屋"表　→　”資産”表　→　”建物"表</p>
+        <p class="selectlist">エ　”部屋"表　→　”建物"表　→　”資産"表</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap01_03_a01')" value="解説" /></p>
+      <div id="chap01_03_a01" style="display:none;">
+        <p class="anslist">正解：イ</p>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

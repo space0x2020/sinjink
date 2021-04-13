@@ -1,0 +1,362 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Mathematics</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+数学の基礎<br />
+<input type="button" id="B07_01" onclick="disppage(7, 1);" value="1" />
+<input type="button" id="B07_02" onclick="disppage(7, 2);" value="2" />
+<input type="button" id="B07_03" onclick="disppage(7, 3);" value="3" />
+<input type="button" id="B07_04" onclick="disppage(7, 4);" value="4" />
+<input type="button" id="B07_05" onclick="disppage(7, 5);" value="5" />
+<input type="button" id="B07_06" onclick="disppage(7, 6);" value="6" />
+<input type="button" id="B07_07" onclick="disppage(7, 7);" value="7" />
+<input type="button" id="B07_08" onclick="disppage(7, 8);" value="8" />
+</div>
+
+
+<div id="cpbase07_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 数学の知識</h3></div>
+<div class="pagebody">
+<p class="plist">代表値：大量のデータの特徴を１つの値で示す。</p>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s_ball">平均値</td>
+    <td class="pad_s_ball">データの合計値をデータ数で割った値</td></tr>
+  <tr>
+    <td class="pad_s_ball">メジアン(中央値）</td>
+    <td class="pad_s_ball">データをソートして中央にある値</td></tr>
+  <tr>
+    <td class="pad_s_ball">モード（最頻値）</td>
+    <td class="pad_s_ball">最も出現頻度が高いデータ</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 数学の知識</h3></div>
+<div class="pagebody">
+<p class="plist">標準偏差：</p>
+<p class="plist1">
+標準偏差とは「データのばらつきの大きさ」を表わす指標で、記号 σ または s で表わされる数値です。</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+  <defs>
+    <g id="m_root">
+      <path class="ff" d="M0 14 L 1 12 4 20 8 -20 H 80" />
+    </g>
+  </defs>
+  <g id="f7_22">
+   <text class="ff ll i" x="0" y="65">s</text>
+   <text class="ff ll i" x="20" y="65">=</text>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#m_root" transform="translate(50,60),scale(2,2)"></use>
+   <text class="ff ll" x="80" y="45">1</text>
+   <line class="ff" x1="70" y1="60" x2="100" y2="60" />
+   <text class="ff ll i" x="80" y="85" font-family="Times Roman">n</text>
+   <text class="ff ll" x="100" y="66" style="font-size:42">Σ</text>
+   <text class="ff ss i" x="115" y="85" text-anchor="middle" font-style="italic" font-size="14">i=1</text>
+   <text class="ff ss i" x="115" y="35" text-anchor="middle">n</text>
+   <text class="ff i" x="135" y="60,60,70,60,60,60,60,60,50">(xi - <tspan text-decoration="overline">x</tspan>)2</text>
+  </g>
+</svg>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"><i>S</i> :<td>
+    <td class="pad_s"> 標準偏差</td></tr>
+  <tr>
+    <td class="pad_s"><i>n</i> :<td>
+    <td class="pad_s">データの数</td></tr>
+  <tr>
+    <td class="pad_s"><i>x<sub>i</sub></i> :<td>
+    <td class="pad_s"> 各データの値</td></tr>
+  <tr>
+    <td class="pad_s"><i><span style="text-decoration:overline;">x</span></i> :<td>
+    <td class="pad_s"> データの平均</td></tr>
+</tbody>
+</table>
+<a href="http://atarimae.biz/archives/5379" target="blank">http://atarimae.biz/archives/5379</a>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 順列と組み合わせ</h3></div>
+<div class="pagebody">
+<p class="plsit1">
+データの並びを考慮して、すべてのパターン数を求めることを、順列</p>
+<p class="plsit1">
+データの並びを考慮せずに、すべてのパターン数を求めることを、組合せ</p>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" rowspan="2">確率：</td>
+    <td class="pad_s bb">ある事のパターン数</td></tr>
+  <tr>
+    <td class="pad_s">すべてのパターン数</td></tr>
+</tbody>
+</table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 順列と組み合わせ(順列)</h3></div>
+<div class="pagebody">
+<p class="plist">
+５本のくじがあり、そのうち２本が当たりである。くじを同時に２本引いたとき、２本とも当たりとなる確率はいくらか。
+</p>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" rowspan="2">確率：</td>
+    <td class="pad_s bb">ある事のパターン数</td></tr>
+  <tr>
+    <td class="pad_s">すべてのパターン数</td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">順序を使った求め方：</p>
+<p class="plist1">
+５本をＡ，Ｂ、Ｃ、Ｄ、Ｅとする。これら５つの中から２つを選ぶ順序は、</p>
+<p class="plist3">最初が A ： AB AC AD AE の４通り<br />
+最初が B ： BA BC BD BE の４通り<br />
+最初が C ： CA CB CD CE の４通り<br />
+最初が D ： DA DB DC DE の４通り<br />
+最初が E ： EA EB EC ED の４通り<br />
+の５×４＝２０通り。（すべてのパターン数）</p>
+<p class="plist1">仮にＢとＥが当たりなら、ある事のパターン数は、BE EB の２通り。
+<p class="plist">
+確率は、<table class="bunsu"><tr class="bunsu"><td class="bunsi">2</td></tr><tr class="bunsu"><td class="bunbo">20</td></tr></table> = <table class="bunsu"><tr class="bunsu"><td>1</td</tr><tr class="bunsu"><td class="bunbo">10</td></tr></table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 順列と組み合わせ(組合せ)</h3></div>
+<div class="pagebody">
+<p class="plist">
+５本のくじがあり、そのうち２本が当たりである。くじを同時に２本引いたとき、２本とも当たりとなる確率はいくらか。
+</p>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s" rowspan="2">確率：</td>
+    <td class="pad_s bb">ある事のパターン数</td></tr>
+  <tr>
+    <td class="pad_s">すべてのパターン数</td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">組合せを使った求め方：</p>
+<p class="plist1">
+５本をＡ，Ｂ、Ｃ、Ｄ、Ｅとする。これら５つの中から２つを選ぶ組合せは、</p>
+<p class="plist3">最初が A ： AB AC AD AE の４通り<br />
+最初が B ： <span style="color:gray"><strike>BA</strike></span>
+             BC BD BE の３通り<br />
+最初が C ： <span style="color:gray"><strike>CA</strike></span>
+            <span style="color:gray"><strike>CB</strike></span>
+             CD CE の２通り<br />
+最初が D ： <span style="color:gray"><strike>DA</strike></span>
+            <span style="color:gray"><strike>DB</strike></span>
+            <span style="color:gray"><strike>DC</strike></span>
+            DE の１通り<br />
+最初が E ： <span style="color:gray"><strike>EA</strike></span>
+            <span style="color:gray"><strike>EB</strike></span>
+            <span style="color:gray"><strike>EC</strike></span>
+            <span style="color:gray"><strike>ED</strike></span>
+             の０通り<br />
+の４＋３＋２＋１＝１０通り。（すべてのパターン数）</p>
+<p class="plist1">仮にＢとＥが当たりなら、ある事のパターン数は、BE の１	通り。
+<p class="plist">
+確率は、<table class="bunsu"><tr class="bunsu"><td class="bunsi">1</td></tr><tr class="bunsu"><td class="bunbo">10</td></tr></table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="cpbase07_06" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[6] 順列と組み合わせ(乗法定理)</h3></div>
+<div class="pagebody">
+<p class="plist">
+５本のくじがあり、そのうち２本が当たりである。くじを同時に２本引いたとき、２本とも当たりとなる確率はいくらか。
+</p>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s vat">乗法定理：</td>
+    <td class="pad_s">２つのことが同時に起こる確率は、それぞれの確率の乗算で求められる。</td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">
+乗法定理を使った求め方：
+</p>
+<p class="plist1">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">
+       ２本とも当たりの確率は、<br />
+       &nbsp;&nbsp;１本目のくじが当たる確率×２本目のくじが当たる確率<br />
+       となる。</td></tr>
+  <tr>
+    <td class="pas_s">
+       １本目のくじが当たる確率は、５本のなかに２本当たりがあるので
+       <table class="bunsu"><tr class="bunsu"><td class="bunsi">2</td></tr><tr class="bunsu"><td class="bunbo">5</td></tr></table></td></tr>
+  <tr>
+    <td class="pad_s">
+      ２本目のくじがあたる確率は、４本のなかに１本あたりがあるので
+       <table class="bunsu"><tr class="bunsu"><td class="bunsi">1</td></tr><tr class="bunsu"><td class="bunbo">4</td></tr></table></td><tr>
+  <tr>
+    <td class="pas_s">
+      <table class="bunsu"><tr class="bunsu"><td class="bunsi">2</td></tr><tr class="bunsu"><td class="bunbo">5</td></tr></table> × <table class="bunsu"><tr class="bunsu"><td class="bunsi">1</td></tr><tr class="bunsu"><td class="bunbo">4</td></tr></table> = 
+      <table class="bunsu"><tr class="bunsu"><td class="bunsi">1</td></tr><tr class="bunsu"><td class="bunbo">10</td></tr></table>
+    </td></tr>
+</tbody>
+</table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_07" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[7] 数式とグラフ</h3></div>
+<div class="pagebody">
+<p class="plist">線形計画法：</p>
+<p class="plist3">線形計画法とは数理計画法とも呼ばれ、一次式を最大化または最小化する最適値を、計算を用いて求める手法です。</p>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_08" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[8] 例題 数式とグラフ問題</h3></div>
+<div class="pagebody">
+<div class="reidai">
+T商店では毎日KとLという菓子を作り，これを組み合わせて箱詰めした商品MとNを 販売している。箱詰めの組合せと１商品当たりの利益は表に示すとおりである。Kの１日の最大製造能力は360個であり，Lの１日の最大製造能力は240個である。すべての商品を売ったときの１日の販売利益を最大にするように，商品MとNを作ったときの利益は何円か。
+<p />
+<table class="tbl" align="center">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">K（個）</td>
+    <td class="pad_s_ball">L（個）</td>
+    <td class="pad_s_ball">販売利益（円）</td></tr>
+  <tr>
+    <td class="pad_s_ball">商品 M</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">600</td></tr>
+  <tr>
+    <td class="pad_s_ball">商品 N</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">400</td></tr>
+</tbody>
+</table>
+
+<p class="anslist">ア　24,000　　　　 イ　36,000　　　　 ウ　40,000　　　　 エ　48,000</p>
+</div>
+
+<div id="f07_08_and" style="float:left;">
+<p class="plist">
+商品Mをx個、商品Ｎをy個作るとすると、<br />
+<br />
+6x + 3y ≦ 360    菓子Kの製造能力の限界<br />
+2x + 4y ≦ 240    菓子Lの製造能力の限界<br />
+<br />
+z  =  600x + 400y    利益(目的関数)<br />
+
+<table class="tbl">
+<tbody>
+  <tr>
+    <td>→ <i>y</i> = <table class="bunsu"><tbody><tr class="bunsu"><td class="bunsi">−3</td></tr><tr class="bunsu"><td class="bunbo">2</td></tr></tbody></table> <i>x</i>  +   
+<table class="bunsu"><tr class="bunsu"><td class="bunsi"><i>z</i></td></tr><tr class="bunsu"><td class="bunbo">400</td></tr></tbody></table>
+</tbody></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_08">
+    <pattern id="hatching1" x="0" y="0" width="10" height="2" patternTransform="rotate(45)" patternUnits="userSpaceOnUse" viewBox="0 0 10 10">
+        <rect width="10" height="5" fill="white"/>
+    </pattern>
+    <line class="ff" x1="20" y1="280" x2="300" y2="280" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(300, 280)"></use>
+    <line class="ff" x1="40" y1="300" x2="40" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(40, 20),rotate(-90)"></use>
+    <text class="ff s" x="40" y="10" text-anchor="middle">y</text>
+    <text class="ff s" x="320" y="285">x</text>
+    <text class="ff s" x="25" y="300" text-anchor="end">0</text>
+    <text class="ff s" x="25" y="160" text-anchor="end">60</text>
+    <text class="ff s" x="25" y="50" text-anchor="end">120</text>
+    <text class="ff s" x="160" y="300" text-anchor="middle">60</text>
+    <text class="ff s" x="280" y="300" text-anchor="middle">120</text>
+    <path d="M40 280 H 160 L 120 200 40 160 z" fill="url(#hatching1)" />
+    <circle class="ffw" cx="40" cy="160" r="5" />
+    <text class="ff s" x="50" y="160">A</text>
+    <circle class="ffw" cx="160" cy="280" r="5" />
+    <text class="ff s" x="170" y="270">C</text>
+    <circle class="ffw" cx="120" cy="200" r="5" />
+    <text class="ff s" x="130" y="200">B</text>
+    <line class="ff" x1="40" y1="160" x2="280" y2="280" />
+    <path d="M180 60 H 120 L 80 110" stroke="white" fill="none" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(80, 110),rotate(130)"></use>
+    <text class="ff s" x="195" y="65">6x + 3y = 360 のグラフ</text>
+    <line class="ff" x1="40" y1="40" x2="160" y2="280" />
+    <path class="ff" d="M230 200 H 200 L 180 220" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(180, 220),rotate(135)"></use>
+    <text class="ff s" x="240" y="205">2x + 4y = 240 のグラフ</text>
+    <line x1="40" y1="60" x2="172" y2="280" stroke="red" />
+    <path d="M210 120 H 180 L 100 150" stroke="red" fill="none" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8_red" transform="translate(100, 150),rotate(160)"></use>
+    <g id="f7_28_s1" transform="translate(220, 100)">
+    <text class="ff s b" x="0" y="25" style="fill:red">y = </text>
+    <text class="ff s b" x="35" y="25" style="fill:red">-</text>
+    <text class="ff s b" x="50" y="15" style="fill:red">3</text>
+    <text class="ff s b" x="50" y="35" style="fill:red">2</text>
+    <line x1="50" y1="20" x2="60" y2="20" stroke="red" />
+    <text class="ff s b" x="65" y="25" style="fill:red">x +</text>
+    <text class="ff s b" x="120" y="15" text-anchor="middle" style="fill:red">z</text>
+    <text class="ff s b" x="120" y="35" text-anchor="middle" style="fill:red">400</text>
+    <line x1="100" y1="20" x2="140" y2="20" stroke="red" />
+    <text class="ff s b" x="150" y="25" style="fill:red">のグラフ</text>
+    </g>
+  </g>
+</svg>
+</div>
+<div style="floatclear"></div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

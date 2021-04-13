@@ -1,0 +1,815 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Polish Notation</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+逆ポーランド記法<br />
+<input type="button" id="B07_01" onclick="disppage(7, 1);" value="1" />
+<input type="button" id="B07_02" onclick="disppage(7, 2);" value="2" />
+<input type="button" id="B07_03" onclick="disppage(7, 3);" value="3" />
+<input type="button" id="B07_04" onclick="disppage(7, 4);" value="4" />
+<input type="button" id="B07_05" onclick="disppage(7, 5);" value="5" />
+</div>
+
+<div id="cpbase07_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 逆ポーランド記法</h3></div>
+<div class="pagebody">
+<p class="plist">逆ポーランド記法</p>
+<p class="plist1">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">2 + 3  x 4</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">値　演算子　値</td>
+    <td class="pad_s l30">中置記法（ちゅうちきほう）</td></tr>
+  <tr>
+    <td class="pad_s">&nbsp;</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">2      3       +</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">値　値　演算子</td>
+    <td class="pad_s l30">後置記法（こうちきほう）</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 逆ポーランド記法(2)</h3></div>
+<div class="pagebody">
+<p class="plist">
+(1) A + <u>B × C</u>
+</p>
+<p class="plist1" style="margin-top:10px;">　　　　B × C → <u>B C ×</u></p>
+<p class="plist1" style="margin-top:10px;">A + <u>B C ×</u> → A B C × +</p>
+</p>
+<p class="plist">
+(2) A × (B + C)
+</p>
+<p class="plist1" style="margin-top:10px;">　　　　(B + C) → <u>B C + </u></p>
+<p class="plist1" style="margin-top:10px;">A × <u> B C +</u> → <u>A B C + ×</u>
+</p>
+<p />
+<p class="plist">
+(3) (A+B) ÷ (C -D)
+</p>
+<p class="plist1" style="margin-top:10px;">(A + B) → <u>A B + </u></p>
+<p class="plist1" style="margin-top:10px;">　　　　(C - D) → <u>C D -</u></p>
+<p class="plist1" style="margin-top:10px;"><u>A B +</u> ÷ <u>C D -</u> → <u>A B + C D - ÷</u></p>
+<p />
+<p class="plist">
+(4) X = A + B － C
+</p>
+<p class="plist1" style="margin-top:10px;">　　A + B → <u>A B +</u></p>
+<p class="plist1" style="margin-top:10px;"> <u>A B +</u> - C → <u> A B + C -</u></p>
+<p class="plist1" style="margin-top:10px;">X = <u>A B + C -</u> → <u>X A  B + C - =</u></p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] スタック</h3></div>
+<p />
+<div class="pagebody" style="display:block;">
+<p class="plist">
+スタックはコンピュータで用いられる基本的なデータ構造の1つで、データを<u>後入れ先出し</u>（LIFO: Last In First Out; FILO: First In Last Out）の構造で保持するものである。(ウィキペディア)
+</p>
+<p />
+<p class="plist1">データを格納する　→ PUSH</p>
+<p class="plist1">データを取り出す　→ POP</p>
+<input type="button" id="B07_03_01" onclick="dispsubpage(7, 3, 1);" value="(1)" />
+<input type="button" id="B07_03_02" onclick="dispsubpage(7, 3, 2);" value="(2)" />
+<input type="button" id="B07_03_03" onclick="dispsubpage(7, 3, 3);" value="(3)" />
+<input type="button" id="B07_03_04" onclick="dispsubpage(7, 3, 4);" value="(4)" />
+<input type="button" id="B07_03_05" onclick="dispsubpage(7, 3, 5);" value="(5)" />
+<input type="button" id="B07_03_06" onclick="dispsubpage(7, 3, 6);" value="(6)" />
+<input type="button" id="B07_03_07" onclick="dispsubpage(7, 3, 7);" value="(7)" />
+<input type="button" id="B07_03_08" onclick="dispsubpage(7, 3, 8);" value="(8)" />
+
+<div id="cpbasesub07_03_01" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <defs>
+    <g id="stackframe">
+      <text class="ff" x="40" y="16" text-anchor="middle">スタック</text>
+      <rect class="ff" x="0" y="20" width="80" height="123" />
+      <line class="ff" x1="0" y1="51" x2="80" y2="51"  />
+      <line class="ff" x1="0" y1="82" x2="80" y2="82" />
+      <line class="ff" x1="0" y1="113" x2="80" y2="113" />
+    </g>
+    <g id="stack1">
+      <text class="ff" x="0" y="60">1 番目のデータ</text>
+      <text class="ff" x="140" y="60">12</text>
+      <text class="ff" x="0" y="80">2 番目のデータ</text>
+      <text class="ff" x="140" y="80">45</text>
+      <text class="ff" x="0" y="100">3 番目のデータ</text>
+      <text class="ff" x="140" y="100">56</text>
+    </g>
+    <g id="myarrowsp">
+      <path class="ffw" d="M0 0 12 12 V 6 H 30 V -6 H 12 L 12 -12 z" />
+    </g>
+    <g id="myarrowsp2">
+      <path class="ff" d="M0 0 12 12 V 6 H 20 V -6 H 12 L 12 -12 z" />
+    </g>
+  </defs>
+  <g id="f7_16_1">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+  </g>
+</svg>
+
+</div>
+<div id="cpbasesub07_03_02" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_2">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_2_s1" transform="translate(40, 60)">
+      <text class="ff b" x="180" y="60">① PUSH 12</text>
+      <text class="ff b act" x="340" y="135" text-anchor="middle">12</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 130)"></use>
+      <text  class="ff" x="450" y="137" text-anchor="middle">①</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_03_03" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_3">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_3_s1" transform="translate(40, 60)">
+      <text class="ff" x="180" y="60" style="fill:gray">① PUSH 12</text>
+      <text class="ff b" x="180" y="80">② PUSH 45</text>
+      <text class="ff" x="340" y="135" text-anchor="middle">12</text>
+      <text class="ff b act" x="340" y="105" text-anchor="middle">45</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 100)"></use>
+      <text class="ff" x="450" y="107" text-anchor="middle">②</text>
+      </g>
+  </g>
+</svg>
+</div>
+<div id="cpbasesub07_03_04" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_4">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_4_s1" transform="translate(40, 60)">
+      <text class="ff" x="180" y="60" style="fill:gray">① PUSH 12</text>
+      <text class="ff" x="180" y="80" style="fill:gray">② PUSH 45</text>
+      <text class="ff b" x="180" y="100">③ PUSH 56</text>
+      <text class="ff" x="340" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="340" y="105" text-anchor="middle">45</text>
+      <text class="ff b act" x="340" y="75"  text-anchor="middle">56</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 70)"></use>
+      <text class="ff" x="450" y="77" text-anchor="middle">③</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_03_05" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_5">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_5_s1" transform="translate(40, 60)">
+      <text class="ff" x="0" y="120">データを取出す</text>
+      <text class="ff" x="140" y="120">56</text>
+      <text class="ff" x="180" y="60" style="fill:gray">① PUSH 12</text>
+      <text class="ff" x="180" y="80" style="fill:gray">② PUSH 45</text>
+      <text class="ff" x="180" y="100" style="fill:gray">③ PUSH 56</text>
+      <text class="ff b" x="180" y="120">④ POP</text>
+      <text class="ff" x="340" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="340" y="105" text-anchor="middle">45</text>
+      <text class="ff" x="340" y="75" text-anchor="middle" style="fill:gray">56</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 100)"></use>
+      <text class="ff" x="450" y="107" text-anchor="middle">④</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_03_06" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_6">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_6_s1" transform="translate(40, 60)">
+      <text class="ff" x="0" y="120">データを取出す</text>
+      <text class="ff" x="140" y="120">56</text>
+      <text class="ff" x="0" y="140">データを取出す</text>
+      <text class="ff" x="140" y="140">45</text>
+      <text class="ff" x="180" y="60" style="fill:gray">① PUSH 12</text>
+      <text class="ff" x="180" y="80" style="fill:gray">② PUSH 45</text>
+      <text class="ff" x="180" y="100" style="fill:gray">③ PUSH 56</text>
+      <text class="ff" x="180" y="120" style="fill:gray">④ POP</text>
+      <text class="ff b" x="180" y="140">⑤ POP</text>
+      <text class="ff" x="340" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="340" y="105" text-anchor="middle" style="fill:gray">45</text>
+      <text class="ff" x="340" y="75" text-anchor="middle" style="fill:gray">56</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 130)"></use>
+      <text class="ff" x="450" y="137" text-anchor="middle">⑤</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_03_07" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_16_7">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack1" transform="translate(40, 60)"></use>
+    <g id="f7_16_7_s1" transform="translate(40, 60)">
+      <text class="ff" x="0" y="120">データを取出す</text>
+      <text class="ff" x="140" y="120">56</text>
+      <text class="ff" x="0" y="140">データを取出す</text>
+      <text class="ff" x="140" y="140">45</text>
+      <text class="ff" x="0" y="160">４番目のデータ</text>
+      <text class="ff" x="140" y="160">123</text>
+      <text class="ff" x="180" y="60" style="fill:gray">① PUSH 12</text>
+      <text class="ff" x="180" y="80" style="fill:gray">② PUSH 45</text>
+      <text class="ff" x="180" y="100" style="fill:gray">③ PUSH 56</text>
+      <text class="ff" x="180" y="120" style="fill:gray">④ POP</text>
+      <text class="ff" x="180" y="140" style="fill:gray">⑤ POP</text>
+      <text class="ff b" x="180" y="160">⑥ PUSH 123</text>
+      <text class="ff" x="340" y="135" text-anchor="middle">12</text>
+      <text class="ff b act" x="340" y="105" text-anchor="middle">123</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(400, 100)"></use>
+      <text class="ff" x="450" y="107" text-anchor="middle">⑥</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_03_08" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+  <g id="f7_16_8">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(240, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp2" transform="translate(320, 142)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(340, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp2" transform="translate(420, 142)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(440, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp2" transform="translate(520, 142)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(540, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp2" transform="translate(620, 142)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(640, 60)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp2" transform="translate(720, 142)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackframe" transform="translate(740, 60)"></use>
+    <g id="f7_16_8_s1" transform="translate(0, 60)">
+      <text class="ff" x="0" y="60">１番目</text>
+      <text class="ff" x="100" y="60" text-anchor="end">12</text>
+      <text class="ff" x="0" y="80">２番目</text>
+      <text class="ff" x="100" y="80" text-anchor="end">45</text>
+      <text class="ff" x="0" y="100">３番目</text>
+      <text class="ff" x="100" y="100" text-anchor="end">56</text>
+      <text class="ff" x="0" y="120">取出す</text>
+      <text class="ff" x="100" y="120" text-anchor="end">56</text>
+      <text class="ff" x="0" y="140">取出す</text>
+      <text class="ff" x="100" y="140" text-anchor="end">45</text>
+      <text class="ff" x="0" y="160">４番目</text>
+      <text class="ff" x="100" y="160" text-anchor="end">123</text>
+      <text class="ff" x="120" y="60">① PUSH 12</text>
+      <text class="ff" x="120" y="80">② PUSH 45</text>
+      <text class="ff" x="120" y="100">③ PUSH 56</text>
+      <text class="ff" x="120" y="120">④ POP</text>
+      <text class="ff" x="120" y="140">⑤ POP</text>
+      <text class="ff" x="120" y="160">⑥ PUSH 123</text>
+      <text class="ff" x="300" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="300" y="105" text-anchor="middle">123</text>
+      <text class="ff" x="400" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="500" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="500" y="105" text-anchor="middle">45</text>
+      <text class="ff" x="600" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="600" y="105" text-anchor="middle">45</text>
+      <text class="ff" x="600" y="75"  text-anchor="middle">56</text>
+      <text class="ff" x="700" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="700" y="105" text-anchor="middle">45</text>
+      <text class="ff" x="800" y="135" text-anchor="middle">12</text>
+      <text class="ff" x="280" y="180" text-anchor="middle">⑥</text>
+      <text class="ff" x="280" y="200" text-anchor="middle">PUSH</text>
+      <text class="ff" x="280" y="220" text-anchor="middle">123</text>
+      <text class="ff" x="380" y="180" text-anchor="middle">⑤</text>
+      <text class="ff" x="380" y="200" text-anchor="middle">POP</text>
+      <text class="ff" x="480" y="180" text-anchor="middle">④</text>
+      <text class="ff" x="480" y="200" text-anchor="middle">POP</text>
+      <text class="ff" x="580" y="180" text-anchor="middle">③</text>
+      <text class="ff" x="580" y="200" text-anchor="middle">PUSH</text>
+      <text class="ff" x="580" y="220" text-anchor="middle">56</text>
+      <text class="ff" x="680" y="180" text-anchor="middle">②</text>
+      <text class="ff" x="680" y="200" text-anchor="middle">PUSH</text>
+      <text class="ff" x="680" y="220" text-anchor="middle">45</text>
+      <text class="ff" x="780" y="180" text-anchor="middle">①</text>
+      <text class="ff" x="780" y="200" text-anchor="middle">PUSH</text>
+      <text class="ff" x="780" y="220" text-anchor="middle">12</text>
+    </g>
+  </g>
+</svg>
+</div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 逆ポーランド記法</h3></div>
+<div class="pagebody">
+<input type="button" id="B07_04_01" onclick="dispsubpage(7, 4, 1);" value="(1)" />
+<input type="button" id="B07_04_02" onclick="dispsubpage(7, 4, 2);" value="(2)" />
+<input type="button" id="B07_04_03" onclick="dispsubpage(7, 4, 3);" value="(3)" />
+<input type="button" id="B07_04_04" onclick="dispsubpage(7, 4, 4);" value="(4)" />
+<input type="button" id="B07_04_05" onclick="dispsubpage(7, 4, 5);" value="(5)" />
+<input type="button" id="B07_04_06" onclick="dispsubpage(7, 4, 6);" value="(6)" />
+<input type="button" id="B07_04_07" onclick="dispsubpage(7, 4, 7);" value="(7)" />
+<input type="button" id="B07_04_08" onclick="dispsubpage(7, 4, 8);" value="(8)" />
+
+<div id="cpbasesub07_04_01" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <defs>
+    <g id="rporland1">
+      <rect class="ff" x="30" y="0" width="80" height="123" />
+      <line class="ff" x1="30" y1="31" x2="110" y2="31" />
+      <line class="ff" x1="30" y1="62" x2="110" y2="62" />
+      <line class="ff" x1="30" y1="93" x2="110" y2="93" />
+      <text class="ff" x="0" y="30" >ス</text>
+      <text class="ff" x="0" y="50" >タ</text>
+      <text class="ff" x="0" y="70" text-anchor="right">ッ</text>
+      <text class="ff" x="0" y="90">ク</text>
+  </defs>
+  <g id="f7_04_1" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text class="ff ll" x="100" y="40">+</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_02" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_2" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text x="20" y="40" font-size="32" fill="red">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text class="ff ll" x="100" y="40">+</text>
+    <text class="ff" x="70" y="176" text-anchor="middle">2</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(120, 170)"></use>
+    <text class="ff" x="160" y="176">2 をスタックにプッシュ</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_03" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_3" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text x="60" y="40" font-size="32" fill="red">3</text>
+    <text class="ff ll" x="100" y="40">+</text>
+    <text class="ff" x="70" y="176" text-anchor="middle">2</text>
+    <text class="ff" x="70" y="146" text-anchor="middle">3</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(120, 140)"></use>
+    <text class="ff" x="160" y="146">3 をスタックにプッシュ</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_04" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_4" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text x="100" y="40" font-size="32" fill="red">+</text>
+    <text class="ff" x="70" y="176" text-anchor="middle">2</text>
+    <text class="ff" x="70" y="146" text-anchor="middle">3</text>
+    <text class="ff" x="160" y="100">演算子＋なので、スタックから２つの数を取り出す。</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_05" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_5" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text x="100" y="40" font-size="32" fill="red">+</text>
+    <text class="ff" x="70" y="176" text-anchor="middle">2</text>
+    <text class="ff" x="160" y="100">演算子＋なので、スタックから２つの数を取り出す。</text>
+    <text class="ff" x="160" y="146">Pop →  3　　上から順に取り出す</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_06" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_6" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text x="100" y="40" font-size="32" fill="red">+</text>
+    <text class="ff" x="160" y="100">演算子＋なので、スタックから２つの数を取り出す。</text>
+    <text class="ff" x="160" y="146" style="fill:gray">Pop →  3　　上から順に取り出す</text>
+    <text class="ff" x="160" y="176">Pop →  2　　上から順に取り出す</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_07" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_7" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text x="100" y="40" font-size="32" fill="red">+</text>
+    <text class="ff" x="160" y="100">演算子＋なので、スタックから２つの数を取り出す。</text>
+    <text class="ff" x="160" y="146" style="fill:gray">Pop →  3　　上から順に取り出す</text>
+    <text class="ff" x="160" y="176" style="fill:gray">Pop →  2　　上から順に取り出す</text>
+    <text class="ff" x="160" y="216">スタックから取り出した2つの値を使って演算する。</text>
+    <text class="ff" x="160" y="246">２　＋　３　＝　５</text>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_04_08" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f7_04_8" transform="translate(80,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rporland1" transform="translate(0, 60)"></use>
+    <text class="ff ll" x="20" y="40">2</text>
+    <text class="ff ll" x="60" y="40">3</text>
+    <text x="100" y="40" font-size="32" fill="red">+</text>
+    <text class="ff" x="70" y="176" text-anchor="middle">5</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#myarrowsp" transform="translate(120, 170)"></use>
+    <text class="ff" x="160" y="100" style="fill:gray">演算子＋なので、スタックから２つの数を取り出す。</text>
+    <text class="ff" x="160" y="146" style="fill:gray">Pop →  3　　上から順に取り出す</text>
+    <text class="ff" x="160" y="176" style="fill:gray">Pop →  2　　上から順に取り出す</text>
+    <text class="ff" x="160" y="216" style="fill:gray">スタックから取り出した2つの値を使って演算する。</text>
+    <text class="ff" x="160" y="246" style="fill:gray">２　＋　３　＝　５</text>
+    <text class="ff" x="160" y="276">演算結果の５をプッシュ</text>
+  </g>
+</svg>
+</div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 逆ポーランド記法(3)</h3></div>
+<div class="pagebody">
+<p class="plist">演習問題</p>
+<p class="plist1" style="margin-top:20px;">EF-G÷CD-AB+÷+</p>
+<p class="plist1" style="margin-top:20px;">
+(1) E F <span style="color:red;">-</span>  → (E <span style="color:red;">-</span> F)  <u>演算子が出現したら前の２つの数で演算を行う</u></p>
+<p class="plist1" style="margin-top:20px;">
+(2) <u>(E-F)</u> | <u>G</u><span style="color:red;">÷</span> → ((E - F) <span style="color:red;">÷</span> G)
+<p class="plist1" style="margin-top:20px;">
+(3) ((E-F)÷G) | <u>C</u> <u>D</u> <span style="color:red;">-</span> → ((E-F)÷G) (C<span style="color:red;">-</span>D)
+<p class="plist1" style="margin-top:20px;">
+(4) ((E-F)÷G ) | (C-D) | <u>A</u> <u>B</u> <span style="color:red;">+</span> → ((E-F)÷G )(C-D)(A <span style="color:red;">+ </span>B)
+<p class="plist1" style="margin-top:20px;">
+(5) ((E-F)÷G ) | <u>(C-D)</u> | <u>(A+B)</u> | <span style="color:red;">÷</span> → (E-F)÷G ((C-D) <span style="color:red;">÷</span> (A+B)))
+<p class="plist1" style="margin-top:20px;">
+(6) <u>((E-F)÷G)</u> | <u>((C-D)÷(A+B))</u> | <span style="color:red;">+</span> → (E-F)÷G <span style="color:red;">＋</span> (C-D)÷(A+B)
+
+<div id="btns18">
+<input type="button" id="B07_05_01" onclick="dispsubpage(7, 5, 1);" value="(1)" />
+<input type="button" id="B07_05_02" onclick="dispsubpage(7, 5, 2);" value="(2)" />
+<input type="button" id="B07_05_03" onclick="dispsubpage(7, 5, 3);" value="(3)" />
+<input type="button" id="B07_05_04" onclick="dispsubpage(7, 5, 4);" value="(4)" />
+<input type="button" id="B07_05_05" onclick="dispsubpage(7, 5, 5);" value="(5)" />
+<input type="button" id="B07_05_06" onclick="dispsubpage(7, 5, 6);" value="(6)" />
+<input type="button" id="B07_05_07" onclick="dispsubpage(7, 5, 7);" value="(7)" />
+<input type="button" id="B07_05_08" onclick="dispsubpage(7, 5, 8);" value="(8)" />
+<input type="button" id="B07_05_09" onclick="dispsubpage(7, 5, 9);" value="(9)" />
+<input type="button" id="B07_05_10" onclick="dispsubpage(7, 5, 10);" value="(10)" />
+<input type="button" id="B07_05_11" onclick="dispsubpage(7, 5, 11);" value="(11)" />
+<input type="button" id="B07_05_12" onclick="dispsubpage(7, 5, 12);" value="(12)" />
+<input type="button" id="B07_05_13" onclick="dispsubpage(7, 5, 13);" value="(13)" />
+<input type="button" id="B07_05_14" onclick="dispsubpage(7, 5, 14);" value="(14)" />
+<input type="button" id="B07_05_15" onclick="dispsubpage(7, 5, 15);" value="(15)" />
+<input type="button" id="B07_05_16" onclick="dispsubpage(7, 5, 16);" value="(16)" />
+<input type="button" id="B07_05_17" onclick="dispsubpage(7, 5, 17);" value="(17)" />
+<input type="button" id="B07_05_18" onclick="dispsubpage(7, 5, 18);" value="(18)" />
+<input type="button" id="B07_05_19" onclick="dispsubpage(7, 5, 19);" value="(19)" />
+</div>
+
+<div id="cpbasesub07_05_01" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <defs>
+    <g id="stack07_18">
+      <rect class="ff" x="0" y="0" width="300" height="186" />
+      <line class="ff" x1="0" y1="31" x2="300" y2="31" />
+      <line class="ff" x1="0" y1="62" x2="300" y2="62" />
+      <line class="ff" x1="0" y1="93" x2="300" y2="93" />
+      <line class="ff" x1="0" y1="124" x2="300" y2="124" />
+      <line class="ff" x1="0" y1="155" x2="300" y2="155" />
+    </g>
+  </defs>
+  <g id="f7_18_01">
+    <text class="ff ll" x="80" y="30"><tspan fill="red">E</tspan>F-G÷CD-AB+÷+</text>
+    <g id="f7_18_01_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">E</text>
+      <text class="ff" x="320" y="180">E をpush</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_02" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_02">
+    <text class="ff ll" x="80" y="30">E<tspan fill="red">F</tspan>-G÷CD-AB+÷+</text>
+    <g id="f7_18_02_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">E</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">F</text>
+      <text class="ff" x="320" y="150">F をpush</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_03" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_03">
+    <text class="ff ll" x="80" y="30">EF<tspan fill="red">-</tspan>G÷CD-AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子-が出現したら前の２つ数で演算を行う EF- → E-F</text>
+    <g id="f7_18_03_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="320" y="180">pop → E</text>
+      <text class="ff" x="320" y="150">pop → F</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_04" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_04">
+    <text class="ff ll" x="80" y="30">EF<tspan fill="red">-</tspan>G÷CD-AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子-が出現したら前の２つ数で演算を行う EF- → E-F</text>
+    <text class="ff" x="40" y="80">結果 (E-F) をプッシュ</text>
+    <g id="f7_18_04_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)</text>
+      <text class="ff" x="320" y="180">演算結果 E-F を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_05" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_5">
+    <text class="ff ll" x="80" y="30">EF-<tspan fill="red">G</tspan>÷CD-AB+÷+</text>
+    <g id="f7_18_05_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">G</text>
+      <text class="ff" x="320" y="150">G を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_06" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_06">
+    <text class="ff ll" x="80" y="30">EF-G<tspan fill="red">÷</tspan>CD-AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_06_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="320" y="180">pop → (E-F)</text>
+      <text class="ff" x="320" y="150">pop → G</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_07" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_07">
+    <text class="ff ll" x="80" y="30">EF-G<tspan fill="red">÷</tspan>CD-AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_07_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="320" y="180">演算結果 (E-F) ÷ G を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_08" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_08">
+    <text class="ff ll" x="80" y="30">EF-G÷<tspan fill="red">C</tspan>D-AB+÷+</text>
+    <g id="f7_18_08_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">C</text>
+      <text class="ff" x="320" y="150">C を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_09" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_09">
+    <text class="ff ll" x="80" y="30">EF-G÷C<tspan fill="red">D</tspan>-AB+÷+</text>
+    <g id="f7_18_09_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">C</text>
+      <text class="ff" x="150" y="120" text-anchor="middle">D</text>
+      <text class="ff" x="320" y="120">D を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_10" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_10">
+    <text class="ff ll" x="80" y="30">EF-G÷CD<tspan fill="red">-</tspan>AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子-が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_10_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="320" y="150">pop → C</text>
+      <text class="ff" x="320" y="120">pop → D</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_11" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_11">
+    <text class="ff ll" x="80" y="30">EF-G÷CD<tspan fill="red">-</tspan>AB+÷+</text>
+    <text class="ff" x="40" y="55">演算子-が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_11_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)</text>
+      <text class="ff" x="320" y="150">演算結果 C-D を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_12" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_12">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-<tspan fill="red">A</tspan>B+÷+</text>
+    <g id="f7_18_12_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)</text>
+      <text class="ff" x="150" y="120" text-anchor="middle">A</text>
+      <text class="ff" x="320" y="120">A を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_13" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_13">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-A<tspan fill="red">B</tspan>+÷+</text>
+    <g id="f7_18_13_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)</text>
+      <text class="ff" x="150" y="120" text-anchor="middle">A</text>
+      <text class="ff" x="150" y="90" text-anchor="middle">B</text>
+      <text class="ff" x="320" y="90">B を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_14" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_14">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB<tspan fill="red">+</tspan>÷+</text>
+    <text class="ff" x="40" y="55">演算子+が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_14_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)</text>
+      <text class="ff" x="320" y="120">pop → A</text>
+      <text class="ff" x="320" y="90">pop → B</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_15" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_15">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB<tspan fill="red">+</tspan>÷+</text>
+    <text class="ff" x="40" y="55">演算子+が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_15_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)</text>
+      <text class="ff" x="150" y="120" text-anchor="middle">(A+B)</text>
+      <text class="ff" x="320" y="120">演算結果 A+B を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_16" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_16">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB+<tspan fill="red">÷</tspan>+</text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_16_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="320" y="150">pop → C-D</text>
+      <text class="ff" x="320" y="120">pop → A+B</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_17" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_17">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB+<tspan fill="red">÷</tspan>+</text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_17_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G</text>
+      <text class="ff" x="150" y="150" text-anchor="middle">(C-D)÷(A+B)</text>
+      <text class="ff" x="320" y="150">演算結果 (C-D)÷(A+B) を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_18" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_18">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB+÷<tspan fill="red">+</tspan></text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_18_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="320" y="180">pop → (E-F)÷G</text>
+      <text class="ff" x="320" y="150">pop → (C-D)÷(A+B)</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="cpbasesub07_05_19" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="440" viewBox="0 0 740 440">
+  <g id="f7_18_19">
+    <text class="ff ll" x="80" y="30">EF-G÷CD-AB+÷<tspan fill="red">+</tspan></text>
+    <text class="ff" x="40" y="55">演算子÷が出現したら前の２つ数で演算を行い、結果を push する</text>
+    <g id="f7_18_19_s1" transform="translate(40,90)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stack07_18" transform="translate(0, 4)"></use>
+      <text class="ff" x="150" y="180" text-anchor="middle">(E-F)÷G + (C-D)÷(A+B)</text>
+      <text class="ff" x="320" y="180">演算結果 (E-F)÷G + (C-D)÷(A+B) を push</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

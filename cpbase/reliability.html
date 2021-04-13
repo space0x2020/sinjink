@@ -1,0 +1,445 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>RELIABILITY</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+信頼性<br />
+<input type="button" id="B06_01" onclick="disppage(6, 1);" value="1" />
+<input type="button" id="B06_02" onclick="disppage(6, 2);" value="2" />
+<input type="button" id="B06_03" onclick="disppage(6, 3);" value="3" />
+<input type="button" id="B06_04" onclick="disppage(6, 4);" value="4" />
+<input type="button" id="B06_05" onclick="disppage(6, 5);" value="5" />
+<input type="button" id="B06_06" onclick="disppage(6, 6);" value="6" />
+<input type="button" id="B06_07" onclick="disppage(6, 7);" value="7" />
+</div>
+
+
+<div style="display:none">
+<svg>
+  <defs>
+    <g id="exp_mtbf">
+      <text class="ff l i" x="0" y="50">MTBF</text>
+      <text class="ff l i" x="65" y="50"> = </text>
+      <text class="ff l i" x="160" y="40" text-anchor="middle">総稼働時間</text>
+      <line class="ff" x1="90" y1="40" x2="230" y2="40" />
+      <text class="ff l i" x="160" y="60" text-anchor="middle">総故障件数</text>
+    </g>
+    <g id="exp_avail">
+      <text class="ff l i" x="0" y="50">稼働率</text>
+      <text class="ff l i" x="65" y="50"> = </text>
+      <text class="ff l i" x="170" y="40" text-anchor="middle">MTBF</text>
+      <line class="ff" x1="90" y1="40" x2="250" y2="40" />
+      <text class="ff l i" x="170" y="60" text-anchor="middle">MTBF + MTTR</text>
+      <text class="ff l i" x="260" y="50"> = </text>
+      <text class="ff l i" x="430" y="40" text-anchor="middle">平均故障間隔</text>
+      <line class="ff" x1="290" y1="40" x2="570" y2="40" />
+      <text class="ff l i" x="430" y="60" text-anchor="middle">平均故障間隔+平均修理時間</text>
+    </g>
+    <g id="exp_mttr">
+      <text class="ff l i" x="0" y="50">MTTR</text>
+      <text class="ff l i" x="65" y="50"> = </text>
+      <text class="ff l i" x="160" y="40" text-anchor="middle">総修理時間</text>
+      <line class="ff" x1="90" y1="40" x2="230" y2="40" />
+      <text class="ff l i" x="160" y="60" text-anchor="middle">総故障件数</text>
+    </g>
+  </defs>
+</svg>
+</div>
+
+<div id="cpbase06_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] システムの信頼性(1)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="100" viewBox="0 0 700 100">
+  <g id="f06_01_1" text-anchor="middle">
+    <text class="ff" x="50" y="15">10時間</text>
+    <line class="ff" x1="0" y1="20" x2="100" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(0, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(100, 20)"></use>
+    <rect x="0" y="30" width="100" height="30" stroke="white" fill="#555555" />
+    <text class="ff" x="50" y="50" style="fill:white">稼働中</text>
+    <text class="ff" x="135" y="15" >1時間</text>
+    <line class="ff" x1="100" y1="20" x2="170" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(100, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(170, 20)"></use>
+    <rect x="100" y="30" width="70" height="30" stroke="white" fill="#332222" />
+    <text class="ff" x="135" y="50" style="fill:white">修理中</text>
+    <text class="ff" x="220" y="15" text-anchor="middle">8時間</text>
+    <line class="ff" x1="170" y1="20" x2="270" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(170, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(270, 20)"></use>
+    <rect x="170" y="30" width="100" height="30" stroke="white" fill="#555555" />
+    <text class="ff" x="220" y="50" style="fill:white">稼働中</text>
+    <text class="ff" x="305" y="15">1時間</text>
+    <line class="ff" x1="270" y1="20" x2="340" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(270, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(340, 20)"></use>
+    <rect x="270" y="30" width="70" height="30" stroke="white" fill="#332222" />
+    <text class="ff" x="305" y="50" style="fill:white">修理中</text>
+    <text class="ff" x="390" y="15">9時間</text>
+    <line class="ff" x1="340" y1="20" x2="440" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(340, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(440, 20)"></use>
+    <rect x="340" y="30" width="100" height="30" stroke="white" fill="#555555" />
+    <text class="ff" x="390" y="50" style="fill:white">稼働中</text>
+    <text class="ff" x="475" y="15">1時間</text>
+    <line class="ff" x1="440" y1="20" x2="510" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(440, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(510, 20)"></use>
+    <rect x="440" y="30" width="70" height="30" stroke="white" fill="#332222" />
+    <text class="ff" x="475" y="50" style="fill:white">修理中</text>
+  </g>
+</svg>
+<p class="plist">RAS</p>
+<p class="plist">●信頼性(<span style="color:red;">R</span>eliability)</p>
+<p class="plist1">故障するまでの平均故障間隔MTBF (Mean Time Between Failures)で表します(故障と故障の間の平均時間)。
+</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="100" viewBox="0 0 700 100">
+  <g id="f06_01_2" transform="translate(50,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exp_mtbf" transform="translate(0, 0)"></use>
+    <text class="ff l i" x="250" y="50"> = </text>
+    <text class="ff l i" x="350" y="40" text-anchor="middle">10 + 8 + 9</text>
+    <line class="ff" x1="280" y1="42" x2="420" y2="42" />
+    <text class="ff l i" x="350" y="60" text-anchor="middle">3</text>
+    <text class="ff l i" x="440" y="50"> = </text>
+    <text class="ff l i" x="495" y="40" text-anchor="middle">27</text>
+    <line class="ff" x1="470" y1="42" x2="520" y2="42" />
+    <text class="ff l i" x="495" y="60" text-anchor="middle">3</text>
+    <text class="ff l i" x="530" y="50"> = 9</text>
+  </g>
+</svg>
+<p class="plist">●可用性(<span style="color:red;">A</span>vailability)</p>
+<p class="plist1">予定されたサービス提供期間(本来動かそうとしている時間)に、実際にサービスが利用できる期間の割合である稼働率で表します。</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="160" viewBox="0 0 700 160">
+  <g id="f06_01_3" transform="translate(50,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exp_avail" transform="translate(0, 0)"></use>
+    <text class="ff l i" x="580" y="50"> = </text>
+    <text class="ff l i" x="630" y="40" text-anchor="middle">9</text>
+    <line class="ff" x1="610" y1="43" x2="650" y2="43" />
+    <text class="ff l i" x="630" y="60" text-anchor="middle">10</text>
+    <text class="ff l i" x="65" y="130"> = </text>
+    <text class="ff l i" x="180" y="120" text-anchor="middle">動作している時間</text>
+    <line class="ff" x1="90" y1="123" x2="270" y2="123" />
+    <text class="ff l i" x="180" y="140" text-anchor="middle">すべての時間</text>
+    <text class="ff l i" x="280" y="130"> = </text>
+    <text class="ff l i" x="330" y="120" text-anchor="middle">27</text>
+    <line class="ff" x1="310" y1="123" x2="350" y2="123" />
+    <text class="ff l i" x="330" y="140" text-anchor="middle">30</text>
+  </g>
+</svg>
+<p class="plist">●保守性(<span style="color:red;">S</span>erviceability)</p>
+<p class="plist1">故障が発生してから通常のサービス提供までに掛かる平均期間MTTR (Mean Time To Repair)で表します (故障してから修理が終わるまでの平均時間)。</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="100" viewBox="0 0 700 100">
+  <g id="f06_01_4" transform="translate(50,0)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exp_mttr" transform="translate(0, 0)"></use>
+    <text class="ff l i" x="250" y="50"> = </text>
+    <text class="ff l i" x="350" y="40" text-anchor="middle">1 + 1 + 1</text>
+    <line class="ff" x1="280" y1="43" x2="420" y2="43" />
+    <text class="ff l i" x="350" y="60" text-anchor="middle">3</text>
+    <text class="ff l i" x="440" y="50"> = </text>
+    <text class="ff l i" x="495" y="40" text-anchor="middle">3</text>
+    <line class="ff" x1="470" y1="43" x2="520" y2="43" />
+    <text class="ff l i" x="495" y="60" text-anchor="middle">3</text>
+    <text class="ff l i" x="530" y="50"> = 1</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase06_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] システムの信頼性(2)</h3></div>
+<div class="pagebody">
+<p class="plist">●稼働率</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 0 700 300">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exp_avail" transform="translate(0, 0)"></use>
+  <g id="f06_02_1" transform="translate(50, 100)"  text-anchor="middle">
+    <rect class="ff" x="100" y="40" width="200" height="40" />
+    <text class="ff" x="200" y="65">MTBF(平均故障間隔)</text>
+    <rect class="ff" x="0" y="80" width="200" height="40" />
+    <text class="ff" x="100" y="105">MTBF(平均故障間隔)</text>
+    <rect class="ff" x="200" y="80" width="200" height="40" />
+    <text class="ff" x="300" y="105">MTTR(平均修理時間)</text>
+    <line class="ff" x1="100" y1="10" x2="100" y2="30" />
+    <line class="ff" x1="300" y1="10" x2="300" y2="30" />
+    <line class="ff" x1="100" y1="20" x2="125" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(100, 20)"></use>
+    <text class="ff" x="200" y="25">動作している時間</text>
+    <line class="ff" x1="275" y1="20" x2="300" y2="20" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(300, 20)"></use>
+    <line class="ff" x1="0" y1="140" x2="0" y2="160" />
+    <line class="ff" x1="0" y1="150" x2="25" y2="150" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(0, 150)"></use>
+    <text class="ff" x="100" y="155" text-anchor="middle">動作している時間</text>
+    <line class="ff" x1="175" y1="150" x2="200" y2="150" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(200, 150)"></use>
+    <line class="ff" x1="200" y1="140" x2="200" y2="160" />
+    <line class="ff" x1="200" y1="150" x2="225" y2="150" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(200, 150)"></use>
+    <text class="ff" x="300" y="155">停止している時間</text>
+    <line class="ff" x1="375" y1="150" x2="400" y2="150" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(400, 150)"></use>
+    <line class="ff" x1="400" y1="140" x2="400" y2="160" />
+    <line class="ff" x1="0" y1="170" x2="0" y2="190" />
+    <line class="ff" x1="0" y1="180" x2="140" y2="180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(0, 180)"></use>
+    <text class="ff" x="200" y="185">すべての時間</text>
+    <line class="ff" x1="260" y1="180" x2="400" y2="180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(400, 180)"></use>
+    <line class="ff" x1="400" y1="170" x2="400" y2="190" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase06_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] システムの信頼性2</h3></div>
+<div class="pagebody">
+<p class="plist">・稼働率:直列 (同時に動作していなければばらない）</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="400" viewBox="0 0 700 400">
+  <g id="f06_03_1" text-anchor="middle" transform="translate(0,10)" >
+    <line class="ff" x1="0" y1="25" x2="60" y2="25" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(60, 25)"></use>
+    <rect class="ff" x="60" y="0" width="160" height="50" />
+    <text class="ff" x="140" y="20">パソコン</text>
+    <text class="ff" x="140" y="45">稼働率 = 0.9</text>
+    <line class="ff" x1="220" y1="25" x2="280" y2="25" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(280, 25)"></use>
+    <rect class="ff" x="280" y="0" width="160" height="50" />
+    <text class="ff" x="360" y="20">プリンタ</text>
+    <text class="ff" x="360" y="45">稼働率 = 0.8</text>
+    <line class="ff" x1="440" y1="25" x2="500" y2="25" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(500, 25)"></use>
+    <path class="ff" d="M60 60 Q60 70 70 70 H240 Q250 70 250 90 Q 250 70 260 70 H 430 Q 440 70 440 60" />
+    <text class="ff" x="250" y="120">システム全体の稼働率　＝　0.9 × 0.8 = 0.72</text>
+  </g>
+  <g id="f06_03_2" text-anchor="middle" transform="translate(0,180)" >
+    <rect class="ff" x="0" y="0" width="160" height="50" />
+    <text class="ff" x="80" y="20">パソコン</text>
+    <text class="ff" x="80" y="44">稼働率 = 0.9</text>
+    <line class="ff" x1="180" y1="15" x2="180" y2="35" />
+    <line class="ff" x1="480" y1="15" x2="480" y2="35" />
+    <line class="ff sw2" x1="180" y1="25" x2="480" y2="25" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_15L" transform="translate(180, 25)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_15R" transform="translate(480, 25)"></use>
+    <line class="ff" x1="450" y1="25" x2="450" y2="115" />
+    <path class="ff" d="M180 25 Q 180 35 190 35 H320 Q 330 35 330 45 Q 330 35 340 35 H440 Q 450 35 450 25" />
+    <text class="ff" x="330" y="65">0.9</text>
+    <rect class="ff" x="0" y="80" width="160" height="50" />
+    <text class="ff" x="80" y="100">プリンタ</text>
+    <text class="ff" x="80" y="120">稼働率 = 0.8</text>
+    <line class="ff" x1="180" y1="95" x2="180" y2="115" />
+    <line class="ff" x1="180" y1="105" x2="450" y2="105" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_15L" transform="translate(180, 105)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_15R" transform="translate(450, 105)"></use>
+    <line class="ff" x1="396" y1="105" x2="396" y2="20" stroke-dasharray="4,4" />
+    <path class="ff" d="M180 105 Q180 115 190 115 H278 Q 288 115 288 125 Q 288 115 298 115 H 386 Q 396 115 396 105" />
+    <text class="ff" x="288" y="145">0.8</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase06_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] システムの信頼性2</h3></div>
+<div class="pagebody">
+<p class="plist">・稼働率:並列 (どちらか一方が稼働していればよい）</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="400" viewBox="0 0 700 400">
+  <defs>
+    <g id="printeravailability1" text-anchor="middle">
+      <rect class="ff" x="0" y="0" width="160" height="50" />
+      <text class="ff" x="80" y="20">プリンタ１</text>
+      <text class="ff" x="80" y="45">稼働率 = 0.8</text>
+      <rect class="ff" x="0" y="70" width="160" height="50" />
+      <text class="ff" x="80" y="90">プリンタ２</text>
+      <text class="ff" x="80" y="115">稼働率 = 0.8</text>
+    </g>
+  </defs>
+  <g id="f06_04_1" transform="translate(0,10)" >
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#printeravailability1" transform="translate(80, 0)"></use>
+    <line class="ff" x1="0" y1="60" x2="40" y2="60" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(40, 60)"></use>
+    <path class="ff" d="M80 25 H40 V95 H80" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(80, 25)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(80, 95)"></use>
+    <path class="ff" d="M240 25 H280 V95 H240" />
+    <line class="ff" x1="280" y1="60" x2="320" y2="60" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(320, 60)"></use>
+    <path class="ff" d="M20 130 Q 20 140 30 140 H150 Q 160 140 160 160 Q 160 140 170 140 H290 Q 300 140 300 130" />
+    <text class="ff" x="10" y="200">システム全体の稼働率　＝　1　–　 (1 –  0.8)(1 –  0.8)   =  1 – 0.2×0.2 = 0.96</text>
+    <path class="ff" d="M310 210 Q310 220 320 220 L410 220 Q 420 220 420 210" />
+    <text class="ff" x="385" y="240" text-anchor="middle">両方が同時に故障する率</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase06_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] システムの信頼性2</h3></div>
+<div class="pagebody">
+<p class="plist">・稼働率:並列</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="600" viewBox="0 0 780 600">
+  <defs>
+   <g id="availability1">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#printeravailability1" transform="translate(0, 0)"></use>
+    <line class="ff" x1="180" y1="15" x2="180" y2="35" />
+    <line class="ff" x1="380" y1="15" x2="380" y2="35" />
+    <line class="ff" x1="180" y1="25" x2="380" y2="25" />
+    <line class="ff" x1="180" y1="85" x2="180" y2="105" />
+    <line class="ff" x1="380" y1="85" x2="380" y2="105" />
+    <line class="ff" x1="180" y1="95" x2="380" y2="95" />
+   </g>
+  </defs>
+  <line x1="0" y1="248" x2="800" y2="248" stroke="lightblue" />
+  <line x1="390" y1="0" x2="390" y2="500" stroke="lightblue" />
+  <g id="f06_05_1">
+    <text class="ff" x="0" y="20">(1) プリンタ１、プリンタ2共に稼働</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#availability1" transform="translate(0, 40)"></use>
+    <g id="f06_05_1_1" transform="translate(0,40)">
+      <line class="ff sw2" x1="180" y1="25" x2="340" y2="25" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(180, 25)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(340, 25)"></use>
+      <line class="ff" x1="340" y1="25" x2="340" y2="95" />
+      <path class="ff" d="M180 25 Q 180 35 190 35 H250 Q 260 35 260 45 Q 260 35 270 35 L330 35 Q 340 35 340 25" />
+      <text class="ff" x="260" y="55" text-anchor="middle">0.8</text>
+      <line class="ff" x1="308" y1="25" x2="308" y2="95" stroke-dasharray="4,4" />
+      <path class="ff" d="M180 95 Q 180 105 190 105 H234 Q 244 105 244 115 Q 244 105 254 105 L298 105 Q 304 105 304 95" />
+      <text class="ff" x="244" y="130" text-anchor="middle">0.8</text>
+      <text class="ff" x="80" y="160">稼働率　＝　0.8×0.8 = 0.64</text>
+    </g>
+  <g id="f06_05_2" transform="translate(400,0)">
+    <text class="ff" x="0" y="20">(2) プリンタ１稼働、プリンタ2故障</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#availability1" transform="translate(0, 40)"></use>
+    <g id="f06_05_2_1" transform="translate(0,40)">
+      <line class="ff sw2" x1="180" y1="25" x2="340" y2="25" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(180, 25)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(340, 25)"></use>
+      <line class="ff" x1="340" y1="25" x2="340" y2="95" />
+      <path class="ff" d="M180 25 Q 180 35 190 35 H250 Q 260 35 260 45 Q 260 35 270 35 L330 35 Q 340 35 340 25" />
+      <text class="ff" x="260" y="55" text-anchor="middle">0.8</text>
+      <line class="ff d" x1="212" y1="25" x2="212" y2="95" />
+      <path class="ff" d="M180 95 Q 180 105 185 105 H191 Q 196 105 196 115 Q 196 105 201 105 L207 105 Q 212 105 212 95" />
+      <text class="ff" x="196" y="130" text-anchor="middle">0.2</text>
+      <text class="ff" x="80" y="160">稼働率　＝　0.8×0.2 = 0.16</text>
+    </g>
+  <g id="f06_05_3" transform="translate(-400,260)">
+    <text class="ff" x="0" y="20">(3) プリンタ１故障、プリンタ2稼働</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#availability1" transform="translate(0, 40)"></use>
+    <g id="f06_05_3_1" transform="translate(0,40)">
+      <line class="ff sw2" x1="180" y1="25" x2="220" y2="25" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(180, 25)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(220, 25)"></use>
+      <line class="ff" x1="220" y1="25" x2="220" y2="95" />
+      <path class="ff" d="M180 25 Q 180 35 185 35 H195 Q 200 35 200 45 Q 200 35 205 35 L215 35 Q 220 35 220 25" />
+      <path class="ff" d="M180 95 Q 180 105 185 105 H191 Q 196 105 196 115 Q 196 105 201 105 L207 105 Q 212 105 212 95" />
+      <text class="ff" x="196" y="130" text-anchor="middle">0.8</text>
+      <text class="ff" x="80" y="160">稼働率　＝　0.2×0.8 = 0.16</text>
+    </g>
+  <g id="f06_05_4" transform="translate(400,0)">
+    <text class="ff" x="0" y="20">(4) プリンタ１、プリンタ2共に故障</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#availability1" transform="translate(0, 40)"></use>
+    <g id="f06_05_4_1" transform="translate(0,40)">
+      <line class="ff sw2" x1="180" y1="25" x2="220" y2="25" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10L" transform="translate(180, 25)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(220, 25)"></use>
+      <line class="ff" x1="220" y1="25" x2="220" y2="95" />
+      <path class="ff" d="M180 25 Q 180 35 185 35 H195 Q 200 35 200 45 Q 200 35 205 35 L215 35 Q 220 35 220 25" />
+      <text class="ff" x="200" y="55" text-anchor="middle">0.2</text>
+      <line class="ff d" x1="188" y1="25" x2="188" y2="95" />
+      <path class="ff" d="M180 95 L 180 105 182 105 H184 Q 184 105 184 115 Q 184 105 188 105 L188 105  188 95" />
+      <text class="ff" x="184" y="130" text-anchor="middle">0.2</text>
+      <text class="ff" x="80" y="160">稼働率　＝　0.2×0.2 = 0.04</text>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase06_06" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[6] 信頼性を向上させるシステム設計 p.227</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody class="vat">
+  <tr>
+    <td class="pad_s_ball">フェールソフト</td>
+    <td class="pad_s_ball">システムに障害が発生したときに、機能の低下があってもシステムを停止させない仕組みを用意しておくこと</td></tr>
+  <tr>
+    <td class="pad_s_ball">フェールセーフ</td>
+    <td class="pad_s_ball">システムに障害が発生したときに、安全な状態にする仕組みを用意しておくこと</td></tr>
+  <tr>
+    <td class="pad_s_ball">フォールトトレラント</td>
+    <td class="pad_s_ball">システムが故障することを想定して、故障時でもシステムの動作を継続する仕組みを用意しておくこと</td></tr>
+  <tr>
+    <td class="pad_s_ball">フールプルーフ</td>
+    <td class="pad_s_ball">システムに不慣れなユーザの誤動作を想定して、その場合でも問題が生じない仕組みを用意すること</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="cpbase06_07" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[7] 例題</h3></div>
+<div class="pagebody">
+<div class="reidai">
+調歩同期式（スタートストップ方式）のデータ伝送において偶数パリティによる誤り検出方式を用いて，文字 T (JIS７単位符号 1010100) を送出した。正しく受信したときのビット列はどれか。ここで，送出はスタートビット(0)，文字の低位ビットから高位ビット，パリティビット，ストップビット(1)の順とし，受信したビットを左から順に記す。
+<br />
+ア　0001010101　　 イ　0001010111　　 ウ　1001010110　　 エ　1001010111
+</div><!-- reidai -->
+<br />
+<p class="plist1">
+<table class="tbl">
+<tr>
+  <td class="pad_s bl br bb2 c">スタートビット</td>
+  <td class="pad_s bl br bb2 c">文字Ｔの低位から</td>
+  <td class="pad_s bl br bb2 c">パリティビット</td>
+  <td class="pad_s bl br bb2 c ">ストップビット</td>
+  <td></td></tr>
+<tr>
+  <td class="pad_s bl br c">0</td>
+  <td class="pad_s bl br c">0 0 1 0 1 0 1</td>
+  <td class="pad_s bl br c">?</td>
+  <td class="pad_s bl br c">1<td>
+  <td></td></tr>
+<tr>
+  <td class="pad_s bl br c"></td>
+  <td class="pad_s bl br c">1は３つ</td>
+  <td class="pad_s bl br c">1</td>
+  <td class="pad_s bl br c"><td>
+  <td></td></tr>
+<tr>
+  <td class="pad_s bl br c">0</td>
+  <td class="pad_s bl br c">0 0 1 0 1 0 1</td>
+  <td class="pad_s bl br c">1</td>
+  <td class="pad_s bl br c">1<td>
+  <td>イ</td></tr>
+</table>
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

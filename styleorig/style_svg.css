@@ -1,0 +1,177 @@
+<div id="svgstyle" style="display:none;">
+  <svg>
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+#ifdef V1
+        stroke: white; /*v1*/
+#else
+        stroke: black; /*V2*/
+#endif
+        fill: none;
+      }
+      path.red, line.red, rect.red, circle.red, ellipse.red {
+        stroke: red;
+        fill: none;
+      }
+      path.yellow, line.yellow, rect.yellow, circle.yellow, ellipse.yellow {
+        stroke: yellow;
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+#ifdef V1
+        fill: white; /*v1*/
+#else
+        fill: black; /*V2*/
+#endif
+      }
+      path.ffwgray, line.ffwgray, rect.ffwgray, circle.ffwgray, ellipse.ffwgray {
+#ifdef V1
+        fill: gray; /*v1*/
+#else
+        fill: lightgray; /*V2*/
+#endif
+      }
+      path.ffwred, line.ffwred, rect.ffwred, circle.ffwred, ellipse.ffwred {
+        fill: red;
+      }
+      path.ffwyellow, line.ffwyellow, rect.ffwyellow, circle.ffwyellow, ellipse.ffwyellow {
+        fill: yellow;
+      }
+      path.ffwblue, line.ffwblue, rect.ffwblue, circle.ffwblue, ellipse.ffwblue {
+        fill: blue;
+      }
+      path.ffwlightblue, line.ffwlightblue, rect.ffwlightblue, circle.ffwlightblue, ellipse.ffwlightblue {
+        fill: lightblue;
+      }
+      path.ffwrev, line.ffwrev, rect.ffwrev, circle.ffwrev, ellipse.ffwrev {
+#ifdef V1
+        fill: black; /*v1*/
+#else
+        fill: white; /*V2*/
+#endif
+      }
+      path.ffnop, line.ffnop, rect.ffnop, circle.ffnop, ellipse.ffnop {
+#ifdef V1
+        stroke: white; /*v1*/
+#else
+        stroke: black; /*V2*/
+#endif
+      }
+      path.ffrev, line.ffrev, rect.ffrev, circle.ffrev, ellipse.ffrev {
+#ifdef V1
+        stroke: black; /*v1*/
+#else
+        stroke: white; /*V2*/
+#endif
+        fill: none;
+      }
+      text.ff { /* 18pt */
+#ifdef V1
+        fill: white; /*v1*/
+#else
+        fill: black: /*V2*/
+#endif
+        font-size: 18;
+      }
+      text.ffrev { /* 18pt */
+#ifdef V1
+        fill: black; /*v1*/
+#else
+        fill: white; /*V2*/
+#endif
+        font-size: 18;
+      }
+      text.grey {
+        fill: gray;
+        font-size: 18;
+      }
+      text.red { /* red */
+        fill:red;
+        font-size: 18;
+      }
+      text.yellow { /* yellow */
+        fill:yellow;
+        font-size: 18;
+      }
+      rect.th {
+#ifdef V1
+        fill: blue; /*V1*/
+#else
+        fill: lightblue; /*V2*/
+#endif
+      }
+      rect.tdo {
+#ifdef V1
+        fill: #444444; /*V1*/
+#else
+        fill: #D0D8DB; /*V2*/
+#endif
+      }
+      rect.tde {
+#ifdef V1
+        fill: #888888; /*V1*/
+#else
+        fill: #E9EDF4; /*V2*/
+#endif
+      }
+      /*----*/
+      path.d, line.d, rect.d, circle.d, ellipse.d {
+        stroke-dasharray: 4,4;
+      }
+      path.sw2, line.sw2, rect.sw2, circle.sw2, ellipse.sw2 {
+        stroke-width: 2;
+      }
+      path.sw3, line.sw3, rect.sw3, circle.sw3, ellipse.sw3 {
+        stroke-width: 3;
+      }
+      path.sw4, line.sw4, rect.sw4, circle.sw4, ellipse.sw4 {
+        stroke-width: 4;
+      }
+      path.sw5, line.sw5, rect.sw5, circle.sw5, ellipse.sw5 {
+        stroke-width: 5;
+      }
+      text.sss { /* 12pt */
+        font-size: 12;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.l { /* 20pt */
+        font-size: 20;
+      }
+      text.ll { /* 24pt */
+        font-size: 24;
+      }
+      text.i { /* italic */
+        font-style: italic;
+      }
+      text.b { /* bold */
+        font-weight: bolder;
+      }
+      text.ul { /* underline */
+        text-decoration: underline;
+      }
+      text.ol { /* overline */
+        text-decoration: overline;
+      }
+      rect.nor1 {
+        stroke: red;
+      }
+      rect.nor2 {
+        stroke: orange;
+      }
+      path.act, line.act, rect.act, circle.act, ellipse.act {
+        stroke: orange;
+        fill: none;
+      }
+      path.actf, line.actf, rect.actf, circle.actf, ellipse.actf, text.act {
+        fill: orange;
+      }
+    ]]></style>
+  </defs>
+  </svg>
+</div>

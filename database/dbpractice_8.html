@@ -1,0 +1,1418 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 8(SQL)</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習問題解答例：
+    <input type="button" id="B08_01" onclick="disppage(8, 1);" value="SQL問題(1)" />
+    <input type="button" id="B08_02" onclick="disppage(8, 2);" value="SQL問題(2)" />
+    <input type="button" id="B08_03" onclick="disppage(8, 3);" value="SQL問題(3)" />
+    <input type="button" id="B08_04" onclick="disppage(8, 4);" value="SQL問題(4)" />
+    <input type="button" id="B08_05" onclick="disppage(8, 5);" value="SQL問題(5)" />
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap08_01" class="chap">
+      <h4>SQL問題(1)</h4>
+      <div class="quiz">
+        次のSQL文によって“会員”表から新たに得られる表はどれか。
+<pre class="f">
+[SQL文〕
+  SELECT AVG(年齢)
+    FROM 会員
+    GROUP BY グループ
+    HAVING COUNT(*) > 1
+</pre>
+        <table class="tbl">
+          <caption style="text-align:left;">会員</caption>
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">会員番号</th>
+              <th class="pad_s_ball thcolor">年齢</th>
+              <th class="pad_s_ball thcolor">グループ</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">001</td>
+              <td class="pad_s_ball">20</td>
+              <td class="pad_s_ball">B</td></tr>
+            <tr>
+              <td class="pad_s_ball">002</td>
+              <td class="pad_s_ball">30</td>
+              <td class="pad_s_ball">C</td></tr>
+            <tr>
+              <td class="pad_s_ball">003</td>
+              <td class="pad_s_ball">60</td>
+              <td class="pad_s_ball">A</td></tr>
+            <tr>
+              <td class="pad_s_ball">004</td>
+              <td class="pad_s_ball">40</td>
+              <td class="pad_s_ball">C</td></tr>
+            <tr>
+              <td class="pad_s_ball">005</td>
+              <td class="pad_s_ball">40</td>
+              <td class="pad_s_ball">B</td></tr>
+            <tr>
+              <td class="pad_s_ball">006</td>
+              <td class="pad_s_ball">50</td>
+              <td class="pad_s_ball">C</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+        <table class="tbl" border="0">
+        <tbody class="c">
+          <tr>
+            <td class="pad_s r">ア</td>
+            <td class="pad_s"></td>
+            <td class="pad_s r" width="40">イ</td>
+            <td class="pad_s"></td>
+            <td class="pad_s r" width="40">ウ</td>
+            <td class="pad_s"></td>
+            <td class="pad_s r" width="40">エ</td>
+            <td class="pad_s"></td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">AVG(年齢)</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">AVG(年齢)</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">AVG(年齢)</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">AVG(年齢)</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">36</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">40</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">30</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">60</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">40</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">30</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">40</td></tr>
+        </tbody>
+        </table>
+        </p>
+      </div>
+      <p><input type="button" onclick="detailson('chap08_01_a01')" value="解説" /></p>
+      <div id="chap08_01_a01" style="display:none;">
+        <p class="sqlp1">GROUP BY グループ</p>
+        <div class="plist3"><pre class="f"><code>→ <u>グループ列でグルーピング</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_01_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap08_01_a02" style="display:none;">
+        <p class="sqlp1">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">会員番号</th>
+              <th class="pad_s_ball thcolor">年齢</th>
+              <th class="pad_s_ball thcolor">グループ</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">003</td>
+              <td class="pad_s_ball">60</td>
+              <td class="pad_s_ball">A</td></tr>
+            <tr style="background-color:gray;">
+              <td class="pad_s_ball">001</td>
+              <td class="pad_s_ball">20</td>
+              <td class="pad_s_ball">B</td></tr>
+            <tr style="background-color:gray;">
+              <td class="pad_s_ball">005</td>
+              <td class="pad_s_ball">40</td>
+              <td class="pad_s_ball">B</td></tr>
+            <tr>
+              <td class="pad_s_ball">002</td>
+              <td class="pad_s_ball">30</td>
+              <td class="pad_s_ball">C</td></tr>
+            <tr>
+              <td class="pad_s_ball">004</td>
+              <td class="pad_s_ball">40</td>
+              <td class="pad_s_ball">C</td></tr>
+            <tr>
+              <td class="pad_s_ball">006</td>
+              <td class="pad_s_ball">50</td>
+              <td class="pad_s_ball">C</td></tr>
+          </tbody>
+        </table>
+        </p>
+        <p><input type="button" onclick="detailson('chap08_01_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap08_01_a03" style="display:none;">
+        <p />
+        <p class="sqlp1">グループ毎に平均</p>
+        <table class="tbl">
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">会員番号</th>
+            <th class="pad_s_ball thcolor">年齢</th>
+            <th class="pad_s_ball thcolor">グループ</th>
+            <th width="30 thcolor" style="border-top-style:dashed;border-bottom-style:dashed;"></th>
+            <th class="pad_s_ball thcolor">AVG(年齢)</th>
+            <th class="pad_s_ball thcolor">count(*)</th>
+            <th class="pad_s_ball thcolor">グループ</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">003</td>
+            <td class="pad_s_ball">60</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball">60</td>
+            <td class="pad_s_ball">1</td>
+            <td class="pad_s_ball">A</td></tr>
+          <tr>
+            <td class="pad_s_ball" style="background-color:gray;">001</td>
+            <td class="pad_s_ball" style="background-color:gray;">20</td>
+            <td class="pad_s_ball" style="background-color:gray;">B</td>
+            <td class="pad_s_ball" rowspan="2" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">30</td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">2</td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">B</td></tr>
+          <tr style="background-color:gray;">
+            <td class="pad_s_ball">005</td>
+            <td class="pad_s_ball">40</td>
+            <td class="pad_s_ball">B</td></tr>
+          <tr>
+            <td class="pad_s_ball">002</td>
+            <td class="pad_s_ball">30</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball" rowspan="3" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball" rowspan="3">40</td>
+            <td class="pad_s_ball" rowspan="3">3</td>
+            <td class="pad_s_ball" rowspan="3">C</td></tr>
+          <tr>
+            <td class="pad_s_ball">004</td>
+            <td class="pad_s_ball">40</td>
+            <td class="pad_s_ball">C</td></tr>
+          <tr>
+            <td class="pad_s_ball">006</td>
+            <td class="pad_s_ball">50</td>
+            <td class="pad_s_ball">C</td></tr>
+        </tbody>
+        </table>
+        </p>
+        <p><input type="button" onclick="detailson('chap08_01_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap08_01_a04" style="display:none;">
+        <p />
+        <p class="sqlp1">having count(*) > 1</p>
+        <table class="tbl">
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">会員番号</th>
+            <th class="pad_s_ball thcolor">年齢</th>
+            <th class="pad_s_ball thcolor">グループ</th>
+            <th class="pad_s_ball thcolor" width="30" style="border-top-style:dashed;border-bottom-style:dashed;"></th>
+            <th class="pad_s_ball thcolor">AVG(年齢)</th>
+            <th class="pad_s_ball thcolor">count(*)</th>
+            <th class="pad_s_ball thcolor">グループ</th>
+            <th class="pad_s_ball thcolor" width="30" style="border-top-style:dashed;border-bottom-style:dashed;"></th>
+            <th class="pad_s_ball thcolor">AVG(年齢)</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">003</td>
+            <td class="pad_s_ball">60</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball" style="border-top-style:dashed;border-bottom-style:dashed"></td>
+            <td class="pad_s_ball">60</td>
+            <td class="pad_s_ball">1</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball"></td></tr>
+          <tr>
+            <td class="pad_s_ball" style="background-color:gray;">001</td>
+            <td class="pad_s_ball" style="background-color:gray;">20</td>
+            <td class="pad_s_ball" style="background-color:gray;">B</td>
+            <td class="pad_s_ball" rowspan="2" style="border-top-style:dashed;border-bottom-style:dashed"></td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">30</td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;"><b>2</b></td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">B</td>
+            <td class="pad_s_ball" rowspan="2" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball" rowspan="2" style="background-color:gray;">30</td></tr>
+          <tr>
+            <td class="pad_s_ball" style="background-color:gray;">005</td>
+            <td class="pad_s_ball" style="background-color:gray;">40</td>
+            <td class="pad_s_ball" style="background-color:gray;">B</td></tr>
+          <tr>
+            <td class="pad_s_ball">002</td>
+            <td class="pad_s_ball">30</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball" rowspan="3" style="border-top-style:dashed;border-bottom-style:dashed"></td>
+            <td class="pad_s_ball" rowspan="3">40</td>
+            <td class="pad_s_ball" rowspan="3"><b>3</b></td>
+            <td class="pad_s_ball" rowspan="3">C</td>
+            <td class="pad_s_ball" rowspan="3" style="border-top-style:dashed;border-bottom-style:dashed;"></td>
+            <td class="pad_s_ball" rowspan="3">40</td></tr>
+          <tr>
+            <td class="pad_s_ball">004</td>
+            <td class="pad_s_ball">40</td>
+            <td class="pad_s_ball">C</td></tr>
+          <tr>
+            <td class="pad_s_ball">006</td>
+            <td class="pad_s_ball">50</td>
+            <td class="pad_s_ball">C</td></tr>
+        </tbody>
+        </table>
+        </p>
+        <p><input type="button" onclick="detailson('chap08_01_a05')" value="正解" /></p>
+      </div>
+      <div id="chap08_01_a05" style="display:none;">
+        <p class="anslist">正解：ウ</p>
+      </div>
+  </div>
+  <div id="chap08_02" class="chap">
+      <h4>SQL問題(2)</h4>
+      <div class="quiz">
+          “社員B”表から、役割名がプログラマである社員が３人以上所属している部門の部門名を取得するSQL文はどれか。ここで、実線の下線は主キーを表す。
+        <p style="padding-left:3em;">社員B（<u>社員番号</u>,  部門名,  社員名,  役割名）</p>
+        <p class="selectlistsql">ア　SELECT 部門名 FROM 社員B<br />
+                     GROUP BY 部門名<br />
+                     HAVING COUNT(*) &gt;= 3<br />
+                     WHERE 役割名 = 'プログラマ'</p>
+        <p class="selectlistsql">イ　SELECT 部門名 FROM 社員B<br />
+                     WHERE COUNT(*) &gt;= 3 AND 役割名 = 'プログラマ'<br />
+                     GROUP BY 部門名</p>
+        <p class="selectlistsql">ウ　SELECT 部門名 FROM 社員B<br />
+                     WHERE COUNT(*) &gt;= 3<br />
+                     GROUP BY 部門名<br />
+                     HAVING 役割名 = 'プログラマ'</p>
+        <p class="selectlistsql">エ　SELECT 部門名 FROM 社員B<br />
+                     WHERE 役割名 = 'プログラマ'<br />
+                     GROUP BY 部門名<br />
+                     HAVING COUNT(*) &gt;= 3</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap08_02_a01')" value="解説" /></p>
+      <div id="chap08_02_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員B表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員B</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_02_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap08_02_a02" style="display:none;">
+        <p class="sqlp1">[2] 役割名がプログラマである社員</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員B <u>where 役割名 = 'プログラマ'</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_02_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap08_02_a03" style="display:none;">
+        <p class="sqlp1">[3] 社員が3人以上所属している部門→部門名でグルーピングして件数が3以上</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員B where 役割名 = 'プログラマ' <u>group by 部門名 having count(*) &gt;= 3</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_02_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap08_02_a04" style="display:none;">
+        <p class="sqlp1">[4] 部門名を取得</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select 部門名</u> from 社員B where 役割名 = 'プログラマ' group by 部門名 having count(*) &gt;= 3</code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_02_a05')" value="正解" /></p>
+      </div>
+      <div id="chap08_02_a05" style="display:none;">
+        <p class="selectlistsql">正解　エ　SELECT 部門名 FROM 社員B<br />
+                     WHERE 役割名 = 'プログラマ'<br />
+                     GROUP BY 部門名<br />
+                     HAVING COUNT(*) &gt;= 3</p>
+      </div>
+  </div>
+  <div id="chap08_03" class="chap">
+      <h4>SQL問題(3)</h4>
+      <div class="quiz">
+        “社員”表と”人事異動”表から社員ごとの勤務成績の平均を求める適切なSQL文はどれか。
+        ここで、求める項目は、社員コード、社員名、勤務成績(平均)の３項目とする。
+        <p>
+        <table class="tbl" style="float:left;margin-right:10px;">
+        <caption style="text-align:left;">社員</caption>
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">社員コード</th>
+            <th class="pad_s_ball thcolor">社員名</th>
+            <th class="pad_s_ball thcolor">性別</th>
+            <th class="pad_s_ball thcolor">生年月日</th>
+            <th class="pad_s_ball thcolor">入社年月日</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">O1553</td>
+            <td class="pad_s_ball">太田　由美</td>
+            <td class="pad_s_ball">女</td>
+            <td class="pad_s_ball">1970-03-10</td>
+            <td class="pad_s_ball">1990-04-01</td></tr>
+          <tr>
+            <td class="pad_s_ball">S3781</td>
+            <td class="pad_s_ball">佐藤　義男</td>
+            <td class="pad_s_ball">男</td>
+            <td class="pad_s_ball">1943-11-20</td>
+            <td class="pad_s_ball">1975-06-11</td></tr>
+          <tr>
+            <td class="pad_s_ball">O8665</td>
+            <td class="pad_s_ball">太田　由美</td>
+            <td class="pad_s_ball">女</td>
+            <td class="pad_s_ball">1978-10-13</td>
+            <td class="pad_s_ball">1999-04-11</td></tr>
+        </tbody>
+        </table>
+        <table class="tbl">
+          <caption style="text-align:left;">人事異動</caption>
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">社員コード</th>
+            <th class="pad_s_ball thcolor">配属部門</th>
+            <th class="pad_s_ball thcolor">配属年月日</th>
+            <th class="pad_s_ball thcolor">担当勤務内容</th>
+            <th class="pad_s_ball thcolor">勤務成績</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">O1553</td>
+            <td class="pad_s_ball">総務部</td>
+            <td class="pad_s_ball">1990-04-01</td>
+            <td class="pad_s_ball l">広報(社内報)</td>
+            <td class="pad_s_ball">69.0</td></tr>
+          <tr>
+            <td class="pad_s_ball">O1553</td>
+            <td class="pad_s_ball">営業部</td>
+            <td class="pad_s_ball">1998-07-01</td>
+            <td class="pad_s_ball l">顧客管理</td>
+            <td class="pad_s_ball">72.0</td></tr>
+          <tr>
+            <td class="pad_s_ball">S3781</td>
+            <td class="pad_s_ball">資材部</td>
+            <td class="pad_s_ball">1975-06-11</td>
+            <td class="pad_s_ball l">仕入在庫管理</td>
+            <td class="pad_s_ball">70.0</td></tr>
+          <tr>
+            <td class="pad_s_ball">S3781</td>
+            <td class="pad_s_ball">経理部</td>
+            <td class="pad_s_ball">1984-07-01</td>
+            <td class="pad_s_ball l">資金計画</td>
+            <td class="pad_s_ball">81.0</td></tr>
+          <tr>
+            <td class="pad_s_ball">S3781</td>
+            <td class="pad_s_ball">企画部</td>
+            <td class="pad_s_ball">1993-07-01</td>
+            <td class="pad_s_ball l">会社組織、分掌</td>
+            <td class="pad_s_ball">95.0</td></tr>
+          <tr>
+            <td class="pad_s_ball">O8665</td>
+            <td class="pad_s_ball">秘書室</td>
+            <td class="pad_s_ball">1999-04-01</td>
+            <td class="pad_s_ball l">受付</td>
+            <td class="pad_s_ball">70.0</td></tr>
+        </tbody>
+        </table>
+        <p class="selectlistsql">ア　SELECT 社員．社員コード，社員名，AVG(勤務成績) AS “勤務成績(平均)”<br />
+                FROM 社員,人事異動<br />
+                WHERE 社員．社員コード = 人事異動．社員コード<br />
+                GROUP BY 勤務成績</p>
+        <p class="selectlistsql">イ　SELECT 社員．社員コード，社員名，AVG（勤務成績） AS  “勤務成績(平均)”<br />
+                FROM 社員,人事異動<br />
+                WHERE 社員．社員コード = 人事異動．社員コード<br />
+                GROUP  BY 社員．社員コード,社員．社員名</p>
+        <p class="selectlistsql">ウ　SELECT 社員．社員コード，社員名，AVG(勤務成績)/ COUNT(勤務成績) AS “勤務成績(平均)”<br />
+                FROM 社員,人事異動<br />
+                WHERE 社員．社員コード = 人事異動．社員コード<br />
+                GROUP BY 社員．社員コード，社員．社員名</p>
+        <p class="selectlistsql">エ　SELECT 社員．社員コード，社員名，MAX(勤務成績) / COUNT(*) AS “勤務成績(平均)”<br />
+                FROM 社員,人事異動<br />
+                WHERE 社員．社員コード = 人事異動．社員コード<br />
+                GROUP BY 社員．社員コード ，社員．社員名</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap08_03_a01')" value="解説" /></p>
+      <div id="chap08_03_a01" style="display:none;">
+        <p class="sqlp1">[1] ”社員”表と”人事異動”表から→社員表と人事異動表を社員コードで結合</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_03_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap08_03_a02" style="display:none;">
+        <p class="sqlp1">[2] 社員ごとの勤務成績の平均→社員コードでグルーピング</p>
+        <div class="plist3"><pre class="f"><code>→ from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード<br />
+                         　<u>group by 社員.社員コード,　社員.社員名</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_03_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap08_03_a03" style="display:none;">
+        <p class="sqlp1">[3] 求める項目は、社員コード、社員名、勤務y成績(平均)</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select 社員.社員コード, 社員名, AVG(勤務成績) as “勤務成績(平均)”</u><br />
+                         　from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード<br />
+                         　group by 社員.社員コード,　社員.社員名</code></pre></div>
+        <p><input type="button" onclick="detailson('chap08_03_a04')" value="正解" /></p>
+      </div>
+      <div id="chap08_03_a04" style="display:none;">
+        <p class="selectlistsql">正解　イ　SELECT 社員．社員コード，社員名，AVG（勤務成績） AS  “勤務成績(平均)”<br />
+                FROM 社員,人事異動<br />
+                WHERE 社員．社員コード = 人事異動．社員コード<br />
+                GROUP  BY 社員．社員コード,社員．社員名</p>
+      </div>
+  </div>
+  <div id="chap08_04" class="chap">
+      <h4>SQL問題(4)</h4>
+      <div class="quiz">
+            “商品”表と”売上明細”表に対して、次のSQL文を実行した結果の表として、正しいものはどれか。ここで、結果の表中の”－”は、値がナルであることを表す。
+        <pre class="f">
+SELECT  X．商品番号,  商品名,  数量
+     FROM 商品 X  LEFT OUTER JOIN  売上明細 Y
+           ON X．商品番号 = Y．商品番号
+        </pre>
+        <table class="tbl" style="float:left;margin-right:10px;">
+          <caption style="text-align:left;">商品</caption>
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">商品番号</th>
+            <th class="pad_s_ball thcolor">商品名</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td></tr>
+          <tr>
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td></tr>
+          <tr>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td></tr>
+        </tbody>
+        </table>
+        <table class="tbl">
+          <caption style="text-align:left;">売上明細</caption>
+        <thead>
+          <tr>
+            <th class="pad_s_ball thcolor">売上番号</th>
+            <th class="pad_s_ball thcolor">売上日</th>
+            <th class="pad_s_ball thcolor">商品番号</th>
+            <th class="pad_s_ball thcolor">数量</th>
+            <th class="pad_s_ball thcolor">売上金額</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+        </tbody>
+        </table>
+
+        <p>
+
+        <table class="tbl" style="border-top-style:none;border-left-style:none;border-bottom-style:none;">
+        <tbody class="c">
+          <tr>
+            <td class="pad_s vat">ア</td>
+            <td class="pad_s_ball">商品番号</td>
+            <td class="pad_s_ball">商品名</td>
+            <td class="pad_s_ball">数量</td>
+            <td class="pad_s vat" width="30">イ</td>
+            <td class="pad_s_ball">商品番号</td>
+            <td class="pad_s_ball">商品名</td>
+            <td class="pad_s_ball">数量</td>
+            <td class="pad_s vat" width="30">ウ</td>
+            <td class="pad_s_ball">商品番号</td>
+            <td class="pad_s_ball">商品名</td>
+            <td class="pad_s_ball">数量</td>
+            <td class="pad_s vat" width="30">エ</td>
+            <td class="pad_s_ball">商品番号</td>
+            <td class="pad_s_ball">商品名</td>
+            <td class="pad_s_ball">数量</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">15</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">15</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">-</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball r">5</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">-</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">10</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">10</td>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">8</td></tr>
+          <tr>
+            <td class="pad_s"></td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">8</td></tr>
+        </table>
+      </div>
+      <p><input type="button" onclick="detailson('chap08_04_a01')" value="解説" /></p>
+      <div id="chap08_04_a01" style="display:none;">
+        <p class="sqlp1">直積：</p>
+        <table class="tbl">
+        <thead>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball" colspan="2">商品</th>
+            <th class="pad_s_ball" colspan="5">売上明細</th>
+          </tr>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">商品名</th>
+            <th class="pad_s_ball">売上番号</th>
+            <th class="pad_s_ball">売上日</th>
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">数量</th>
+            <th class="pad_s_ball">売上金額</th>
+          </tr>
+        </thead>
+        <tbody class="c">
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td>
+          </tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td>
+          </tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td>
+          </tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td>
+          </tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td>
+          </tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td>
+          </tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td>
+          </tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td>
+          </tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td>
+          </tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td>
+          </tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td>
+          </tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td>
+          </tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td>
+          </tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td>
+          </tr>
+          </tbody>
+        </table>
+        <p><input type="button" onclick="detailson('chap08_04_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap08_04_a02" style="display:none;">
+        <p class="sqlp1">選択：</p>
+        <table class="tbl">
+        <thead>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball" colspan="2">商品</th>
+            <th class="pad_s_ball" colspan="5">売上明細</th>
+          </tr>
+          <tr style="color:black;background-color:white">
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">商品名</th>
+            <th class="pad_s_ball">売上番号</th>
+            <th class="pad_s_ball">売上日</th>
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">数量</th>
+            <th class="pad_s_ball">売上金額</th>
+          </tr>
+        </thead>
+        <tbody class="c">
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball" style="color:white;background:red;">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball" style="color:white;background:red;">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball" style="color:white;background:red;">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball" style="color:white;background:red;">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr style="color:black;background-color:lightgreen;">
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr style="color:black;background-color:lightblue;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball" style="color:white;background:red;">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball" style="color:white;background:red;">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr style="color:black;background-color:yellow;">
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball" style="color:white;background:red;">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball" style="color:white;background:red;">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td><td>D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr style="color:black;background-color:pink;">
+            <td class="pad_s_ball" style="color:white;background:red;">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball" style="color:white;background:red;">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+        </tbody>
+        </table>
+        <p><input type="button" onclick="detailson('chap08_04_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap08_04_a03" style="display:none;">
+        <p />
+        <p class="sqlp1">直積 + 選択：</p>
+        <table class="tbl">
+        <thead>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball" colspan="2">商品</th>
+            <th class="pad_s_ball" colspan="5">売上明細</th>
+          </tr>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">商品名</th>
+            <th class="pad_s_ball">売上番号</th>
+            <th class="pad_s_ball">売上日</th>
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">数量</th>
+            <th class="pad_s_ball">売上金額</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+        </tbody>
+        </table>
+        <p><input type="button" onclick="detailson('chap08_04_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap08_04_a04" style="display:none;">
+        <p />
+        <p class="sqlp1">LEFT OUTER JOIN (左外結合)：</p>
+        <table class="tbl">
+        <thead>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball" colspan="2">商品</th>
+            <th class="pad_s_ball" colspan="5">売上明細</th>
+          </tr>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">商品名</th>
+            <th class="pad_s_ball">売上番号</th>
+            <th class="pad_s_ball">売上日</th>
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">数量</th>
+            <th class="pad_s_ball">売上金額</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U001</td>
+            <td class="pad_s_ball">2006-02-10</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">7,500</td></tr>
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball r">10</td>
+            <td class="pad_s_ball r">15,000</td></tr>
+          <tr style="color:white;background-color:red;">
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball">&nbsp;</td>
+            <td class="pad_s_ball">&nbsp;</td>
+            <td class="pad_s_ball r">&nbsp;</td>
+            <td class="pad_s_ball r">&nbsp;</td><td></td></tr>
+          <tr>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball r">5</td>
+            <td class="pad_s_ball r">5,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U002</td>
+            <td class="pad_s_ball">2006-02-25</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">2</td>
+            <td class="pad_s_ball r">4,000</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball">U003</td>
+            <td class="pad_s_ball">2006-03-05</td>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball r">8</td>
+            <td class="pad_s_ball r">16,000</td></tr>
+        </tbody>
+        </table>
+        <p><input type="button" onclick="detailson('chap08_04_a05')" value="正解" /></p>
+      </div>
+      <div id="chap08_04_a05" style="display:none;">
+        <p />
+        <p class="anslist">射影：ア</p>
+        <table class="tbl">
+        <thead>
+          <tr style="color:black;background-color:white;">
+            <th class="pad_s_ball">商品番号</th>
+            <th class="pad_s_ball">商品名</th>
+            <th class="pad_s_ball">数量</th></tr>
+        </thead>
+        <tbody class="c">
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">5</td></tr>
+          <tr>
+            <td class="pad_s_ball">S101</td>
+            <td class="pad_s_ball">A</td>
+            <td class="pad_s_ball r">10</td></tr>
+          <tr>
+            <td class="pad_s_ball">S102</td>
+            <td class="pad_s_ball">B</td>
+            <td class="pad_s_ball r">&nbsp;</td></tr>
+          <tr>
+            <td class="pad_s_ball">S103</td>
+            <td class="pad_s_ball">C</td>
+            <td class="pad_s_ball r">5</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">2</td></tr>
+          <tr>
+            <td class="pad_s_ball">S104</td>
+            <td class="pad_s_ball">D</td>
+            <td class="pad_s_ball r">8</td></tr>
+        </tbody>
+        </table>
+      </div>
+  </div>
+  <div id="chap08_05" class="chap">
+      <h4>SQL問題(5)</h4>
+      <div class="quiz">
+        “商品”表、”在庫”表に対する次のSQL文の結果と同じ結果が得られるSQL文はどれか。
+        ここで、下線部は主キーを表す。
+        <pre class="f">
+SELECT  商品番号 FROM 商品
+     WHERE 商品番号 NOT IN (SELECT 商品番号 FROM 在庫)
+        </pre>
+        <p>
+          <table class="tbl" style="float:left;margin-right:20px;">
+            <caption style="text-align:left;">商品</caption>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball"><u>商品番号</u></td>
+              <td class="pad_s_ball">商品名</td>
+              <td class="pad_s_ball">単価</td></tr>
+          </tbody>
+          </table></p>
+          <table class="tbl">
+            <caption style="text-align:left;">在庫</caption>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball"><u>倉庫番号</u></td>
+              <td class="pad_s_ball"><u>商品番号</u></td>
+              <td class="pad_s_ball">在庫数</td></tr>
+          </tbody>
+          </table>
+        </p>
+        <p class="selectlistsql">ア　SELECT 商品番号 FROM 在庫<br />
+                        WHERE EXISTS (SELECT 商品番号 FROM 商品)</p>
+        <p class="selectlistsql">イ　SELECT 商品番号 FROM 在庫<br />
+                        WHERE NOT EXISTS (SELECT 商品番号 FROM 商品)</p>
+        <p class="selectlistsql">ウ SELECT 商品番号 FROM 商品<br />
+                        WHERE EXISTS (SELECT 商品番号 FROM 在庫<br />
+                        WHERE 商品.商品番号 = 在庫.商品番号)</p>
+        <p class="selectlistsql">エ　SELECT 商品番号 FROM 商品<br />
+                        WHERE NOT EXISTS (SELECT 商品番号 FROM 在庫<br />
+                        WHERE 商品.商品番号 = 	在庫.商品番号）</p>
+      </div>
+      <p><input type="button" onclick="detailson('chap08_05_a01')" value="解説" /></p>
+      <div id="chap08_05_a01" style="display:none;">
+        <p class="sqlp1" style="border:solid;border-color:red;">
+           副問合せ(SELECT 商品番号 FROM 在庫)は、在庫にある商品番号を抽出している。<br />
+           主問い合わせは、NOT IN (副問合せ)であるので、在庫に無い商品を抽出している。
+        </p>
+        <p><input type="button" onclick="detailson('chap08_05_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap08_05_a02" style="display:none;">
+        <p class="selectlistsql" style="border:solid;">
+            ア　SELECT 商品番号 FROM 在庫<br />
+                WHERE EXISTS (SELECT 商品番号 FROM 商品)<br /><br />
+            副問合せが(SELECT 商品番号 FROM 商品)なので、商品表に行があれば、<br />
+            EXISTS句は常にTRUEとなり、在庫表にあるすべての商品番号が抽出される。<br />
+            →×</p>
+        </p>
+        <p><input type="button" onclick="detailson('chap08_05_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap08_05_a03" style="display:none;">
+        <p class="selectlistsql" style="border:solid;">
+            イ　SELECT 商品番号 FROM 在庫<br />
+                WHERE NOT EXISTS (SELECT 商品番号 FROM 商品)<br /><br />
+            副問合せが(SELECT 商品番号 FROM 商品)なので、商品表に行があれば、<br />
+            NOT EXISTS句は常にFALSEとなり、在庫表から何も抽出されない。<br />
+            →×</p>
+        </p>
+        <p><input type="button" onclick="detailson('chap08_05_a04')" value="(4)" /></p>
+      </div>
+      <div id="chap08_05_a04" style="display:none;">
+        <p class="selectlistsql" style="border:solid;">
+            ウ SELECT 商品番号 FROM 商品<br />
+               WHERE EXISTS (SELECT 商品番号 FROM 在庫<br />
+                       WHERE <u>商品.商品番号</u> = 在庫.商品番号)<br /><br />
+            相関副問合せにより、商品表にある商品番号と同じ商品番号が在庫表に存在すれば
+            EXISTS句はTRUEとなる。<br />
+            商品表のうち、在庫表に存在する商品番号を抽出している。<br />
+            →×</p>
+         </p>
+        <p><input type="button" onclick="detailson('chap08_05_a05')" value="(5)" /></p>
+      </div>
+      <div id="chap08_05_a05" style="display:none;">
+        <p class="selectlistsql" style="border:solid;">
+            エ　SELECT 商品番号 FROM 商品<br />
+                WHERE NOT EXISTS (SELECT 商品番号 FROM 在庫<br />
+                        WHERE 商品.商品番号 = 	在庫.商品番号）<br /><br />
+            相関副問合せにより、商品表にある商品番号と同じ商品番号が在庫表に存在しなければば
+            NOT EXISTS句はTRUEとなる。<br />
+            商品表のうち、在庫表に存在しない商品番号を抽出している。<br />
+            →正解。</p>
+      </div>
+  </div>
+</div><!-- campus -->
+
+<script text/script="javascript">
+var curpname ='';
+var cursubpname = '';
+var curbtn;
+var cursubbtns = [];
+var defbtncolor = null;
+var defbtnbgcolor = null;
+var defsubbtncolor = null;
+var defsubbtnbgcolor = null;
+var pagename = 'feaux';
+var subpagename = 'feaux';
+
+function setpagename(apage, asubpage)
+{
+  pagename = apage;
+  subpagename = asubpage;
+}
+
+function changepage(tNameSelf, tNameNext)
+{
+  tMenu = document.all[tNameSelf].style.display = "none";
+  tMenu = document.all[tNameNext].style.display = "block";
+  curpname = tNaneNext;
+}
+function disppage(tChap, tQ)
+{
+  var tChaps, tQs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' +tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  idname = tChaps + '_' + tQs;
+  tNameSelf = pagename + idname;
+  if (curpname != '') {
+      tMenu = document.all[curpname];
+      if (tMenu != null) {
+          tMenu.style.display = "none";
+      }
+  }
+  tMenu = document.all[tNameSelf];
+  if (tMenu != null) {
+      tMenu.style.display = "block";
+  }
+  curpname = tNameSelf;
+
+  if (curbtn != null) {
+    curbtn.style.color = defbtncolor;
+    curbtn.style.backgroundColor = defbtnbgcolor;
+  }
+  var btn = document.all['B' + idname];
+  if (btn != null) {
+    if (curbtn == null && defbtncolor == null) {
+      defbtncolor = btn.style.color;
+      defbtnbgcolor = btn.style.backgroundColor;
+    }
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    curbtn = btn;
+  }
+}
+function dispsubpage(tChap, tQ, tN)
+{
+  var tChaps, tQs, tNs;
+  tChaps = (tChap < 10) ? '0' + tChap : '' + tChap;
+  tQs = (tQ < 10) ? '0' + tQ : '' + tQ;
+  tNs = (tN < 10) ? '0' + tN : '' + tN;
+  var pid = tChaps + '_' + tQs + '_' + tNs;
+  var subdiv = subpagename + pid;
+  if (cursubpname != '') {
+    if (cursubpname == subdiv) {
+        return;
+    }
+    tMenu = document.all[cursubpname].style.display = "none";
+  }
+  tMenu = document.all[subdiv].style.display = "block";
+  cursubpname = subdiv;
+
+  var cursubbtn = cursubbtns[tQ];
+  if (cursubbtn != null && defsubbtncolor == null) {
+     cursubbtn.style.color = defsubbtncolor;
+     cursubbtn.style.backgroundColor = defsubbtnbgcolor;
+  }
+  var subbtnid = "B" + pid;
+  var subbtn = document.all[subbtnid];
+  if (subbtn != null) {
+    subbtn.style.color = "white";
+    subbtn.style.backgroundColor = "red";
+    cursubbtns[tQ] = subbtn;
+  }
+}
+
+var onlist = [];
+
+function detailson(qlist)
+{
+     var n;
+     var t;
+     var s;
+     var x;
+
+     x = 0;
+     n = onlist.length;
+     for (var i = 0; i < n; i++) {
+        var s = onlist[i];
+        if (s == qlist) {
+            t = document.all[qlist];
+            if (t != null) {
+                t.style.display = 'none';
+            }
+            onlist.splice(i, 1);
+            x = 1;
+            break;
+        }
+     }
+     if (x == 0) {
+        t = document.all[qlist];
+        if (t != null) {
+            onlist.push(qlist);
+            t.style.display = 'block';
+        }
+     }
+}
+</script>
+<script text/script="javascript">
+    setpagename('chap', 'chap');
+</script>
+</body>
+</html>

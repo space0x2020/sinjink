@@ -1,0 +1,1433 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Complement</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+補数<br />
+<input type="button" id="B01_01" onclick="disppage(1, 1);" value="1" />
+<input type="button" id="B01_02" onclick="disppage(1, 2);" value="2" />
+<input type="button" id="B01_03" onclick="disppage(1, 3);" value="3" />
+<input type="button" id="B01_04" onclick="disppage(1, 4);" value="4" />
+<input type="button" id="B01_05" onclick="disppage(1, 5);" value="5" />
+<input type="button" id="B01_06" onclick="disppage(1, 6);" value="6" />
+<input type="button" id="B01_07" onclick="disppage(1, 7);" value="7" />
+<input type="button" id="B01_08" onclick="disppage(1, 8);" value="8" />
+<input type="button" id="B01_09" onclick="disppage(1, 9);" value="9" />
+<input type="button" id="B01_10" onclick="disppage(1, 10);" value="10" />
+<input type="button" id="B01_11" onclick="disppage(1, 11);" value="11" />
+<input type="button" id="B01_12" onclick="disppage(1, 12);" value="12" />
+<input type="button" id="B01_13" onclick="disppage(1, 13);" value="13" />
+</div>
+
+
+<div id="cpbasecomplement01_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 補数</h3></div>
+<div class="pagebody">
+<p class="plist">
+桁数が有限であることが重要
+<table class="tbl" border="0">
+<tbody class="c">
+  <tr>
+    <td class="pad_s" width="40"></td>
+    <td class="pad_s btl" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s bt" style="border-color:red;" width="40">1</td>
+    <td class="pad_s btr" style="border-color:red;" width="40">1</td>
+    <td class="pad_s" width="40"></td>
+    <td class="pad_s bt bl br" width="40"><span style="color:red;">?</span></td>
+</tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s bl "style="border-color:red;">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s br" style="border-color:red;">1</td>
+    <td class="pad_s"></td>
+    <td class="pad_s bl br">1</td></tr>
+  <tr>
+    <td class="pad_s bt">1</td>
+    <td class="pad_s bt bl bb" style="border-left-color:red;border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bt bb" style="border-bottom-color:red;">0</td>
+    <td class="pad_s bbr bt"  style="border-bottom-color:red;border-right-color:red;">0</td>
+    <td class="pad_s bt"></td>
+    <td class="pad_s btl bbr">0</td></tr>
+</tbody>
+</table>
+
+<p />
+<table class="tbl" border="0">
+<tbody class="c">
+  <tr>
+    <td class="pad_s">1 1 1 1 1 1 1 1</td>
+    <td class="pad_s" width="30">+</td>
+    <td class="pad_s">0 0 0 0 0 0 0 1</td>
+    <td class="pad_s" width="30">=</td><td>0 0 0 0 0 0 0 0</td></tr>
+  <tr>
+    <td class="pad_s"><span stype="color:red;">?</span></td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">0</td></tr>
+  <tr>
+    <td class="pad_s">-1</td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">0</td></tr>
+</tbody>
+</table>
+<p class="plist">
+すべての桁が 1 である 1111111 という２進数は、－１を表している。
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 補数：桁数が有限であることが重要</h3></div>
+<div class="pagebody">
+<p class="plist">
+補数: n進数には２つある。</p>
+<p class="plist3">(1)  (n-1)の補数</p>
+<p class="plist3">(2)  nの補数</p>
+
+<p />
+<p class="plist">
+10進数で考えると、</p>
+<p class="plist3">(1)  9の補数</p>
+<p class="plist3">(2)  10の補数</p>
+<p class="plist">
+がある。</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 補数(2)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+(1) (n-1)の補数<br />
+<u>ある桁数</u>の n進数で  (n-1)の補数とは、このある数に足すと<u>その桁数</u>で一番大きい数になる数。<br />
+<u>その桁数で一番大きい数－ある数＝ある数に対する(n-1)の補数。</u><br />
+<br />
+例：<u>1桁</u>の10進数 ３に対する９の補数は、6  (3+6=9)<br />
+       １桁の１０進数で一番大きい数は、９→ 9-3=6
+</p>
+<p />
+<p class="bplist">
+(2) nの補数<br />
+<u>ある桁数</u>の n進数で  n の補数とは、このある数に足すと桁上がりする数で一番小さい数。<br />
+<u>(n-1)の補数に１を足したもの。</u><br />
+<br />
+例：1桁の10進数３に対する１０の補数は、 7  (3+7=10)
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 補数(3)</h3></div>
+<div class="pagebody">
+<p class="plist">
+10進数<span style="font-size:180%;">1桁</span>の10の補数</p>
+
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="40">1</td>
+    <td class="pad_s_ball" width="40">9</td>
+    <td class="pad_s_ball" width="50">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball" width="40">1</td>
+    <td class="pad_s_ball" width="40">9</td>
+    <td class="pad_s_ball" width="50">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball" width="40">1</td>
+    <td class="pad_s_ball" width="40">9(-1)</td>
+    <td class="pad_s_ball" width="50">⇒0</td>
+    <td class="pad_s space">↑</td>
+    <td class="pad_s_ball" width="40">1</td>
+    <td class="pad_s_ball" width="50">9(-1)</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball" width="40">1</td>
+    <td class="pad_s_ball" width="50"></td></tr>
+  <tr>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">8(-2)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space">│</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">8(-2)</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">7(-3)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space">├</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">7(-3)</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">6(-4)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space">│</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">6(-4)</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">5(-5)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space">↓</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">4(-6)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">3(-7)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">2(-8)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball">⇒10</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">1(-9)</td>
+    <td class="pad_s_ball">⇒0</td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">-1</td></tr>
+  <tr>
+    <td class="pad_s nball" colspan="16"></td>
+    <td class="pad_s nball">↑</td>
+  </tr>
+  <tr>
+    <td class="pad_s nball" colspan="11"></td>
+    <td class="pad_s nball r" colspan="6">表現できる範囲：-5 ～ 4</td>
+  </tr>
+</tbody>
+</table>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="250" viewBox="0 0 700 250">
+    <g id="f01_10_fig_1" text-anchor="middle">
+      <line class="ff" x1="0" y1="20" x2="440" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="40" />
+      <line class="ff" x1="400" y1="0" x2="400" y2="40" />
+      <line class="act sw5" x1="230" y1="10" x2="390" y2="10" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L_act" transform="translate(220, 10)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(400, 10)"></use>
+      <text class="ff" x="220,240,260,280,300,320,340,360,380,400" y="50">0123456789</text>
+      <line class="ff" x1="315" y1="55" x2="405" y2="55" />
+      <line class="ff" x1="0" y1="100" x2="440" y2="100" />
+      <line class="ff" x1="120" y1="80" x2="120" y2="120" />
+      <line class="ff" x1="220" y1="80" x2="220" y2="120" />
+      <line class="ff" x1="300" y1="80" x2="300" y2="120" />
+      <line class="act sw5" x1="130" y1="90" x2="290" y2="90" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L_act" transform="translate(120, 90)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R_act" transform="translate(300, 90)"></use>
+      <text class="ff" x="120,140,160,180,200,220,240,260,280,300" y="140">5678901234</text>
+      <line class="ff" x1="115" y1="145" x2="205" y2="145" />
+      <g id="cpbasecomplement01_04_003" transform="translate(360, 60),rotate(30)">
+        <line class="act sw5" x1="10" y1="0" x2="10" y2="75" />
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D_act" transform="translate(10, 85)"></use>
+      </g>
+      <text class="ff" x="120" y="170">-5</text>
+      <text class="ff" x="140" y="170">-4</text>
+      <text class="ff" x="160" y="170">-3</text>
+      <text class="ff" x="180" y="170">-2</text>
+      <text class="ff" x="200" y="170">-1</text>
+      <text class="ff" x="220,240,260,280,300" y="170">01234</text>
+    </g>
+</svg>
+
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 補数(3-2)</h3></div>
+<div class="pagebody">
+<p class="plist">
+10進数<span style="font-size:180%;">1桁</span>の10の補数</p>
+<div class="floatcontents">
+<table class="tbl" style="float:left;margin-right:20px;">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="30">1</td>
+    <td class="pad_s_ball r05" width="50">1</td></tr>
+  <tr>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball r05">2</td></tr>
+  <tr>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball r05">3</td></tr>
+  <tr>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball r05">4</td></tr>
+  <tr>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball r05">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball r05">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball r05">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball r05">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball r05">-1</td></tr>
+</tbody>
+</table>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">
+      例えば、<br />
+      &nbsp;&nbsp;3 +  8    = 1 は、<br />
+      &nbsp;&nbsp;3 + (-2) = 1<br />
+      と考えられる。
+    </td>
+    <td class="pad_s space"></td>
+    <td class="pad_s">
+      減算：<br />
+      &nbsp;&nbsp;3  -   2    = 1 は、<br />
+      &nbsp;&nbsp;3 + (-2)  = 1<br />
+      &nbsp;&nbsp;3 +    8    = 1<br />
+      と考えられる。
+    </td>
+  </tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s space"></td>
+    <td class="pad_s">&nbsp;</td></tr>
+<tr>
+<td class="pad_s" colspan="3">2を引くときは、2に対する10の補数である8を足せばよい</td></tr>
+</tbody>
+</table>
+</div><!-- floatcontents  -->
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_06" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[6] 補数(4) 4桁２進数では:1の補数</h3></div>
+<div class="pagebody">
+<div class="floatcontents">
+<table class="tbl" style="float:right;margin-left:20px;">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="40"></td>
+    <td class="pad_s_ball">1の補数</td>
+    <td class="pad_s_ball" width="40"></td>
+    <td class="pad_s_ball">+</td></tr>
+  <tr>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1111</td>
+    <td class="pad_s_ball">F</td>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball">1111</td></tr>
+</tbody>
+</table>
+
+<p class="bplist">
+(1) 1の補数<br />
+ある桁数の 2進数で 1の補数とは、このある数に足すとその桁数で一番大きい数になる数。その桁数で一番大きい数：
+<pre class="f">
+  　２桁：　11
+  　４桁：  1111
+  　８桁：  11111111
+  　16桁： 1111111111111111
+  その桁すべて 1 の数）
+
+ある数　＋　１の補数 = 最大値
+　　　　　↓
+最大値－ある数＝１の補数
+</pre>
+</p>
+<p />
+<pre class="f">
+4桁2進数では、1の補数は
+１１１１　－　xxxx
+例：1111 – 0011 = 1100
+</pre>
+</div><!-- floatcontents -->
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_07" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[7] 補数(5) 4桁２進数では:2の補数</h3></div>
+<div class="pagebody">
+<p class="bplist">
+(2) 2の補数<br />
+ある桁数の 2進数で 2の補数とは、このある数に足すと桁上がりする数で一番小さい数。１の補数に１を足したもの。</p>
+<div class="floatcontents">
+<table class="tbl" style="float:left;margin-right:20px;">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball bgcp04" width="80"></td>
+    <td class="pad_s_ball bgcp04" width="40"></td>
+    <td class="pad_s_ball bgcp04">2の補数</td>
+    <td class="pad_s_ball bgcp04" width="40"></td>
+    <td class="pad_s_ball bgcp04">+</td>
+    <td class="pad_s_ball">1の補数</td>
+    <td class="pad_s_ball" width="40"></td>
+    <td class="pad_s_ball" width="80"></td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0000</td>
+    <td class="pad_s_ball bgcp04">0</td>
+    <td class="pad_s_ball bgcp04"></td>
+    <td class="pad_s_ball bgcp04"></td>
+    <td class="pad_s_ball bgcp04"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0001</td>
+    <td class="pad_s_ball bgcp04">1</td>
+    <td class="pad_s_ball bgcp04">1111</td>
+    <td class="pad_s_ball bgcp04">F</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0010</td>
+    <td class="pad_s_ball bgcp04">2</td>
+    <td class="pad_s_ball bgcp04">1110</td>
+    <td class="pad_s_ball bgcp04">E</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0011</td>
+    <td class="pad_s_ball bgcp04">3</td>
+    <td class="pad_s_ball bgcp04">1101</td>
+    <td class="pad_s_ball bgcp04">D</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0100</td>
+    <td class="pad_s_ball bgcp04">4</td>
+    <td class="pad_s_ball bgcp04">1100</td>
+    <td class="pad_s_ball bgcp04">C</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0101</td>
+    <td class="pad_s_ball bgcp04">5</td>
+    <td class="pad_s_ball bgcp04">1011</td>
+    <td class="pad_s_ball bgcp04">B</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0110</td>
+    <td class="pad_s_ball bgcp04">6</td>
+    <td class="pad_s_ball bgcp04">1010</td>
+    <td class="pad_s_ball bgcp04">A</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">0111</td>
+    <td class="pad_s_ball bgcp04">7</td>
+    <td class="pad_s_ball bgcp04">1001</td>
+    <td class="pad_s_ball bgcp04">9</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1000</td>
+    <td class="pad_s_ball bgcp04">8</td>
+    <td class="pad_s_ball bgcp04">1000</td>
+    <td class="pad_s_ball bgcp04">8</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1001</td>
+    <td class="pad_s_ball bgcp04">9</td>
+    <td class="pad_s_ball bgcp04">0111</td>
+    <td class="pad_s_ball bgcp04">7</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1010</td>
+    <td class="pad_s_ball bgcp04">A</td>
+    <td class="pad_s_ball bgcp04">0110</td>
+    <td class="pad_s_ball bgcp04">6</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1011</td>
+    <td class="pad_s_ball bgcp04">B</td>
+    <td class="pad_s_ball bgcp04">0101</td>
+    <td class="pad_s_ball bgcp04">5</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1100</td>
+    <td class="pad_s_ball bgcp04">C</td>
+    <td class="pad_s_ball bgcp04">0100</td>
+    <td class="pad_s_ball bgcp04">4</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1101</td>
+    <td class="pad_s_ball bgcp04">D</td>
+    <td class="pad_s_ball bgcp04">0011</td>
+    <td class="pad_s_ball bgcp04">3</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1110</td>
+    <td class="pad_s_ball bgcp04">E</td>
+    <td class="pad_s_ball bgcp04">0010</td>
+    <td class="pad_s_ball bgcp04">2</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball bgcp04">1111</td>
+    <td class="pad_s_ball bgcp04">F</td>
+    <td class="pad_s_ball bgcp04">0001</td>
+    <td class="pad_s_ball bgcp04">1</td>
+    <td class="pad_s_ball bgcp04">10000</td>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball">1111</td></tr>
+</tbody>
+</table>
+<div>
+<pre class="f">
+１の補数：
+　ある数 ＋ １の補数 ＝ 最大値
+　最大値 － ある数 ＝ １の補数
+
+２の補数：
+　１の補数 ＋ 1  =  2の補数
+
+２の補数 ＝ １の補数 ＋ 1
+　　　　 ＝ 最大値 ー ある数 ＋ 1
+　　　　 ＝ (最大値 ＋ 1) － ある数
+
+4桁2進数では、2の補数は
+１００００　－　xxxx
+例：10000 – 0011 = 1101
+</pre>
+</div>
+</div><!-- floatcontents -->
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_08" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[8] 補数(6) 4桁２進数では:2の補数範囲</h3></div>
+<div class="pagebody">
+<p class="plist">
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball" colspan="4">2の補数</td></tr>
+  <tr>
+    <td class="pad_s_ball" width="80">0000</td>
+    <td class="pad_s_ball" width="60">0</td>
+    <td class="pad_s_ball" width="60"></td>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="60"></td>
+    <td class="pad_s_ball" width="60"></td></tr>
+  <tr>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1111</td>
+    <td class="pad_s_ball">F</td>
+    <td class="pad_s_ball bgcp05">-1</td></tr>
+  <tr>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball bgcp05">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball bgcp05">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball bgcp05">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball bgcp05">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball"></td>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball bgcp05">-6</td></tr>
+  <tr>
+    <td class="pad_s_ball" style="border-bottom-width:4px;">0111</td>
+    <td class="pad_s_ball" style="border-bottom-width:4px;">7</td>
+    <td class="pad_s_ball" style="border-bottom-width:4px;"></td>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball bgcp05">-7</td></tr>
+  <tr>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">-8</td>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball">-8</td></tr>
+  <tr>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball bgcp05">-7</td>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball bgcp05">-6</td>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball bgcp05">-5</td>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball bgcp05">-4</td>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball bgcp05">-3</td>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball bgcp05">-2</td>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball"></td></tr>
+  <tr>
+    <td class="pad_s_ball">1111</td>
+    <td class="pad_s_ball">F</td>
+    <td class="pad_s_ball bgcp05">-1</td>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball"></td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_09" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[9] 補数(6) 4桁２進数では:2の補数範囲</h3></div>
+<div class="pagebody">
+<div class="floatcontents">
+<table class="tbl" style="float:left;margin-right:50px;">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball"   width="80"></td>
+    <td class="pad_s_ball bgcp04" width="80"></td>
+    <td class="pad_s_ball bgcp05" width="80">2の<br />補数</td></tr>
+  <tr>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball bgcp04">0</td>
+    <td class="pad_s_ball r10 bgcp05">0</td></tr>
+  <tr>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball bgcp04">1</td>
+    <td class="pad_s_ball r10 bgcp05">1</td></tr>
+  <tr>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball bgcp04">2</td>
+    <td class="pad_s_ball r10 bgcp05">2</td></tr>
+  <tr>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball bgcp04">3</td>
+    <td class="pad_s_ball r10 bgcp05">3</td></tr>
+  <tr>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball bgcp04">4</td>
+    <td class="pad_s_ball r10 bgcp05">4</td></tr>
+  <tr>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball bgcp04">5</td>
+    <td class="pad_s_ball r10 bgcp05">5</td></tr>
+  <tr>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball bgcp04">6</td>
+    <td class="pad_s_ball r10 bgcp05">6</td></tr>
+  <tr>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball bgcp04">7</td>
+    <td class="pad_s_ball r10 bgcp05">7</td></tr>
+  <tr>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball bgcp04">8</td>
+    <td class="pad_s_ball r10 bgcp05">-8</td></tr>
+  <tr>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball bgcp04">9</td>
+    <td class="pad_s_ball r10 bgcp05">-7</td></tr>
+  <tr>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball bgcp04">A</td>
+    <td class="pad_s_ball r10 bgcp05">-6</td></tr>
+  <tr>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball bgcp04">B</td>
+    <td class="pad_s_ball r10 bgcp05">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball bgcp04">C</td>
+    <td class="pad_s_ball r10 bgcp05">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball bgcp04">D</td>
+    <td class="pad_s_ball r10 bgcp05">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball bgcp04">E</td>
+    <td class="pad_s_ball r10 bgcp05">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball">1111</td>
+    <td class="pad_s_ball bgcp04">F</td>
+    <td class="pad_s_ball r10 bgcp05">-1</td></tr>
+</tbody>
+</table>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s g"></td>
+    <td class="pad_s">表現できる範囲： 0 ～ F(15)</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s bgcp05">2の補数</td>
+    <td class="pad_s">表現できる範囲： -8 ～ 7</td>
+    <td class="pad_s">-2<sup>3</sup>～2<sup>3</sup> - 1</td><tr>
+</table>
+</tbody>
+<div style=" vertical-align: middle;">
+<p />
+<p class="plist" style="font-size:180%;">
+n桁なら、<br /><br /><br />
+-2<sup>(n - 1)</sup> ～ 2<sup>(n - 1)</sup> - 1
+</p>
+</div>
+</div><!-- floatcontents -->
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_10" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[10] 補数(7) －１</h3></div>
+<div class="pagebody">
+<div class="floatcontents">
+<table class="tbl" style="float:left;margin-right:50px;">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="80">2の<br />補数</td></tr>
+  <tr>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball r10">0</td></tr>
+  <tr>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball r10">1</td></tr>
+  <tr>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball r10">2</td></tr>
+  <tr>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball r10">3</td></tr>
+  <tr>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball r10">4</td></tr>
+  <tr>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball r10">5</td></tr>
+  <tr>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball r10">6</td></tr>
+  <tr>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball r10">7</td></tr>
+  <tr>
+    <td class="pad_s_ball">1000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball r10">-8</td></tr>
+  <tr>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball r10">-7</td></tr>
+  <tr>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball r10">-6</td></tr>
+  <tr>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball r10">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball r10">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball r10">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball r10">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball g">1111</td>
+    <td class="pad_s_ball bgcp04">F</td>
+    <td class="pad_s_ball r10 bgcp04">-1</td></tr>
+</tbody>
+</table>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">4ビット：</td>
+    <td class="pad_s c" width="60"> -1</td>
+    <td class="pad_s">1111</td></tr>
+  <tr>
+    <td class="pad_s">8ビット：</td>
+    <td class="pad_s c"> -1</td>
+    <td class="pad_s">11111111</td></tr>
+  <tr>
+    <td class="pad_s">16ビット：</td>
+    <td class="pad_s c"> -1</td>
+    <td class="pad_s">1111111111111111</td></tr>
+  <tr>
+    <td class="pad_s">32ビット：</td>
+    <td class="pad_s c"> -1</td>
+    <td class="pad_s">11111111111111111111111111111111</td></tr>
+<?tbody>
+</table>
+</div><!-- floatcontents -->
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_11" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[11] 補数(8) 反転して１</h3></div>
+<div class="pagebody">
+<div class="floatcontents">
+<div style="float:left;margin-right:30px;">
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="60"></td>
+    <td class="pad_s_ball" width="60"></td>
+    <td class="pad_s_ball" width="70">×</td>
+    <td class="pad_s_ball" width="70">2の補数</td>
+    <td class="pad_s_ball" width="70">1の補数</td></tr>
+  <tr>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball r10">0</td>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">0000</td>
+    <td class="pad_s_ball">1111</td></tr>
+  <tr>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball r10">-1</td>
+    <td class="pad_s_ball">0001</td>
+    <td class="pad_s_ball">1111</td>
+    <td class="pad_s_ball">1110</td></tr>
+  <tr>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball r10">-2</td>
+    <td class="pad_s_ball">0010</td>
+    <td class="pad_s_ball">1110</td>
+    <td class="pad_s_ball">1101</td></tr>
+  <tr>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball r10">-3</td>
+    <td class="pad_s_ball">0011</td>
+    <td class="pad_s_ball">1101</td>
+    <td class="pad_s_ball">1100</td></tr>
+  <tr>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball r10">-4</td>
+    <td class="pad_s_ball">0100</td>
+    <td class="pad_s_ball">1100</td>
+    <td class="pad_s_ball">1011</td></tr>
+  <tr>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball r10">-5</td>
+    <td class="pad_s_ball">0101</td>
+    <td class="pad_s_ball">1011</td>
+    <td class="pad_s_ball">1010</td></tr>
+  <tr>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball r10">-6</td>
+    <td class="pad_s_ball">0110</td>
+    <td class="pad_s_ball">1010</td>
+    <td class="pad_s_ball">1001</td></tr>
+  <tr>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball r10">-7</td>
+    <td class="pad_s_ball">0111</td>
+    <td class="pad_s_ball">1001</td>
+    <td class="pad_s_ball">1000</td></tr>
+</tbody>
+</table>
+</div>
+<div style="float:left;width:600px">
+<p class="plist ball" style="width:110px;">2の補数</p>
+ある桁数の 2進数で 2の補数とは、このある数に足すと桁上がりする数で一番小さい数。１の補数に１を足したもの。</p>
+<p class="plist ball" style="width:110px;">1の補数</p>
+ある桁数の 2進数で 1の補数とは、このある数に足すとその桁数で一番大きい数になる数。の桁数で一番大きい数：すべての桁が１。
+<pre class="f">x  +  １の補数 = 1111
+	→ 1111 – x = 1の補数
+</pre>
+</p>
+</div>
+</div><!-- floatcontents -->
+<div class="floatclear"></div>
+<table class="tbl">
+<caption style="text-align:left;">0010(2) の１の補数を求める</caption>
+<tbody class="c">
+  <tr>
+    <td class="pad_S"></td>
+    <td class="pad_S" width="30">1</td>
+    <td class="pad_S" width="30">1</td>
+    <td class="pad_S" width="30">1</td>
+    <td class="pad_S" width="30">1</td>
+    <td class="pad_S">15(10)</td>
+    <td class="pad_S">0</td>
+    <td class="pad_S">0</td>
+    <td class="pad_S">1</td>
+    <td class="pad_S">0</td></tr>
+  <tr>
+    <td class="pad_S">－</td>
+    <td class="pad_S">0</td>
+    <td class="pad_S">0</td>
+    <td class="pad_S">1</td>
+    <td class="pad_S">0</td>
+    <td class="pad_S">2(10)</td>
+    <td class="pad_S" colspan="4">↓ビットを反転</td></tr>
+  <tr>
+    <td class="pad_S bt"></td>
+    <td class="pad_S bt">1</td>
+    <td class="pad_S bt">1</td>
+    <td class="pad_S bt">0</td>
+    <td class="pad_S bt">1</td>
+    <td class="pad_S">←結果が同じ→</td>
+    <td class="pad_S bt">1</td>
+    <td class="pad_S bt">1</td>
+    <td class="pad_S bt">0</td>
+    <td class="pad_S bt">1</td></tr>
+</tbody>
+</table>
+<p />
+<table class="tbl ball">
+<tbody>
+  <tr>
+    <td class="pad_s">⇒</td>
+    <td class="pad_s">　１の補数　</td>
+    <td class="pad_s">＝</td>
+    <td class="pad_s">　ビットを反転</td></tr>
+  <tr>
+    <td class="pad_s">&nbsp;</td></tr>
+  <tr>
+    <td class="pad_s">⇒</td>
+    <td class="pad_s">　２の補数　</td>
+    <td class="pad_s">＝</td>
+    <td class="pad_s">　１の補数　＋　１</td></tr>
+  <tr>
+    <td class="pad_s" colspan="2">　　　　　　　</td>
+    <td class="pad_s">＝</td>
+    <td class="pad_s">　ビットを反転　＋　１</td></tr>
+</tbody>
+</table>
+
+<div class="floatclear"></div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbasecomplement01_12" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[12] 補数(9) 符号ビット</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="80"></td>
+    <td class="pad_s_ball" width="80">2の<br />補数</td>
+    <td class="pad_s nball"></td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>000</td>
+    <td class="pad_s_ball">0</td>
+    <td class="pad_s_ball r10 bgcp04">0</td>
+    <td class="pad_s nball l vam" rowspan="7">　正の数：最上位ビットが０</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>001</td>
+    <td class="pad_s_ball">1</td>
+    <td class="pad_s_ball r10 bgcp04">1</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>010</td>
+    <td class="pad_s_ball">2</td>
+    <td class="pad_s_ball r10 bgcp04">2</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>011</td>
+    <td class="pad_s_ball">3</td>
+    <td class="pad_s_ball r10 bgcp04">3</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>100</td>
+    <td class="pad_s_ball">4</td>
+    <td class="pad_s_ball r10 bgcp04">4</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>101</td>
+    <td class="pad_s_ball">5</td>
+    <td class="pad_s_ball r10 bgcp04">5</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>110</td>
+    <td class="pad_s_ball">6</td>
+    <td class="pad_s_ball r10 bgcp04">6</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">0</span>111</td>
+    <td class="pad_s_ball">7</td>
+    <td class="pad_s_ball r10 bgcp04">7</td>
+    <td class="pad_s nball l vam" rowspan="2">　最上位ビットを符号ビットということもある。</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>000</td>
+    <td class="pad_s_ball">8</td>
+    <td class="pad_s_ball r10 bgcp05">-8</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>001</td>
+    <td class="pad_s_ball">9</td>
+    <td class="pad_s_ball r10 bgcp05">-7</td>
+    <td class="pad_s nball l vam" rowspan="7">　負の数：最上位ビットが１</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>010</td>
+    <td class="pad_s_ball">A</td>
+    <td class="pad_s_ball r10 bgcp05">-6</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>011</td>
+    <td class="pad_s_ball">B</td>
+    <td class="pad_s_ball r10 bgcp05">-5</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>100</td>
+    <td class="pad_s_ball">C</td>
+    <td class="pad_s_ball r10 bgcp05">-4</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>101</td>
+    <td class="pad_s_ball">D</td>
+    <td class="pad_s_ball r10 bgcp05">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>110</td>
+    <td class="pad_s_ball">E</td>
+    <td class="pad_s_ball r10 bgcp05">-2</td></tr>
+  <tr>
+    <td class="pad_s_ball"><span style="color:red;">1</span>111</td>
+    <td class="pad_s_ball">F</td>
+    <td class="pad_s_ball r10 bgcp05">-1</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="cpbasecomplement01_13" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[13] 補数(10) 符号拡張</h3></div>
+<div class="pagebody">
+<p class="plist">
+例えば、各ビット長でのー３
+<p>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s_ball" width="110">4ビット</td>
+    <td class="pad_s_ball r">1101</td>
+    <td class="pad_s_ball c" width="50">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">8ビット</td>
+    <td class="pad_s_ball r">11111101</td>
+    <td class="pad_s_ball c">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">16ビット</td>
+    <td class="pad_s_ball r">1111111111111101</td>
+    <td class="pad_s_ball c">-3</td></tr>
+  <tr>
+    <td class="pad_s_ball">32ビット</td>
+    <td class="pad_s_ball r">11111111111111111111111111111101</td>
+    <td class="pad_s_ball c">-3</td></tr>
+</tbody>
+</table>
+
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">　</td>
+    <td class="pad_s c">CPU</td>
+    <td class="pad_s">　</td>
+    <td class="pad_s" width="40"></td>
+    <td class="pad_s">　</td>
+    <td class="pad_s c">メモリ</td>
+    <td class="pad_s">　</td>
+  </tr>
+  <tr>
+    <td class="pad_s btl"></td>
+    <td class="pad_s bt">演算装置：Register(32ビット)</td>
+    <td class="pad_s btr"></td>
+    <td class="pad_s"></td>
+    <td class="pad_s btl"></td>
+    <td class="pad_s bt"></td>
+    <td class="pad_s btr"></td>
+   </tr>
+  <tr>
+    <td class="pad_s bl"></td>
+    <td class="pad_s ball">00000000000000000000000011111101</td>
+    <td class="pad_s br"></td>
+    <td class="pad_s" align="center">←</td>
+    <td class="pad_s bl"></td>
+    <td class="pad_s ball">11111101</td>
+    <td class="pad_s br"></td>
+  </tr>
+  <tr>
+    <td class="pad_s bbl">　</td>
+    <td class="pad_s bb"></td>
+    <td class="pad_s bbr"></td>
+    <td class="pad_s"></td>
+    <td class="pad_s bbl"></td>
+    <td class="pad_s bb"></td>
+    <td class="pad_s bbr"></td>
+  </tr>
+</tbody>
+</table>
+
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">　</td>
+    <td class="pad_s c">CPU</td>
+    <td class="pad_s">　</td>
+    <td class="pad_s" width="40"></td>
+    <td class="pad_s">　</td>
+    <td class="pad_s c">メモリ</td>
+    <td class="pad_s">　</td>
+  </tr>
+  <tr>
+    <td class="pad_s btl"></td>
+    <td class="pad_s bt">演算装置：Register(32ビット)</td>
+    <td class="pad_s btr"></td>
+    <td class="pad_s"></td>
+    <td class="pad_s btl"></td>
+    <td class="pad_s bt"></td>
+    <td class="pad_s btr"></td>
+ </tr>
+  <tr>
+    <td class="pad_s bl"></td>
+    <td class="pad_s ball"><span style="color:red">111111111111111111111111</span>11111101</td>
+    <td class="pad_s br"></td>
+    <td class="pad_s" align="center">←</td>
+    <td class="pad_s bl"></td>
+    <td class="pad_s ball"><span style="color:red;">1</span>1111101</td>
+    <td class="pad_s br"></td>
+  </tr>
+  <tr>
+    <td class="pad_s bbl">　</td>
+    <td class="pad_s bb" align="center">符号拡張</td>
+    <td class="pad_s bbr"></td>
+    <td class="pad_s"></td>
+    <td class="pad_s bbl"></td>
+    <td class="pad_s bb"></td>
+    <td class="pad_s bbr"></td>
+  </tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbasecomplement", "cpbasecomplementsub");
+</script>
+</body>
+</html>

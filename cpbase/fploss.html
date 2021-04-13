@@ -1,0 +1,262 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>誤差</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+誤差<br />
+<input type="button" id="B07_01" onclick="disppage(7, 1);" value="1" />
+<input type="button" id="B07_02" onclick="disppage(7, 2);" value="2" />
+<input type="button" id="B07_03" onclick="disppage(7, 3);" value="3" />
+<input type="button" id="B07_04" onclick="disppage(7, 4);" value="4" />
+<input type="button" id="B07_05" onclick="disppage(7, 5);" value="5" />
+</div>
+
+
+<div id="cpbase07_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 誤差の種類</h3></div>
+<div class="pagebody">
+<p class="plist"><u>打ち切り誤差</u></p>
+<p class="plist1">
+コンピュータで扱える数値の範囲には、限界があります。したがって、1/3 = 0.333・・・のような循環小数や、√2= 1.4142135・・・のように永遠に続く数は、どこかで打ち切られます。この打ち切りによって生じる誤差を「打ち切り誤差」と呼びます。<br />
+無限または数多くの回数の演算をある有限回の演算で打ち切るときに発生 する誤差。
+</p>
+
+<p />
+<p class="plist"><u>丸め誤差</u></p>
+<p class="plist1">
+小数点以下の何桁目かで、四捨五入、切捨て、切上げを行う場合があります。この際に生じる誤差を「丸め誤差」と呼びます。「丸め」は、四捨五入、切捨て、切上げを総称する言葉です。</p>
+
+<p />
+<p class="plist"><u>情報落ち</u></p>
+<p class="plist1">
+浮動小数点形式で、極端に大きな値に、極端に小さな値の加算または減算を行った場合、極端に小さい値の一部または全部が演算結果に反映されないことがあります。これを「情報落ち」と呼びます。</p>
+
+<p />
+<p class="plist"><u>桁落ち</u></p>
+<p class="plist1">
+浮動小数点形式で、値の近い２つの数の減算を行うと、有効桁数が減少することがあります。これを「桁落ち」と呼びます。</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 情報落ち(1)</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s r">1230000000</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000456</td></tr>
+  <tr>
+    <td class="pad_s bt" colspan="3">↓大きな値に指数を合わせる</td></tr>
+</tbody>
+</table>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s">0.123</td>
+    <td class="pad_s">× 10<sup>10</sup></td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s">0.000000000000000000456</td>
+    <td class="pad_s">× 10<sup>10</sup></td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s bt" colspan="2">0.123000000000000000456</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s" colspan="2">0.12300000000000000045</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s" colspan="2">0.1230000000000000004</td></tr>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s" colspan="2">0.123000000000000000</td></tr>
+</tbody>
+</table>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 情報落ち(2)</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s r">1230000000</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000456</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000789</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000345</td></tr>
+  <tr>
+    <td class="pad_s bb">+</td>
+    <td class="pad_s r bb">0</td>
+    <td class="pad_s bb">.00000000345</td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">先に大きい数値を使うと、</p>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s r">1230000000</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000456</td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s r bt">1230000000</td>
+    <td class="pad_s bt">.00000000</td><td>　　情報落ち</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000789</td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s r bt">1230000000</td>
+    <td class="pad_s bt">.00000000</td><td>　　情報落ち</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000345</td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s r bt">1230000000</td>
+    <td class="pad_s bt">.00000000</td><td>　　情報落ち</td></tr>
+<?tbody>
+</table>
+<p class="plist">となってしまう。</p>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 情報落ち(3)</h3></div>
+<div class="pagebody">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s r" width="150">1230000000</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000456</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000789</td></tr>
+  <tr>
+    <td class="pad_s bb">+</td>
+    <td class="pad_s r bb">0</td>
+    <td class="pad_s bb">.00000000345</td></tr>
+</tbody>
+</table>
+<p />
+<p class="plist">このような場合は、先に小さい数値の計算を先に行う。</p>
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s"></td>
+    <td class="pad_s r" width="150">0</td>
+    <td class="pad_s">.00000000456</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000789</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">0</td>
+    <td class="pad_s">.00000000345</td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s r bt">0</td>
+    <td class="pad_s bt">.00000001590</td></tr>
+  <tr>
+    <td class="pad_s">+</td>
+    <td class="pad_s r">1230000000</td>
+    <td class="pad_s">.00000000000</td></tr>
+  <tr>
+    <td class="pad_s bt"></td>
+    <td class="pad_s r bt">1230000000</td>
+    <td class="pad_s bt">.00000001</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase07_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 桁落ち</h3></div>
+<div class="pagebody">
+<p class="plist">桁落ち</p>
+<p class="plist1">
+<table class="tbl" cellpadding="10">
+<tbody>
+  <tr>
+    <td class="pad_s">0.1234</td>
+    <td class="pad_s">-</td>
+    <td class="pad_s">0.1231</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">0.0003</td>
+    <td class="pad_s"></td></tr>
+  <tr class="c">
+    <td class="pad_s">4</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">4</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">←有効桁数</td></tr>
+  <tr>
+    <td class="pad_s" colspan="5">0.3000 × 10<sup>-3</sup></td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

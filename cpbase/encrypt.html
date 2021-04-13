@@ -1,0 +1,526 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>ENCRYPT</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+暗号化<br />
+<input type="button" id="B05_01" onclick="disppage(5, 1);" value="1" />
+<input type="button" id="B05_02" onclick="disppage(5, 2);" value="2" />
+<input type="button" id="B05_03" onclick="disppage(5, 3);" value="3" />
+<input type="button" id="B05_04" onclick="disppage(5, 4);" value="4" />
+<input type="button" id="B05_05" onclick="disppage(5, 5);" value="5" />
+<input type="button" id="B05_06" onclick="disppage(5, 6);" value="6" />
+<input type="button" id="B05_07" onclick="disppage(5, 7);" value="7" />
+<input type="button" id="B05_08" onclick="disppage(5, 8);" value="8" />
+<input type="button" id="B05_09" onclick="disppage(5, 9);" value="9" />
+</div>
+
+<div id="svgdefs05" style="display:none;">
+<svg>
+  <defs>
+    <linearGradient id="gd0" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="gold"/>
+        <stop offset="0.8" stop-color="white"/>
+    </linearGradient>
+    <g id="key" transform="scale(0.5,0.5)">
+      /*<path d="M0 10 H50 A 20,20,0,1,1,50,20 L 40 20 V 30 H 35 V 20 H 30 V30 H23 V 25 H 18 V 30 H 10 L7 20 H 0z M60 15 A 10,10,0,0,0,80,15 A 10,10,0,0,0,60,15" fill="url(#gd0)" fill-rule="nonzero"/>*/
+      <path class="ff actf" d="M0 10 H50 A 20,20,0,1,1,50,20 L 40 20 V 30 H 35 V 20 H 30 V30 H23 V 25 H 18 V 30 H 10 L7 20 H 0z M60 15 A 10,10,0,0,0,80,15 A 10,10,0,0,0,60,15" fill-rule="nonzero"/>
+    </g>
+    <g id="person">
+      <ellipse class="ff" cx="20" cy="20" rx="14" ry="10" />
+      <circle class="ff" cx="14" cy="17" r="2" />
+      <circle class="ff" cx="26" cy="17" r="2" />
+      <path class="ff" d="M14 22 Q 20 26 26 22" />
+      <line class="ff" x1="20" y1="30" x2="20" y2="60" />
+      <line class="ff" x1="5" y1="35" x2="20" y2="45" />
+      <line class="ff" x1="20" y1="45" x2="45" y2="35" />
+      <line class="ff" x1="20" y1="60" x2="10" y2="80" />
+      <line class="ff" x1="20" y1="60" x2="40" y2="80" />
+    </g>
+    <g id="sender">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(0, 10)"></use>
+      <text class="ff s" x="20" y="10" text-anchor="middle">送信者</text>
+    </g>
+    <g id="receiver">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#person" transform="translate(0, 10)"></use>
+      <text class="ff s" x="20" y="10" text-anchor="middle">受信者</text>
+    </g>
+    <g id="bunsho">
+      <path class="ff" d="M0 15 V60 H 80 L 90 50 V 15 z" />
+      <path d="M80 60 V 50 H 90 z" stroke="white" fill="lightgray" />
+    </g>
+    <g id="hirabun">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bunsho"></use>
+      <text class="ff s" x="40" y="10" text-anchor="middle">平文</text>
+      <text class="ff" x="15" y="35">あいう</text>
+    </g>
+    <g id="hirabun2">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bunsho"></use>
+      <text class="ff s" x="40" y="10" text-anchor="middle">平文</text>
+      <text class="ff" x="15" y="35">かきく</text>
+    </g>
+      <g id="lock">
+        <path class="ff" d="M10 20 A 20,20,0,1,1,44 20" stroke-width="5" />
+        <rect class="ffw" x="0" y="20" width="52" height="40"  />
+        <path class="ffwrev" d="M17 55 22 38 A 8 8 0 1 1 32 38 L 37 55 z" />
+      </g>
+    <g id="angoubun">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bunsho"></use>
+      <text class="ff s" x="40" y="10" text-anchor="middle">暗号文</text>
+      <text class="ff" x="15" y="35">#$#”S(#</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock" transform="matrix(0.4, 0, 0, 0.4, 70, 0)"></use>
+    </g>
+    <g id="angoubun2">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bunsho"></use>
+      <text class="ff s" x="40" y="10" text-anchor="middle">暗号文</text>
+      <text class="ff" x="15" y="35">#j&W5S(#</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock" transform="matrix(0.4, 0, 0, 0.4, 70, 0)"></use>
+    </g>
+    <g id="keydialog">
+      <path d="M0 10 V 40 H 70 V 50 L 90 25 70 0 V 10 z" stroke="white" fill="black" />
+      <text x="40" y="30" text-anchor="middle" fill="white">鍵</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#key" transform="translate(20, 50)"></use>
+    </g>
+  </defs>
+</svg>
+</div>
+
+<div id="cpbase05_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] 暗号方式</h3></div>
+<div class="pagebody">
+<p class="plist">[暗号化]</p>
+<p class="plist1">
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s_ball">平文（ひらぶん)</td>
+    <td class="pad_s_ball">暗号化する前の文</td></tr>
+  <tr>
+    <td class="pad_s_ball">暗号文</td>
+    <td class="pad_s_ball">暗号化された文</td></tr>
+</tbody>
+</table>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <defs>
+  </defs>
+  <g id="f5_01">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(70, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 140)"></use>
+    <text class="ff" x="155" y="150" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 150)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(240, 140)"></use>
+    <text class="ff" x="395" y="150" text-anchor="middle">復号</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(360, 150)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(480, 140)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(450, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(240, 280)"></use>
+    <g transform="translate(270, 230)">
+      <path class="ff" d="M5 0 V 30 H 0 L 10 40 20 30 H 15 V 0 z" />
+    </g>
+    <text class="ff" x="300" y="260">解読</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] 暗号方式(共通鍵暗号方式)</h3></div>
+<div class="pagebody">
+<p class="plist">[共通鍵暗号方式]</p>
+<p class="plist1">送信者が暗号化に使う暗号化鍵と受信者が復号に使う復号鍵が同じ。</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 0 700 300">
+  <g id="f5_02">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(70, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 140)"></use>
+    <text class="ff" x="155" y="150" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 150)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(240, 140)"></use>
+    <text class="ff" x="395" y="150" text-anchor="middle">復号</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(360, 150)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(480, 140)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(450, 20)"></use>
+    <path class="ff" d="M160 230 V 250 H 400 V 230" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(160, 230),rotate(-90)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(400, 230),rotate(-90)"></use>
+    <text class="ff s" x="280" y="270" text-anchor="middle">共通鍵暗号方式は、同じ鍵を使う</text>
+  </g>
+</svg>
+<p class="plist1">
+・送信者と受信者以外の第3者に鍵を知られてはいけない。</p>
+<p class="plist1">
+・鍵をそのままネットワークに流してはいけない。</p>
+<p class="plist1">
+・暗号文を復号できるのは、鍵を知っている人だけ。鍵を知っていれば、誰でも復号できる。</p>
+<p class="bplist2">
+・復号できれば、鍵を知っていることになる。</p>
+<p class="bplist2">
+・もし、この鍵を知っているのが送信者と受信者の2人だけであれば、復号できるということは、この鍵を知っている正しい受信者であると認証できたことになる。また、暗号した人は、正しい送信者であると認証できたことになる。</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] 暗号方式(共通鍵暗号方式-2)</h3></div>
+<div class="pagebody">
+<p class="plist">[共通鍵暗号方式]</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+    <linearGradient id="gd0" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="gold"/>
+        <stop offset="0.8" stop-color="white"/>
+    </linearGradient>
+  <g id="f5_03" transform="translate(0, 20)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(90, 0)"></use>
+    <text class="ff s" x="135" y="10">A</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 100)"></use>
+    <text class="ff" x="165" y="110" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 110)"></use>
+    <text class="ff s" x="170" y="140">A</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(280, 100)"></use>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(90, 230)"></use>
+    <text class="ff s" x="135" y="240">B</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun2" transform="translate(0, 330)"></use>
+    <text class="ff" x="165" y="340" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 340)"></use>
+    <text class="ff s" x="170" y="370">B</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun2" transform="translate(280, 330)"></use>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(540, 60)"></use>
+    <g id="deca" transform="translate(440,120),rotate(30)">
+      <text class="ff" x="40" y="10" text-anchor="middle">復号</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(0,10)"></use>
+      <text class="ff" x="50" y="40">A</text>
+    </g>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(520, 160)"></use>
+
+    <g id="deca" transform="translate(400,320),rotate(-30)">
+      <text class="ff" x="40" y="10" text-anchor="middle">復号</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(0,10)"></use>
+      <text class="ff" x="50" y="40">B</text>
+    </g>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun2" transform="translate(520, 260)"></use>
+</svg>
+<p class="plist">
+送信者A用の鍵A、送信者B用の鍵Bがそれぞれ必要。</p>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] 暗号化方式(公開鍵暗号方式)</h3></div>
+<div class="pagebody">
+<p class="plist">[公開鍵暗号方式]</p>
+<p class="plist1">キーペアー　：　公開キー　　　秘密キー</p>
+<table class="tbl" style="border:solid;border-color:red;">
+<tbody>
+  <tr class="vat">
+   <td class="pad_s">●公開キーで暗号化　⇒</td>
+   <td>秘密キーでのみで復号可能<br />
+       公開キーでの復号はできない</td>
+  </tr>
+  <tr>
+    <td class="pad_s" colspan="2">●公開キーから秘密キーの生成は困難</td></tr>
+</tbody>
+</table>
+<p />
+<table class="tbl">
+<tbody>
+  <tr>
+    <td class="pad_s">公開キー：</td>
+    <td class="pad_s">誰に知られてもかまわない。</td></tr>
+  <tr>
+    <td class="pad_s">密キー：</td>
+    <td class="pad_s">人に知られてはならない。</td></tr>
+</tbody>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_05" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[5] 暗号方式(公開鍵暗号方式)</h3></div>
+<div class="pagebody">
+<p class="plist">[公開鍵暗号方式]</p>
+<p class="plist1">送信者が暗号に使う暗号化鍵と受信者が復号に使う復号鍵が異なる。
+</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="340" viewBox="0 0 700 340">
+    <linearGradient id="gd0" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="gold"/>
+        <stop offset="0.8" stop-color="white"/>
+    </linearGradient>
+  <g id="f5_05">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(70, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 140)"></use>
+    <text class="ff" x="155" y="150" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 150)"></use>
+    <text class="ff s" x="170" y="180">１</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(240, 140)"></use>
+    <text class="ff" x="395" y="150" text-anchor="middle">復号</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(360, 150)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(480, 140)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(450, 20)"></use>
+    <path class="ff" d="M160 260 V 280 H 400 V 260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(160, 260),rotate(-90)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(400, 260),rotate(-90)"></use>
+    <text class="ff s" x="280" y="300" text-anchor="middle">公開鍵暗号方式は、キーペアを使う</text>
+    <text class="ff s" x="160" y="240" text-anchor="middle">受信者の公開キー</text>
+    <text class="ff s" x="400" y="240" text-anchor="middle">受信者の秘密キー</text>
+    <text class="ff s" x="390" y="20" text-anchor="middle">キーペア</text>
+    <text class="ff s" x="390" y="50" text-anchor="middle">公開キー</text>
+    <text class="ff s" x="390" y="80" text-anchor="middle">秘密キー</text>
+    <rect class="ff s" x="350" y="30" width="80" height="60" />
+    <line class="ff" x1="350" y1="60" x2="430" y2="60" />
+    <path class="ff sw2" d="M350 45 Q 180 55 160 130" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(160, 130),rotate(110)"></use>
+    <path class="ff sw2" d="M350 75 Q 300 90 370 130" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(370, 130),rotate(30)"></use>
+
+  </g>
+</svg>
+<p class="plist">・公開キーは、誰に知られてもかまわない。</p>
+<p class="plist">・秘密キーは、第３者に知られてはならない。</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_06" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[6] 暗号方式(公開鍵暗号方式)</h3></div>
+<div class="pagebody">
+<p class="plist">[公開鍵暗号方式]</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="460" viewBox="0 0 700 460">
+  <g id="f5_06">
+    <linearGradient id="gd0" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="gold"/>
+        <stop offset="0.8" stop-color="white"/>
+    </linearGradient>
+  <g id="f05_fig_3" transform="translate(0, 20)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(90, 0)"></use>
+    <text class="ff s" x="135" y="10">A</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 100)"></use>
+    <text class="ff" x="165" y="110" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 110)"></use>
+    <text class="ff s" x="170" y="140">１</text>
+    <text class="ff s" x="119" y="142">公開</text>
+    <text class="ff s" x="100" y="200">受信者の公開キー</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(280, 100)"></use>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(90, 230)"></use>
+    <text class="ff s" x="135" y="240">B</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun2" transform="translate(0, 330)"></use>
+    <text class="ff" x="165" y="340" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 340)"></use>
+    <text class="ff s" x="170" y="370">１</text>
+    <text class="ff s" x="119" y="372">公開</text>
+    <text class="ff s" x="100" y="430">受信者の公開キー</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun2" transform="translate(280, 330)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(540, 60)"></use>
+    <g id="deca" transform="translate(440,120),rotate(30)">
+      <text class="ff" x="40" y="10" text-anchor="middle">復号</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(0,10)"></use>
+      <text class="ff" x="50" y="40">２</text>
+      <text class="ff s" x="0" y="40">秘密</text>
+      <text class="ff" x="00" y="100">受信者の秘密キー</text>
+    </g>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(520, 160)"></use>
+
+    <g id="deca" transform="translate(400,320),rotate(-30)">
+      <text class="ff" x="40" y="10" text-anchor="middle">復号</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(0,10)"></use>
+      <text class="ff" x="50" y="40">２</text>
+      <text class="ff s" x="0" y="40">秘密</text>
+      <text class="ff" x="00" y="100">受信者の秘密キー</text>
+    </g>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun2" transform="translate(520, 260)"></use>
+
+    <text class="ff s" x="440" y="20" text-anchor="middle">キーペア</text>
+    <text class="ff s" x="440" y="50" text-anchor="middle">公開キー</text>
+    <text class="ff s" x="440" y="80" text-anchor="middle">秘密キー</text>
+    <rect class="ff" x="400" y="30" width="80" height="60" />
+    <line class="ff" x1="400" y1="60" x2="480" y2="60" />
+    <path class="ff sw2" d="M400 45 Q 200 50 160 90" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(160, 90),rotate(140)"></use>
+    <path class="ff sw2" d="M400 45 Q 250 70 160 320" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(160, 320),rotate(110)"></use>
+    <path class="ff sw2" d="M400 75 Q 350 85 420 150" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(420, 150),rotate(40)"></use>
+    <path class="ff sw2" d="M400 75 Q 350 85 420 300" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(420, 300),rotate(70)"></use>
+</svg>
+<p class="plist">
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_07" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[7] ディジタル書名</h3></div>
+<div class="pagebody">
+<p class="plist">[ディジタル書名]</p>
+<p class="plist1">メッセージの改ざんやなりすましを防止する。</p>
+<p class="plist1">公開鍵暗号方式で一般的に使用されているRSA方式には、以下の性質がある。</p>
+<p class="bplist1">・秘密キーで暗号化した暗号文は、そのペアである公開キーでのみ復号可能<br />
+この性質を利用し、メッセージが改ざんされていないこが確認できる。</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 0 700 300">
+    <linearGradient id="gd0" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="gold"/>
+        <stop offset="0.8" stop-color="white"/>
+    </linearGradient>
+  <g id="f5_07">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sender" transform="translate(70, 20)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(0, 140)"></use>
+    <text class="ff" x="155" y="150" text-anchor="middle">暗号化</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(120, 150)"></use>
+    <text class="ff s" x="170" y="180">１</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angoubun" transform="translate(240, 140)"></use>
+    <text class="ff" x="395" y="150" text-anchor="middle">復号</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#keydialog" transform="translate(360, 150)"></use>
+    <text class="ff s" x="410" y="180">２</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hirabun" transform="translate(480, 140)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#receiver" transform="translate(440, 20)"></use>
+    <text class="ff s" x="160" y="240" text-anchor="middle">送信者の秘密キー</text>
+    <text class="ff s" x="400" y="240" text-anchor="middle">送信者の公開キー</text>
+
+    <text class="ff s" x="190" y="20" text-anchor="middle">キーペア</text>
+    <text class="ff s" x="190" y="50" text-anchor="middle">公開キー</text>
+    <text class="ff s" x="190" y="80" text-anchor="middle">秘密キー</text>
+    <rect class="ff" x="150" y="30" width="80" height="60" />
+    <line class="ff" x1="150" y1="60" x2="230" y2="60" />
+    <path class="ff sw2" d="M150 75 Q 100 85 140 130" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(140, 130),rotate(55)"></use>
+    <path class="ff sw2" d="M230 55 Q 280 55 360 130" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(360, 130),rotate(40)"></use>
+    <text class="ff s" x="350" y="50">参照</text>
+    <path class="ff sw2" d="M430 65 Q 350 55 230 45" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(230, 45),rotate(180)"></use>
+  </g>
+</svg>
+<p class="plist">受信者は、送信者の公開キーで復号する。送信者の公開キーで復号できということは、送信者の秘密キーで暗号化されていることである。</p>
+<p class="plist">実際には、送信したい文書（メッセージという）を暗号化するのではなく、メッセージから<u>メッセージダイジェスト</u>といわれるハッシュ値を算出して暗号化し、メッセージと共に送付する。
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_08" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[8] メッセージダイジェスト</h3></div>
+<div class="pagebody">
+<p class="plist">[メッセージダイジェスト]</p>
+<p class="plist1">
+「メッセージダイジェスト」とは、一方向ハッシュ関数とも呼ばれ、任意の文字列から固定長の擬似乱数（ハッシュ値）を生成するアルゴリズムのことです。一方向であるため、ハッシュ値からもとの文字列を再現することは非常に難しいものとなっています。また異なる文字列から同じハッシュ値を作成することは極めて困難である(TECHSCOREより）
+</p>
+<pre class="f">
+<code class="f">
+$ cat a.txt
+This is a pen.
+$ md5sum a.txt
+<u>eee0ca57643e4b59815847fdd152cd5c</u>  a.txt
+$ vi a.txt
+$ cat a.txt
+This is a pan.
+$ md5sum a.txt
+<u>4482a8a121dca0f1bc1fdecec322c0f8</u>      a.txt
+</code>
+</pre>
+<p class="plist">テキスト p.203</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="cpbase05_09" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[9] ディジタル書名(2)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <defs>
+    <linearGradient id="gd1" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0.2" stop-color="white"/>
+        <stop offset="0.8" stop-color="gray"/>
+    </linearGradient>
+    <g id="human">
+      <path d="M0 50 V35 Q 3 27 10 25 A 10 10 0 1 1 20 25 Q 27 27 30 35 L 33 38 30 40 30 50 z" fill="url(#gd1)" fill-rule="nonzero" />
+    </g>
+  </defs>
+  <g id="f5_09">
+     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#human" transform="scale(0.8,0.8),translate(50, 50)"></use>
+    <text class="ff" x="150" y="20" text-anchor="middle">Aさん(送信者)</text>
+    <rect class="ff" x="95" y="50" width="110" height="60" />
+    <text class="ff" x="100" y="70">平文：</text>
+    <text class="ff" x="100" y="100">This is a pen.</text>
+    <line class="ff" x1="150" y1="110" x2="150" y2="140" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(150, 140),rotate(90)"></use>
+    <text class="ff" x="105" y="132">算出</text>
+
+    <rect class="ff" x="0" y="140" width="300" height="50" />
+    <text class="ff" x="5" y="160">MD:</text>
+    <text class="ff" x="5" y="180">eee0ca57643e4b59815847fdd152cd5c</text>
+    <line class="ff" x1="150" y1="190" x2="150" y2="340" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(150, 340),rotate(90)"></use>
+
+    <rect class="ff" x="70" y="340" width="160" height="30" />
+    <text class="ff" x="75" y="360" >暗号化されたＭＤ</text>
+
+    <path class="ff" d="M0,240 140,240 140,255 150,260 140,265 140,285 0 285 z" />
+    <text class="ff" x="5" y="260">Aさんの秘密鍵で</text>
+    <text class="ff" x="5" y="280">暗号化する</text>
+
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#human" transform="scale(0.8,0.8),translate(700, 50)"></use>
+    <text class="ff" x="490" y="20" text-anchor="middle">Bさん(受信者)</text>
+    <rect class="ff" x="435" y="50" width="110" height="60" />
+    <text class="ff" x="440" y="70">平文：</text>
+    <text class="ff" x="440" y="100">This is a pen.</text>
+    <line class="ff" x1="490" y1="110" x2="490" y2="140" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(490, 140),rotate(90)"></use>
+    <text class="ff" x="500" y="132">算出</text>
+
+    <rect class="ff" x="340" y="140" width="300" height="50" />
+    <text class="ff" x="345" y="160">MD:</text>
+    <text class="ff" x="345" y="180">eee0ca57643e4b59815847fdd152cd5c</text>
+
+    <rect class="ff" x="400" y="240" width="300" height="50" />
+    <text class="ff" x="405" y="260" >MD:</text>
+    <text class="ff" x="405" y="280" >eee0ca57643e4b59815847fdd152cd5c</text>
+
+    <rect class="ff" x="410" y="340" width="160" height="30" />
+    <text class="ff" x="410" y="360" >暗号化されたＭＤ</text>
+
+    <path class="ff" d="M560 380 V 425 H 700 V 380 H 650 L 490 310 L 630 380 z" />
+    <text class="ff" x="565" y="400">Aさんの公開鍵で</text>
+    <text class="ff" x="565" y="420">復号する</text>
+
+    <line class="ff sw2" x1="205" y1="80" x2="435" y2="80" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_16" transform="translate(435, 80)"></use>
+    <text class="ff" x="320" y="70" text-anchor="middle">送信</text>
+    <line class="ff sw2" x1="230" y1="355" x2="410" y2="355" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(410, 355)"></use>
+    <text class="ff" x="320" y="345" text-anchor="middle">送信</text>
+    <line class="ff" x1="490" y1="340" x2="490" y2="290" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(490, 290),rotate(-90)"></use>
+    <line class="ff act sw2" x1="490" y1="240" x2="490" y2="190" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8_act" transform="translate(490, 240),rotate(90)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8_act" transform="translate(490, 190),rotate(-90)"></use>
+    <text class="ff act" x="500" y="225">一致することを確認</text>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

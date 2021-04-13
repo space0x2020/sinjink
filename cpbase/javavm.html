@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>JavaVM</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+JavaVM<br />
+<input type="button" id="B03_01" onclick="disppage(3, 1);" value="1" />
+</div>
+
+<div id="cpbase03_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] JavaVM</h3></div>
+<div class="pagebody">
+<p class="plist">仮想マシン(JavaVM)：</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
+  <g id="f3_23" text-anchor="middle">
+    <text class="ff" x="90" y="20">ソースファイル</text>
+    <rect class="ff" x="0" y="30" width="180" height="30" />
+    <text class="ff" x="90" y="80">hello.java</text>
+    <line class="ff" x1="190" y1="45" x2="270" y2="45" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(270, 45)"></use>
+    <text class="ff" x="230" y="70">コンパイル</text>
+    <text class="ff" x="230" y="90">(翻訳)</text>
+    <text class="ff" x="370" y="20">オブジェクトファイル</text>
+    <rect class="ff" x="280" y="30" width="180" height="30" />
+    <text class="ff" x="370" y="50">バイトコード</text>
+    <text class="ff" x="370" y="80">hello.class</text>
+    <rect class="ff" x="280" y="180" width="180" height="30" />
+    <text class="ff" x="370" y="200">JavaVM</text>
+    <rect class="ff" x="160" y="260" width="140" height="30" />
+    <text class="ff" x="230" y="280">Linux</text>
+    <rect class="ff" x="300" y="260" width="140" height="30" />
+    <text class="ff" x="370" y="280">Windows</text>
+    <rect class="ff" x="440" y="260" width="140" height="30" />
+    <text class="ff" x="510" y="280">MacOS</text>
+    <line class="ff" x1="230" y1="260" x2="230" y2="230" />
+    <line class="ff" x1="370" y1="260" x2="370" y2="210" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(370, 210),rotate(-90)"></use>
+    <line class="ff" x1="510" y1="260" x2="510" y2="230" />
+    <line class="ff" x1="230" y1="230" x2="510" y2="230" />
+    <line class="ff" x1="370" y1="150" x2="370" y2="120" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(370, 120),rotate(-90)"></use>
+    <text class="ff" x="380" y="145" text-anchor="start">実行</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>

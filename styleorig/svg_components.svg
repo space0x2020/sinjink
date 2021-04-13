@@ -1,0 +1,337 @@
+  <defs>
+    <g id="garrow1_15">
+      <path class="ff" d="M0 0 15 0 M5 -5 15 0 5 5" />
+    </g>
+    <g id="garrow1_20">
+      <path class="ff" d="M0 0 20 0 M10 -5 20 0 10 5" />
+    </g>
+    <g id="garrow1_25">
+      <path class="ff" d="M0 0 25 0 M15 -5 25 0 15 5" />
+    </g>
+    <g id="garrow1_30">
+      <path class="ff" d="M0 0 30 0 M20 -5 30 0 20 5" />
+    </g>
+    <g id="garrow1_35">
+      <path class="ff" d="M0 0 35 0 M25 -5 35 0 25 5" />
+    </g>
+    <g id="garrow1_40">
+      <path class="ff" d="M0 0 40 0 M30 -5 40 0 30 5" />
+    </g>
+    <g id="garrow1_45">
+      <path class="ff" d="M0 0 45 0 M35 -5 45 0 35 5" />
+    </g>
+    <g id="garrow1_50">
+      <path class="ff" d="M0 0 50 0 M40 -5  50 0 40 5" />
+    </g>
+    <g id="garrow1_60">
+      <path class="ff" d="M0 0 60 0 M50 -5  60 0 50 5" />
+    </g>
+    <g id="garrow1_70">
+      <path class="ff" d="M0 0 70 0 M60 -5  70 0 60 5" />
+    </g>
+    <g id="garrow1_75">
+      <path class="ff" d="M0 0 75 0 M65 -5 75 0 65 5" />
+    </g>
+    <g id="garrow1_80">
+      <path class="ff" d="M0 0 80 0 M70 -5 80 0 70 5" />
+    </g>
+    <g id="garrow1_90">
+      <path class="ff" d="M0 0 90 0 M80 -5 90 0 80 5" />
+    </g>
+    <g id="garrow1_100">
+      <path class="ff" d="M0 0 100 0 M90 -5 100 0 90 5" />
+    </g>
+    <g id="garrow1_110">
+      <path class="ff" d="M0 0 110 0 M100 -5 110 0 100 5" />
+    </g>
+    <g id="garrow1_120">
+      <path class="ff" d="M0 0 120 0 M110 -5 120 0 110 5" />
+    </g>
+    <g id="garrow1_140">
+      <path class="ff" d="M0 0 140 0 M130 -5 140 0 130 5" />
+    </g>
+    <g id="garrow1_160">
+      <path class="ff" d="M0 0 160 0 M150 -5 160 0 150 5" />
+    </g>
+    <g id="garrow1_230">
+      <path class="ff" d="M0 0 230 0 M220 -5 230 0 220 5" />
+    </g>
+    <g id="garrow1_260">
+      <path class="ff" d="M0 0 260 0 M250 -5 260 0 250 5" />
+    </g>
+    <g id="garrow1_420">
+      <path class="ff" d="M0 0 420 0 M410 -5 420 0 410 5" />
+    </g>
+    <g id="garrow2_30">
+      <path class="ffnop ffw" d="M0 0 H22 V -4 L 30 0 22 4 22 0 z" />
+    </g>
+    <g id="garrow2_30r">
+      <path class="ffnop ffw" d="M-30 0 H-8 V -4 L 0 0 -8 4 -8 0 z" />
+    </g>
+    <g id="garrow2_80">
+      <path class="ffnop ffw" d="M0 0 H72 V -4 L 80 0 72 4 72 0 z" />
+    </g>
+    <g id="garrow2_80r">
+      <path class="ffnop ffw" d="M-80 0 H-8 V -4 L 0 0 -8 4 -8 0 z" />
+    </g>
+    <g id="garrow2_90">
+      <path class="ffnop ffw" d="M0 0 H82 V -4 L 90 0 82 4 82 0 z" />
+    </g>
+    <g id="garrow2_90r">
+      <path class="ffnop ffw" d="M-90 0 H-8 V -4 L 0 0 -8 4 -8 0 z" />
+    </g>
+    <g id="garrow2_100">
+      <path class="ffnop ffw" d="M0 0 H92 V -4 L 100 0 92 4 92 0 z" />
+    </g>
+    <g id="garrow2_100r">
+      <path class="ffnop ffw" d="M-100 0 H-8 V -4 L 0 0 -8 4 -8 0 z" />
+    </g>
+    <g id="garrow2_110">
+      <path class="ffnop ffw" d="M0 0 H102 V -4 L 110 0 102 4 102 0 z" />
+    </g>
+    <g id="garrow2_120">
+      <path class="ffnop ffw" d="M0 0 H112 V -4 L 120 0 112 4 112 0 z" />
+    </g>
+    <g id="garrow2_130">
+      <path class="ffnop ffw" d="M0 0 H122 V -4 L 130 0 122 4 122 0 z" />
+    </g>
+    <g id="garrow2_140">
+      <path class="ffnop ffw" d="M0 0 H132 V -4 L 140 0 132 4 132 0 z" />
+    </g>
+    <g id="garrow2_150">
+      <path class="ffnop ffw" d="M0 0 H142 V -4 L 150 0 142 4 142 0 z" />
+    </g>
+    <g id="garrow2_160">
+      <path class="ffnop ffw" d="M0 0 H152 V -4 L 160 0 152 4 152 0 z" />
+    </g>
+    <g id="garrow2_170">
+      <path class="ffnop ffw" d="M0 0 H162 V -4 L 170 0 162 4 162 0 z" />
+    </g>
+    <g id="garrow2_180">
+      <path class="ffnop ffw" d="M0 0 H172 V -4 L 180 0 172 4 172 0 z" />
+    </g>
+    <g id="garrow2_260">
+      <path class="ffnop ffw" d="M0 0 H252 V -4 L 260 0 252 4 252 0 z" />
+    </g>
+    <g id="garrowhead1_10L">
+      <path class="ff" d="M10 5 0 0 10 -5" />
+    </g>
+    <g id="garrowhead1_10U">
+      <path class="ff" d="M5 10 0 0 -5 10" />
+    </g>
+    <g id="garrowhead1_10R">
+      <path class="ff" d="M-10 -5 0 0 -10 5" />
+    </g>
+    <g id="garrowhead1_10D">
+      <path class="ff" d="M5 -10 0 0 -5 -10" />
+    </g>
+    <g id="garrowhead1_10L_red">
+      <path class="ff" d="M10 5 0 0 10 -5" style="stroke:red" />
+    </g>
+    <g id="garrowhead1_10U_red">
+      <path class="ff" d="M5 10 0 0 -5 10" style="stroke:red" />
+    </g>
+    <g id="garrowhead1_10R_red">
+      <path class="ff" d="M-10 -5 0 0 -10 5" style="stroke:red" />
+    </g>
+    <g id="garrowhead1_10D_red">
+      <path class="ff" d="M5 -10 0 0 -5 -10" style="stroke:red" />
+    </g>
+    <g id="garrowheadc_10L">
+      <path class="ff" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadc_10U">
+      <path class="ff" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadc_10R">
+      <path class="ff" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+    <g id="garrowheadc_10D">
+      <path class="ff" d="M5 -10 0 0 -5 -10 z" />
+    </g>
+    <g id="garrowheadc_15L">
+      <path class="ff" d="M15 7 0 0 15 -7 z" />
+    </g>
+    <g id="garrowheadc_15U">
+      <path class="ff" d="M7 15 0 0 -7 15 z" />
+    </g>
+    <g id="garrowheadc_15R">
+      <path class="ff" d="M-15 -7 0 0 -15 7 z" />
+    </g>
+    <g id="garrowheadc_15D">
+      <path class="ff" d="M7 -15 0 0 -7 -15 z" />
+    </g>
+    <g id="garrowheadcw_10L">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadcw_10U">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadcw_10R">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+    <g id="garrowheadcw_10D">
+      <path class="ffw" d="M5 -10 0 0 -5 -10 z" />
+    </g>
+    <g id="garrowheadcw_10L_yellow">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_10U_yellow">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_10R_yellow">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_10D_yellow">
+      <path class="ffw" d="M5 -10 0 0 -5 -10 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_10L_red">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_10U_red">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_10R_red">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_10D_red">
+      <path class="ffw" d="M5 -10 0 0 -5 -10 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_10L_act">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_10U_act">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_10R_act">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_10D_act">
+      <path class="ffw" d="M5 -10 0 0 -5 -10 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_15L">
+      <path class="ffw" d="M15 7 0 0 15 -7 z" />
+    </g>
+    <g id="garrowheadcw_15U">
+      <path class="ffw" d="M7 15 0 0 -7 15 z" />
+    </g>
+    <g id="garrowheadcw_15R">
+      <path class="ffw" d="M-15 -7 0 0 -15 7 z" />
+    </g>
+    <g id="garrowheadcw_15D">
+      <path class="ffw" d="M7 -15 0 0 -7 -15 z" />
+    </g>
+    <g id="garrowheadcw_15L_yellow">
+      <path class="ffw" d="M15 7 0 0 15 -7 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_15U_yellow">
+      <path class="ffw" d="M7 15 0 0 -7 15 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_15R_yellow">
+      <path class="ffw" d="M-15 -7 0 0 -15 7 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_15D_yellow">
+      <path class="ffw" d="M7 -15 0 0 -7 -15 z" style="fill:yellow" />
+    </g>
+    <g id="garrowheadcw_15L_red">
+      <path class="ffw" d="M15 7 0 0 15 -7 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_15U_red">
+      <path class="ffw" d="M7 15 0 0 -7 15 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_15R_red">
+      <path class="ffw" d="M-15 -7 0 0 -15 7 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_15D_red">
+      <path class="ffw" d="M7 -15 0 0 -7 -15 z" style="fill:red" />
+    </g>
+    <g id="garrowheadcw_15L_act">
+      <path class="ffw" d="M15 7 0 0 15 -7 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_15U_act">
+      <path class="ffw" d="M7 15 0 0 -7 15 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_15R_act">
+      <path class="ffw" d="M-15 -7 0 0 -15 7 z" style="fill:orange" />
+    </g>
+    <g id="garrowheadcw_15D_act">
+      <path class="ffw" d="M7 -15 0 0 -7 -15 z" style="fill:orange" />
+    </g>
+    <g id="warrow1_25">
+      <path class="ff" d="M0 0 V-5 H 15 V-10 L 25 0 15 10 V 5 H 0 z" style="fill:lightblue" />
+    </g>
+    <g id="warrow1_40">
+      <path class="ff" d="M0 0 V-5 H 30 V-10 L 40 0 30 10 V 5 H 0 z" style="fill:lightblue" />
+    </g>
+    <g id="rarrow1_40">
+      <path d="M0 0 V5 H 30 V10 L 40 0 30 -10 V -5 H 0 z" stroke="blue" style="fill:white" />
+    </g>
+    <g id="rarrow1_50">
+      <path d="M0 0 V5 H 40 V10 L 50 0 40 -10 V -5 H 0 z" stroke="blue" style="fill:white" />
+    </g>
+    <g id="rarrow1_60">
+      <path d="M0 0 V5 H 50 V10 L 60 0 50 -10 V -5 H 0 z" stroke="blue" style="fill:white" />
+    </g>
+    <g id="rarrow1_70">
+      <path d="M0 0 V5 H 60 V10 L 70 0 60 -10 V -5 H 0 z" stroke="blue" style="fill:white" />
+    </g>
+    <g id="rarrow1_80">
+      <path d="M0 0 V5 H 70 V10 L 80 0 70 -10 V -5 H 0 z" stroke="blue" style="fill:white" />
+    </g>
+    <g id="rarrow1h_40">
+      <path d="M0 0 V5 H 30 V10 L 40 0 30 -10 V -5 H 0 z" stroke="blue" stroke=dasharray="4,4" style="fill:none" />
+    </g>
+    <g id="rarrow1h_50">
+      <path d="M0 0 V5 H 40 V10 L 50 0 40 -10 V -5 H 0 z" stroke="blue" stroke=dasharray="4,4" style="fill:none" />
+    </g>
+    <g id="rarrow1h_60">
+      <path d="M0 0 V5 H 50 V10 L 60 0 50 -10 V -5 H 0 z" stroke="blue" stroke=dasharray="4,4" style="fill:none" />
+    </g>
+    <g id="rarrow1h_70">
+      <path d="M0 0 V5 H 60 V10 L 70 0 60 -10 V -5 H 0 z" stroke="blue" stroke=dasharray="4,4" style="fill:none" />
+    </g>
+    <g id="rarrow1h_80">
+      <path d="M0 0 V5 H 70 V10 L 80 0 70 -10 V -5 H 0 z" stroke="blue" stroke=dasharray="4,4" style="fill:none" />
+    </g>
+    <g id="gdiamond_10L">
+      <path class="ff" d="M-10 0 -5 -5 0 0 -5 5 z" />
+    </g>
+    <g id="gdiamond_10U">
+      <path class="ff" d="M0 -10 5 -5 0 0 -5 -5 z" />
+    </g>
+    <g id="gdiamond_10R">
+      <path class="ff" d="M0 0 5 -5 10 0 5 5 z" />
+    </g>
+    <g id="gdiamond_10D">
+      <path class="ff" d="M0 10 -5 5 0 0 5 5 z" />
+    </g>
+    <g id="gdiamond_15L">
+      <path class="ff" d="M-15 0 -7.5 -7.5 0 0 -7.5 7.5 z" />
+    </g>
+    <g id="gdiamond_15U">
+      <path class="ff" d="M0 -15 7.5 -7.5 0 0 -7.5 -7.5 z" />
+    </g>
+    <g id="gdiamond_15R">
+      <path class="ff" d="M0 0 7.5 -7.5 15 0 7.5 7.5 z" />
+    </g>
+    <g id="gdiamond_15D">
+      <path class="ff" d="M0 15 -7.5 7.5 0 0 7.5 7.5 z" />
+    </g>
+    <g id="nosign">
+      <circle x="0" y="0" r="15" stroke="red" stroke-width="5" fill="white" />
+      <line x1="5" y1="5" x2="25" y2="25" stroke="red" stroke-width="5" transform="translate(-15,-15)" />
+    </g>
+    <g id="messure">
+      <line class="ff" x1="0" y1="10" x2="1000" y2="10" />
+      <line class="ff" x1="100" y1="0" x2="100" y2="20" />
+      <line class="ff" x1="200" y1="0" x2="200" y2="20" />
+      <line class="ff" x1="300" y1="0" x2="300" y2="20" />
+      <line class="ff" x1="400" y1="0" x2="400" y2="20" />
+      <line class="ff" x1="500" y1="0" x2="500" y2="20" />
+      <line class="ff" x1="600" y1="0" x2="600" y2="20" />
+      <line class="ff" x1="700" y1="0" x2="700" y2="20" />
+      <line class="ff" x1="800" y1="0" x2="800" y2="20" />
+      <line class="ff" x1="900" y1="0" x2="900" y2="20" />
+      <line class="ff" x1="1000" y1="0" x2="1000" y2="20" />
+    </g>
+  </defs>

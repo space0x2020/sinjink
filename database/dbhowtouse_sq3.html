@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DB How to use</title>
+</head>
+<body>
+
+<ul>
+<li><a href="#startpsql">sqlite3の起動方法</a></li>
+<li><a href="#exitpsql">sqlite3の終了方法</a></li>
+<li><a href="#execsql">SQL文の実行</a></li>
+<li><a href="#desctable">テーブル定義の参照</a></li>
+<li><a href="#longsql">長いSQL文の入力</a></li>
+</ul>
+<h2 style="background-color: lightblue;"><a name="startpsql"></a>sqlite3の起動方法</h2>
+<ol>
+<li>「スタート」右クリック→「Windows PowerShell」をクリックします。Windows PowerShell ウィンドウが表示されます</li>
+<li>
+<p>Windows PowerShell ウィンドウが表示されたら、sqlite3 フォルダーへ移動します。</p>
+<pre class="terminal">
+PS C:\Users\<i>PANDA-ID</i>&gt; <b><span color="yellow">cd</span> Desktop\sqlite3</b> &lt;ENTER&gt;    ←
+PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; _
+</pre>
+</li>
+<li>
+<p>sqlite3 を起動します。</p>
+<pre class="terminal">
+PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; <b><span color="yellow">.\sqlite3.exe</span> .\mydb.db</b> &lt;ENTER&gt;    ←
+-- Loading resources from C:\Users\<i>PANDA-ID</i>/.sqliterc
+SQLite version 3.35.4 2021-04-02 15:20:16
+Enter ".help" for usage hints.
+sqlite&gt; _
+</pre>
+</li>
+</ol>
+
+<h2 style="background-color: lightblue;"><a name="exitpsql"></a>sqlite3の終了方法</h2>
+<ol>
+<li>sqlite3のプロンプト(sqlite&gt;)上で、.q を入力します。
+<pre class="terminal">
+sqlite&gt; .q &lt;ENTER&gt;    ←
+PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; _
+</pre>
+</li>
+<li>PowerShellを終了します。
+<pre class="terminal">
+PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; <b>exit</b> &lt;ENTER&gt;    ←
+</pre>
+</li>
+</ol>
+
+<h2 style="background-color: lightblue;"><a name="execsql"></a>SQL文の実行</h2>
+<ul>
+<li>sqlite3では、SQL文の後ろにセミコロン(;)を付けます。(以降、&lt;ENTER&gt;は省略します。)
+<pre class="terminal">sqlite&gt; select * from dept;    ←最後に ; を付ける。
+deptno  dname       loc
+------  ----------  ----------
+   10   ACCOUNTING  NEW YORK
+   20   RESEARCH    DALLAS
+   30   SALES       CHICAGO
+   40   OPERATIONS  BOSTON
+sqlite&gt; _
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="desctable"></a>テーブル定義の参照</h2>
+<ul>
+<li>表の定義を参照するには、「.schema 表名」コマンドを使います。
+<pre class="terminal">
+sqlite&gt; .schema dept
+CREATE TABLE dept (
+    deptno  int constraint pk_dept primary key,
+    dname   varchar(14),
+    loc     varchar(13)
+);
+sqlite&gt; _
+</pre>
+</li>
+</ul>
+
+<h2 style="background-color: lightblue;"><a name="longsql"></a>長いSQL文の入力</h2>
+<ul>
+<li>セミコロン(;)を付けずにSQL文の途中で、&lt;ENTER&gt; を入力すると、プロンプトが「...&gt;」になり継続して入力できます。
+セミコロン(;)を入力して&lt;ENTER&gt;を入力すると、SQL文が実行されます。
+<pre class="terminal">
+sqlite&gt; select * &lt;ENTER&gt;
+   ...&gt; * &lt;ENTER&gt;
+   ...&gt; from &lt;ENTER&gt;
+   ...&gt; dept &lt;ENTER&gt;
+   ...&gt; ; &lt;ENTER&gt;
+deptno  dname       loc
+------  ----------  ----------
+   10   ACCOUNTING  NEW YORK
+   20   RESEARCH    DALLAS
+   30   SALES       CHICAGO
+   40   OPERATIONS  BOSTON
+sqlite&gt; _
+</pre>
+</li>
+</ul>
+
+</body>
+</html>
