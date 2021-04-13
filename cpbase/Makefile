@@ -86,7 +86,8 @@ TARGETS= \
 	$(MOODLEDIR)/taskquiz.svg \
 	$(HTMLDIR)/taskquiz.html \
 	$(MOODLEDIR)/virtualaddress.svg \
-	$(HTMLDIR)/virtualaddress.html
+	$(HTMLDIR)/virtualaddress.html \
+	$(HTMLDIR)/index.html
 
 all: $(TARGETS)
 
@@ -227,6 +228,9 @@ $(MOODLEDIR)/virtualaddress.svg: $(HTMLDIR)/virtualaddress.html
 
 $(HTMLDIR)/virtualaddress.html: virtualaddress.html $(STYLES) $(SVGCOMPONENTS)
 	$(CPP) -C -D$(V) -I$(INCPATH) $< > $@
+
+$(HTMLDIR)/index.html: index.html
+	sed 's/HTML\///' $< > $@
 
 #
 # Images

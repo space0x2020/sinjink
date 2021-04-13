@@ -51,7 +51,8 @@ TARGETS= \
 	$(MOODLEDIR)/dbhowtouse_pg.svg \
 	$(HTMLDIR)/dbhowtouse_pg.html \
 	$(MOODLEDIR)/dbhowtouse_sq3.svg \
-	$(HTMLDIR)/dbhowtouse_sq3.html
+	$(HTMLDIR)/dbhowtouse_sq3.html \
+	$(HTMLDIR)/index.html
 
 all: $(TARGETS)
 
@@ -156,6 +157,9 @@ $(MOODLEDIR)/dbhowtouse_sq3.svg: $(HTMLDIR)/dbhowtouse_sq3.html
 
 $(HTMLDIR)/dbhowtouse_sq3.html: dbhowtouse_sq3.html $(STYLES) $(SVGCOMPONENTS)
 	$(CPP) -C -D$(V) -I$(INCPATH) $< > $@
+
+$(HTMLDIR)/index.html: index.html
+	sed 's/HTML\///' $< > $@
 
 #
 # style
