@@ -18,6 +18,7 @@ IMAGEDIR=images
 ENCODEDDIR=ENCODED
 
 IMGFILES= \
+	$(HTMLDIR) $(MOODLEDIR) $(ENCODEDDIR) \
 	$(HTMLDIR)/1401-2-A.jpg \
 	$(ENCODEDDIR)/1401-2-A.b64 \
 	$(HTMLDIR)/1502-A.jpg \
@@ -90,6 +91,15 @@ TARGETS= \
 	$(HTMLDIR)/index.html
 
 all: $(TARGETS)
+
+$(HTMLDIR): .
+	if [ ! -d $(HTMLDIR) ]; then mkdir $(HTMLDIR) ; fi
+
+$(MOODLEDIR): .
+	if [ ! -d $(MOODLEDIR) ]; then mkdir $(MOODLEDIR) ; fi
+
+$(ENCODEDDIR): .
+	if [ ! -d $(ENCODEDDIR) ]; then mkdir $(ENCODEDDIR) ; fi
 
 $(MOODLEDIR)/addressing.svg: $(HTMLDIR)/addressing.html
 	$(TOMOODLE) -I$(HTMLDIR):$(ENCODEDDIR) -$V -f $< > $@

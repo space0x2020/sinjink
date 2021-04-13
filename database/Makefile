@@ -17,6 +17,7 @@ IMAGEDIR=images
 ENCODEDDIR=ENCODED
 
 TARGETS= \
+	$(HTMLDIR) $(MOODLEDIR) \
 	$(STYLES) \
 	$(MOODLEDIR)/dblogwrite.svg \
 	$(HTMLDIR)/dblogwrite.html \
@@ -55,6 +56,12 @@ TARGETS= \
 	$(HTMLDIR)/index.html
 
 all: $(TARGETS)
+
+$(HTMLDIR): .
+	if [ ! -d $(HTMLDIR) ]; then mkdir $(HTMLDIR) ; fi
+
+$(MOODLEDIR): .
+	if [ ! -d $(MOODLEDIR) ]; then mkdir $(MOODLEDIR) ; fi
 
 $(MOODLEDIR)/dblogwrite.svg: $(HTMLDIR)/dblogwrite.html
 	$(TOMOODLE) -I$(HTMLDIR):$(ENCODEDDIR) -$V -f $< > $@
