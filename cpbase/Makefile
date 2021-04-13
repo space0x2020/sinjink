@@ -65,8 +65,8 @@ TARGETS= \
 	$(HTMLDIR)/fploss.html \
 	$(MOODLEDIR)/harddisk.svg \
 	$(HTMLDIR)/harddisk.html \
-	$(MOODLEDIR)/interupt.svg \
-	$(HTMLDIR)/interupt.html \
+	$(MOODLEDIR)/interrupt.svg \
+	$(HTMLDIR)/interrupt.html \
 	$(MOODLEDIR)/javavm.svg \
 	$(HTMLDIR)/javavm.html \
 	$(MOODLEDIR)/maskopration.svg \
@@ -163,10 +163,10 @@ $(MOODLEDIR)/harddisk.svg: $(HTMLDIR)/harddisk.html
 $(HTMLDIR)/harddisk.html: harddisk.html $(STYLES) $(SVGCOMPONENTS)
 	$(CPP) -C -D$(V) -I$(INCPATH) $< > $@
 
-$(MOODLEDIR)/interupt.svg: $(HTMLDIR)/interupt.html
+$(MOODLEDIR)/interrupt.svg: $(HTMLDIR)/interrupt.html
 	$(TOMOODLE) -I$(HTMLDIR):$(ENCODEDDIR) -$V -f $< > $@
 
-$(HTMLDIR)/interupt.html: interupt.html $(STYLES) $(SVGCOMPONENTS)
+$(HTMLDIR)/interrupt.html: interrupt.html $(STYLES) $(SVGCOMPONENTS)
 	$(CPP) -C -D$(V) -I$(INCPATH) $< > $@
 
 $(MOODLEDIR)/javavm.svg: $(HTMLDIR)/javavm.html
