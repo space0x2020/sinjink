@@ -124,7 +124,21 @@ function execcppcmd($cppcmd, $cppopt) {
     global $ifdeflevel;
     global $ifdefcontext;
 
-    if ($cppcmd == "ifdef") {
+    if ($cppcmd == "include" || $cppcmd == "htmlinclude") {
+        $htmlesc = false;
+        if ($cppcmd == "htmlinclude")
+            $htmlesc = true;
+        
+        $path = searchpath($includepath, $cppopt);
+        if ($path !== false) {
+                $ifdeflevel++;
+                $ifdefcontext[$ifdeflevel] = true;
+                mainprocess($path, $htmlesc);
+                $ifdeflevel--;
+        } else {
+            fputs(STDERR, "Cannot open " . $cppopt . "\n");
+        }
+    } else if ($cppcmd == "ifdef") {
         $ifdeflevel++;
         $ifdefcontext[$ifdeflevel] = false;
         foreach ($deflist as $defs) {
@@ -140,27 +154,7 @@ function execcppcmd($cppcmd, $cppopt) {
         if ($ifdeflevel < 0)
             $ifdeflevel = 0;
     } else {
-        if ($ifdefcontext[$ifdeflevel] === true) {
-            if ($cppcmd == "include" || $cppcmd == "htmlinclude") {
-                $htmlesc = false;
-                if ($cppcmd == "htmlinclude")
-                    $htmlesc = true;
-            
-                $path = searchpath($includepath, $cppopt);
-                if ($path !== false) {
-                        $ifdeflevel++;
-                        $ifdefcontext[$ifdeflevel] = true;
-                        mainprocess($path, $htmlesc);
-                        $ifdeflevel--;
-                } else {
-                    fputs(STDERR, "Cannot open " . $cppopt . "\n");
-                }
-            } else if ($cppcmd == "define") {
-                array_push($deflist, $cppopt);
-            } else {
-                fputs(STDERR, "Uknown command " . $cppcmd . "\n");
-            }
-        }
+        fputs(STDERR, "Uknown command " . $cppcmd . "\n");
     }
 }
 ?>

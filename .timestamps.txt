@@ -1,10 +1,10 @@
 # type=d --ignore=.git --ignore=.timestamps.txt --ignore=cpbase/HTML --ignore=cpbase/MOODLE --ignore=cpbase/ENCODED --ignore=database/HTML --ignore=database/MOODLE
 202104131412.33 GetTime.sh
-202004181852.00 cmd/cppinclude.php
+201911022007.48 cmd/cppinclude.php
 202004191202.44 cmd/mksvgc.php
 201908272206.26 cmd/src2svg.php
-202004191125.13 cmd/tobase64.sh
-201911041100.47 cmd/tomoodle.php
+201911022011.22 cmd/tobase64.sh
+202104071914.41 cmd/tomoodle.php
 202004191203.03 cmd/
 202104131355.19 cpbase/Makefile
 202004191439.47 cpbase/addressing.html
@@ -32,7 +32,7 @@
 201904291011.38 cpbase/images/varboxt.png
 201911012153.16 cpbase/images/
 202104131150.29 cpbase/index.html
-202004191431.03 cpbase/interupt.html
+202004191431.03 cpbase/interrupt.html
 202004191510.03 cpbase/javavm.html
 202104121641.04 cpbase/kakomon.txt
 202104121659.18 cpbase/kakomon_2021.txt
