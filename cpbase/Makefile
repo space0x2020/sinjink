@@ -52,6 +52,8 @@ TARGETS= \
 	$(HTMLDIR)/addressing.html \
 	$(MOODLEDIR)/binarynum.svg \
 	$(HTMLDIR)/binarynum.html \
+	$(MOODLEDIR)/binaryadd.svg \
+	$(HTMLDIR)/binaryadd.html \
 	$(MOODLEDIR)/bnf.svg \
 	$(HTMLDIR)/bnf.html \
 	$(MOODLEDIR)/clock.svg \
@@ -119,6 +121,12 @@ $(MOODLEDIR)/binarynum.svg: binarynum.html $(STYLESMOODLE) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) -DMOODLE $< | $(SED) | $(TOMOODLE) -I$(HTMLDIR) -I$(ENCODEDDIR) -$V > $@
 
 $(HTMLDIR)/binarynum.html: binarynum.html $(STYLESHTML) $(SVGCOMPONENTS)
+	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
+
+$(MOODLEDIR)/binaryadd.svg: binaryadd.html $(STYLESMOODLE) $(SVGCOMPONENTS)
+	$(CPP) -D$(V) $(INCPATH) -DMOODLE $< | $(SED) | $(TOMOODLE) -I$(HTMLDIR) -I$(ENCODEDDIR) -$V > $@
+
+$(HTMLDIR)/binaryadd.html: binaryadd.html $(STYLESHTML) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
 
 $(MOODLEDIR)/bnf.svg: bnf.html $(STYLESMOODLE) $(SVGCOMPONENTS)

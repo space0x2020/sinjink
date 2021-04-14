@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Binary Add</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:2800;">
+<div style="display:block">
+2進数の足し算<br />
+<input type="button" id="B04_23" onclick="disppage(4, 1);" value="1" />
+</div>
+
+<div id="cpbase04_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">論理回路 加算回路１</h3></div>
+<div class="pagebody">
+<p class="plist">2進数の足し算</p>
+<p class="plist3">
+<table class="tbl">
+<tbody class="c">
+  <tr>
+    <td class="pad_s bb" width="60">A</td>
+    <td class="pad_s bb" width="60">+</td>
+    <td class="pad_s bb" width="60">B</td>
+    <td class="pad_s bb" width="60">=</td>
+    <td class="pad_s bb" width="60">X</td>
+    <td class="pad_s bb" width="60"></td>
+    <td class="pad_s bb" width="20">C</td>
+    <td class="pad_s bb" width="60">S</td></tr>
+  <tr>
+    <td class="pad_s">0</td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">00</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">0</td></td>
+  <tr>
+    <td class="pad_s">0</td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">01</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">1</td></td>
+  <tr>
+    <td class="pad_s">1</td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">01</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">0</td>
+    <td class="pad_s">1</td></td>
+  <tr>
+    <td class="pad_s">1</td>
+    <td class="pad_s">+</td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">=</td>
+    <td class="pad_s">10</td>
+    <td class="pad_s"></td>
+    <td class="pad_s">1</td>
+    <td class="pad_s">0</td></td>
+  <tr>
+    <td class="pad_s" colspan="6"></td>
+    <td class="pad_s">↑</td>
+    <td class="pad_s"></td></tr>
+  <tr>
+    <td class="pad_s" colspan="6"></td>
+    <td class="pad_s">A AND B</td>
+    <td class="pad_s">↑</td></tr>
+  <tr>
+    <td class="pad_s" colspan="6"></td>
+    <td class="pad_s"></td>
+    <td class="pad_s">A XOR B</td></tr>
+</tbody>
+</table></p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("cpbase", "cpbasesub");
+</script>
+</body>
+</html>
