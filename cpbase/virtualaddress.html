@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>VirtualAddress/FileSystem</title>
+<title>VirtualAddress</title>
 </head>
 <body>
 
@@ -15,9 +15,8 @@
 
 <div id="campus" class="basepane" style="height:2800;">
 <div style="display:block">
-仮想記憶/ファイルシステム<br />
+仮想記憶<br />
 <input type="button" id="B16_01" onclick="disppage(16, 1);" value="1" />
-<input type="button" id="B16_02" onclick="disppage(16, 2);" value="2" />
 </div>
 
 
@@ -692,88 +691,6 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R_yellow" transform="translate(550, 130),rotate(-53)"></use>
    </g>
   </g>
-</svg>
-</div>
-</div><!-- pagebody -->
-</div><!-- page -->
-
-
-<div id="cpbase16_02" class="page">
-<div class="pagetitle"><h3 class="pagetitle">[2] ファイルシステム</h3></div>
-<div class="pagebody">
-<input type="button" id="B16_02_01" onclick="dispsubpage(16, 2, 1);" value="(1)" />
-<input type="button" id="B16_02_02" onclick="dispsubpage(16, 2, 2);" value="(2)" />
-<div id="cpbasesub16_02_01" style="display:none;">
-<p class="plist">ファイルシステム：絶対パス</p>
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
-  <defs>
-    <g id="filesystem1" text-anchor="middle">
-      <rect class="ff" x="0" y="0" width="290" height="320" />
-      <text class="ff" x="145" y="20">ルートディレクトリ</text>
-      <rect class="ff" x="15" y="40" width="120" height="270" />
-      <text class="ff" x="75" y="60">A</text>
-      <rect class="ff" x="30" y="80" width="90" height="100" />
-      <text class="ff" x="75" y="100">A1</text>
-      <rect class="ff" x="45" y="125" width="60" height="30" />
-      <text class="ff" x="75" y="145">A11</text>
-      <rect class="ff" x="30" y="200" width="90" height="100" />
-      <text class="ff" x="75" y="220">A2</text>
-      <rect class="ff" x="155" y="40" width="120" height="270" />
-      <text class="ff" x="215" y="60">B</text>
-      <rect class="ff" x="170" y="80" width="90" height="100" />
-      <text class="ff" x="215" y="100">B1</text>
-      <rect x="185" y="125" width="60" height="30" stroke="white" fill="grey" />
-      <text class="ff" x="215" y="145">MyFile</text>
-      <rect class="ff" x="170" y="200" width="90" height="100" />
-      <text class="ff" x="215" y="220">A2</text>
-    </g>
-  </defs>
-  <g id="f3_27_1">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filesystem1" transform="translate(400, 20)"></use>
-    <g id="f3_27_1_s" transform="translate(350, 20)">
-      <path class="ff" d="M180 30 Q 190 50 180 80 Q 170 100 190 125" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zarrow_8" transform="translate(190, 125),rotate(50)"></use>
-    <text class="ff" x="0" y="340" text-anchor="start">MyFileの絶対パス： \B\B1\MyFile</text>
-    </g>
-</g>
-</svg>
-</div>
-
-<div id="cpbasesub16_02_02" style="display:none;">
-<p class="plist">ファイルシステム：相対パス</p>
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
-  <g id="f3_27_2">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filesystem1" transform="translate(400, 20)"></use>
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#virtualmemory1" transform="translate(0, 10)"></use>
-    <g id="f3_27_2_s" text-anchor="middle" transform="translate(0, 0)">
-      <rect x="445" y="145" width="60" height="30" stroke="red" fill="green" />
-      <text class="ff" x="475" y="165">A11</text>
-      <rect x="120" y="80" width="190" height="30" rx="8" stroke="red" stroke-width="3" fill="green" />
-      <text class="ff" x="215" y="100">カレントディレクトリ</text>
-      <rect x="120" y="280" width="190" height="30" rx="8" stroke="red" stroke-width="3" fill="green" />
-      <text class="ff" x="215" y="300">カレントディレクトリ</text>
-      <line x1="320" y1="95" x2="440" y2="160" stroke="green" stroke-width="4" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R_green" transform="translate(440, 160),rotate(28)"></use>
-      <line x1="320" y1="295" x2="440" y2="240" stroke="green" stroke-width="4" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R_green" transform="translate(440, 240),rotate(-28)"></use>
-      <line x1="480" y1="155" x2="480" y2="125" stroke="red" stroke-width="3" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15U_red" transform="translate(480, 120)"></use>
-      <text class="ff b" x="495" y="140" style="fill:red">..</text>
-      <line x1="500" y1="120" x2="500" y2="90" stroke="red" stroke-width="3" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15U_red" transform="translate(500, 90)"></use>
-      <text class="ff b" x="515" y="95" style="fill:red">..</text>
-      <line x1="520" y1="75" x2="520" y2="50" stroke="red" stroke-width="3" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15U_red" transform="translate(520, 50)"></use>
-      <text class="ff b" x="535" y="55" style="fill:red">..</text>
-      <line x1="580" y1="50" x2="580" y2="75" stroke="red" stroke-width="3" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D_red" transform="translate(580, 80)"></use>
-      <line x1="590" y1="90" x2="590" y2="120" stroke="red" stroke-width="3" />
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D_red" transform="translate(590, 120)"></use>
-      <text class="ff" x="400" y="370" text-anchor="start">プロセスAのカレントディレクリから見た</text>
-      <text class="ff" x="400" y="395" text-anchor="start">MyFileの相対パス：</text>
-      <text class="ff" x="400" y="425" text-anchor="start">.\..\..\..\B\B1\MyFile</text>
-
-    </g>
 </svg>
 </div>
 </div><!-- pagebody -->

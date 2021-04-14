@@ -94,10 +94,12 @@ TARGETS= \
 	$(HTMLDIR)/taskquiz.html \
 	$(MOODLEDIR)/virtualaddress.svg \
 	$(HTMLDIR)/virtualaddress.html \
+	$(MOODLEDIR)/filesystem.svg \
+	$(HTMLDIR)/filesystem.html \
 	$(MOODLEDIR)/waitqueue.svg \
 	$(HTMLDIR)/waitqueue.html \
-	$(MOODLEDIR)/shorcutkey.svg \
-	$(HTMLDIR)/shorcutkey.html \
+	$(MOODLEDIR)/shortcutkey.svg \
+	$(HTMLDIR)/shortcutkey.html \
 	$(HTMLDIR)/index.html
 
 all: $(TARGETS)
@@ -255,16 +257,22 @@ $(MOODLEDIR)/virtualaddress.svg: virtualaddress.html $(STYLESMOODLE) $(SVGCOMPON
 $(HTMLDIR)/virtualaddress.html: virtualaddress.html $(STYLESHTML) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
 
+$(MOODLEDIR)/filesystem.svg: filesystem.html $(STYLESMOODLE) $(SVGCOMPONENTS)
+	$(CPP) -D$(V) $(INCPATH) -DMOODLE $< | $(SED) | $(TOMOODLE) -I$(HTMLDIR) -I$(ENCODEDDIR) -$V > $@
+
+$(HTMLDIR)/filesystem.html: filesystem.html $(STYLESHTML) $(SVGCOMPONENTS)
+	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
+
 $(MOODLEDIR)/waitqueue.svg: waitqueue.html $(STYLESMOODLE) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) -DMOODLE $< | $(SED) | $(TOMOODLE) -I$(HTMLDIR) -I$(ENCODEDDIR) -$V > $@
 
 $(HTMLDIR)/waitqueue.html: waitqueue.html $(STYLESHTML) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
 
-$(MOODLEDIR)/shorcutkey.svg: shorcutkey.html $(STYLESMOODLE) $(SVGCOMPONENTS)
+$(MOODLEDIR)/shortcutkey.svg: shortcutkey.html $(STYLESMOODLE) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) -DMOODLE $< | $(SED) | $(TOMOODLE) -I$(HTMLDIR) -I$(ENCODEDDIR) -$V > $@
 
-$(HTMLDIR)/shorcutkey.html: shorcutkey.html $(STYLESHTML) $(SVGCOMPONENTS)
+$(HTMLDIR)/shortcutkey.html: shortcutkey.html $(STYLESHTML) $(SVGCOMPONENTS)
 	$(CPP) -D$(V) $(INCPATH) $< | $(SED) > $@
 
 $(HTMLDIR)/index.html: index.html
