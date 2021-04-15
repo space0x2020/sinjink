@@ -86,15 +86,13 @@
 <div style="display:block">
 ファイルシステム<br />
 <input type="button" id="B17_01" onclick="disppage(17, 1);" value="1" />
+<input type="button" id="B17_01" onclick="disppage(17, 2);" value="2" />
 </div>
 
 
 <div id="cpbase17_01" class="page">
 <div class="pagetitle"><h3 class="pagetitle">ファイルシステム</h3></div>
 <div class="pagebody">
-<input type="button" id="B17_02_01" onclick="dispsubpage(17, 2, 1);" value="(1)" />
-<input type="button" id="B17_02_02" onclick="dispsubpage(17, 2, 2);" value="(2)" />
-<div id="cpbasesub17_02_01" style="display:none;">
 <p class="plist">ファイルシステム：絶対パス</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
   <defs>
@@ -128,9 +126,10 @@
     </g>
 </g>
 </svg>
-</div>
+</div><!-- pagebody -->
+</div><!-- page -->
 
-<div id="cpbasesub17_02_02" style="display:none;">
+<div id="cpbase17_02" style="display:none;">
 <p class="plist">ファイルシステム：相対パス</p>
 <svg xmlns="http://www.w3.org/2000/svg" width="700" height="440" viewBox="0 0 700 440">
   <g id="f3_27_2">
