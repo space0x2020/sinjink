@@ -125,18 +125,20 @@ function execcppcmd($cppcmd, $cppopt) {
     global $ifdefcontext;
 
     if ($cppcmd == "include" || $cppcmd == "htmlinclude") {
-        $htmlesc = false;
-        if ($cppcmd == "htmlinclude")
-            $htmlesc = true;
-        
-        $path = searchpath($includepath, $cppopt);
-        if ($path !== false) {
-                $ifdeflevel++;
-                $ifdefcontext[$ifdeflevel] = true;
-                mainprocess($path, $htmlesc);
-                $ifdeflevel--;
-        } else {
-            fputs(STDERR, "Cannot open " . $cppopt . "\n");
+        if ($ifdefcontext[$ifdeflevel] === true) {
+            $htmlesc = false;
+            if ($cppcmd == "htmlinclude")
+                $htmlesc = true;
+
+            $path = searchpath($includepath, $cppopt);
+            if ($path !== false) {
+                    $ifdeflevel++;
+                    $ifdefcontext[$ifdeflevel] = true;
+                    mainprocess($path, $htmlesc);
+                    $ifdeflevel--;
+            } else {
+                fputs(STDERR, "Cannot open " . $cppopt . "\n");
+            }
         }
     } else if ($cppcmd == "ifdef") {
         $ifdeflevel++;
