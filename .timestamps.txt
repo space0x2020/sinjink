@@ -46,10 +46,11 @@
 202104141420.21 cpbase/shortcutkey.html
 202104141016.34 cpbase/software.html
 202104160955.38 cpbase/sramdramcache.html
+202104151432.40 cpbase/syrabas2021.txt
 202104141017.10 cpbase/taskquiz.html
 202104152222.29 cpbase/virtualaddress.html
 202104141421.11 cpbase/waitqueue.html
-202104161038.38 cpbase/
+202104161042.36 cpbase/
 202104132242.48 database/Makefile
 202104121406.22 database/dbhowtouse_pg.html
 202104081328.49 database/dbhowtouse_sq3.html
