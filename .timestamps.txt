@@ -1,5 +1,5 @@
-# type=d --ignore=.git --ignore=.timestamps.txt --ignore=cpbase/HTML --ignore=cpbase/MOODLE --ignore=cpbase/ENCODED --ignore=database/HTML --ignore=database/MOODLE
-202104131412.33 GetTime.sh
+# type=d --ignore=.git --ignore=.timestamps.txt --ignore=cpbase/HTML --ignore=cpbase/MOODLE --ignore=cpbase/ENCODED --ignore=database/HTML --ignore=database/MOODLE --ignore=svgsamples/HTML --ignore=svgsamples/MOODLE --ignore=*.swp
+202104161040.12 GetTime.sh
 202104152143.06 cmd/cppinclude.php
 202004191202.44 cmd/mksvgc.php
 201908272206.26 cmd/src2svg.php
@@ -49,7 +49,7 @@
 202104141017.10 cpbase/taskquiz.html
 202104152222.29 cpbase/virtualaddress.html
 202104141421.11 cpbase/waitqueue.html
-202104160955.39 cpbase/
+202104161038.38 cpbase/
 202104132242.48 database/Makefile
 202104121406.22 database/dbhowtouse_pg.html
 202104081328.49 database/dbhowtouse_sq3.html
@@ -77,4 +77,10 @@
 202011071808.56 styleorig/style_svg.css
 202010291912.49 styleorig/svg_components.svg
 202104080957.33 styleorig/
+202104160821.29 svgsamples/ENCODED/
+202104160908.09 svgsamples/Makefile
+202104160905.39 svgsamples/index.html
+202104160937.47 svgsamples/mksamplehtml.awk
+202104160937.48 svgsamples/samplesvgs.html
+202104160938.21 svgsamples/
 201910302258.17 template.html
