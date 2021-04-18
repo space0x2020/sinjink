@@ -52,45 +52,80 @@ SRAM DRAM キャッシュ<br />
 <div id="cpbase06_02" class="page">
 <div class="pagetitle"><h3 class="pagetitle">[2] キャッシュ</h3></div>
 <div class="pagebody">
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" viewBox="0 0 700 280">
-<g id="cachememory" text-anchor="middle">
-  <text class="ff" x="100" y="18">CPU</text>
-  <rect class="ff" x="0" y="20" width="200" height="200" />
-  <rect class="ff" x="30" y="30" width="140" height="50" />
-  <text class="ff" x="100" y="50">演算装置</text>
-  <text class="ff" x="100" y="70">制御装置</text>
-  <rect class="ff" x="20" y="160" width="170" height="50" />
-  <text class="ff" x="100" y="180">キャッシュメモリ</text>
-  <text class="ff" x="100" y="200">(高速なSRAM)</text>
-  <text class="ff" x="400" y="18">メインメモリ(低速なDRAM)</text>
-  <rect class="ff" x="300" y="20" width="200" height="200" />
-  <text class="ff" x="400" y="100">情報</text>
-  <text class="ff" x="400" y="120">(プログラムとデータ)</text>
-  <line class="ff sw4" x1="172" y1="45" x2="290" y2="45" />
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R" transform="translate(300, 45)"></use>
-  <line class="ff sw4" x1="300" y1="65" x2="180" y2="65" />
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15L" transform="translate(170, 65)"></use>
-  <line class="ff sw4" x1="250" y1="65" x2="250" y2="185" />
-  <line class="ff sw4" x1="250" y1="185" x2="210" y2="185" />
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15L" transform="translate(200, 185)"></use>
-  <line class="ff sw4" x1="100" y1="160" x2="100" y2="90" />
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15U" transform="translate(100, 80)"></use>
-  <text class="ff" x="250" y="30">(1)</text>
-  <text class="ff" x="210" y="210" text-anchor="start">(2) 400n</text>
-  <text class="ff" x="210" y="230" text-anchor="start">(1 - ヒット率)</text>
-  <text class="ff" x="110" y="110" text-anchor="start">(3) 40n</text>
-  <text class="ff" x="110" y="130" text-anchor="start">(ヒット率)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280">
+<defs>
+  <g id="cachememoryframe" text-anchor="middle">
+    <text class="ff" x="100" y="38">CPU</text>
+    <rect class="ff" x="0" y="40" width="200" height="200" />
+    <rect class="ff" x="30" y="50" width="140" height="50" />
+    <text class="ff" x="100" y="70">演算装置</text>
+    <text class="ff" x="100" y="90">制御装置</text>
+    <rect class="ff" x="20" y="180" width="170" height="50" />
+    <text class="ff" x="100" y="200">キャッシュメモリ</text>
+    <text class="ff" x="100" y="220">(高速なSRAM)</text>
+    <text class="ff" x="300" y="18">メインメモリ</text>
+    <text class="ff" x="300" y="36">(低速なDRAM)</text>
+    <rect class="ff" x="250" y="40" width="100" height="200" />
+    <text class="ff" x="300" y="100">情報</text>
+    <text class="ff" x="300" y="120">(プログラム</text>
+    <text class="ff" x="300" y="140">とデータ)</text>
+    </g>
+</defs>
+<g id="cachememory1">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cachememoryframe" transform="translate(0, 0)"></use>
+  <line class="ff sw4" x1="60" y1="100" x2="60" y2="170" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(60, 180)"></use>
+  <text class="ff" x="30" y="130" text-anchor="start">(1)</text>
+  <line class="ff sw4" x1="100" y1="180" x2="100" y2="110" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15U" transform="translate(100, 100)"></use>
+  <text class="ff" x="104" y="130" text-anchor="start">(2)</text>
+  <text class="ff" x="104" y="150" text-anchor="start">40n</text>
+  <text class="ff" x="104" y="170" text-anchor="start">(ヒット率)</text>
+</g>
+<line class="ff" x1="380" y1="0" x2="380" y2="280" />
+<g id="cachememory2" transform="translate(400, 0)">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cachememoryframe" transform="translate(0, 0)"></use>
+  <line class="ff sw4" x1="60" y1="100" x2="60" y2="170" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(60, 180)"></use>
+  <text class="ff" x="30" y="130" text-anchor="start">(1')</text>
+  <line class="ff sw4" x1="170" y1="65" x2="240" y2="65" />
+  <line class="ff sw4 d" x1="100" y1="180" x2="100" y2="140" />
+  <text class="ff" x="104" y="130" text-anchor="start">(2')</text>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R" transform="translate(250, 65)"></use>
+  <text class="ff" x="200" y="55">(3')</text>
+  <line class="ff sw4" x1="250" y1="85" x2="180" y2="85" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15L" transform="translate(170, 85)"></use>
+  <text class="ff" x="200" y="110" text-anchor="start">(4')</text>
+  <text class="ff" x="160" y="130" text-anchor="start">400ns</text>
+  <text class="ff" x="120" y="150" text-anchor="start">(1- ヒット率)</text>
+  <line class="ff sw4" x1="230" y1="85" x2="230" y2="207" />
+  <line class="ff sw4" x1="230" y1="205" x2="200" y2="205" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15L" transform="translate(190, 205)"></use>
+  <text class="ff" x="210" y="230" text-anchor="start">(5')</text>
 </g>
 </svg>
 <p class="bplist1">
-(1) 目的の情報メモリに取りにいく</p>
-<p class="bplist1">
-(2) メモリから制御装置や演算装置へ読み込まれる。<br />
-  このとき同時にキャシュメモリへもコピーされる。
+〇キャッシュメモリに目的のデータがある場合</p>
+<p class="bplist2">
+(1) 目的の情報をキャッシュメモリに取りにいく</p>
+<p class="bplist2">
+(2) キャッシュメモリに存在してれば（ヒット率）、キャッシュメモリから制御装置や演算装置へ読み込まれる。<br />
+</p>
+<p class="bplist2">
+→同じデータが必要になったときは、キャシュメモリから読み出す。
 </p>
 <p class="bplist1">
-(3) 同じデータが必要になったときは、キャシュメモリから読み出す。
-</p>
+〇キャッシュメモリに目的のデータがない場合</p>
+<p class="bplist2">
+(1') 目的の情報をキャッシュメモリに取りにいく</p>
+<p class="bplist2">
+(2') 目的の情報がキャッシュメモリに存在しない(確率： 1 - ヒット率)</p>
+<p class="bplist2">
+(3') 目的の情報をメインメモリに取りに行く</p>
+<p class="bplist2">
+(4') メインメモリから制御装置や演算装置へ読み込まれる</p>
+<p class="bplist2">
+(5') キャッシュメモリへもコピーされる</p>
 <p />
 <p class="plist" style="margin-top:3em;"><u>ヒット率：目的の情報が運よくキャシュメモリの中に記憶されている確率</u>
 </p>
@@ -102,6 +137,9 @@ SRAM DRAM キャッシュ<br />
 <p class="plist1" style="margin-top:2em;">
 平均アクセス時間 = 40n × 0.8  +  400 ×　0.2  = 112n
 </p>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" viewBox="0 0 700 280">
+</svg>
+<p class="bplist1">
 </div><!-- pagebody -->
 </div><!-- page -->
 
