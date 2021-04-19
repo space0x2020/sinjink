@@ -74,10 +74,10 @@
 202004181847.16 script/changepage.js
 201707241009.56 script/script.js
 202104131207.29 script/
-202104071854.54 styleorig/style_orig.css
+202104191021.27 styleorig/style_orig.css
 202011071808.56 styleorig/style_svg.css
 202010291912.49 styleorig/svg_components.svg
-202104080957.33 styleorig/
+202104191021.27 styleorig/
 202104160821.29 svgsamples/ENCODED/
 202104160908.09 svgsamples/Makefile
 202104160905.39 svgsamples/index.html
