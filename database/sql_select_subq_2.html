@@ -1,0 +1,479 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SELECT 相関副問い合わせ</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+#include "shain_table.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+SELECT 相関副問い合わせ<br />
+<input type="button" id="B17_01" onclick="disppage(17, 1);" value="1" />
+<input type="button" id="B17_02" onclick="disppage(17, 2);" value="2(2)" />
+<input type="button" id="B17_03" onclick="disppage(17, 3);" value="3" />
+<input type="button" id="B17_04" onclick="disppage(17, 4);" value="4" />
+<input type="button" id="B17_05" onclick="disppage(17, 5);" value="5" />
+<input type="button" id="B17_06" onclick="disppage(17, 6);" value="6" />
+<input type="button" id="B17_07" onclick="disppage(17, 7);" value="7(3)" />
+<input type="button" id="B17_08" onclick="disppage(17, 8);" value="8" />
+<input type="button" id="B17_09" onclick="disppage(17, 9);" value="9" />
+<input type="button" id="B17_10" onclick="disppage(17, 10);" value="10" />
+<input type="button" id="B17_11" onclick="disppage(17, 11);" value="11" />
+<input type="button" id="B17_12" onclick="disppage(17, 12);" value="12(4)" />
+<input type="button" id="B17_13" onclick="disppage(17, 13);" value="13" />
+<input type="button" id="B17_14" onclick="disppage(17, 14);" value="14" />
+<input type="button" id="B17_15" onclick="disppage(17, 15);" value="15" />
+<input type="button" id="B17_16" onclick="disppage(17, 16);" value="16" />
+<input type="button" id="B17_17" onclick="disppage(17, 17);" value="17(5)" />
+</div>
+
+
+<div id="dbsql17_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] SELECT文　相関副問い合わせ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■ 副問い合わせが外側の表を参照する副問合せ<br />
+</p>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+<div id="divsubq2_1_1">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <text class="ff" x="5" y="25">例：部署別最高給与取得者を選択する。</text>
+  <defs>
+  <g id="subq2_1_sel">
+    <rect class="ff act" x="0" y="0" width="700" height="160" />
+    <text class="ff" x="10" y="40">select * from 社員表 a where a.給与 =</text>
+    <text class="ff" x="60" y="100">(select max(b.給与) from 社員表 b where b.部署コード = a.部署コード )</text>
+  </g>
+  </defs>
+  <g id="subq2_1_2" transform="translate(0,40)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_1_sel"></use>
+  </g>
+</svg>
+</div><!-- divsubq2_1_1 -->
+<div id="divsubq2_1_2" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <text class="ff" x="5" y="25">例：部署別最高給与取得者を選択する。</text>
+  <g id="subq2_1_2" transform="translate(0,40)">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_1_sel"></use>
+    <text class="ff s" x="570" y="30">外側の表を</text>
+    <text class="ff s" x="570" y="50">参照している</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(610, 70),scale(1.05,1)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace600" transform="translate(366, 120),rotate(180),scale(1,1)"></use>
+    <text class="ff" x="330" y="150">副問合せ</text>
+    <rect class="ff act" x="550" y="84" width="120" height="20" />
+    <g transform="translate(560,84),rotate(186),scale(0.9,1)">
+      <line class="ff act" x1="0" y1="0" x2="400" y2="0" />
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R_act" transform="translate(400, 0)"></use>
+    </g>
+    <rect class="ff act" x="130" y="24" width="76" height="20" />
+  </g>
+</svg>
+</div><!-- divsubq2_1_2 -->
+<p><input type="button" onclick="disptoggle('divsubq2_1_1', 'divsubq2_1_2')" value="→" /></p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_02" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[2] SELECT 相関副問い合わせ(2)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <g id="subq2_2_fig">
+    <g id="subq2_2_2_tablea" transform="translate(0, 20)">
+      <text class="ff" x="0" y="20">社員表 a (外側の表)</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(0, 30)"></use>
+    </g>
+    <g id="subq2_2_2_tableb" transform="translate(340, 20)">
+      <text class="ff" x="0" y="20">社員表 b (内側の表)</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(0, 30)"></use>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_03" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[3] SELECT 相関副問い合わせ(2) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_3_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="70" width="300" height="20" style="stroke-width:5;stroke:purple" />
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000001, 山田一郎,350000,0002)</text>
+    <path class="ff" d="M300,80 Q320,80 320,100 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_04" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[4] SELECT 相関副問い合わせ(2) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_4_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_3_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s" x="20" y="290">⇒</text>
+    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
+    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] SELECT 相関副問い合わせ(2) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_5_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_4_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 350000</text>
+    <rect class="ff" x="340" y="70" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] SELECT 相関副問い合わせ(2) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_6_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_5_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) (3)で求まった結果を使って(1)で取り出した行が条件を満たしていれば、その行を選択する。</text>
+    <text class="ff s" x="20" y="370">(1)の給与の値: 350000 = (3)の結果:350000 → 選択(000001, 山田一郎, 350000, 0002)</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[7] SELECT 相関副問い合わせ(3)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_7_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="90" width="300" height="20" style="stroke-width:5;stroke:purple" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] SELECT 相関副問い合わせ(3) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_8_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_7_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000002, 鈴木花子,320000,0001)</text>
+    <path class="ff" d="M300,100 Q320,100 320,120 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_09" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[9] SELECT 相関副問い合わせ(3) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_9_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_8_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s" x="20" y="290">⇒</text>
+    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
+    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_10" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[10] SELECT 相関副問い合わせ(3) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_10_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_9_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 320000</text>
+    <rect class="ff" x="340" y="90" width="300" height="20" style="stroke-width:5;stroke:red" />
+    <rect class="ff" x="340" y="150" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_11" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[11] SELECT 相関副問い合わせ(3) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_11_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_10_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) (3)で求まった結果を使って(1)で取り出した行が条件を満たしていれば、その行を選択する。</text>
+    <text class="ff s" x="20" y="370">(1)の給与の値: 320000 = (3)の結果:320000 → 選択(000002, 鈴木花子, 320000, 0001)</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_12" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[12] SELECT 相関副問い合わせ(4)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_12_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="150" width="300" height="20" style="stroke-width:5;stroke:purple" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_13" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[13] SELECT 相関副問い合わせ(4) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_13_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_12_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000005, 高橋五郎,210000,0001)</text>
+    <path class="ff" d="M300,160 Q320,160 320,180 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_14" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[14] SELECT 相関副問い合わせ(4) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_14_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_13_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s" x="20" y="290">⇒</text>
+    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
+    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_15" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[15] SELECT 相関副問い合わせ(4) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_15_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_14_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 320000</text>
+    <rect class="ff" x="340" y="90" width="300" height="20" style="stroke-width:5;stroke:red" />
+    <rect class="ff" x="340" y="150" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_16" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[16] SELECT 相関副問い合わせ(4) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_16_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_15_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) (3)で求まった結果を使って(1)で取り出した行が条件を満たしていれば、その行を選択する。</text>
+    <text class="ff s" x="20" y="370">(1)の給与の値: 210000 = (3)の結果:320000 → 選択なし</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_17" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[17] SELECT 相関副問い合わせ(5)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<p class="bplist">
+例：部署別最高給与取得者を選択する。
+</p>
+<pre class="terminal">
+select * from 社員表 a where a.給与 =
+    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+</pre>
+<p class="bplist">
+実行例：
+</p>
+<pre class="terminal">
+社員番号 社員名   性別  生年月日   給与    部署コード
+------   ----     --   ----------  ------  -----
+000001   山田一郎 男   1950-03-25  350000  0002
+000002   鈴木花子 女   1956-07-18  320000  0001
+000003   佐藤三郎 男   1961-07-03  280000  0003
+</pre>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>

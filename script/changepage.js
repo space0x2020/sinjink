@@ -117,3 +117,19 @@ function detailson(qlist)
         }
      }
 }
+
+function disptoggle(t1, t2)
+{
+    x1 = document.all[t1];
+    x2 = document.all[t2];
+    if (x1 != null && x2 != null) {
+        if (x1.style.display == 'block') {
+            x1.style.display = 'none';
+            x2.style.display = 'block';
+        } else {
+            x1.style.display = 'block';
+            x2.style.display = 'none';
+        }
+    }
+}
+

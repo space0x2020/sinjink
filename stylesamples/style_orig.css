@@ -422,20 +422,12 @@ pre.f code {
 }
 
 pre.terminal {
-  margin: 0;
   padding: 0.5em;
   border-style: solid;
   border-width: 2;
   color: white;
   background-color: black;
   line-height: 120%;
-}
-
-pre.terminal code {
-#ifdef HTML
-  font-size:12pt;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-#endif
 }
 
 span.keyword {
@@ -455,11 +447,6 @@ div.codelist p {
 
 div.codelist pre.f {
   padding: 0 0 1em 0.5em;
-}
-
-div.codelist pre.codelist {
-  margin: 0;
-  padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
 #ifdef V1

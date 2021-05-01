@@ -1,0 +1,338 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SELECT 副問い合わせ</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+SELECT 副問い合わせ<br />
+<input type="button" id="B16_01" onclick="disppage(16, 1);" value="1" />
+<input type="button" id="B16_02" onclick="disppage(16, 2);" value="2" />
+<input type="button" id="B16_03" onclick="disppage(16, 3);" value="3" />
+<input type="button" id="B16_04" onclick="disppage(16, 4);" value="4" />
+<input type="button" id="B16_05" onclick="disppage(16, 5);" value="5" />
+<input type="button" id="B16_06" onclick="disppage(16, 6);" value="6" />
+</div>
+
+
+<div id="dbsql16_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] SELECT文　副問い合わせ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■ 副問い合わせ(サブクエリー)<br />
+SELECT文の中に別のSELECT文があるときその内側のSELECT文を副問い合わせという。<br />
+たとえば、あるSELECT文の結果を検索条件にしたい場合などに副問い合わせを使う。
+つまり、検索条件がある表のデータに依存するような場合などの使う。
+</p>
+<p class="bplist">
+<pre class="codelist">
+<code>
+■ select ... from (select ...) A where A.a = (select ...)
+</code>
+</pre>
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="dbsql16_02" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[2] SELECT 副問い合わせ(2)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■社員表から給与データが一番少ない人を抽出
+</p>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+<div class="bplist">
+ (1)  社員表から給与が一番少ない人を抽出
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 給与 = <u><i>社員表の給与の最小値</i></u>
+</pre>
+</div>
+<div class="bplist">
+ (2)  社員表から給与の最小値を求めるSELECT文
+</div>
+<div class="plist2">
+<pre class="codelist">
+select min(給与) from 社員表
+</pre>
+</div>
+<div class="bplist">
+ (3)  上記２つをあわせると
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 給与 = (select min(給与) from 社員表)
+</pre>
+</div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="dbsql16_03" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[3] SELECT IN + 副問合せ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが複数の値を返すような場合
+</p>
+<div class="codelist">
+<pre class="codelist">
+select ... from 表明 where 列名 IN (副問合せ)
+</pre>
+</div>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+
+<p class="plist">
+例：社員表から、給与が300000以上の人がいる部署に所属している社員を抽出
+</p>
+
+<div class="bplist">
+ (1)  社員表から条件を満たす部署に所属する人を抽出
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 部署コード IN
+        (給与が300000以上の人がいる部署コード) ←副問合せ
+</pre>
+</div>
+<div class="bplist">
+ (2)  給与が30000以上のいる人がいる部署コードを抽出
+</div>
+<div class="plist2">
+<pre class="codelist">
+select 部署コード from 社員表 where 給与 => 300000
+</pre>
+</div>
+<div class="bplist">
+ (3)  上記２つをあわせて
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 部署コード IN
+    (select 部署コード from 社員表 where 給与 => 300000)
+</pre>
+</div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="dbsql16_04" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[4] SELECT文 + NOT IN + 副問合せ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが返す値のどれにも一致しないような場合
+</p>
+<div class="codelist">
+<pre class="codelist">
+select ... from 表明 where 列名 NOT IN (副問合せ)
+</pre>
+</div>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+<p class="plist">
+例：社員表から、給与が300000以上の人がいない部署に所属している社員を抽出
+</p>
+
+<div class="bplist">
+ (1)  社員表から条件を満たす部署に所属しない人を抽出
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 部署コード NOT IN
+        (給与が300000以上の人がいる部署コード) ←副問合せ
+</pre>
+</div>
+<div class="bplist">
+ (2)  給与が30000以上のいる人がいる部署コードを抽出
+</div>
+<div class="plist2">
+<pre class="codelist">
+select 部署コード from 社員表 where 給与 => 300000
+</pre>
+</div>
+<div class="bplist">
+ (3)  上記２つをあわせて
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表 where 部署コード NOT IN
+    (select 部署コード from 社員表 where 給与 => 300000)
+</pre>
+</div>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+<div id="dbsql16_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] SELECT文 EXISTS + 副問合せ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが行を返す場合、真(TRUE)と判断するとき
+</p>
+<div class="codelist">
+<pre class="codelist">
+select ... from 表明 where EXISTS (副問合せ)
+</pre>
+</div>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+
+<div class="bplist">
+ (1)  副問合せが行を返す場合
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表
+    where EXISTS (select * from 社員表 where 部署コード = '0001')
+</pre>
+</div>
+<p class="plist2">
+この副問合せは2行返すのでEXISTS区はTRUEとなり、行が抽出される。
+</p>
+
+<div class="bplist">
+ (2)  副問合せが行を返さない場合
+</div>
+<div class="plist2">
+<pre class="codelist">
+select * from 社員表
+    where EXISTS (select * from 社員表 where 部署コード = '0004')
+</pre>
+</div>
+<p class="plist2">
+この副問合せは行を返さないのでEXISTS区はFALSEとなり、行は抽出されない。
+</p>
+<p class="plist">
+このEXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql16_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] SELECT文 NOT EXISTS + 副問合せ</h3></div>
+<div class="pagebody">
+<div class="pagebody">
+<p class="bplist">
+■副問合せが行を返す場合、偽(FALSE)と判断するとき
+</p>
+<div class="codelist">
+<pre class="codelist">
+select ... from 表明 where NOT EXISTS (副問合せ)
+</pre>
+</div>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><td>社員番号</td><td>社員名</td><td>給与</td><td>部署コード</td></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+
+<div class="bplist">
+ (1)  副問合せが行を返す場合
+</div>
+<div class="plist2">
+<pre class="codelsit">
+select * from 社員表
+    where NOT EXISTS (select * from 社員表 where 部署コード = '0001')
+</pre>
+</div>
+<p class="plist2">
+この副問合せは2行返すのでNOT EXISTS区はFALSEとなり、行が抽出されない。
+</p>
+
+<div class="bplist">
+ (2)  副問合せが行を返さない場合
+</div>
+<div class="plist2">
+<pre class="codelsit">
+select * from 社員表
+    where NOT NOT EXISTS (select * from 社員表 where 部署コード = '0004')
+</pre>
+</div>
+<p class="plist2">
+この副問合せは行を返ないのでNOT EXISTS区はTRUEとなり、行は抽出される。
+</p>
+<p class="plist">
+このNOT EXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>

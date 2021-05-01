@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>TITLE DBPRACTICE 6</title>
+</head>
+<body>
+
+<div id="campus" class="basepane">
+  <div id="commandbar">
+    <center>演習６
+    </center>
+  </div>
+  <hr style="margin:0;">
+  <div id="chap06_01" class="chap" style="display:block;">
+      <h4>演習６－１</h4>
+      <div class="quiz">
+         社員表に次のデータを挿入しなさい。
+        <p>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th class="pad_s_ball thcolor">社員番号</th>
+              <th class="pad_s_ball thcolor">社員名</th>
+              <th class="pad_s_ball thcolor">性別</th>
+              <th class="pad_s_ball thcolor">生年月日</th>
+              <th class="pad_s_ball thcolor">給与</th>
+              <th class="pad_s_ball thcolor">部署コード</th></tr>
+          </thead>
+          <tbody class="c">
+            <tr>
+              <td class="pad_s_ball">'000006'</td>
+              <td class="pad_s_ball">'小泉　純'</td>
+              <td class="pad_s_ball">'男'</td>
+              <td class="pad_s_ball">'1978/01/18'</td>
+              <td class="pad_s_ball">500000</td>
+              <td class="pad_s_ball">null</td></tr>
+            <tr>
+              <td class="pad_s_ball">'000007'</td>
+              <td class="pad_s_ball">'鈴木花子'</td>
+              <td class="pad_s_ball">'女'</td>
+              <td class="pad_s_ball">'1986/05/03'</td>
+              <td class="pad_s_ball">280000</td>
+              <td class="pad_s_ball">null</td></tr>
+          </tbody>
+        </table>
+        </p>
+      </div>
+  </div>
+  <div id="chap06_02" class="chap" style="display:block;">
+      <h4>演習６－２</h4>
+      <div class="quiz">
+       社員表から、部署コードが NULL である人を抽出しなさい。
+      </div>
+  </div>
+  <div id="chap06_03" class="chap" style="display:block;">
+      <h4>演習６－３</h4>
+      <div class="quiz">
+        生年月日が '1970/01/01' 以降の人を若い順に抽出しなさい。抽出する列は、社員番号、社員名、部署名、生年月日とする。
+      </div>
+  </div>
+  <div id="chap06_04" class="chap" style="display:block;">
+      <h4>演習６－４</h4>
+      <div class="quiz">
+        社員表から同姓同名の社員名を抽出しなさい。
+      </div>
+  </div>
+  <div id="chap06_05" class="chap" style="display:block;">
+      <h4>演習６－５</h4>
+      <div class="quiz">
+        社員表の小泉　純さん(社員番号：000006)  の部署コードを 0001 に更新しなさい。
+      </div>
+  </div>
+  <div id="chap06_06" class="chap" style="display:block;">
+      <h4>演習６－６</h4>
+      <div class="quiz">
+        社員表の小泉　純さん(社員番号：000006) の行を削除しなさい。
+      </div>
+  </div>
+  <div id="chap06_07" class="chap" style="display:block;">
+      <h4>演習６－７</h4>
+      <div class="quiz">
+        トランザクションを開始し、社員表で鈴木花子さん（社員番号:000002)の部署コードを‘確認した後、0002'に変更し、結果を確認しなさい。<br />rollbackを実行し、鈴木花子さんの部署コードがどうなったかを確認しなさい。
+      </div>
+  </div>
+  <div id="chap06_08" class="chap" style="display:block;">
+      <h4>演習６－８</h4>
+      <div class="quiz">
+        トランザクションを開始し、社員表の鈴木花子さんの行を削除、commitを実行し、社員表を確認しなさい。
+      </div>
+  </div>
+
+
+</div><!-- campus -->
+</body>
+</html>

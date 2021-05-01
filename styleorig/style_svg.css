@@ -18,6 +18,14 @@
         stroke: yellow;
         fill: none;
       }
+      path.blue, line.blue, rect.blue, circle.blue, ellipse.blue {
+        stroke: blue;
+        fill: none;
+      }
+      path.lightblue, line.lightblue, rect.lightblue, circle.lightblue, ellipse.lightblue {
+        stroke: lightblue;
+        fill: none;
+      }
       path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
 #ifdef V1
         fill: white; /*v1*/

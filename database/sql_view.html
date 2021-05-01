@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SQL VIEW</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+#include "shain_table.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+
+
+<div id="dbsql20_01" class="page" style="display:block;">
+<div class="pagetitle"><h3 class="pagetitle">[1] DDL文例 CREATE VIEW文</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■ ビュー：射影、選択、結合などの一部を抽出したり、複数の表に対して検索や表の結合を行った際の結果データが取り込まれる新たな表。
+</p>
+<p class="bplist">
+<u>ビューの作成</u><br />
+create view ビュー名 as select ステートメント
+</p>
+<p class="bplist">
+<u>ビューの削除</u><br />
+drop view ビュー名
+</p>
+<pre class="terminal"><code>実行例１<br />
+&gt; create view 社員表V
+  as select a.社員名, b.部署名 from 社員表 a join 部署表 b
+  on a.部署コード = b.部署コード</code>
+</pre>
+<br />
+<pre class="terminal"><code>実行例２<br />
+&gt; select * from 社員表V
+社員名   部署名
+----     ---
+山田一郎 営業部
+鈴木花子 総務部
+佐藤三郎 開発部
+田中良子 開発部
+高橋五郎 総務部</code>
+</pre>
+<br />
+<pre class="terminal"><code>実行例３<br />
+&gt; drop view 社員表V</code>
+</pre>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>

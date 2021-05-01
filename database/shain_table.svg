@@ -1,0 +1,106 @@
+  <defs>
+    <g id="ex_shaintable_R0">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">社員番号</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">社員名</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">給与</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">部署コード</text>
+    </g>
+    <g id="ex_shaintable_R1">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000001</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">山田一郎</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">350000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0002</text>
+    </g>
+    <g id="ex_shaintable_R2">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000002</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">鈴木花子</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">320000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0001</text>
+    </g>
+    <g id="ex_shaintable_R3">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000003</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">佐藤三郎</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">280000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0003</text>
+    </g>
+    <g id="ex_shaintable_R4">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000004</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">田中良子</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">250000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0003</text>
+    </g>
+    <g id="ex_shaintable_R5">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000005</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">高橋五郎</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">210000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0001</text>
+    </g>
+    <g id="ex_shaintable_R6_null">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000006</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">小泉　純</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">500000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">/text>
+    </g>
+    <g id="ex_shaintable_R6">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000006</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">小泉　純</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">500000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0003</text>
+    </g>
+    <g id="ex_shaintable_R_BLANK">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+    </g>
+    <g id="ex_shaintable_R6_1">
+      <rect class="ff" x="0" y="0" width="300" height="20" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="20" />
+      <line class="ff" x1="140" y1="0" x2="140" y2="20" />
+      <line class="ff" x1="220" y1="0" x2="220" y2="20" />
+      <text class="ff ss" x="30" y="15" text-anchor="middle">000006</text>
+      <text class="ff ss" x="100" y="15" text-anchor="middle">小泉　純</text>
+      <text class="ff ss" x="180" y="15" text-anchor="middle">500000</text>
+      <text class="ff ss" x="260" y="15" text-anchor="middle">0001</text>
+    </g>
+    <g id="ex_shaintable">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R0" transform="translate(0, 0)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R1" transform="translate(0, 20)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R2" transform="translate(0, 40)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R3" transform="translate(0, 60)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R4" transform="translate(0, 80)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R5" transform="translate(0, 100)"></use>
+    </g>
+  </defs>

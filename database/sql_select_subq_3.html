@@ -1,0 +1,384 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SELECT EXEISTS+相関副問い合わせ</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+#include "shain_table.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+SELECT EXISTS句+相関副問い合わせ<br />
+<input type="button" id="B18_01" onclick="disppage(18, 1);" value="1" />
+<input type="button" id="B18_02" onclick="disppage(18, 2);" value="2(2)" />
+<input type="button" id="B18_03" onclick="disppage(18, 3);" value="3" />
+<input type="button" id="B18_04" onclick="disppage(18, 4);" value="4" />
+<input type="button" id="B18_05" onclick="disppage(18, 5);" value="5" />
+<input type="button" id="B18_06" onclick="disppage(18, 6);" value="6" />
+<input type="button" id="B18_07" onclick="disppage(18, 7);" value="7(3)" />
+<input type="button" id="B18_08" onclick="disppage(18, 8);" value="8" />
+<input type="button" id="B18_09" onclick="disppage(18, 9);" value="9" />
+<input type="button" id="B18_10" onclick="disppage(18, 10);" value="10" />
+<input type="button" id="B18_11" onclick="disppage(18, 11);" value="11" />
+<input type="button" id="B18_12" onclick="disppage(18, 12);" value="12(4)" />
+</div>
+
+
+<div id="dbsql18_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] SELECT文　EXISTS + 相関副問い合わせ</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><th width="90">社員番号</th><th width="90">社員名</th><th width="90">給与</th><th width="96">部署コード</th></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+<br />
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_02" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[2] SELECT EXISTS+相関副問い合わせ(2)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <g id="subq3_2_fig">
+    <g id="subq3_2_2_tablea" transform="translate(0, 20)">
+      <text class="ff" x="0" y="20">社員表 a (外側の表)</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(0, 30)"></use>
+    </g>
+    <g id="subq3_2_2_tableb" transform="translate(340, 20)">
+      <text class="ff" x="0" y="20">社員表 b (内側の表)</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(0, 30)"></use>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_03" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[3] SELECT 相関副問い合わせ(2) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_3_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="70" width="300" height="20" style="stroke-width:5;stroke:purple" />
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000001, 山田一郎,350000,0002)</text>
+    <path class="ff" d="M300,80 Q320,80 320,100 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_04" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[4] SELECT 相関副問い合わせ(2) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_4_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_3_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s" x="570" y="270">and b.給与 < a.給与</text>
+    <text class="ff s" x="20" y="290">⇒</text>
+    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
+    <text class="ff s" x="570" y="290">and b.給与 < <tspan style="fill:red">350000</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
+    <path class="ff" d="M600,280 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+    <rect class="ff" x="340" y="70" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] SELECT 相関副問い合わせ(2) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_5_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_4_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 選択なし</text>
+    <rect class="ff" x="340" y="70" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] SELECT 相関副問い合わせ(2) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_6_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_5_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) 副問合せが行を返せば、(1)の行を選択する。</text>
+    <text class="ff s" x="20" y="370">副問合せの結果：行の選択なし → (1)で取り出した行の選択なし</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[7] SELECT 相関副問い合わせ(3)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_7_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="90" width="300" height="20" style="stroke-width:5;stroke:purple" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] SELECT 相関副問い合わせ(3) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_8_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_7_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000002, 鈴木花子,320000,0001)</text>
+    <path class="ff" d="M300,100 Q320,100 320,120 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_09" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[9] SELECT 相関副問い合わせ(3) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_9_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_8_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s" x="570" y="270">and b.給与 < a.給与</text>
+    <text class="ff s" x="20" y="290">⇒</text>
+    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <text class="ff s" x="570" y="290">and b.給与 < <tspan style="fill:red">320000</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
+    <path class="ff" d="M600,280 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+    <rect class="ff" x="340" y="90" width="300" height="20" style="stroke-width:5;stroke:red" />
+    <rect class="ff" x="340" y="150" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_10" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[10] SELECT 相関副問い合わせ(3) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_10_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_9_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → (000005,高橋五郎,210000,0001)</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_11" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[11] SELECT 相関副問い合わせ(3) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq3_11_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq3_10_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) 副問合せが行を返せば、(1)の行を選択する。</text>
+    <text class="ff s" x="20" y="370">副問合せの結果、行が返されたので、(1)の行(00002,鈴木花子,320000,0001)を選択する。</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql18_12" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[12] SELECT 相関副問い合わせ(4)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+例：自分と同じ職場に所属する社員で自分より給与が低い社員がいる社員を選択
+</p>
+<center>
+社員表
+<table class="tbl" border="1">
+<tbody>
+<tr class="c"><th width="90">社員番号</th><th width="90">社員名</th><th width="90">給与</th><th width="96">部署コード</th></tr>
+<tr class="c"><td>000001</td><td>山田一郎</td><td>350000</td><td>0002</td></tr>
+<tr class="c"><td>000002</td><td>鈴木花子</td><td>320000</td><td>0001</td></tr>
+<tr class="c"><td>000003</td><td>佐藤三郎</td><td>280000</td><td>0003</td></tr>
+<tr class="c"><td>000004</td><td>田中良子</td><td>250000</td><td>0003</td></tr>
+<tr class="c"><td>000005</td><td>高橋五郎</td><td>210000</td><td>0001</td></tr>
+</tbody>
+</table>
+</center>
+<div class="codelist">
+<pre class="codelist">
+select * from 社員表 a
+    where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+                                           and b.給与 < a.給与)
+</pre>
+</div>
+<br />
+<pre class="terminal"><code>実行例：<br />
+&gt; select * from 社員表 a
+ where EXISTS (select * from 社員表 b where b.部署コード = a.部署コード
+ and b.給与 < a.給与);
+社員番号 社員名   性別  生年月日   給与    部署コード
+------   ----     --   ----------  ------  -----
+000002   鈴木花子 女   1956-07-18  320000  0001
+000003   佐藤三郎 男   1961-07-03  280000  0003</code>
+</pre>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>

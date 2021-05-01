@@ -1,0 +1,388 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SELECT 2</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+#include "shain_table.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+SELECT 集約関数<br />
+<input type="button" id="B15_01" onclick="disppage(15, 1);" value="1" />
+<input type="button" id="B15_02" onclick="disppage(15, 2);" value="2" />
+<input type="button" id="B15_03" onclick="disppage(15, 3);" value="3" />
+<input type="button" id="B15_04" onclick="disppage(15, 4);" value="4" />
+<input type="button" id="B15_05" onclick="disppage(15, 5);" value="5" />
+<input type="button" id="B15_06" onclick="disppage(15, 6);" value="6" />
+<input type="button" id="B15_07" onclick="disppage(15, 7);" value="7" />
+<input type="button" id="B15_08" onclick="disppage(15, 8);" value="8" />
+</div>
+
+
+<div id="dbsql15_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] SELECT文 集約関数</h3></div>
+<div class="pagebody">
+<div class="codelist">
+<pre class="codelist">集計：<code>(1) select 集約関数(列名1), .... from 表名リスト [group by 列名 [,列名]... [having 条件]</code>
+</pre>
+</div><!-- codelist -->
+<p class="bplist1">
+集約関数：引数で指定した列の複数の(行の)値から１つの値を求めるもの
+</p>
+<br />
+<center>
+<table class="tbl" border="1">
+<tr class="c"><th>関数名</th><th>意味</th><th>例</th><th>例の意味</th></tr>
+<tr><td>sum()</td><td>合計値</td><td>select sum(給与) from 社員表</td><td>社員表の給与列の値の合計値</td></tr>
+<tr><td>avg()</td><td>平均値</td><td>select avg(給与) from 社員表</td><td>社員表の給与列の値の平均値</td></tr>
+<tr><td>max()</td><td>最大値</td><td>select max(給与) from 社員表</td><td>社員表の給与列の値の最大値</td></tr>
+<tr><td>min()</td><td>最小値</td><td>select min(給与) from 社員表</td><td>社員表の給与列の値の最小値</td></tr>
+<tr><td>count()</td><td>件数</td><td>select count(*) from 社員表</td><td>社員表の行数</td></tr>
+</table>
+</center>
+
+<br />
+<div class="codelist">
+<pre class="codelist">
+例１：<code> select sum(給与), avg(給与), max(給与), min(給与), count(*) from 社員表</code>
+</pre>
+</div><!-- codelist -->
+<div class="codelist">
+<pre class="codelist">
+例２：<code> select 部署コード, sum(給与), avg(給与), max(給与), min(給与), count(*)
+    from 社員表 group by 部署コード <span style="color:red">having</span> count(*) > 1</code>
+</pre>
+</div><!-- codelist -->
+<p class="bplist1">
+☆集計結果の絞り込みは、having句を使う。(whereではできない)
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] SELECT文 集約関数</h3></div>
+<div class="pagebody">
+<p class="plist">
+集約関数：引数で指定した列の複数の(行の)値から１つの値を求めるもの
+</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <g id="sqlselect2_2" transform="translate(0, 0)">
+    <text class="ff" x="50" y="20">社員表</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(50, 30)"></use>
+    <rect class="ff sw2 red" x="190" y="50" width="80" height="100" />
+    <line class="ff" x1="210" y1="160" x2="110" y2="240" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(110, 240),rotate(141)"></use>
+    <line class="ff" x1="220" y1="160" x2="210" y2="240" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(210, 240),rotate(97)"></use>
+    <line class="ff" x1="230" y1="160" x2="310" y2="240" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(310, 240),rotate(45)"></use>
+    <line class="ff" x1="240" y1="160" x2="420" y2="240" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(420, 240),rotate(23.9)"></use>
+    <line class="ff" x1="250" y1="160" x2="500" y2="240" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(500, 240),rotate(17.7)"></use>
+    <text class="ff" s" x="5" y="260">select count(給与), min(給与), max(給与), sum(給与), avg(給与) from 社員表</text>
+  </g>
+</svg>
+<div class="codelist">
+<pre class="codelist"><code>count(給与)  min(給与)  max(給与)  sum(給与)  avg(給与)
+---------    -------    -------    -------    --------
+5            210000     350000     1410000    282000.0</code>
+</pre>
+</div><!-- codelist -->
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] SELECT文 集約関数：グループ化</h3></div>
+<div class="pagebody">
+<p class="bplist">
+グループ化とは、同列内の中で、同じ値をもつデータごとに集合化すること。
+</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="sqlselect2_3" transform="translate(50, 0)">
+    <text class="ff" x="0" y="20">社員表</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable" transform="translate(0, 30)"></use>
+    <rect class="ff sw2 act" x="220" y="30" width="80" height="120" />
+    <text class="ff" x="10" y="180">部署コードでグループ化(group by 部署コード)すると、</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warrow1_25" transform="translate(150, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] SELECT文 集約関数：グループ化(2)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+  <defs>
+    <g id="ex_shaintable_g">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R0" transform="translate(0, 0)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R5" transform="translate(0, 20)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R2" transform="translate(0, 40)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R1" transform="translate(0, 60)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R3" transform="translate(0, 80)"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_R4" transform="translate(0, 100)"></use>
+    </g>
+  </defs>
+  <g id="sqlselect2_4" transform="translate(50, 0)">
+    <text class="ff" x="0" y="20">社員表</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shaintable_g" transform="translate(0, 30)"></use>
+    <rect class="ff sw2 act" x="2" y="53" width="296" height="34" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(310, 70),rotate(90),scale(0.4,1)"></use>
+    <rect class="ff sw2 blue" x="2" y="93" width="296" height="14" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(310, 100),rotate(90),scale(0.2,1)"></use>
+    <rect class="ff sw2 red" x="2" y="113" width="296" height="34" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(310, 130),rotate(90),scale(0.4,1)"></use>
+    <line class="ff" x1="380" y1="100" x2="320" y2="70" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(320, 70),rotate(30)"></use>
+    <line class="ff" x1="380" y1="100" x2="320" y2="100" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(320, 100)"></use>
+    <line class="ff" x1="380" y1="100" x2="320" y2="130" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(320, 130),rotate(-30)"></use>
+    <text class="ff" x="380" y="90">この単位で、集計や</text>
+    <text class="ff" x="380" y="110">平均、件数カウント</text>
+    <text class="ff" x="380" y="130">を行う。</text>
+    <text class="ff s" x="5" y="380">select count(*), sum(給与), avg(給与), <tspan text-decoration="underline">部署コード</tspan> from 社員表 group by <tspan text-decoration="underline">部署コード</tspan></text>
+    <path class="ff" d="M600,380 600,400 350,400 350,380" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(350, 380)"></use>
+    <text class="ff s" x="45" y="420">(group by で指定した列だけが、selectにそのまま書くことができる)</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warrow1_25" transform="translate(150, 440)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] SELECT文 集約関数：グループ化(3)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+  <defs>
+    <g id="arrowplain40">
+      <path class="ff" d="M40,0 Q0,50 40,100 L40,90 50,110 40,130 40 120 Q0,70 40,20 L40,0" />
+    </g>
+  </defs>
+  <g id="sqlselect2_5">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sqlselect2_4" transform="translate(0, 0)"></use>
+    <text class="ff" x="30" y="190">集約関数を使って、給与の合計と平均を計算する。</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrowplain40" transform="translate(0, 90),scale(1, 1.5)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] SELECT文 集約関数：グループ化(4)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+  <g id="sqlselect2_6">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sqlselect2_5" transform="translate(0, 0)"></use>
+    <g id="sqlselect2_4_1" transform="translate(50,200)">
+      <rect class="ff" x="0" y="0" width="440" height="150" />
+      <line class="ff" x1="0" y1="25" x2="440" y2="25" />
+      <line class="ff" x1="0" y1="75" x2="440" y2="75" />
+      <line class="ff" x1="0" y1="100" x2="440" y2="100" />
+      <line class="ff" x1="160" y1="0" x2="160" y2="150" />
+      <line class="ff" x1="320" y1="0" x2="320" y2="150" />
+      <rect class="ff sw2 act" x="2" y="27" width="436" height="46" />
+      <rect class="ff sw2 blue" x="2" y="77" width="436" height="21" />
+      <rect class="ff sw2 red" x="2" y="102" width="436" height="46" />
+
+      <text class="ff s" x="5" y="18">合計(給与)</text>
+      <text class="ff s" x="5" y="45">210000</text>
+      <text class="ff s" x="90" y="55">530000</text>
+      <text class="ff s" x="5" y="65">320000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(80, 50),rotate(90),scale(0.2,0.8)"></use>
+      <text class="ff s" x="5" y="95">350000</text>
+      <text class="ff s" x="90" y="95">350000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrow1_15" transform="translate(70, 87)"></use>
+      <text class="ff s" x="5" y="120">280000</text>
+      <text class="ff s" x="90" y="130">530000</text>
+      <text class="ff s" x="5" y="140">250000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(80, 125),rotate(90),scale(0.2,0.8)"></use>
+
+      <text class="ff s" x="165" y="18">平均(給与)</text>
+      <text class="ff s" x="165" y="45">210000</text>
+      <text class="ff s" x="250" y="55">265000</text>
+      <text class="ff s" x="165" y="65">320000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(240, 50),rotate(90),scale(0.2,0.8)"></use>
+      <text class="ff s" x="165" y="95">350000</text>
+      <text class="ff s" x="250" y="95">350000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrow1_15" transform="translate(230, 87)"></use>
+      <text class="ff s" x="165" y="120">280000</text>
+      <text class="ff s" x="250" y="130">265000</text>
+      <text class="ff s" x="165" y="140">250000</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(240, 125),rotate(90),scale(0.2,0.8)"></use>
+
+      <text class="ff s" x="325" y="18">部署コード</text>
+      <text class="ff s" x="325" y="45">0001</text>
+      <text class="ff s" x="390" y="55">0001</text>
+      <text class="ff s" x="325" y="65">0001</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(380, 50),rotate(90),scale(0.2,0.8)"></use>
+      <text class="ff s" x="325" y="95">0002</text>
+      <text class="ff s" x="390" y="95">0002</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrow1_15" transform="translate(370, 87)"></use>
+      <text class="ff s" x="325" y="120">0003</text>
+      <text class="ff s" x="390" y="130">0003</text>
+      <text class="ff s" x="325" y="140">0003</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(380, 125),rotate(90),scale(0.2,0.8)"></use>
+    </g>
+  </g>
+</dvg>
+</table>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[7] SELECT文 集約関数：グループ化(5)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+  <defs>
+    <g id="ex_shain_group_0">
+      <rect class="ff" x="0" y="0" width="250" height="125" />
+      <line class="ff" x1="0" y1="50" x2="250" y2="50" />
+      <line class="ff" x1="0" y1="75" x2="250" y2="75" />
+      <line class="ff" x1="0" y1="100" x2="250" y2="100" />
+      <line class="ff" x1="50" y1="0" x2="50" y2="125" />
+      <line class="ff" x1="120" y1="0" x2="120" y2="125" />
+      <line class="ff" x1="190" y1="0" x2="190" y2="125" />
+
+      <text class="ff s" x="5" y="20">count</text>
+      <text class="ff s" x="55" y="20">合計</text>
+      <text class="ff s" x="55" y="40">(給与)</text>
+      <text class="ff s" x="125" y="20">平均</text>
+      <text class="ff s" x="125" y="40">(給与)</text>
+      <text class="ff s" x="195" y="20">部署</text>
+      <text class="ff s" x="195" y="40">コード</text>
+
+      <text class="ff s" x="25" y="70">2</text>
+      <text class="ff s" x="55" y="70">530000</text>
+      <text class="ff s" x="125" y="70">265000</text>
+      <text class="ff s" x="195" y="70">0001</text>
+
+      <text class="ff s" x="25" y="95">1</text>
+      <text class="ff s" x="55" y="95">350000</text>
+      <text class="ff s" x="125" y="95">350000</text>
+      <text class="ff s" x="195" y="95">0002</text>
+
+      <text class="ff s" x="25" y="120">2</text>
+      <text class="ff s" x="55" y="120">530000</text>
+      <text class="ff s" x="125" y="120">265000</text>
+      <text class="ff s" x="195" y="120">0003</text>
+    </g>
+    <g id="ex_shain_group">
+      <rect class="ff" x="0" y="0" width="330" height="100" />
+      <line class="ff" x1="0" y1="25" x2="330" y2="25" />
+      <line class="ff" x1="0" y1="50" x2="330" y2="50" />
+      <line class="ff" x1="0" y1="75" x2="330" y2="75" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="100" />
+      <line class="ff" x1="150" y1="0" x2="150" y2="100" />
+      <line class="ff" x1="240" y1="0" x2="240" y2="100" />
+
+      <text class="ff s" x="5" y="20">count</text>
+      <text class="ff s" x="65" y="20">合計(給与)</text>
+      <text class="ff s" x="155" y="20">平均(給与)</text>
+      <text class="ff s" x="245" y="20">部署コード</text>
+
+      <text class="ff s" x="25" y="45">2</text>
+      <text class="ff s" x="70" y="45">530000</text>
+      <text class="ff s" x="160" y="45">265000</text>
+      <text class="ff s" x="270" y="45">0001</text>
+
+      <text class="ff s" x="25" y="70">1</text>
+      <text class="ff s" x="70" y="70">350000</text>
+      <text class="ff s" x="160" y="70">350000</text>
+      <text class="ff s" x="270" y="70">0002</text>
+
+      <text class="ff s" x="25" y="95">2</text>
+      <text class="ff s" x="70" y="95">530000</text>
+      <text class="ff s" x="160" y="95">265000</text>
+      <text class="ff s" x="270" y="95">0003</text>
+    </g>
+    <g id="ex_shain_group_sub2">
+      <rect class="ff" x="0" y="0" width="330" height="50" />
+      <line class="ff" x1="0" y1="25" x2="330" y2="25" />
+      <line class="ff" x1="0" y1="50" x2="330" y2="50" />
+      <line class="ff" x1="60" y1="0" x2="60" y2="50" />
+      <line class="ff" x1="150" y1="0" x2="150" y2="50" />
+      <line class="ff" x1="240" y1="0" x2="240" y2="50" />
+
+      <text class="ff s" x="5" y="20">count</text>
+      <text class="ff s" x="65" y="20">合計(給与)</text>
+      <text class="ff s" x="155" y="20">平均(給与)</text>
+      <text class="ff s" x="245" y="20">部署コード</text>
+      <text class="ff s" x="25" y="45">1</text>
+      <text class="ff s" x="70" y="45">350000</text>
+      <text class="ff s" x="160" y="45">350000</text>
+      <text class="ff s" x="270" y="45">0002</text>
+    </g>
+  </defs>
+  <g id="sqlselect2_7">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sqlselect2_6" transform="translate(0, 0)"></use>
+    <g id="sqlselect2_5_1" transform="translate(550,200)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shain_group_0" transform="translate(0, 0)"></use>
+    </g>
+    <line class="ff" x1="490" y1="225" x2="550" y2="250" />
+    <line class="ff" x1="490" y1="275" x2="550" y2="275" />
+    <line class="ff" x1="490" y1="300" x2="550" y2="300" />
+    <line class="ff" x1="490" y1="350" x2="550" y2="325" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warrow1_25" transform="translate(510, 210)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql15_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] SELECT文 集約関数：グループ化(6)</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <g id="sqlselect2_8">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shain_group" transform="translate(0, 0)"></use>
+    <text class="ff" x="380" y="70">集計結果に対して抽出条件</text>
+    <text class="ff" x="380" y="95">を指定することが可能</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ex_shain_group_sub2" transform="translate(0, 200)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrowplain40" transform="translate(390, 60),scale(-1, 1.5)"></use>
+    <text class="ff" x="400" y="150">給与の平均が、</text>
+    <text class="ff" x="400" y="175">300000以上を選択すると</text>
+    <text class="ff" x="0" y="300">集計結果に対して条件を設定するには、havingを使い以下のように書きます。</text>
+  </g>
+</svg>
+<div class="codelist">
+<pre class="codelist">
+<code>select count(*), max(給与),  avg(給与), 部署コード from 社員表
+group by 部署コード <u>having avg(給与) &gt;= 300000</u></code>
+</pre>
+</div><!-- codelist -->
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>
