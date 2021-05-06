@@ -14,6 +14,7 @@
     <input type="button" id="B04_03" onclick="disppage(4, 3);" value="演習４－３" />
     <input type="button" id="B04_04" onclick="disppage(4, 4);" value="演習４－４" />
     <input type="button" id="B04_05" onclick="disppage(4, 5);" value="演習４－５" />
+    <input type="button" id="B04_06" onclick="disppage(4, 6);" value="演習４－６" />
     </center>
   </div>
   <hr style="margin:0;">
@@ -38,16 +39,14 @@
         <p><input type="button" onclick="detailson('chap04_01_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_01_a04" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select * from 社員表 where 部署コード = '0003';
-
- 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
-----------+----------+-------+------------+--------+------------
- 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
- 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; select * from 社員表 where 部署コード = '0003';
+社員番号  社員名    性別  生年月日    給与   部署コード
+------    ----      --    ----------  ------  -----
+000003    佐藤三郎  男    1961-07-03  280000  0003
+000004    田中良子  女    1978-01-18  250000  0003</code>
+</pre>
         </div>
       </div>
   </div>
@@ -72,17 +71,17 @@
         <p><input type="button" onclick="detailson('chap04_02_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_02_a04" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select * from 社員表 where 給与 &gt;= 200000 and 給与 &lt; 300000;
-
- 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
-----------+----------+-------+------------+--------+------------
- 000003   | 佐藤三郎 | 男    | 1961-07-03 | 280000 | 0003
- 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
- 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
-</code></pre>
+</code>
+</pre>
+<pre class="terminal"><code>実行例：
+&gt; select * from 社員表 where 給与 &gt;= 200000 and 給与 &lt; 300000;
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000003    佐藤三郎  男    1961-07-03  280000  0003
+000004    田中良子  女    1978-01-18  250000  0003
+000005    高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
         </div>
       </div>
   </div>
@@ -112,20 +111,18 @@
         <p><input type="button" onclick="detailson('chap04_03_a05')" value="実行例" /></p>
       </div>
       <div id="chap04_03_a05" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select s.社員番号 as "番号", s.社員名 as "氏名" , b.部署名 as "所属"
--# from 社員表 s join 部署表 b on s.部署コード = b.部署コード;
-
-  番号  |   氏名   |  所属
---------+----------+--------
- 000001 | 山田一郎 | 営業部
- 000002 | 鈴木花子 | 総務部
- 000003 | 佐藤三郎 | 開発部
- 000004 | 田中良子 | 開発部
- 000005 | 高橋五郎 | 総務部
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; select s.社員番号 as "番号", s.社員名 as "氏名" , b.部署名 as "所属"
+  from 社員表 s join 部署表 b on s.部署コード = b.部署コード;
+番号    氏名      所属
+------  ----      ---
+000001  山田一郎  営業部
+000002  鈴木花子  総務部
+000003  佐藤三郎  開発部
+000004  田中良子  開発部
+000005  高橋五郎  総務部</code>
+</pre>
         </div>
       </div>
   </div>
@@ -150,18 +147,16 @@
         <p><input type="button" onclick="detailson('chap04_04_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_04_a04" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select s.社員番号, s.社員名, s.部署コード
--# from 社員表 s join 部署表 b on s.部署コード = b.部署コード
--# where b.部署名 = '総務部';
-
- 社員番号 |  社員名  | 部署コード
-----------+----------+------------
- 000002   | 鈴木花子 | 0001
- 000005   | 高橋五郎 | 0001
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; select s.社員番号, s.社員名, s.部署コード
+  from 社員表 s join 部署表 b on s.部署コード = b.部署コード
+  where b.部署名 = '総務部';
+社員番号  社員名    部署コード
+------    ----      -----
+000002    鈴木花子  0001
+000005    高橋五郎  0001</code>
+</pre>
         </div>
       </div>
   </div>
@@ -186,16 +181,49 @@
         <p><input type="button" onclick="detailson('chap04_05_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_05_a04" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select * from 社員表 where 生年月日 &gt;= '1970/01/01';
-
- 社員番号 |  社員名  | 性別  |  生年月日  |  給与  | 部署コード
-----------+----------+-------+------------+--------+------------
- 000004   | 田中良子 | 女    | 1978-01-18 | 250000 | 0003
- 000005   | 高橋五郎 | 男    | 1982-11-06 | 210000 | 0001
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; select * from 社員表 where 生年月日 &gt;= '1970/01/01';
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000004    田中良子  女    1978-01-18  250000  0003
+000005    高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
+        </div>
+      </div>
+  </div>
+  <div id="chap04_06" class="chap">
+      <h4>演習４－６</h4>
+      <div class="quiz">
+        社員表を、給与の大きい順に並べ替えなさい。</div>
+      <p><input type="button" onclick="detailson('chap04_06_a01')" value="解説" /></p>
+      <div id="chap04_06_a01" style="display:none;">
+        <p class="sqlp1">[1] 社員表から</p>
+        <div class="plist3"><pre class="f"><code>→ <u>from 社員表</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_06_a02')" value="(2)" /></p>
+      </div>
+      <div id="chap04_06_a02" style="display:none;">
+        <p class="sqlp1">[2] 列の指定がないので全列とする</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select *</u> from 社員表</code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_06_a03')" value="(3)" /></p>
+      </div>
+      <div id="chap04_06_a03" style="display:none;">
+        <p class="sqlp1">[3] 給与の大きい順に並べ替える</p>
+        <div class="plist3"><pre class="f"><code>→ <u>select * from 社員表 order by 給与 desc</u></code></pre></div>
+        <p><input type="button" onclick="detailson('chap04_06_a04')" value="実行例" /></p>
+      </div>
+      <div id="chap04_06_a04" style="display:none;">
+        <div class="codelist">
+<pre class="terminal"><code>実行例：
+&gt; select * from 社員表 order by 給与 desc;
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000001    山田一郎  男    1950-03-25  350000  0002
+000002    鈴木花子  女    1956-07-18  320000  0001
+000003    佐藤三郎  男    1961-07-03  280000  0003
+000004    田中良子  女    1978-01-18  250000  0003
+000005    高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
         </div>
       </div>
   </div>

@@ -47,15 +47,14 @@
       </div>
       <p><input type="button" onclick="detailson('chap07_01_a01')" value="実行例" /></p>
       <div id="chap07_01_a01" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# create table SHOUHIN (
-(# 商品コード char(3) primary key,
-(# 商品名     varchar(24),
-(# 単価       numeric(8)
-(# );
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; create table SHOUHIN (
+  商品コード char(3) primary key,
+  商品名     varchar(24),
+  単価       numeric(8)
+  );</code>
+</pre>
         </div>
       </div>
   </div>
@@ -90,22 +89,20 @@
       </div>
       <p><input type="button" onclick="detailson('chap07_02_a01')" value="実行例" /></p>
       <div id="chap07_02_a01" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# insert into SHOUHIN(商品コード, 商品名, 単価) values('S01', '鉛筆', 30);
-=# insert into SHOUHIN(商品コード, 商品名, 単価) values('T03', 'テレビ', 40000);
-=# insert into SHOUHIN(商品コード, 商品名, 単価) values('S02', 'お茶', 230);
-
-確認：
-
-=# select * from shouhin;
- 商品コード | 商品名 | 単価
-------------+--------+-------
- S01        | 鉛筆   |    30
- T03        | テレビ | 40000
- S02        | お茶   |   230
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('S01', '鉛筆', 30);
+&gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('T03', 'テレビ', 40000);
+&gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('S02', 'お茶', 230);</code>
+</pre>
+<pre class="terminal"><code>確認：
+&gt; select * from shouhin;
+商品コード  商品名  単価
+-----       ---     -----
+S01         鉛筆    30
+T03         テレビ  40000
+S02         お茶    230</code>
+</pre>
         </div>
       </div>
   </div>
@@ -125,11 +122,10 @@
         <p><input type="button" onclick="detailson('chap07_03_a03')" value="実行例" /></p>
       </div>
       <div id="chap07_03_a03" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# create view V_SHOUHIN as select 商品名, 単価 from SHOUHIN;
-</code></pre>
+<pre class="terminal"><code>実行例：
+=# create view V_SHOUHIN as select 商品名, 単価 from SHOUHIN;</code>
+</pre>
         </div>
       </div>
   </div>
@@ -154,16 +150,14 @@
         <p><input type="button" onclick="detailson('chap07_04_a04')" value="実行例" /></p>
       </div>
       <div id="chap07_04_a04" style="display:none;">
-        <p class="sqlp1">実行例：</p>
         <div class="codelist">
-<pre class="f"><code>
-=# select * from V_SHOUHIN where 単価 &lt;= 1000;
-
- 商品名 | 単価
---------+------
- 鉛筆   |   30
- お茶   |  230
-</code></pre>
+<pre class="terminal"><code>実行例：
+&gt; select * from V_SHOUHIN where 単価 &lt;= 1000;
+商品名  単価
+---     ---
+鉛筆    30
+お茶    230</code>
+</pre>
         </div>
       </div>
   </div>

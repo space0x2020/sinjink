@@ -20,8 +20,8 @@ ENCODEDDIR=ENCODED
 SED=sed -e '/^\#/d' -e '/^$$/d'
 
 TARGETS= \
-	$(SCRIPTS) \
 	$(HTMLDIR) $(MOODLEDIR) \
+	$(SCRIPTS) \
 	$(STYLESHTML) $(STYLESMOODLE) \
 	$(MOODLEDIR)/sql_select_1.svg \
 	$(HTMLDIR)/sql_select_1.html \

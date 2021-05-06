@@ -62,8 +62,8 @@ SELECT 相関副問い合わせ<br />
   <defs>
   <g id="subq2_1_sel">
     <rect class="ff act" x="0" y="0" width="700" height="160" />
-    <text class="ff" x="10" y="40">select * from 社員表 a where a.給与 =</text>
-    <text class="ff" x="60" y="100">(select max(b.給与) from 社員表 b where b.部署コード = a.部署コード )</text>
+    <text class="ff fix" x="10" y="40">select * from 社員表 a where a.給与 =</text>
+    <text class="ff fix" x="60" y="100">(select max(b.給与) from 社員表 b where b.部署コード = a.部署コード )</text>
   </g>
   </defs>
   <g id="subq2_1_2" transform="translate(0,40)">
@@ -164,12 +164,12 @@ select * from 社員表 a where a.給与 =
   <g id="subq2_4_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_3_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
-    <text class="ff s" x="20" y="290">⇒</text>
-    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
-    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
-    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="20" y="290">⇒</text>
+    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
+    <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
   </g>
 </svg>
@@ -285,12 +285,12 @@ select * from 社員表 a where a.給与 =
   <g id="subq2_9_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_8_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
-    <text class="ff s" x="20" y="290">⇒</text>
-    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
-    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
-    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="20" y="290">⇒</text>
+    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
+    <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
   </g>
 </svg>
@@ -407,12 +407,12 @@ select * from 社員表 a where a.給与 =
   <g id="subq2_14_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_13_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
-    <text class="ff s" x="20" y="290">⇒</text>
-    <text class="ff s" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
-    <path class="ff" d="M470,220 Q470,230 480,230 Q490,230 490,240 L490,260" />
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(490, 260)"></use>
-    <path class="ff" d="M520,285 Q600,280 600,250 L600,240 L600,180" />
+    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="20" y="290">⇒</text>
+    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
+    <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
   </g>
 </svg>

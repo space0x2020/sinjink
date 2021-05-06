@@ -102,6 +102,9 @@
         fill:yellow;
         font-size: 18;
       }
+      text.fix {
+        font-family:monospace;
+      }
       rect.th {
 #ifdef V1
         fill: blue; /*V1*/

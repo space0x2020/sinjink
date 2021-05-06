@@ -34,13 +34,13 @@ SELECT文の中に別のSELECT文があるときその内側のSELECT文を副�
 たとえば、あるSELECT文の結果を検索条件にしたい場合などに副問い合わせを使う。
 つまり、検索条件がある表のデータに依存するような場合などの使う。
 </p>
-<p class="bplist">
+<div class="plist">
 <pre class="codelist">
 <code>
 ■ select ... from (select ...) A where A.a = (select ...)
 </code>
 </pre>
-</p>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
@@ -89,7 +89,7 @@ select * from 社員表 where 給与 = (select min(給与) from 社員表)
 </div>
 <pre class="terminal">
 <code>実行例：<br />
-&gt; sqlite> select * from 社員表 where 給与 = (select min(給与) from 社員表);
+&gt; select * from 社員表 where 給与 = (select min(給与) from 社員表);
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000005    高橋五郎  男   1982-11-06   210000  0001</code>
@@ -154,7 +154,7 @@ select * from 社員表 where 部署コード IN
 </div>
 <pre class="terminal">
 <code>実行例：<br />
-&gt; sqlite> select * from 社員表 where 部署コード IN
+&gt; select * from 社員表 where 部署コード IN
    (select 部署コード from 社員表 where 給与 >= 300000);
 社員番号 社員名    性別  生年月日    給与    部署コード
 ------   ----      --    ----------  ------  -----
@@ -221,7 +221,7 @@ select * from 社員表 where 部署コード NOT IN
 </div>
 <pre class="terminal">
 <code>実行例：<br />
-&gt; sqlite> select * from 社員表 where 部署コード NOT IN
+&gt; select * from 社員表 where 部署コード NOT IN
     (select 部署コード from 社員表 where 給与 >= 300000);
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----

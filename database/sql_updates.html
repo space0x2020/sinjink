@@ -43,13 +43,13 @@
 </svg>
 <p class="plist">(1) 列名を省略した場合</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表 values ('000006', '小泉　純', 500000, '0003')
 </pre>
 </div>
 <p class="plist">(2) 列名を記述した場合</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表(社員番号, 社員名, 給与, 部署コード)
   values ('000006', '小泉　純', 500000, '0003')
 </pre>
@@ -57,21 +57,21 @@
 <p class="plist">(3) 部署コードを省略する場合(省略した場合、nullとなる)
 </p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表(社員番号, 社員名, 給与)  values ('000006', '小泉　純', 500000)
 </pre>
 </div>
 <p class="plist">(4) nullを挿入する場合</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表(社員番号, 社員名, 給与)
    values ('000006', '小泉　純', 500000)
 </pre>
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表(社員番号, 社員名, 給与,　部署コード) 
    values ('000006', '小泉　純', 500000, null)
 </pre>
-<pre class="terminal">
+<pre class="codelist">
 &gt; insert into 社員表 values ('000006', '小泉　純', 500000, null)
 </pre>
 </div>
@@ -103,13 +103,13 @@
 </svg>
 <p class="plist">(1) update文</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; update 社員表 set 部署コード = '0001' where <u>社員番号 = '000006'</u>
 </pre>
 </div>
 <p class="plist">(2) where句を省くと</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; update 社員表 set 部署コード = '0001'
 </pre>
 <p class="plist1"><u>社員表のすべてのデータ(行)の部署コードが'0001'になる。</u></p>
@@ -139,13 +139,13 @@
 </svg>
 <p class="plist">(1) DELETE文</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; deletee from 社員表 where <u>社員番号 = '000006'</u>
 </pre>
 </div>
 <p class="plist">(2) where句を省くと</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; delete from 社員表
 </pre>
 <p class="plist1"><u>社員表のすべてのデータ(行)が削除される。</u></p>
@@ -171,7 +171,7 @@ COMMMIT
 </p>
 <p class="plist">例：commit</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; begin transaction;
 &gt; update 部署表 set 部署名 = '販売部' where 部署コード = '0002';
 &gt; commit;
@@ -180,7 +180,7 @@ COMMMIT
 </p>
 <p class="plist">例：rollback</p>
 <div class="plist1">
-<pre class="terminal">
+<pre class="codelist">
 &gt; begin transaction;
 &gt; update 部署表 set 部署名 = '販売部' where 部署コード = '0002';
 &gt; rollback;
