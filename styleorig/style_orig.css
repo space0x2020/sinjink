@@ -93,6 +93,9 @@ h3.pagetitle {
 .commandbar {
   align:center;
 }
+h4.quizno {
+  margin-block-end: 0.3em;
+}
 .quiz {
   border-style: solid;
   padding:0.3em;
@@ -429,6 +432,7 @@ pre.terminal {
   color: white;
   background-color: black;
   line-height: 120%;
+  width: 860px;
 }
 
 pre.terminal code {

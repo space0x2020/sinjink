@@ -87,6 +87,13 @@ select min(給与) from 社員表
 select * from 社員表 where 給与 = (select min(給与) from 社員表)
 </pre>
 </div>
+<pre class="terminal">
+<code>実行例：<br />
+&gt; sqlite> select * from 社員表 where 給与 = (select min(給与) from 社員表);
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000005    高橋五郎  男   1982-11-06   210000  0001</code>
+</pre>
 </div><!-- pagebody -->
 </div><!-- page -->
 
@@ -133,7 +140,7 @@ select * from 社員表 where 部署コード IN
 </div>
 <div class="plist2">
 <pre class="codelist">
-select 部署コード from 社員表 where 給与 => 300000
+select 部署コード from 社員表 where 給与 >= 300000
 </pre>
 </div>
 <div class="bplist">
@@ -142,10 +149,19 @@ select 部署コード from 社員表 where 給与 => 300000
 <div class="plist2">
 <pre class="codelist">
 select * from 社員表 where 部署コード IN
-    (select 部署コード from 社員表 where 給与 => 300000)
+    (select 部署コード from 社員表 where 給与 >= 300000)
 </pre>
 </div>
-
+<pre class="terminal">
+<code>実行例：<br />
+&gt; sqlite> select * from 社員表 where 部署コード IN
+   (select 部署コード from 社員表 where 給与 >= 300000);
+社員番号 社員名    性別  生年月日    給与    部署コード
+------   ----      --    ----------  ------  -----
+000001   山田一郎  男    1950-03-25  350000  0002
+000002   鈴木花子  女    1956-07-18  320000  0001
+000005   高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
 </div><!-- pagebody -->
 </div><!-- page -->
 
@@ -191,7 +207,7 @@ select * from 社員表 where 部署コード NOT IN
 </div>
 <div class="plist2">
 <pre class="codelist">
-select 部署コード from 社員表 where 給与 => 300000
+select 部署コード from 社員表 where 給与 >= 300000
 </pre>
 </div>
 <div class="bplist">
@@ -200,9 +216,18 @@ select 部署コード from 社員表 where 給与 => 300000
 <div class="plist2">
 <pre class="codelist">
 select * from 社員表 where 部署コード NOT IN
-    (select 部署コード from 社員表 where 給与 => 300000)
+    (select 部署コード from 社員表 where 給与 >= 300000)
 </pre>
 </div>
+<pre class="terminal">
+<code>実行例：<br />
+&gt; sqlite> select * from 社員表 where 部署コード NOT IN
+    (select 部署コード from 社員表 where 給与 >= 300000);
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000003    佐藤三郎  男    1961-07-03  280000  0003
+000004    田中良子  女    1978-01-18  250000  0003</code>
+</pre>
 
 </div><!-- pagebody -->
 </div><!-- page -->
@@ -244,7 +269,19 @@ select * from 社員表
 <p class="plist2">
 この副問合せは2行返すのでEXISTS区はTRUEとなり、行が抽出される。
 </p>
-
+<pre class="terminal">
+<code>実行例：<br />
+&gt; select * from 社員表
+    where EXISTS (select * from 社員表 where 部署コード = '0001');
+社員番号 社員名    性別  生年月日    給与    部署コード
+------   ----      --    ----------  ------  -----
+000001   山田一郎  男    1950-03-25  350000  0002
+000002   鈴木花子  女    1956-07-18  320000  0001
+000003   佐藤三郎  男    1961-07-03  280000  0003
+000004   田中良子  女    1978-01-18  250000  0003
+000005   高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
+<p></p>
 <div class="bplist">
  (2)  副問合せが行を返さない場合
 </div>
@@ -260,6 +297,12 @@ select * from 社員表
 <p class="plist">
 このEXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
 </p>
+<pre class="terminal">
+<code>実行例：<br />
+&gt; select * from 社員表
+    where EXISTS (select * from 社員表 where 部署コード = '0004');
+&gt;</code>
+</pre>
 </div><!-- pagebody -->
 </div><!-- page -->
 
@@ -294,7 +337,7 @@ select ... from 表明 where NOT EXISTS (副問合せ)
  (1)  副問合せが行を返す場合
 </div>
 <div class="plist2">
-<pre class="codelsit">
+<pre class="codelist">
 select * from 社員表
     where NOT EXISTS (select * from 社員表 where 部署コード = '0001')
 </pre>
@@ -302,14 +345,20 @@ select * from 社員表
 <p class="plist2">
 この副問合せは2行返すのでNOT EXISTS区はFALSEとなり、行が抽出されない。
 </p>
-
+<pre class="terminal">
+<code>実行例：<br />
+&gt; select * from 社員表
+   where NOT EXISTS (select * from 社員表 where 部署コード = '0001');
+&gt;</code>
+</pre>
+<p></p>
 <div class="bplist">
  (2)  副問合せが行を返さない場合
 </div>
 <div class="plist2">
-<pre class="codelsit">
+<pre class="codelist">
 select * from 社員表
-    where NOT NOT EXISTS (select * from 社員表 where 部署コード = '0004')
+    where NOT EXISTS (select * from 社員表 where 部署コード = '0004')
 </pre>
 </div>
 <p class="plist2">
@@ -318,6 +367,19 @@ select * from 社員表
 <p class="plist">
 このNOT EXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
 </p>
+<pre class="terminal">
+<code>実行例：<br />
+&gt; select * from 社員表
+   where NOT EXISTS (select * from 社員表 where 部署コード = '0004');
+社員番号  社員名    性別  生年月日    給与    部署コード
+------    ----      --    ----------  ------  -----
+000001    山田一郎  男    1950-03-25  350000  0002
+000002    鈴木花子  女    1956-07-18  320000  0001
+000003    佐藤三郎  男    1961-07-03  280000  0003
+000004    田中良子  女    1978-01-18  250000  0003
+000005    高橋五郎  男    1982-11-06  210000  0001</code>
+</pre>
+<br />
 </div><!-- pagebody -->
 </div><!-- page -->
 
