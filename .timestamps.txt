@@ -52,7 +52,6 @@
 202104152222.29 cpbase/virtualaddress.html
 202104141421.11 cpbase/waitqueue.html
 202105061050.51 cpbase/
-202105071224.33 database/.sql_select_subq_1.html.swp
 202105061050.56 database/Makefile
 202104121406.22 database/dbhowtouse_pg.html
 202105061101.11 database/dbhowtouse_sq3.html
@@ -68,7 +67,7 @@
 202105061621.21 database/dbpractice_4q.html
 202105071004.04 database/dbpractice_5.html
 202105061620.55 database/dbpractice_5q.html
-202105071011.53 database/dbpractice_6.html
+202105071340.33 database/dbpractice_6.html
 202105062320.14 database/dbpractice_6q.html
 202105070951.21 database/dbpractice_7.html
 202105070952.07 database/dbpractice_7q.html
@@ -83,9 +82,9 @@
 202105071224.02 database/sql_select_subq_1.html
 202105071205.18 database/sql_select_subq_2.html
 202105071205.29 database/sql_select_subq_3.html
-202105061537.33 database/sql_updates.html
-202105012057.52 database/sql_view.html
-202105071224.04 database/
+202105071335.00 database/sql_updates.html
+202105071336.45 database/sql_view.html
+202105071340.39 database/
 202105070007.14 memeo.txt
 202104212048.08 memo.txt
 202104291338.59 script/changepage.js

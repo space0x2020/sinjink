@@ -25,20 +25,21 @@
 </p>
 <p class="bplist">
 <u>ビューの作成</u><br />
-create view ビュー名 as select ステートメント
+CREATE VIEW ビュー名 AS SELECT ステートメント
 </p>
 <p class="bplist">
 <u>ビューの削除</u><br />
 drop view ビュー名
 </p>
-<pre class="terminal"><code>実行例１<br />
-&gt; create view 社員表V
-  as select a.社員名, b.部署名 from 社員表 a join 部署表 b
-  on a.部署コード = b.部署コード</code>
+<pre class="terminal"><code>実行例１
+&gt; CREATE VIEW 社員表V
+  AS SELECT a.社員名, b.部署名 FROM 社員表 a JOIN 部署表 b
+  ON a.部署コード = b.部署コード</code>
 </pre>
 <br />
-<pre class="terminal"><code>実行例２<br />
-&gt; select * from 社員表V
+<pre class="terminal"><code>実行例２
+&gt; SELECT * FROM 社員表V
+<br />
 社員名   部署名
 ----     ---
 山田一郎 営業部
@@ -49,7 +50,7 @@ drop view ビュー名
 </pre>
 <br />
 <pre class="terminal"><code>実行例３<br />
-&gt; drop view 社員表V</code>
+&gt; DROP VIEW 社員表V</code>
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->
