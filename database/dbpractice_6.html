@@ -57,13 +57,13 @@
       <p><input type="button" onclick="detailson('chap06_01_a01')" value="実行例" /></p>
       <div id="chap06_01_a01" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; INSERT INTO 社員表 (社員番号, 社員名, 性別, 生年月日, 給与, 部署コード)
   VALUES('000006', '小泉　純', '男', '1978-01-18',  500000, NULL);
 &gt; INSERT INTo 社員表 (社員番号, 社員名, 性別, 生年月日, 給与, 部署コード)
-  VALUES('000007', '鈴木花子', '女', '1988-05-03', 280000, NULL);</code>
+  VALUES('000007', '鈴木花子', '女', '1988-05-03', 280000, NULL);
 </pre>
-<pre class="terminal"><code>確認：
+<pre class="terminal">確認：
 &gt; SELECT * FROM 社員表;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
@@ -74,7 +74,7 @@
 000004    田中良子  女    1978-01-18  250000  0003
 000005    高橋五郎  男    1982-11-06  210000  0001
 000006    小泉　純  男    1978-01-18  500000
-000007    鈴木花子  女    1988-05-03  280000</code>
+000007    鈴木花子  女    1988-05-03  280000
 </pre>
         </div>
       </div>
@@ -87,28 +87,28 @@
       <p><input type="button" onclick="detailson('chap06_02_a01')" value="解説" /></p>
       <div id="chap06_02_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_02_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_02_a02" style="display:none;">
         <p class="sqlp1">[2] 部署コードがNULLである人</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 <u>WHERE 部署コード IS NULL</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 <u>WHERE 部署コード IS NULL</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_02_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_02_a03" style="display:none;">
         <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM 社員表 WHERE 部署コード IS NULL</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM 社員表 WHERE 部署コード IS NULL</pre></div>
         <p><input type="button" onclick="detailson('chap06_02_a04')" value="実行例" /></p>
       </div>
       <div id="chap06_02_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 部署コード IS NULL;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000006    小泉　純  男    1978-01-18  500000
-000007    鈴木花子  女    1988-05-03  280000</code>
+000007    鈴木花子  女    1988-05-03  280000
 </pre>
         </div>
       </div>
@@ -121,27 +121,27 @@
       <p><input type="button" onclick="detailson('chap06_03_a01')" value="解説" /></p>
       <div id="chap06_03_a01" style="display:none;">
         <p class="sqlp1">[1] 部署表の部署名があるので、社員表と部署表を結合 (社員表を s、部署表を b)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_03_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_03_a02" style="display:none;">
         <p class="sqlp1">[2] 生年月日が1970-01-01以降 →抽出条件として生年月日が1970-01-01以上</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     <u>WHERE s.生年月日 &gt;= '1970-01-01'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     <u>WHERE s.生年月日 &gt;= '1970-01-01'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_03_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_03_a03" style="display:none;">
         <p class="sqlp1">[3] 抽出する列は、社員番号、社員名、部署名、生年月日</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT s.社員番号, s.社員名, b.部署名, s.生年月日</u><br />    FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT s.社員番号, s.社員名, b.部署名, s.生年月日</u><br />    FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'</pre></div>
         <p><input type="button" onclick="detailson('chap06_03_a04')" value="(4)" /></p>
       </div>
       <div id="chap06_03_a04" style="display:none;">
         <p class="sqlp1">[4] 若い順</p>
-        <div class="plist3"><pre class="f"><code>→ SELECT s.社員番号, s.社員名, b.部署名, s.生年月日<br />    FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'<br />      <u>ORDER BY s.生年月日 desc</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ SELECT s.社員番号, s.社員名, b.部署名, s.生年月日<br />    FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'<br />      <u>ORDER BY s.生年月日 desc</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_03_a05')" value="実行例" /></p>
       </div>
       <div id="chap06_03_a05" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT s.社員番号, s.社員名, b.部署名, s.生年月日
   FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード
   WHERE s.生年月日 &gt;= '1970-01-01'
@@ -152,19 +152,18 @@
 000005    高橋五郎  総務部  1982-11-06
 000004    田中良子  開発部  1978-01-18
 小泉 純さん、鈴木花子さんがいない！
-</code>
 </pre>
         </div>
         <p><input type="button" onclick="detailson('chap06_03_a06')" value="(5)" /></p>
       </div>
       <div id="chap06_03_a06" style="display:none;">
         <p class="sqlp1">[5] 外結合</p>
-        <div class="plist3"><pre class="f"><code>→ SELECT s.社員番号, s.社員名, b.部署名, s.生年月日<br />    FROM 社員表 s <span style="color:red;">LEFT OUTER</span> JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'<br />      <u>ORDER BY s.生年月日 desc</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ SELECT s.社員番号, s.社員名, b.部署名, s.生年月日<br />    FROM 社員表 s <span style="color:red;">LEFT OUTER</span> JOIN 部署表 b ON s.部署コード = b.部署コード<br />     WHERE s.生年月日 &gt;= '1970-01-01'<br />      <u>ORDER BY s.生年月日 desc</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_03_a07')" value="実行例" /></p>
       </div>
       <div id="chap06_03_a07" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT s.社員番号, s.社員名, b.部署名, s.生年月日
   FROM 社員表 s LEFT OUTER JOIN 部署表 b ON s.部署コード = b.部署コード
   WHERE s.生年月日 &gt;= '1970-01-01'
@@ -175,7 +174,7 @@
 000007    鈴木花子          1988-05-03
 000005    高橋五郎  総務部  1982-11-06
 000004    田中良子  開発部  1978-01-18
-000006    小泉　純          1978-01-18</code>
+000006    小泉　純          1978-01-18
 </pre>
         </div>
       </div>
@@ -188,27 +187,27 @@
       <p><input type="button" onclick="detailson('chap06_04_a01')" value="解説" /></p>
       <div id="chap06_04_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_04_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_04_a02" style="display:none;">
         <p class="sqlp1">[2] 同姓同名であるので、社員名でグループ化し2行以上であれば同じ社員名の人がいる。</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 <u>GROUP BY 社員名 HAVING COUNT(*) > 1 </u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 <u>GROUP BY 社員名 HAVING COUNT(*) > 1 </u></pre></div>
         <p><input type="button" onclick="detailson('chap06_04_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_04_a03" style="display:none;">
         <p class="sqlp1">[3] 社員名を抽出</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT 社員名</u> FROM 社員表 GROUP BY 社員名 HAVING COUNT(*) &gt; 1</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT 社員名</u> FROM 社員表 GROUP BY 社員名 HAVING COUNT(*) &gt; 1</pre></div>
         <p><input type="button" onclick="detailson('chap06_04_a04')" value="実行例" /></p>
       </div>
       <div id="chap06_04_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT 社員名 FROM 社員表 GROUP BY 社員名 HAVING COUNT(*) &gt; 1;
 <br />
 社員名
 ----
-鈴木花子</code>
+鈴木花子
 </pre>
         </div>
       </div>
@@ -221,30 +220,30 @@
       <p><input type="button" onclick="detailson('chap06_05_a01')" value="解説" /></p>
       <div id="chap06_05_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表を更新</p>
-        <div class="plist3"><pre class="f"><code>→ <u>UPDATE 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>UPDATE 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_05_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_05_a02" style="display:none;">
         <p class="sqlp1">[2] 部署コードを0001</p>
-        <div class="plist3"><pre class="f"><code>→ UPDATE 社員表 <u>SET 部署コード = '0001'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ UPDATE 社員表 <u>SET 部署コード = '0001'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_05_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_05_a03" style="display:none;">
         <p class="sqlp1">[3] 小泉　純さん(社員番号：000006)の部署コードを更新</p>
-        <div class="plist3"><pre class="f"><code>→ UPDATE 社員表 SET 部署コード = '0001' <u>WHERE 社員番号 = '000006'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ UPDATE 社員表 SET 部署コード = '0001' <u>WHERE 社員番号 = '000006'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_05_a04')" value="実行例" /></p>
       </div>
       <div id="chap06_05_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
-&gt; UPDATE 社員表 SET 部署コード = '0001' WHERE 社員番号 = '000006';</code>
+<pre class="terminal">実行例：
+&gt; UPDATE 社員表 SET 部署コード = '0001' WHERE 社員番号 = '000006';
 </pre>
-<pre class="terminal"><code>確認：
+<pre class="terminal">確認：
 &gt; SELECT * FROM 社員表 WHERE 社員番号 = '000006';
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
-000006    小泉　純  男    1978-01-18  500000  0001</code>
+000006    小泉　純  男    1978-01-18  500000  0001
 </pre>
         </div>
       </div>
@@ -257,20 +256,20 @@
       <p><input type="button" onclick="detailson('chap06_06_a01')" value="解説" /></p>
       <div id="chap06_06_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表のレコードを削除</p>
-        <div class="plist3"><pre class="f"><code>→ <u>DELETE FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>DELETE FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_06_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_06_a02" style="display:none;">
         <p class="sqlp1">[2] 社員番号000006のレコードを削除</p>
-        <div class="plist3"><pre class="f"><code>→ DELETE FROM 社員表 <u>WHERE 社員番号 = '000006'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ DELETE FROM 社員表 <u>WHERE 社員番号 = '000006'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_06_a03')" value="実行例" /></p>
       </div>
       <div id="chap06_06_a03" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
-&gt; DELETE FROM 社員表 WHERE 社員番号 = '000006';</code>
+<pre class="terminal">実行例：
+&gt; DELETE FROM 社員表 WHERE 社員番号 = '000006';
 </pre>
-<pre class="terminal"><code>確認：
+<pre class="terminal">確認：
 &gt; SELECT * FROM 社員表;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
@@ -280,7 +279,7 @@
 000003    佐藤三郎  男    1961-07-03  280000  0003
 000004    田中良子  女    1978-01-18  250000  0003
 000005    高橋五郎  男    1982-11-06  210000  0001
-000007    鈴木花子  女    1988-05-03  280000</code>
+000007    鈴木花子  女    1988-05-03  280000
 </pre>
         </div>
       </div>
@@ -293,27 +292,27 @@
       <p><input type="button" onclick="detailson('chap06_07_a01')" value="解説" /></p>
       <div id="chap06_07_a01" style="display:none;">
         <p class="sqlp1">[1] トランザクション開始</p>
-        <div class="plist3"><pre class="f"><code>→ BEGIN TRANSACTION</code></pre></div>
+        <div class="plist3"><pre class="f">→ BEGIN TRANSACTION</pre></div>
         <p><input type="button" onclick="detailson('chap06_07_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_07_a02" style="display:none;">
         <p class="sqlp1">[2] 社員表の部署コードを'0002'へ変更</p>
-        <div class="plist3"><pre class="f"><code>→ UPDATE 社員表 <u>SET 部署コード  = '0002'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ UPDATE 社員表 <u>SET 部署コード  = '0002'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_07_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_07_a03" style="display:none;">
         <p class="sqlp1">[3] 社員番号'000002'の部署コードを'0002'へ変更</p>
-        <div class="plist3"><pre class="f"><code>→ UPDATE 社員表 SET 部署コード  = '0002' <u>WHERE 社員番号 = '000002'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ UPDATE 社員表 SET 部署コード  = '0002' <u>WHERE 社員番号 = '000002'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_07_a04')" value="(4)" /></p>
       </div>
       <div id="chap06_07_a04" style="display:none;">
         <p class="sqlp1">[4] ト ランザクションをロールバック</p>
-        <div class="plist3"><pre class="f"><code>→ <u>ROLLBACK</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>ROLLBACK</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_07_a05')" value="実行例" /></p>
       </div>
       <div id="chap06_07_a05" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; BEGIN TRANSACTION;
 &gt; UPDATE 社員表 SET 部署コード = '0002' WHERE 社員番号 = '000002';
 &gt; SELECT * FROM 社員表 WHERE 社員番号 = '000002';
@@ -328,7 +327,7 @@
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
-000002    鈴木花子  女    1956-07-18  320000  <span style="color:red;">0001</span"></code>
+000002    鈴木花子  女    1956-07-18  320000  <span style="color:red;">0001</span">
 </pre>
         </div>
       </div>
@@ -341,32 +340,32 @@
       <p><input type="button" onclick="detailson('chap06_08_a01')" value="解説" /></p>
       <div id="chap06_08_a01" style="display:none;">
         <p class="sqlp1">[1] トランザクション開始</p>
-        <div class="plist3"><pre class="f"><code>→ BEGIN TRANSACTION</code></pre></div>
+        <div class="plist3"><pre class="f">→ BEGIN TRANSACTION</pre></div>
         <p><input type="button" onclick="detailson('chap06_08_a02')" value="(2)" /></p>
       </div>
       <div id="chap06_08_a02" style="display:none;">
         <p class="sqlp1">[2] 社員表のレコードを削除</p>
-        <div class="plist3"><pre class="f"><code>→ <u>DELETE FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>DELETE FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_08_a03')" value="(3)" /></p>
       </div>
       <div id="chap06_08_a03" style="display:none;">
         <p class="sqlp1">[3] 鈴木花子さんのレコードを削除</p>
-        <div class="plist3"><pre class="f"><code>→ DELETE FROM 社員表 <u>WHERE 社員名 = '鈴木花子'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ DELETE FROM 社員表 <u>WHERE 社員名 = '鈴木花子'</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_08_a04')" value="(4)" /></p>
       </div>
       <div id="chap06_08_a04" style="display:none;">
         <p class="sqlp1">[4] コミット</p>
-        <div class="plist3"><pre class="f"><code>→ <u>COMMIT</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>COMMIT</u></pre></div>
         <p><input type="button" onclick="detailson('chap06_08_a05')" value="実行例" /></p>
       </div>
       <div id="chap06_08_a05" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; BEGIN TRANSACTION;
 &gt; DELETE FROM 社員表 WHERE 社員名 = '鈴木花子';
-&gt; COMMIT;</code>
+&gt; COMMIT;
 </pre>
-<pre class="terminal"><code>確認：
+<pre class="terminal">確認：
 &gt; SELECT * FROM 社員表;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
@@ -376,9 +375,7 @@
 000004    田中良子  女    1978-01-18  250000  0003
 000005    高橋五郎  男    1982-11-06  210000  0001
 鈴木花子さん2人とも削除されている。
-</code>
 </pre>
-</code></pre>
         </div>
       </div>
   </div>

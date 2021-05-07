@@ -32,7 +32,7 @@ SELECT 集約関数<br />
 <div class="pagetitle"><h3 class="pagetitle">[1] SELECT文 集約関数</h3></div>
 <div class="pagebody">
 <div class="codelist">
-<pre class="codelist">集計：<code>(1) SELECT 集約関数(列名1), .... FROM 表名リスト [GROUP BY 列名 [,列名]... [HAVING 条件]</code>
+<pre class="codelist">集計：(1) SELECT 集約関数(列名1), .... FROM 表名リスト [GROUP BY 列名 [,列名]... [HAVING 条件]
 </pre>
 </div><!-- codelist -->
 <p class="bplist1">
@@ -51,13 +51,13 @@ SELECT 集約関数<br />
 <br />
 <div class="codelist">
 <pre class="codelist">
-例１：<code>SELECT SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*) FROM 社員表</code>
+例１：SELECT SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*) FROM 社員表
 </pre>
 </div><!-- codelist -->
 <div class="codelist">
 <pre class="codelist">
-例２：<code>SELECT 部署コード, SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*)
-    FROM 社員表 GROUP BY 部署コード <span style="color:red">HAVING</span> COUNT(*) &gt; 1</code>
+例２：SELECT 部署コード, SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*)
+    FROM 社員表 GROUP BY 部署コード <span style="color:red">HAVING</span> COUNT(*) &gt; 1
 </pre>
 </div><!-- codelist -->
 <p class="bplist1">
@@ -92,9 +92,9 @@ SELECT 集約関数<br />
   </g>
 </svg>
 <div class="codelist">
-<pre class="codelist"><code>COUNT(給与)  MIN(給与)  MAX(給与)  SUM(給与)  AVG(給与)
+<pre class="codelist">COUNT(給与)  MIN(給与)  MAX(給与)  SUM(給与)  AVG(給与)
 ---------    -------    -------    -------    --------
-5            210000     350000     1410000    282000.0</code>
+5            210000     350000     1410000    282000.0
 </pre>
 </div><!-- codelist -->
 </div><!-- pagebody -->
@@ -362,17 +362,17 @@ SELECT 集約関数<br />
 </svg>
 <div class="codelist">
 <pre class="codelist">
-<code>SELECT COUNT(*), MAX(給与),  AVG(給与), 部署コード FROM 社員表
-GROUP BY 部署コード <u>HAVING AVG(給与) &gt;= 300000</u></code>
+SELECT COUNT(*), MAX(給与),  AVG(給与), 部署コード FROM 社員表
+GROUP BY 部署コード <u>HAVING AVG(給与) &gt;= 300000</u>
 </pre>
 <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT COUNT(*), MAX(給与),  AVG(給与), 部署コード FROM 社員表
   GROUP BY 部署コード HAVING AVG(給与) &gt;= 300000;
 <br />
 COUNT(*)  MAX(給与)  AVG(給与)  部署コード
 --------  -------    --------   -----
-1         350000     350000.0   0002</code>
+1         350000     350000.0   0002
 </pre>
 </div><!-- codelist -->
 </div><!-- pagebody -->

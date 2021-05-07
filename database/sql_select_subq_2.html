@@ -476,8 +476,7 @@ SELECT * FROM 社員表 a WHERE a.給与 =
 <p class="bplist">
 例：部署別最高給与取得者を選択する。
 </p>
-<pre class="terminal">
-<code>実行例：<br />
+<pre class="terminal">実行例：<br />
 &gt; SELECT * FROM 社員表 a WHERE a.給与 =
     (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 <br />
@@ -485,7 +484,7 @@ SELECT * FROM 社員表 a WHERE a.給与 =
 ------    ----      --    ----------  ------  -----
 000001    山田一郎  男    1950-03-25  350000  0002
 000002    鈴木花子  女    1956-07-18  320000  0001
-000003    佐藤三郎  男    1961-07-03  280000  0003</code>
+000003    佐藤三郎  男    1961-07-03  280000  0003
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->

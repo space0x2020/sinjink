@@ -388,9 +388,11 @@ pre.f, pre.lineno, pre.code, pre.codenoln {
   padding: 0;
   font: inherit;
   font-size: inherit;
+  font-size: 13pt;
   color: inherit;
   background-color: inherit;
   line-height: 12pt;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 pre.lineno {
@@ -434,6 +436,7 @@ pre.terminal {
   background-color: black;
   line-height: 120%;
   width: 860px;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 pre.terminal code {
@@ -466,11 +469,13 @@ pre.codelist {
   color: inherit;
   background-color: inherit;
   font-size: 13pt;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 div.codelist pre.codelist {
   margin: 0;
   padding: 0.5em 0.5em 0.5em 0.5em;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 #ifdef V1

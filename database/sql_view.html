@@ -31,13 +31,13 @@ CREATE VIEW ビュー名 AS SELECT ステートメント
 <u>ビューの削除</u><br />
 drop view ビュー名
 </p>
-<pre class="terminal"><code>実行例１
+<pre class="terminal">実行例１
 &gt; CREATE VIEW 社員表V
   AS SELECT a.社員名, b.部署名 FROM 社員表 a JOIN 部署表 b
-  ON a.部署コード = b.部署コード</code>
+  ON a.部署コード = b.部署コード
 </pre>
 <br />
-<pre class="terminal"><code>実行例２
+<pre class="terminal">実行例２
 &gt; SELECT * FROM 社員表V
 <br />
 社員名   部署名
@@ -46,11 +46,11 @@ drop view ビュー名
 鈴木花子 総務部
 佐藤三郎 開発部
 田中良子 開発部
-高橋五郎 総務部</code>
+高橋五郎 総務部
 </pre>
 <br />
-<pre class="terminal"><code>実行例３<br />
-&gt; DROP VIEW 社員表V</code>
+<pre class="terminal">実行例３<br />
+&gt; DROP VIEW 社員表V
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->

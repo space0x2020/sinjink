@@ -36,9 +36,7 @@ SELECT文の中に別のSELECT文があるときその内側のSELECT文を副�
 </p>
 <div class="plist">
 <pre class="codelist">
-<code>
 ■ SELECT ... FROM (SELECT ...) A WHERE A.a = (SELECT ...)
-</code>
 </pre>
 </div>
 </div><!-- pagebody -->
@@ -87,12 +85,12 @@ SELECT MIN(給与) FROM 社員表
 SELECT * FROM 社員表 WHERE 給与 = (SELECT MIN(給与) FROM 社員表)
 </pre>
 </div>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 = (SELECT MIN(給与) FROM 社員表);
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
-000005    高橋五郎  男   1982-11-06   210000  0001</code>
+000005    高橋五郎  男   1982-11-06   210000  0001
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->
@@ -152,7 +150,7 @@ SELECT * FROM 社員表 WHERE 部署コード IN
     (SELECT 部署コード FROM 社員表 WHERE 給与 &gt;= 300000)
 </pre>
 </div>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 部署コード IN
   (SELECT 部署コード FROM 社員表 WHERE 給与 &gt;= 300000);
 <br />
@@ -160,7 +158,7 @@ SELECT * FROM 社員表 WHERE 部署コード IN
 ------   ----      --    ----------  ------  -----
 000001   山田一郎  男    1950-03-25  350000  0002
 000002   鈴木花子  女    1956-07-18  320000  0001
-000005   高橋五郎  男    1982-11-06  210000  0001</code>
+000005   高橋五郎  男    1982-11-06  210000  0001
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->
@@ -219,14 +217,14 @@ SELECT * FROM 社員表 WHERE 部署コード NOT IN
     (SELECT 部署コード FROM 社員表 WHERE 給与 &gt;= 300000)
 </pre>
 </div>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 部署コード NOT IN
   (SELECT 部署コード FROM 社員表 WHERE 給与 &gt;= 300000);
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000003    佐藤三郎  男    1961-07-03  280000  0003
-000004    田中良子  女    1978-01-18  250000  0003</code>
+000004    田中良子  女    1978-01-18  250000  0003
 </pre>
 
 </div><!-- pagebody -->
@@ -269,7 +267,7 @@ SELECT * FROM 社員表
 <p class="plist2">
 この副問合せは2行返すのでEXISTS区はTRUEとなり、行が抽出される。
 </p>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * from 社員表
   WHERE EXISTS (SELECT * FROM 社員表 WHERE 部署コード = '0001');
 <br />
@@ -279,7 +277,7 @@ SELECT * FROM 社員表
 000002   鈴木花子  女    1956-07-18  320000  0001
 000003   佐藤三郎  男    1961-07-03  280000  0003
 000004   田中良子  女    1978-01-18  250000  0003
-000005   高橋五郎  男    1982-11-06  210000  0001</code>
+000005   高橋五郎  男    1982-11-06  210000  0001
 </pre>
 <p></p>
 <div class="bplist">
@@ -297,10 +295,10 @@ SELECT * from 社員表
 <p class="plist">
 このEXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
 </p>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表
   WHERE EXISTS (SELECT * FROM 社員表 WHERE 部署コード = '0004');
-&gt;</code>
+&gt;
 </pre>
 </div><!-- pagebody -->
 </div><!-- page -->
@@ -344,10 +342,10 @@ SELECT * FROM 社員表
 <p class="plist2">
 この副問合せは2行返すのでNOT EXISTS区はFALSEとなり、行が抽出されない。
 </p>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表
   WHERE NOT EXISTS (SELECT * FROM 社員表 WHERE 部署コード = '0001');
-&gt;</code>
+&gt;
 </pre>
 <p></p>
 <div class="bplist">
@@ -365,7 +363,7 @@ SELECT * FROM 社員表
 <p class="plist">
 このNOT EXISTS句は、次の相関副問合せと組み合わせて使われることが多い。
 </p>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表
   WHERE NOT EXISTS (SELECT * FROM 社員表 WHERE 部署コード = '0004');
 <br />
@@ -375,7 +373,7 @@ SELECT * FROM 社員表
 000002    鈴木花子  女    1956-07-18  320000  0001
 000003    佐藤三郎  男    1961-07-03  280000  0003
 000004    田中良子  女    1978-01-18  250000  0003
-000005    高橋五郎  男    1982-11-06  210000  0001</code>
+000005    高橋五郎  男    1982-11-06  210000  0001
 </pre>
 <br />
 </div><!-- pagebody -->

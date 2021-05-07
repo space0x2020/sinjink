@@ -25,28 +25,28 @@
       <p><input type="button" onclick="detailson('chap04_01_a01')" value="解説" /></p>
       <div id="chap04_01_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_01_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_01_a02" style="display:none;">
         <p class="sqlp1">[2] 部署コードが '0003'である→抽出条件として部署コード列の値が '0003'</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 <u>WHERE 部署コード = '0003'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 <u>WHERE 部署コード = '0003'</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_01_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_01_a03" style="display:none;">
         <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM 社員表 WHERE 部署コード = '0003'</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM 社員表 WHERE 部署コード = '0003'</pre></div>
         <p><input type="button" onclick="detailson('chap04_01_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_01_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 部署コード = '0003';
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000003    佐藤三郎  男    1961-07-03  280000  0003
-000004    田中良子  女    1978-01-18  250000  0003</code>
+000004    田中良子  女    1978-01-18  250000  0003
 </pre>
         </div>
       </div>
@@ -58,31 +58,29 @@
       <p><input type="button" onclick="detailson('chap04_02_a01')" value="解説" /></p>
       <div id="chap04_02_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_02_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_02_a02" style="display:none;">
         <p class="sqlp1">[2] 給与が20万台 → 抽出条件として給与列の値が 200000以上300000未満</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 <u>WHERE 給与 &gt;= 200000 AND 給与 &lt; 300000</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 <u>WHERE 給与 &gt;= 200000 AND 給与 &lt; 300000</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_02_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_02_a03" style="display:none;">
         <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM 社員表 WHERE 給与 &gt;= 200000 AND 給与 &lt; 300000</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM 社員表 WHERE 給与 &gt;= 200000 AND 給与 &lt; 300000</pre></div>
         <p><input type="button" onclick="detailson('chap04_02_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_02_a04" style="display:none;">
         <div class="codelist">
-</code>
-</pre>
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 &gt;= 200000 AND 給与 &lt; 300000;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000003    佐藤三郎  男    1961-07-03  280000  0003
 000004    田中良子  女    1978-01-18  250000  0003
-000005    高橋五郎  男    1982-11-06  210000  0001</code>
+000005    高橋五郎  男    1982-11-06  210000  0001
 </pre>
         </div>
       </div>
@@ -94,27 +92,27 @@
       <p><input type="button" onclick="detailson('chap04_03_a01')" value="解説" /></p>
       <div id="chap04_03_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表と部署表を結合。社員表を s、部署表を b と別名をつける。</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表 s JOIN 部署表 b</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表 s JOIN 部署表 b</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_03_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_03_a02" style="display:none;">
         <p class="sqlp1">[2] 社員表と部署表を部署コードで結合</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 s JOIN 部署表 b <u>ON s.部署コード = b.部署コード</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 s JOIN 部署表 b <u>ON s.部署コード = b.部署コード</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_03_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_03_a03" style="display:none;">
         <p class="sqlp1">[3] 社員番号、社員名、部署名を抽出</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT s.社員番号,  s.社員名,　b.部署名</u> FROM …</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT s.社員番号,  s.社員名,　b.部署名</u> FROM …</pre></div>
         <p><input type="button" onclick="detailson('chap04_03_a04')" value="(4)" /></p>
       </div>
       <div id="chap04_03_a04" style="display:none;">
         <p class="sqlp1">[4] 列見出しは、番号、氏名、所属とする</p>
-        <div class="plist3"><pre class="f"><code>→ SELECT s.社員番号 <u>as "番号"</u>, s.社員名 <u>as "氏名"</u>, b.部署名 <u>as "所属"</u><br />FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</code></pre></div>
+        <div class="plist3"><pre class="f">→ SELECT s.社員番号 <u>as "番号"</u>, s.社員名 <u>as "氏名"</u>, b.部署名 <u>as "所属"</u><br />FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</pre></div>
         <p><input type="button" onclick="detailson('chap04_03_a05')" value="実行例" /></p>
       </div>
       <div id="chap04_03_a05" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT s.社員番号 as "番号", s.社員名 as "氏名" , b.部署名 as "所属"
   FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード;
 <br />
@@ -124,7 +122,7 @@
 000002  鈴木花子  総務部
 000003  佐藤三郎  開発部
 000004  田中良子  開発部
-000005  高橋五郎  総務部</code>
+000005  高橋五郎  総務部
 </pre>
         </div>
       </div>
@@ -136,22 +134,22 @@
       <p><input type="button" onclick="detailson('chap04_04_a01')" value="解説" /></p>
       <div id="chap04_04_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表と部署表から→社員表と部署表を結合(社員表を s、部署表を b として)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_04_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_04_a02" style="display:none;">
         <p class="sqlp1">[2] 部署名が「総務部」→抽出条件として 部署表．部署名 = '総務部'</p>
-        <div class="plist3"><pre class="f"><code>FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />→ <u>WHERE b.部署名 = '総務部'</u></code></pre></div>
+        <div class="plist3"><pre class="f">FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />→ <u>WHERE b.部署名 = '総務部'</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_04_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_04_a03" style="display:none;">
         <p class="sqlp1">[3] 社員番号、社員名、部署コードを抽出</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT s.社員番号, s.社員名, s.部署コード</u><br />FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />WHERE b.部署名 = '総務部'</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT s.社員番号, s.社員名, s.部署コード</u><br />FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード<br />WHERE b.部署名 = '総務部'</pre></div>
         <p><input type="button" onclick="detailson('chap04_04_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_04_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT s.社員番号, s.社員名, s.部署コード
   FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード
   WHERE b.部署名 = '総務部';
@@ -159,7 +157,7 @@
 社員番号  社員名    部署コード
 ------    ----      -----
 000002    鈴木花子  0001
-000005    高橋五郎  0001</code>
+000005    高橋五郎  0001
 </pre>
         </div>
       </div>
@@ -171,28 +169,28 @@
       <p><input type="button" onclick="detailson('chap04_05_a01')" value="解説" /></p>
       <div id="chap04_05_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_05_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_05_a02" style="display:none;">
         <p class="sqlp1">[2] 生年月日が1970年1月1日以降→抽出条件として、生年月日列の値が 1970-01-01 以上</p>
-        <div class="plist3"><pre class="f"><code>→ FROM 社員表 <u>WHERE 生年月日 &gt;= '1970-01-01'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員表 <u>WHERE 生年月日 &gt;= '1970-01-01'</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_05_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_05_a03" style="display:none;">
         <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM 社員表 WHERE 生年月日 &gt;= '1970-01-01'</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM 社員表 WHERE 生年月日 &gt;= '1970-01-01'</pre></div>
         <p><input type="button" onclick="detailson('chap04_05_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_05_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 WHERE 生年月日 &gt;= '1970-01-01';
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000004    田中良子  女    1978-01-18  250000  0003
-000005    高橋五郎  男    1982-11-06  210000  0001</code>
+000005    高橋五郎  男    1982-11-06  210000  0001
 </pre>
         </div>
       </div>
@@ -204,22 +202,22 @@
       <p><input type="button" onclick="detailson('chap04_06_a01')" value="解説" /></p>
       <div id="chap04_06_a01" style="display:none;">
         <p class="sqlp1">[1] 社員表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>FROM 社員表</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員表</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_06_a02')" value="(2)" /></p>
       </div>
       <div id="chap04_06_a02" style="display:none;">
         <p class="sqlp1">[2] 列の指定がないので全列とする</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM 社員表</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM 社員表</pre></div>
         <p><input type="button" onclick="detailson('chap04_06_a03')" value="(3)" /></p>
       </div>
       <div id="chap04_06_a03" style="display:none;">
         <p class="sqlp1">[3] 給与の大きい順に並べ替える</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT * FROM 社員表 ORDER BY 給与 DESC</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ SELECT * FROM 社員表 <u>ORDER BY 給与 DESC</u></pre></div>
         <p><input type="button" onclick="detailson('chap04_06_a04')" value="実行例" /></p>
       </div>
       <div id="chap04_06_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM 社員表 ORDER BY 給与 DESC;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
@@ -228,7 +226,7 @@
 000002    鈴木花子  女    1956-07-18  320000  0001
 000003    佐藤三郎  男    1961-07-03  280000  0003
 000004    田中良子  女    1978-01-18  250000  0003
-000005    高橋五郎  男    1982-11-06  210000  0001</code>
+000005    高橋五郎  男    1982-11-06  210000  0001
 </pre>
         </div>
       </div>

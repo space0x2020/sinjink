@@ -48,12 +48,12 @@
       <p><input type="button" onclick="detailson('chap07_01_a01')" value="実行例" /></p>
       <div id="chap07_01_a01" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; create table SHOUHIN (
   商品コード char(3) primary key,
   商品名     varchar(24),
   単価       numeric(8)
-  );</code>
+  );
 </pre>
         </div>
       </div>
@@ -90,19 +90,19 @@
       <p><input type="button" onclick="detailson('chap07_02_a01')" value="実行例" /></p>
       <div id="chap07_02_a01" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('S01', '鉛筆', 30);
 &gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('T03', 'テレビ', 40000);
-&gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('S02', 'お茶', 230);</code>
+&gt; insert into SHOUHIN(商品コード, 商品名, 単価) values('S02', 'お茶', 230);
 </pre>
-<pre class="terminal"><code>確認：
+<pre class="terminal">確認：
 &gt; SELECT * FROM shouhin;
 <br />
 商品コード  商品名  単価
 -----       ---     -----
 S01         鉛筆    30
 T03         テレビ  40000
-S02         お茶    230</code>
+S02         お茶    230
 </pre>
         </div>
       </div>
@@ -114,18 +114,18 @@ S02         お茶    230</code>
       <p><input type="button" onclick="detailson('chap07_03_a01')" value="解説" /></p>
       <div id="chap07_03_a01" style="display:none;">
         <p class="sqlp1">[1] SHOUHIN表の商品名と単価のみを抽出するSELECT文は、</p>
-        <div class="plist3"><pre class="f"><code>→ SELECT 商品名, 単価 FROM SHOUHIN</code></pre></div>
+        <div class="plist3"><pre class="f">→ SELECT 商品名, 単価 FROM SHOUHIN</pre></div>
         <p><input type="button" onclick="detailson('chap07_03_a02')" value="(2)" /></p>
       </div>
       <div id="chap07_03_a02" style="display:none;">
         <p class="sqlp1">[2] CREATE VIEW .. AS SELECT ...</p>
-        <div class="plist3"><pre class="f"><code>→ <u>create view</u> V_SHOUHIN <u>as</u> SELECT 商品名, 単価 FROM shouhin</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>create view</u> V_SHOUHIN <u>as</u> SELECT 商品名, 単価 FROM shouhin</pre></div>
         <p><input type="button" onclick="detailson('chap07_03_a03')" value="実行例" /></p>
       </div>
       <div id="chap07_03_a03" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
-&gt; CREATE VIEW v_shouhin AS SELECT 商品名, 単価 FROM shouhin;</code>
+<pre class="terminal">実行例：
+&gt; CREATE VIEW v_shouhin AS SELECT 商品名, 単価 FROM shouhin;
 </pre>
         </div>
       </div>
@@ -137,28 +137,28 @@ S02         お茶    230</code>
       <p><input type="button" onclick="detailson('chap07_04_a01')" value="解説" /></p>
       <div id="chap07_04_a01" style="display:none;">
         <p class="sqlp1">[1] V_SHOUHINから</p>
-        <div class="plist3"><pre class="f"><code>→ <u>from V_SHOUHIN</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>from V_SHOUHIN</u></pre></div>
         <p><input type="button" onclick="detailson('chap07_04_a02')" value="(2)" /></p>
       </div>
       <div id="chap07_04_a02" style="display:none;">
         <p class="sqlp1">[2] 単価が1000円以下　選択条件：単価列の値が1000以下</p>
-        <div class="plist3"><pre class="f"><code>→ from V_SHOUHIN <u>where 単価 &lt;= 1000</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ from V_SHOUHIN <u>where 単価 &lt;= 1000</u></pre></div>
         <p><input type="button" onclick="detailson('chap07_04_a03')" value="(3)" /></p>
       </div>
       <div id="chap07_04_a03" style="display:none;">
         <p class="sqlp1">[3] 行を抽出 (列の指定がないので全列とする)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>SELECT *</u> FROM v_shouhin WHERE 単価 &lt;= 1000</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT *</u> FROM v_shouhin WHERE 単価 &lt;= 1000</pre></div>
         <p><input type="button" onclick="detailson('chap07_04_a04')" value="実行例" /></p>
       </div>
       <div id="chap07_04_a04" style="display:none;">
         <div class="codelist">
-<pre class="terminal"><code>実行例：
+<pre class="terminal">実行例：
 &gt; SELECT * FROM v_shouhin WHERE 単価 &lt;= 1000;
 <br />
 商品名  単価
 ---     ---
 鉛筆    30
-お茶    230</code>
+お茶    230
 </pre>
         </div>
       </div>

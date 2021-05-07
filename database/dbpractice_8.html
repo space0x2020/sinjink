@@ -119,7 +119,7 @@
       <p><input type="button" onclick="detailson('chap08_01_a01')" value="解説" /></p>
       <div id="chap08_01_a01" style="display:none;">
         <p class="sqlp1">GROUP BY グループ</p>
-        <div class="plist3"><pre class="f"><code>→ <u>グループ列でグルーピング</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>グループ列でグルーピング</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_01_a02')" value="(2)" /></p>
       </div>
       <div id="chap08_01_a02" style="display:none;">
@@ -309,22 +309,22 @@
       <p><input type="button" onclick="detailson('chap08_02_a01')" value="解説" /></p>
       <div id="chap08_02_a01" style="display:none;">
         <p class="sqlp1">[1] 社員B表から</p>
-        <div class="plist3"><pre class="f"><code>→ <u>from 社員B</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員B</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_02_a02')" value="(2)" /></p>
       </div>
       <div id="chap08_02_a02" style="display:none;">
         <p class="sqlp1">[2] 役割名がプログラマである社員</p>
-        <div class="plist3"><pre class="f"><code>→ from 社員B <u>where 役割名 = 'プログラマ'</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員B <u>WHERE 役割名 = 'プログラマ'</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_02_a03')" value="(3)" /></p>
       </div>
       <div id="chap08_02_a03" style="display:none;">
         <p class="sqlp1">[3] 社員が3人以上所属している部門→部門名でグルーピングして件数が3以上</p>
-        <div class="plist3"><pre class="f"><code>→ from 社員B where 役割名 = 'プログラマ' <u>group by 部門名 having count(*) &gt;= 3</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員B WHERE 役割名 = 'プログラマ' <u>GROUP BY 部門名 HAVING COUNT(*) &gt;= 3</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_02_a04')" value="(4)" /></p>
       </div>
       <div id="chap08_02_a04" style="display:none;">
         <p class="sqlp1">[4] 部門名を取得</p>
-        <div class="plist3"><pre class="f"><code>→ <u>select 部門名</u> from 社員B where 役割名 = 'プログラマ' group by 部門名 having count(*) &gt;= 3</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT 部門名</u> FROM 社員B WHERE 役割名 = 'プログラマ' GROUP BY 部門名 HAVING COUNT(*) &gt;= 3</pre></div>
         <p><input type="button" onclick="detailson('chap08_02_a05')" value="正解" /></p>
       </div>
       <div id="chap08_02_a05" style="display:none;">
@@ -440,20 +440,20 @@
       <p><input type="button" onclick="detailson('chap08_03_a01')" value="解説" /></p>
       <div id="chap08_03_a01" style="display:none;">
         <p class="sqlp1">[1] ”社員”表と”人事異動”表から→社員表と人事異動表を社員コードで結合</p>
-        <div class="plist3"><pre class="f"><code>→ <u>from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>FROM 社員, 人事異動 WHERE 社員.社員コード = 人事異動.社員コード</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_03_a02')" value="(2)" /></p>
       </div>
       <div id="chap08_03_a02" style="display:none;">
         <p class="sqlp1">[2] 社員ごとの勤務成績の平均→社員コードでグルーピング</p>
-        <div class="plist3"><pre class="f"><code>→ from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード<br />
-                         　<u>group by 社員.社員コード,　社員.社員名</u></code></pre></div>
+        <div class="plist3"><pre class="f">→ FROM 社員, 人事異動 WHERE 社員.社員コード = 人事異動.社員コード<br />
+                         　<u>GROUP BY 社員.社員コード,　社員.社員名</u></pre></div>
         <p><input type="button" onclick="detailson('chap08_03_a03')" value="(3)" /></p>
       </div>
       <div id="chap08_03_a03" style="display:none;">
         <p class="sqlp1">[3] 求める項目は、社員コード、社員名、勤務y成績(平均)</p>
-        <div class="plist3"><pre class="f"><code>→ <u>select 社員.社員コード, 社員名, AVG(勤務成績) as “勤務成績(平均)”</u><br />
-                         　from 社員, 人事異動 where 社員.社員コード = 人事異動.社員コード<br />
-                         　group by 社員.社員コード,　社員.社員名</code></pre></div>
+        <div class="plist3"><pre class="f">→ <u>SELECT 社員.社員コード, 社員名, AVG(勤務成績) AS “勤務成績(平均)”</u><br />
+                         　FROM 社員, 人事異動 WHERE 社員.社員コード = 人事異動.社員コード<br />
+                         　GROUP BY 社員.社員コード,　社員.社員名</pre></div>
         <p><input type="button" onclick="detailson('chap08_03_a04')" value="正解" /></p>
       </div>
       <div id="chap08_03_a04" style="display:none;">
