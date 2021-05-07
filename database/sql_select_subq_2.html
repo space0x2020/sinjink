@@ -61,9 +61,9 @@ SELECT 相関副問い合わせ<br />
   <text class="ff" x="5" y="25">例：部署別最高給与取得者を選択する。</text>
   <defs>
   <g id="subq2_1_sel">
-    <rect class="ff act" x="0" y="0" width="700" height="160" />
-    <text class="ff fix" x="10" y="40">select * from 社員表 a where a.給与 =</text>
-    <text class="ff fix" x="60" y="100">(select max(b.給与) from 社員表 b where b.部署コード = a.部署コード )</text>
+    <rect class="ff act" x="0" y="0" width="720" height="160" />
+    <text class="ff fix" x="10" y="40">SELECT * FROM 社員表 a WHERE a.給与 =</text>
+    <text class="ff fix" x="60" y="100">(SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード )</text>
   </g>
   </defs>
   <g id="subq2_1_2" transform="translate(0,40)">
@@ -76,17 +76,17 @@ SELECT 相関副問い合わせ<br />
   <text class="ff" x="5" y="25">例：部署別最高給与取得者を選択する。</text>
   <g id="subq2_1_2" transform="translate(0,40)">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_1_sel"></use>
-    <text class="ff s" x="570" y="30">外側の表を</text>
-    <text class="ff s" x="570" y="50">参照している</text>
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(610, 70),scale(1.05,1)"></use>
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace600" transform="translate(366, 120),rotate(180),scale(1,1)"></use>
-    <text class="ff" x="330" y="150">副問合せ</text>
-    <rect class="ff act" x="550" y="84" width="120" height="20" />
-    <g transform="translate(560,84),rotate(186),scale(0.9,1)">
+    <text class="ff s" x="590" y="30">外側の表を</text>
+    <text class="ff s" x="590" y="50">参照している</text>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace100" transform="translate(630, 70),scale(1.05,1)"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ubrace600" transform="translate(386, 120),rotate(180),scale(1.1,1)"></use>
+    <text class="ff" x="386" y="150" text-anchor="middle">副問合せ</text>
+    <rect class="ff act" x="570" y="84" width="120" height="20" />
+    <g transform="translate(590,84),rotate(186),scale(0.9,1)">
       <line class="ff act" x1="0" y1="0" x2="400" y2="0" />
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15R_act" transform="translate(400, 0)"></use>
     </g>
-    <rect class="ff act" x="130" y="24" width="76" height="20" />
+    <rect class="ff act" x="150" y="24" width="76" height="20" />
   </g>
 </svg>
 </div><!-- divsubq2_1_2 -->
@@ -103,8 +103,8 @@ SELECT 相関副問い合わせ<br />
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
@@ -131,8 +131,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -156,17 +156,17 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
   <g id="subq2_4_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_3_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="40" y="270">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = a.部署コード</text>
     <text class="ff s fix" x="20" y="290">⇒</text>
-    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
+    <text class="ff s fix" x="40" y="290">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = <tspan style="fill:red">'0002'</tspan></text>
     <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
     <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
@@ -185,8 +185,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -208,8 +208,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -231,8 +231,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -253,8 +253,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -277,17 +277,17 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
   <g id="subq2_9_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_8_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="40" y="270">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = a.部署コード</text>
     <text class="ff s fix" x="20" y="290">⇒</text>
-    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <text class="ff s fix" x="40" y="290">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
     <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
     <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
@@ -306,8 +306,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -330,8 +330,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -353,8 +353,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -375,8 +375,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -399,17 +399,17 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
   <g id="subq2_14_fig">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_13_fig" transform="translate(0, 0)"></use>
     <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
-    <text class="ff s fix" x="40" y="270">select max(b.給与from 社員表 b where b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="40" y="270">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = a.部署コード</text>
     <text class="ff s fix" x="20" y="290">⇒</text>
-    <text class="ff s fix" x="40" y="290">select max(b.給与from 社員表 b where b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <text class="ff s fix" x="40" y="290">SELECT MAX(b.給与FROM 社員表 b WHERE b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
     <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
     <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
@@ -428,8 +428,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECt MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -452,8 +452,8 @@ select * from 社員表 a where a.給与 =
 </p>
 <div class="codelist">
 <pre class="codelist">
-select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
 </pre>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
@@ -478,8 +478,9 @@ select * from 社員表 a where a.給与 =
 </p>
 <pre class="terminal">
 <code>実行例：<br />
-&gt; select * from 社員表 a where a.給与 =
-    (select max(b.給与) from 社員表 b where b.部署コード = a.部署コード)
+&gt; SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+<br />
 社員番号  社員名    性別  生年月日    給与    部署コード
 ------    ----      --    ----------  ------  -----
 000001    山田一郎  男    1950-03-25  350000  0002

@@ -32,38 +32,36 @@ SELECT 集約関数<br />
 <div class="pagetitle"><h3 class="pagetitle">[1] SELECT文 集約関数</h3></div>
 <div class="pagebody">
 <div class="codelist">
-<pre class="codelist">集計：<code>(1) select 集約関数(列名1), .... from 表名リスト [group by 列名 [,列名]... [having 条件]</code>
+<pre class="codelist">集計：<code>(1) SELECT 集約関数(列名1), .... FROM 表名リスト [GROUP BY 列名 [,列名]... [HAVING 条件]</code>
 </pre>
 </div><!-- codelist -->
 <p class="bplist1">
 集約関数：引数で指定した列の複数の(行の)値から１つの値を求めるもの
 </p>
 <br />
-<center>
 <table class="tbl" border="1">
 <tr class="c"><th>関数名</th><th>意味</th><th>例</th><th>例の意味</th></tr>
-<tr><td>sum()</td><td>合計値</td><td>select sum(給与) from 社員表</td><td>社員表の給与列の値の合計値</td></tr>
-<tr><td>avg()</td><td>平均値</td><td>select avg(給与) from 社員表</td><td>社員表の給与列の値の平均値</td></tr>
-<tr><td>max()</td><td>最大値</td><td>select max(給与) from 社員表</td><td>社員表の給与列の値の最大値</td></tr>
-<tr><td>min()</td><td>最小値</td><td>select min(給与) from 社員表</td><td>社員表の給与列の値の最小値</td></tr>
-<tr><td>count()</td><td>件数</td><td>select count(*) from 社員表</td><td>社員表の行数</td></tr>
+<tr><td>SUM()</td><td>合計値</td><td>SELECT SUM(給与) FROM 社員表</td><td>社員表の給与列の値の合計値</td></tr>
+<tr><td>AVG()</td><td>平均値</td><td>SELECT AVG(給与) FROM 社員表</td><td>社員表の給与列の値の平均値</td></tr>
+<tr><td>MAX()</td><td>最大値</td><td>SELECT MAX(給与) FROM 社員表</td><td>社員表の給与列の値の最大値</td></tr>
+<tr><td>MIN()</td><td>最小値</td><td>SELECT MIN(給与) FROM 社員表</td><td>社員表の給与列の値の最小値</td></tr>
+<tr><td>COUNT()</td><td>件数</td><td>SELECT COUNT(*) FROM 社員表</td><td>社員表の行数</td></tr>
 </table>
-</center>
 
 <br />
 <div class="codelist">
 <pre class="codelist">
-例１：<code> select sum(給与), avg(給与), max(給与), min(給与), count(*) from 社員表</code>
+例１：<code>SELECT SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*) FROM 社員表</code>
 </pre>
 </div><!-- codelist -->
 <div class="codelist">
 <pre class="codelist">
-例２：<code> select 部署コード, sum(給与), avg(給与), max(給与), min(給与), count(*)
-    from 社員表 group by 部署コード <span style="color:red">having</span> count(*) > 1</code>
+例２：<code>SELECT 部署コード, SUM(給与), AVG(給与), MAX(給与), MIN(給与), COUNT(*)
+    FROM 社員表 GROUP BY 部署コード <span style="color:red">HAVING</span> COUNT(*) &gt; 1</code>
 </pre>
 </div><!-- codelist -->
 <p class="bplist1">
-☆集計結果の絞り込みは、having句を使う。(whereではできない)
+☆集計結果の絞り込みは、HAVING句を使う。(WHEREではできない)
 </p>
 </div><!-- pagebody -->
 </div><!-- page -->
@@ -90,11 +88,11 @@ SELECT 集約関数<br />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(420, 240),rotate(23.9)"></use>
     <line class="ff" x1="250" y1="160" x2="500" y2="240" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(500, 240),rotate(17.7)"></use>
-    <text class="ff" s" x="5" y="260">select count(給与), min(給与), max(給与), sum(給与), avg(給与) from 社員表</text>
+    <text class="ff" s" x="5" y="260">SELECT COUNT(給与), MIN(給与), MAX(給与), SUM(給与), AVG(給与) FROM 社員表</text>
   </g>
 </svg>
 <div class="codelist">
-<pre class="codelist"><code>count(給与)  min(給与)  max(給与)  sum(給与)  avg(給与)
+<pre class="codelist"><code>COUNT(給与)  MIN(給与)  MAX(給与)  SUM(給与)  AVG(給与)
 ---------    -------    -------    -------    --------
 5            210000     350000     1410000    282000.0</code>
 </pre>
@@ -154,10 +152,10 @@ SELECT 集約関数<br />
     <text class="ff" x="380" y="90">この単位で、集計や</text>
     <text class="ff" x="380" y="110">平均、件数カウント</text>
     <text class="ff" x="380" y="130">を行う。</text>
-    <text class="ff s" x="5" y="380">select count(*), sum(給与), avg(給与), <tspan text-decoration="underline">部署コード</tspan> from 社員表 group by <tspan text-decoration="underline">部署コード</tspan></text>
+    <text class="ff s fix" x="5" y="380">SELECT COUNT(*), SUM(給与), AVG(給与), <tspan text-decoration="underline">部署コード</tspan> FROM 社員表 GROUP BY <tspan text-decoration="underline">部署コード</tspan></text>
     <path class="ff" d="M600,380 600,400 350,400 350,380" />
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(350, 380)"></use>
-    <text class="ff s" x="45" y="420">(group by で指定した列だけが、selectにそのまま書くことができる)</text>
+    <text class="ff s" x="45" y="420">(GROUP BY で指定した列だけが、SELECTにそのまま書くことができる)</text>
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warrow1_25" transform="translate(150, 440)"></use>
   </g>
 </svg>
@@ -261,30 +259,30 @@ SELECT 集約関数<br />
       <line class="ff" x1="120" y1="0" x2="120" y2="125" />
       <line class="ff" x1="190" y1="0" x2="190" y2="125" />
 
-      <text class="ff s" x="5" y="20">count</text>
-      <text class="ff s" x="55" y="20">合計</text>
-      <text class="ff s" x="55" y="40">(給与)</text>
-      <text class="ff s" x="125" y="20">平均</text>
-      <text class="ff s" x="125" y="40">(給与)</text>
-      <text class="ff s" x="195" y="20">部署</text>
-      <text class="ff s" x="195" y="40">コード</text>
+      <text class="ff ss" x="25" y="20" text-anchor="middle">COUNT</text>
+      <text class="ff s" x="85" y="20" text-anchor="middle">合計</text>
+      <text class="ff s" x="85" y="40" text-anchor="middle">(給与)</text>
+      <text class="ff s" x="155" y="20" text-anchor="middle">平均</text>
+      <text class="ff s" x="155" y="40" text-anchor="middle">(給与)</text>
+      <text class="ff s" x="220" y="20" text-anchor="middle">部署</text>
+      <text class="ff s" x="220" y="40" text-anchor="middle">コード</text>
 
       <text class="ff s" x="25" y="70">2</text>
       <text class="ff s" x="55" y="70">530000</text>
       <text class="ff s" x="125" y="70">265000</text>
-      <text class="ff s" x="195" y="70">0001</text>
+      <text class="ff s" x="200" y="70">0001</text>
 
       <text class="ff s" x="25" y="95">1</text>
       <text class="ff s" x="55" y="95">350000</text>
       <text class="ff s" x="125" y="95">350000</text>
-      <text class="ff s" x="195" y="95">0002</text>
+      <text class="ff s" x="200" y="95">0002</text>
 
       <text class="ff s" x="25" y="120">2</text>
       <text class="ff s" x="55" y="120">530000</text>
       <text class="ff s" x="125" y="120">265000</text>
-      <text class="ff s" x="195" y="120">0003</text>
+      <text class="ff s" x="200" y="120">0003</text>
     </g>
-    <g id="ex_shain_group">
+    <g id="ex_shain_group" text-anchor="middle">
       <rect class="ff" x="0" y="0" width="330" height="100" />
       <line class="ff" x1="0" y1="25" x2="330" y2="25" />
       <line class="ff" x1="0" y1="50" x2="330" y2="50" />
@@ -293,27 +291,27 @@ SELECT 集約関数<br />
       <line class="ff" x1="150" y1="0" x2="150" y2="100" />
       <line class="ff" x1="240" y1="0" x2="240" y2="100" />
 
-      <text class="ff s" x="5" y="20">count</text>
-      <text class="ff s" x="65" y="20">合計(給与)</text>
-      <text class="ff s" x="155" y="20">平均(給与)</text>
-      <text class="ff s" x="245" y="20">部署コード</text>
+      <text class="ff ss" x="30" y="20">COUNT</text>
+      <text class="ff s" x="105" y="20">合計(給与)</text>
+      <text class="ff s" x="195" y="20">平均(給与)</text>
+      <text class="ff s" x="285" y="20">部署コード</text>
 
-      <text class="ff s" x="25" y="45">2</text>
-      <text class="ff s" x="70" y="45">530000</text>
-      <text class="ff s" x="160" y="45">265000</text>
-      <text class="ff s" x="270" y="45">0001</text>
+      <text class="ff s" x="30" y="45">2</text>
+      <text class="ff s" x="105" y="45">530000</text>
+      <text class="ff s" x="195" y="45">265000</text>
+      <text class="ff s" x="285" y="45">0001</text>
 
-      <text class="ff s" x="25" y="70">1</text>
-      <text class="ff s" x="70" y="70">350000</text>
-      <text class="ff s" x="160" y="70">350000</text>
-      <text class="ff s" x="270" y="70">0002</text>
+      <text class="ff s" x="30" y="70">1</text>
+      <text class="ff s" x="105" y="70">350000</text>
+      <text class="ff s" x="195" y="70">350000</text>
+      <text class="ff s" x="285" y="70">0002</text>
 
-      <text class="ff s" x="25" y="95">2</text>
-      <text class="ff s" x="70" y="95">530000</text>
-      <text class="ff s" x="160" y="95">265000</text>
-      <text class="ff s" x="270" y="95">0003</text>
+      <text class="ff s" x="30" y="95">2</text>
+      <text class="ff s" x="105" y="95">530000</text>
+      <text class="ff s" x="195" y="95">265000</text>
+      <text class="ff s" x="285" y="95">0003</text>
     </g>
-    <g id="ex_shain_group_sub2">
+    <g id="ex_shain_group_sub2" text-anchor="middle">
       <rect class="ff" x="0" y="0" width="330" height="50" />
       <line class="ff" x1="0" y1="25" x2="330" y2="25" />
       <line class="ff" x1="0" y1="50" x2="330" y2="50" />
@@ -321,14 +319,14 @@ SELECT 集約関数<br />
       <line class="ff" x1="150" y1="0" x2="150" y2="50" />
       <line class="ff" x1="240" y1="0" x2="240" y2="50" />
 
-      <text class="ff s" x="5" y="20">count</text>
-      <text class="ff s" x="65" y="20">合計(給与)</text>
-      <text class="ff s" x="155" y="20">平均(給与)</text>
-      <text class="ff s" x="245" y="20">部署コード</text>
-      <text class="ff s" x="25" y="45">1</text>
-      <text class="ff s" x="70" y="45">350000</text>
-      <text class="ff s" x="160" y="45">350000</text>
-      <text class="ff s" x="270" y="45">0002</text>
+      <text class="ff ss" x="30" y="20">COUNT</text>
+      <text class="ff s" x="105" y="20">合計(給与)</text>
+      <text class="ff s" x="195" y="20">平均(給与)</text>
+      <text class="ff s" x="285" y="20">部署コード</text>
+      <text class="ff s" x="30" y="45">1</text>
+      <text class="ff s" x="105" y="45">350000</text>
+      <text class="ff s" x="195" y="45">350000</text>
+      <text class="ff s" x="285" y="45">0002</text>
     </g>
   </defs>
   <g id="sqlselect2_7">
@@ -364,8 +362,17 @@ SELECT 集約関数<br />
 </svg>
 <div class="codelist">
 <pre class="codelist">
-<code>select count(*), max(給与),  avg(給与), 部署コード from 社員表
-group by 部署コード <u>having avg(給与) &gt;= 300000</u></code>
+<code>SELECT COUNT(*), MAX(給与),  AVG(給与), 部署コード FROM 社員表
+GROUP BY 部署コード <u>HAVING AVG(給与) &gt;= 300000</u></code>
+</pre>
+<div class="codelist">
+<pre class="terminal"><code>実行例：
+&gt; SELECT COUNT(*), MAX(給与),  AVG(給与), 部署コード FROM 社員表
+  GROUP BY 部署コード HAVING AVG(給与) &gt;= 300000;
+<br />
+COUNT(*)  MAX(給与)  AVG(給与)  部署コード
+--------  -------    --------   -----
+1         350000     350000.0   0002</code>
 </pre>
 </div><!-- codelist -->
 </div><!-- pagebody -->
