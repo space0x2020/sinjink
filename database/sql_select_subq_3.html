@@ -355,7 +355,9 @@ SELECT * FROM 社員表 a
 </pre>
 </div>
 <br />
-<pre class="terminal">実行例：<br />
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 a
   WHERE EXISTS (SELECT * FROM 社員表 b WHERE b.部署コード = a.部署コード
   AND b.給与 &lt; a.給与);
@@ -365,6 +367,7 @@ SELECT * FROM 社員表 a
 000002   鈴木花子 女   1956-07-18  320000  0001
 000003   佐藤三郎 男   1961-07-03  280000  0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 

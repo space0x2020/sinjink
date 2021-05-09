@@ -17,26 +17,51 @@
 <div style="display:block">
 SELECT<br />
 <input type="button" id="B14_01" onclick="disppage(14, 1);" value="1" />
-<input type="button" id="B14_02" onclick="disppage(14, 2);" value="2(2)" />
-<input type="button" id="B14_03" onclick="disppage(14, 3);" value="3(3)" />
-<input type="button" id="B14_04" onclick="disppage(14, 4);" value="4(4)" />
-<input type="button" id="B14_05" onclick="disppage(14, 5);" value="5" />
-<input type="button" id="B14_06" onclick="disppage(14, 6);" value="6(2)" />
-<input type="button" id="B14_07" onclick="disppage(14, 7);" value="7(3)" />
-<input type="button" id="B14_08" onclick="disppage(14, 8);" value="8(4)" />
-<input type="button" id="B14_09" onclick="disppage(14, 9);" value="9(5)" />
-<input type="button" id="B14_10" onclick="disppage(14, 10);" value="10(6)" />
-<input type="button" id="B14_11" onclick="disppage(14, 11);" value="11(7)" />
-<input type="button" id="B14_12" onclick="disppage(14, 12);" value="12" />
-<input type="button" id="B14_13" onclick="disppage(14, 13);" value="13(2)" />
-<input type="button" id="B14_14" onclick="disppage(14, 14);" value="14(3)" />
-<input type="button" id="B14_15" onclick="disppage(14, 15);" value="15" />
+<input type="button" id="B14_02" onclick="disppage(14, 2);" value="2" />
+<input type="button" id="B14_03" onclick="disppage(14, 3);" value="2(2)" />
+<input type="button" id="B14_04" onclick="disppage(14, 4);" value="4(3)" />
+<input type="button" id="B14_05" onclick="disppage(14, 5);" value="5(4)" />
+<input type="button" id="B14_06" onclick="disppage(14, 6);" value="6" />
+<input type="button" id="B14_07" onclick="disppage(14, 7);" value="7(2)" />
+<input type="button" id="B14_08" onclick="disppage(14, 8);" value="8(3)" />
+<input type="button" id="B14_09" onclick="disppage(14, 9);" value="9(4)" />
+<input type="button" id="B14_10" onclick="disppage(14, 10);" value="10(5)" />
+<input type="button" id="B14_11" onclick="disppage(14, 11);" value="11(6)" />
+<input type="button" id="B14_12" onclick="disppage(14, 12);" value="12(7)" />
+<input type="button" id="B14_13" onclick="disppage(14, 13);" value="13" />
+<input type="button" id="B14_14" onclick="disppage(14, 14);" value="14(2)" />
+<input type="button" id="B14_15" onclick="disppage(14, 15);" value="15(3)" />
 <input type="button" id="B14_16" onclick="disppage(14, 16);" value="16" />
+<input type="button" id="B14_17" onclick="disppage(14, 17);" value="17" />
+<input type="button" id="B14_18" onclick="disppage(14, 18);" value="例題" />
 </div>
 
 
 <div id="dbsql14_01" class="page">
-<div class="pagetitle"><h3 class="pagetitle">[1] SELECT文 射影-1</h3></div>
+<div class="pagetitle"><h3 class="pagetitle">[1] SQL</h3></div>
+<div class="pagebody">
+<p class="plist">SQLの基本構成</p>
+<center>
+<table class="tbl" border="1">
+<tr><td rowspan="2">データ定義言語 DCL<br />(Data Definition Language)</td>
+    <td>CREATE TABLE<br />DROP TABLE</td></tr>
+<tr><td>CREATE VIEW<br />DROP VIEW</td></tr>
+<tr><td rowspan="4">データ操作言語 DML<br />(Data Manipulation Language)</td>
+    <td>SELECT</td></tr>
+<tr><td>INSERT</td></tr>
+<tr><td>UPDATE</td></tr>
+<tr><td>DELETE</td></tr>
+<tr><td rowspan="2">トランザクション制御</td>
+    <td>BEGIN TRANSACTION .... ROLLBACK</td></tr>
+<tr><td>BEGIN TRANSACTION .... COMMIT</td></tr>
+</table>
+</center>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql14_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] SELECT文 射影-1</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">(1) SELECT 列名1, 列名2, .... FROM 表名
@@ -47,7 +72,9 @@ SELECT<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑を「選択リスト」または「列リスト」ともいう。
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT 社員名, 部署コード FROM 社員表;
 <br />
 社員名    部署コード
@@ -58,12 +85,13 @@ SELECT<br />
 田中良子  0003
 高橋五郎  0001
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_02" class="page">
-<div class="pagetitle"><h3 class="pagetitle">[2] SELECT文 射影-2</h3></div>
+<div id="dbsql14_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] SELECT文 射影-2</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">(2) SELECT 列名1 AS "列別名1", 列名2 AS "列別名", 列名3,, .... FROM 表名
@@ -74,7 +102,9 @@ SELECT<br />
 大文字・小文字を使い分けたい、スペース等特殊文字を使いたいときには""で囲む。
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT 社員名 AS "Full Name", 部署コード AS 部署 FROM 社員表;
 <br />
 Full Name  部署
@@ -85,12 +115,13 @@ Full Name  部署
 田中良子   0003
 高橋五郎   0001
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_03" class="page">
-<div class="pagetitle"><h3 class="pagetitle">[3] SELECT文 射影-3</h3></div>
+<div id="dbsql14_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] SELECT文 射影-3</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">(3) SELECT 列名1 ||  列名2, 列名3 || 'C' AS "A and C" ,, .... FROM 表名
@@ -101,7 +132,9 @@ Full Name  部署
 大文字・小文字を使い分けたい、スペース等特殊文字を使いたいときには""で囲む。
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT 社員名 || '様' AS "お客様氏名" FROM 社員表;
 <br />
 お客様氏名
@@ -112,12 +145,13 @@ Full Name  部署
 田中良子様
 高橋五郎様
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_04" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[4] SELECT文 射影-4</h3></div>
+<div id="dbsql14_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] SELECT文 射影-4</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">(4) SELECT * FROM 表名
@@ -128,7 +162,9 @@ Full Name  部署
 (表の内容をチェックするときに使う。APでは使用しないこと。)
 </p>
 <br />
-<pre class=" terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表;
 <br />
 社員番号  社員名    性別  生年月日    給与    部署コード
@@ -139,12 +175,13 @@ Full Name  部署
 000004    田中良子  女    1978-01-18  250000  0003
 000005    高橋五郎  男    1982-11-06  210000  0001
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_05" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[5] SELECT文 選択</h3></div>
+<div id="dbsql14_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] SELECT文 選択</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -158,7 +195,9 @@ Full Name  部署
 → WHERE 給与 &gt; 300000
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 &gt; 300000;
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
@@ -166,23 +205,24 @@ Full Name  部署
 000001    山田一郎 男    1950-03-25  350000  0002
 000002    鈴木花子 女    1956-07-18  320000  0001
 </pre>
+</div>
 <br />
 <p class="plist">■比較演算子 </p>
 <table class="tbl" border="1">
 <tr class="c"><th>演算子</th><th>説明</th></tr>
-<tr><td>&lt;</td><td>小なり</td></tr>
-<tr><td>&gt;</td><td>大なり</td></tr>
-<tr><td>&lt;=</td><td>以下</td></tr>
-<tr><td>&gt;=</td><td>以上</td></tr>
-<tr><td>=</td><td>等しい</td></tr>
-<tr><td>&lt;&gt; または !=</td><td>等しくない</td></tr>
+<tr class="c"><td>&lt;</td><td>小なり</td></tr>
+<tr class="c"><td>&gt;</td><td>大なり</td></tr>
+<tr class="c"><td>&lt;=</td><td>以下</td></tr>
+<tr class="c"><td>&gt;=</td><td>以上</td></tr>
+<tr class="c"><td>=</td><td>等しい</td></tr>
+<tr class="c"><td>&lt;&gt; または !=</td><td>等しくない</td></tr>
 </table>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_06" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[6] SELECT文 選択: OR</h3></div>
+<div id="dbsql14_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[7] SELECT文 選択: OR</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -196,7 +236,9 @@ Full Name  部署
 → WHERE 給与 &gt;= 300000 OR 給与 &lt;= 250000
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 &gt;= 300000 or 給与 &lt;= 250000;
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
@@ -206,12 +248,13 @@ Full Name  部署
 000004    田中良子 女    1978-01-18  250000  0003
 000005    高橋五郎 男    1982-11-06  210000  0001
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_07" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[7] SELECT文 選択: AND</h3></div>
+<div id="dbsql14_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] SELECT文 選択: AND</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -225,7 +268,9 @@ Full Name  部署
 → WHERE 給与 &gt;= 250000 AND 給与 &lt; 300000
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 &gt;= 250000 AND 給与 &lt; 300000;
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
@@ -233,12 +278,13 @@ Full Name  部署
 000003    佐藤三郎 男    1961-07-03  280000  0003
 000004    田中良子 女    1978-01-18  250000  0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_08" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[8] SELECT文 選択: BETWEEN</h3></div>
+<div id="dbsql14_09" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[9] SELECT文 選択: BETWEEN</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -252,7 +298,9 @@ Full Name  部署
 → WHERE 給与 BETWEEN 250000 AND 280000
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 WHERE 給与 BETWEEN 250000 AND 280000;
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
@@ -260,12 +308,13 @@ Full Name  部署
 000003    佐藤三郎 男    1961-07-03  280000  0003
 000004    田中良子 女    1978-01-18  250000  0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_09" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[9] SELECT文 選択: IN</h3></div>
+<div id="dbsql14_10" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[10] SELECT文 選択: IN</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -279,7 +328,9 @@ Full Name  部署
 → WHERE 部署コード IN ('0001', '0003')
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT * FROM 社員表 WHERE 部署コード IN ('0001', '0003');
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
@@ -289,12 +340,13 @@ Full Name  部署
 000004    田中良子 女    1978-01-18  250000  0003
 000005    高橋五郎 男    1982-11-06  210000  0001
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_10" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[10] SELECT文 選択: 文字列</h3></div>
+<div id="dbsql14_11" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[11] SELECT文 選択: 文字列</h3></div>
 <div class="pagebody">
 <h4>
 (1) 文字列 完全一致 =演算子を使う
@@ -307,13 +359,16 @@ Full Name  部署
 ☆ 抽出条件：列名 = '文字列'<br />
 </p>
 <br />
-<pre class="terminal">実行例： 社員名が '佐藤三郎'である行を選択 → where 社員名 = '佐藤三郎'
+<div class="terminal">
+<pre class="codelist">
+実行例： 社員名が '佐藤三郎'である行を選択 → where 社員名 = '佐藤三郎'
 &gt; SELECT * FROM 社員表 WHERE 社員名 = '佐藤三郎';
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
 ------    ----     --    ----------  ------  -----
 000003    佐藤三郎 男    1961-07-03  280000  0003
 </pre>
+</div>
 <br />
 <h4>
 (2) 文字列 部分一致 LIKE 演算子を使う
@@ -330,27 +385,33 @@ _ は任意の1文字<br />
 となる。
 </p>
 <br />
-<pre class="terminal">実行例：社員名が '鈴'から始まる行を選択 → where 社員名 LIKE '鈴%'
+<div class="terminal">
+<pre class="codelist">
+実行例：社員名が '鈴'から始まる行を選択 → where 社員名 LIKE '鈴%'
 &gt; SELECT * FROM 社員表 WHERE 社員名 LIKE '鈴%';
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
 ------    ----     --    ----------  ------  -----
 000002    鈴木花子  女   1956-07-18  320000  0001
 </pre>
+</div>
 <p></p>
-<pre class="terminal">実行例：社員名が '田中(任意の一文字)子'である行を選択→ WHERE 社員名 LIKE '田中%子'
+<div class="terminal">
+<pre class="codelist">
+実行例：社員名が '田中(任意の一文字)子'である行を選択→ WHERE 社員名 LIKE '田中%子'
 &gt; SELECT * FROM 社員表 WHERE 社員名 LIKE '田中%子';
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
 ------    ----     --    ----------  ------  -----
 000004    田中良子  女   1978-01-18  250000  0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_11" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[11] SELECT文 選択: NULL</h3></div>
+<div id="dbsql14_12" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[12] SELECT文 選択: NULL</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名 <u>WHERE 抽出条件</u>
@@ -372,19 +433,22 @@ _ は任意の1文字<br />
 ☆ 抽出条件：列名 IS NULL または 列名 IS NOT NULL
 </p>
 <br />
-<pre class="terminal">実行例：部署コードが NULLである行を選択 → WHERE 部署コード IS NULL
+<div class="terminal">
+<pre class="codelist">
+実行例：部署コードが NULLである行を選択 → WHERE 部署コード IS NULL
 &gt; SELECT * FROM 社員表 WHERE 部署コード IS NULL;
 <br />
 社員番号  社員名   性別  生年月日    給与    部署コード
 ------    ----     --    ----------  ------  -----
 000006    安部真央 女    1980-09-25  200000
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_12" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[12] SELECT文 結合</h3></div>
+<div id="dbsql14_13" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[13] SELECT文 結合</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名1 [相関名1] JOIN 表名2 [相関名2] ON 結合条件
@@ -419,7 +483,9 @@ SELECT s.社員名, b.部署表 FROM 社員表 s, 部署表 b  ←直積<br />
 SELECT s.社員名, b.部署表 FROM 社員表 s, 部署表 b WHERE <span style="color:red">s.部署コード = b.部署コード</span><br />
 </p>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT s.社員名, b.部署コード, b.部署名
    FROM 社員表 s JOIN 部署表 b ON s.部署コード = b.部署コード;
 <br />
@@ -431,12 +497,13 @@ SELECT s.社員名, b.部署表 FROM 社員表 s, 部署表 b WHERE <span style=
 田中良子  0003        開発部
 高橋五郎  0001        総務部
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_13" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[13] SELECT文 外部結合</h3></div>
+<div id="dbsql14_14" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[14] SELECT文 外部結合</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名1 [相関名1] [RIGHT|LEFT|FULL] [OUTER] JOIN 表名2 [相関名2] ON 結合条件
@@ -468,8 +535,8 @@ sqlite3は、left join のみです。
 </div><!-- page -->
 
 
-<div id="dbsql14_14" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[14] SELECT文 結合(直積)</h3></div>
+<div id="dbsql14_15" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[15] SELECT文 結合(直積)</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM 表名1 [相関名1] CROSS JOIN 表名2 [相関名2]
@@ -484,7 +551,9 @@ sqlite3は、left join のみです。
 <pre class="codelist">例２：SELECT 社員名, 部署名 FROM 社員表 s, 部署表 b
 </pre>
 <br />
-<pre class="terminal">実行例：
+<div class="terminal">
+<pre class="codelist">
+実行例：
 &gt; SELECT 社員名, 部署名 FROM 社員表 s CROSS JOIN 部署表 b;
 <br />
 社員名    部署名
@@ -505,12 +574,13 @@ sqlite3は、left join のみです。
 高橋五郎  営業部
 高橋五郎  開発部
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_15" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[15] SELECT文 並替</h3></div>
+<div id="dbsql14_16" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[16] SELECT文 並替</h3></div>
 <div class="pagebody">
 <div class="codelist">
 <pre class="codelist">SELECT &lt;選択リスト&gt; FROM &lt;表リスト&gt; [WHERE] <span style="color:red">ORDER BY 列名 [,列名]... [DESC|ASC]</span>
@@ -527,7 +597,8 @@ sqlite3は、left join のみです。
 ☆ORDER BY句がない時の出力順は不定。
 </p>
 <br />
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 実行例：部署コードの昇順、社員番号の降順で並べ替え<br />
 &gt; SELECT 社員番号, 社員名, 部署コード FROM 社員表 ORDER BY  部署コード, 社員番号 DESC;
 <br />
@@ -539,12 +610,13 @@ sqlite3は、left join のみです。
 000004    田中良子  0003
 000003    佐藤三郎  0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
 
 
-<div id="dbsql14_16" style="display:none;">
-<div class="pagetitle"><h3 class="pagetitle">[16] SELECT文 DISTINCT 重複行の排除
+<div id="dbsql14_17" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[17] SELECT文 DISTINCT 重複行の排除
 </h3></div>
 <div class="pagebody">
 <div class="codelist">
@@ -556,7 +628,9 @@ sqlite3は、left join のみです。
 ☆重複行を排除するには選択リストの先頭に DISTINCTキーワードを付ける。
 </p>
 <br />
-<pre class="terminal">実行例：DISTINCTなし
+<div class="terminal">
+<pre class="codelist">
+実行例：DISTINCTなし
 &gt; SELECT 部署コード FROM 社員表;
 <br />
 部署コード
@@ -567,7 +641,8 @@ sqlite3は、left join のみです。
 0003
 0001
 </pre>
-<pre class="terminal">実行例：DISTINCTあり
+<pre class="codelist">
+実行例：DISTINCTあり
 &gt; SELECT DISTINCT 部署コード FROM 社員表;
 <br />
 部署コード
@@ -576,8 +651,47 @@ sqlite3は、left join のみです。
 0001
 0003
 </pre>
+</div>
 </div><!-- pagebody -->
 </div><!-- page -->
+
+
+<div id="dbsql14_18" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[18] 例題</h3></div>
+<div class="pagebody">
+  <div class="quiz">
+    社員表から、社員番号が '000003' である社員の社員名、部署コードを抽出しなさい。</div>
+  <p><input type="button" onclick="detailson('dbsql14_18_a01')" value="解説" /></p>
+  <div id="dbsql14_18_a01" style="display:none;">
+    <p class="sqlp1">[1] 社員表から</p>
+    <div class="plist3"><pre class="codelist">→ <u>FROM 社員表</u></pre></div>
+    <p><input type="button" onclick="detailson('dbsql14_18_a02')" value="(2)" /></p>
+  </div>
+  <div id="dbsql14_18_a02" style="display:none;">
+    <p class="sqlp1">[2] 社員番号が '000003'である→抽出条件として社員番号列の値が '000003'</p>
+    <div class="plist3"><pre class="codelist">→ FROM 社員表 <u>WHERE 社員番号 = '000003'</u></pre></div>
+    <p><input type="button" onclick="detailson('dbsql14_18_a03')" value="(3)" /></p>
+  </div>
+  <div id="dbsql14_18_a03" style="display:none;">
+    <p class="sqlp1">[3] 社員名、部署コード列の値を抽出</p>
+    <div class="plist3"><pre class="codelist">→ <u>SELECT 社員名, 部署コード</u> FROM 社員表 WHERE 社員番号 = '000003'</pre></div>
+    <p><input type="button" onclick="detailson('dbsql14_18_a04')" value="実行例" /></p>
+  </div>
+  <div id="dbsql14_18_a04" style="display:none;">
+    <div class="terminal">
+      <pre class="codelist">
+実行例：
+&gt; SELECT 社員名, 部署コード FROM 社員表 WHERE 社員番号 = '000003';
+<br />
+社員名    部署コード
+----      -----
+佐藤三郎  0003
+      </pre>
+    </div>
+  </div>
+</div><!-- pagebody -->
+</div><!-- page -->
+
 
 
 </div><!-- campus -->

@@ -21,7 +21,7 @@
       <h4>SQL問題(1)</h4>
       <div class="quiz">
         次のSQL文によって“会員”表から新たに得られる表はどれか。
-<pre class="f">
+<pre class="codelist">
 [SQL文〕
   SELECT AVG(年齢)
     FROM 会員
@@ -250,7 +250,7 @@
       <h4>SQL問題(4)</h4>
       <div class="quiz">
             “商品”表と”売上明細”表に対して、次のSQL文を実行した結果の表として、正しいものはどれか。ここで、結果の表中の”－”は、値がナルであることを表す。
-        <pre class="f">
+        <pre class="codelist">
 SELECT  X．商品番号,  商品名,  数量
      FROM 商品 X  LEFT OUTER JOIN  売上明細 Y
            ON X．商品番号 = Y．商品番号
@@ -429,7 +429,7 @@ SELECT  X．商品番号,  商品名,  数量
       <div class="quiz">
         “商品”表、”在庫”表に対する次のSQL文の結果と同じ結果が得られるSQL文はどれか。
         ここで、下線部は主キーを表す。
-        <pre class="f">
+        <pre class="codelist">
 SELECT  商品番号 FROM 商品
      WHERE 商品番号 NOT IN (SELECT 商品番号 FROM 在庫)
         </pre>

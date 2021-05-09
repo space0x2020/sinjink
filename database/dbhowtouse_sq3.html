@@ -18,42 +18,52 @@
 <li>「スタート」右クリック→「Windows PowerShell」をクリックします。Windows PowerShell ウィンドウが表示されます</li>
 <li>
 Windows PowerShell ウィンドウが表示されたら、sqlite3 フォルダーへ移動します。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 PS C:\Users\<i>PANDA-ID</i>&gt; <b><span color="yellow">cd</span> Desktop\sqlite3</b> &lt;ENTER&gt;    ←
 PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; _
 </pre>
+</div>
 </li>
 <li>
 sqlite3 を起動します。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; <b><span color="yellow">.\sqlite3.exe</span> .\mydb.db</b> &lt;ENTER&gt;    ←
 -- Loading resources from C:\Users\<i>PANDA-ID</i>/.sqliterc
 SQLite version 3.35.4 2021-04-02 15:20:16
 Enter ".help" for usage hints.
 sqlite&gt; _
 </pre>
+</div>
 </li>
 </ol>
 
 <h2 style="background-color: lightblue;"><a name="exitpsql"></a>sqlite3の終了方法</h2>
 <ol>
 <li>sqlite3のプロンプト(sqlite&gt;)上で、.q を入力します。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 sqlite&gt; .q &lt;ENTER&gt;    ←
 PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; _
 </pre>
+</div>
 </li>
 <li>PowerShellを終了します。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 PS C:\Users\<i>PANDA-ID</i>\Desktop\sqlite3&gt; <b>exit</b> &lt;ENTER&gt;    ←
 </pre>
+</div>
 </li>
 </ol>
 
 <h2 style="background-color: lightblue;"><a name="execsql"></a>SQL文の実行</h2>
 <ul>
 <li>sqlite3では、SQL文の後ろにセミコロン(;)を付けます。(以降、&lt;ENTER&gt;は省略します。)
-<pre class="terminal">sqlite&gt; select * from dept;    ←最後に ; を付ける。
+<div class="terminal">
+<pre class="codelist">
+sqlite&gt; select * from dept;    ←最後に ; を付ける。
 deptno  dname       loc
 ------  ----------  ----------
    10   ACCOUNTING  NEW YORK
@@ -62,13 +72,15 @@ deptno  dname       loc
    40   OPERATIONS  BOSTON
 sqlite&gt; _
 </pre>
+</div>
 </li>
 </ul>
 
 <h2 style="background-color: lightblue;"><a name="desctable"></a>テーブル定義の参照</h2>
 <ul>
 <li>表の定義を参照するには、「.schema 表名」コマンドを使います。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 sqlite&gt; .schema dept
 CREATE TABLE dept (
     deptno  int constraint pk_dept primary key,
@@ -77,6 +89,7 @@ CREATE TABLE dept (
 );
 sqlite&gt; _
 </pre>
+</div>
 </li>
 </ul>
 
@@ -84,7 +97,8 @@ sqlite&gt; _
 <ul>
 <li>セミコロン(;)を付けずにSQL文の途中で、&lt;ENTER&gt; を入力すると、プロンプトが「...&gt;」になり継続して入力できます。
 セミコロン(;)を入力して&lt;ENTER&gt;を入力すると、SQL文が実行されます。
-<pre class="terminal">
+<div class="terminal">
+<pre class="codelist">
 sqlite&gt; select * &lt;ENTER&gt;
    ...&gt; * &lt;ENTER&gt;
    ...&gt; from &lt;ENTER&gt;
@@ -98,6 +112,7 @@ deptno  dname       loc
    40   OPERATIONS  BOSTON
 sqlite&gt; _
 </pre>
+</div>
 </li>
 </ul>
 

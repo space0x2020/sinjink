@@ -382,8 +382,51 @@ div.reidai {
   border:solid;
 }
 
+
 /* */
-pre.f, pre.lineno, pre.code, pre.codenoln {
+pre.codelist {
+  margin: 0;
+  padding: 0;
+  line-height: 120%;
+  font-family: monospace;
+  /*font-family: Consolas, 'Courier New', Courier, Monaco, monospace;*/
+  color: inherit;
+  background-color: inherit;
+}
+div.codelist {
+  margin: 1px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border: solid;
+}
+div.codelist0 {
+  margin: 0px;
+  padding: 0em;
+  border: solid;
+}
+div.codelist02 {
+  margin: 0.1em 0 0.1em 0;
+  padding: 0em 0.3em 0em 0.3em;
+  border: solid;
+}
+div.codelistnf {
+  margin: 1px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+div.codelistnf0 {
+  margin: 0px;
+  padding: 0em;
+}
+div.terminal {
+  margin: 1px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border: solid;
+  color: white;
+  background: black;
+}
+
+
+/* */
+pre.lineno, pre.codenoln {
   margin: 0;
   padding: 0;
   font: inherit;
@@ -392,7 +435,8 @@ pre.f, pre.lineno, pre.code, pre.codenoln {
   color: inherit;
   background-color: inherit;
   line-height: 12pt;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  font-family: monospace;
+  /*font-family: Consolas, 'Courier New', Courier, Monaco, monospace;*/
 }
 
 pre.lineno {
@@ -401,11 +445,6 @@ pre.lineno {
   width: 40px;
   user-select: none;
   text-align: right;
-}
-
-pre.code {
-  margin: 0 0 0 40px;
-  padding: 1px 0 1px 1em;
 }
 
 pre.codenoln {
@@ -419,63 +458,8 @@ pre.clear {
   padding: 0;
 }
 
-pre.f code {
-#ifdef HTML
-  font-size:12pt;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-#endif
-}
-
-pre.terminal {
-  margin: 0;
-  padding: 0.5em;
-  border-style: solid;
-  border-width: 2;
-  border-color: white;
-  color: white;
-  background-color: black;
-  line-height: 120%;
-  width: 860px;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-}
-
-pre.terminal code {
-#ifdef HTML
-  font-size:12pt;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-#endif
-}
-
 span.keyword {
   font-weight: bold;
-}
-
-div.codelist {
-  border: solid;
-  width: 860px;
-}
-
-div.codelist p {
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-div.codelist pre.f {
-  padding: 0 0 1em 0.5em;
-}
-
-pre.codelist {
-  color: inherit;
-  background-color: inherit;
-  font-size: 13pt;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-}
-
-div.codelist pre.codelist {
-  margin: 0;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 #ifdef V1
