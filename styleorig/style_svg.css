@@ -78,7 +78,7 @@
 #ifdef V1
         fill: white; /*v1*/
 #else
-        fill: black: /*V2*/
+        fill: black; /*V2*/
 #endif
         font-size: 18;
       }
@@ -95,15 +95,15 @@
         font-size: 18;
       }
       text.red { /* red */
-        fill:red;
+        fill: red;
         font-size: 18;
       }
       text.yellow { /* yellow */
-        fill:yellow;
+        fill: yellow;
         font-size: 18;
       }
       text.fix {
-        font-family:monospace;
+        font-family: monospace;
       }
       rect.th {
 #ifdef V1
