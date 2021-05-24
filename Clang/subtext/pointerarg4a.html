@@ -1,0 +1,443 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>C Pointer Argument 4 swap</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+C Pointer Argument<br />
+<input type="button" id="B14_01" onclick="disppage(14, 1);" value="1" />
+<input type="button" id="B14_02" onclick="disppage(14, 2);" value="2" />
+<input type="button" id="B14_03" onclick="disppage(14, 3);" value="3" />
+<input type="button" id="B14_04" onclick="disppage(14, 4);" value="4" />
+<input type="button" id="B14_05" onclick="disppage(14, 5);" value="5" />
+<input type="button" id="B14_06" onclick="disppage(14, 6);" value="6" />
+<input type="button" id="B14_07" onclick="disppage(14, 7);" value="7" />
+<input type="button" id="B14_08" onclick="disppage(14, 8);" value="8" />
+<input type="button" id="B14_09" onclick="disppage(14, 9);" value="9" />
+<input type="button" id="B14_10" onclick="disppage(14, 10);" value="10" />
+<input type="button" id="B14_11" onclick="disppage(14, 11);" value="11" />
+<input type="button" id="B14_12" onclick="disppage(14, 12);" value="12" />
+</div>
+
+
+<div id="clang14_01" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[1] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1">
+    <g id="clang_pointer_arg1_list" transform="translate(0, 0)">
+      <text class="ff fix" x="40" y="20" text-anchor="end">1:</text>
+      <text class="ff fix" x="44" y="20">#include &lt;stdio.h&gt;</text>
+      <text class="ff fix" x="40" y="40" text-anchor="end">2:</text>
+      <text class="ff fix" x="44" y="40">void swap(int *a, int *b);</text>
+      <text class="ff fix" x="40" y="60" text-anchor="end">3:</text>
+      <text class="ff fix" x="44" y="60"></text>
+      <text class="ff fix" x="40" y="80" text-anchor="end">4:</text>
+      <text class="ff fix" x="44" y="80">int main(void)</text>
+      <text class="ff fix" x="40" y="100" text-anchor="end">5:</text>
+      <text class="ff fix" x="44" y="100">{</text>
+      <text class="ff fix" x="40" y="120" text-anchor="end">6:</text>
+      <text class="ff fix" x="84" y="120">int j = 10, k = 20;</text>
+      <text class="ff fix" x="40" y="140" text-anchor="end">7:</text>
+      <text class="ff fix" x="84" y="140"></text>
+      <text class="ff fix" x="40" y="160" text-anchor="end">8:</text>
+      <text class="ff fix" x="84" y="160">swap(&j, &k);</text>
+      <text class="ff fix" x="40" y="180" text-anchor="end">9:</text>
+      <text class="ff fix" x="84" y="180">printf("j=%d, k=%d\n", j, k);</text>
+      <text class="ff fix" x="40" y="200" text-anchor="end">10:</text>
+      <text class="ff fix" x="84" y="200"></text>
+      <text class="ff fix" x="40" y="220" text-anchor="end">11:</text>
+      <text class="ff fix" x="84" y="220">return 0;</text>
+      <text class="ff fix" x="40" y="240" text-anchor="end">12:</text>
+      <text class="ff fix" x="44" y="240">}</text>
+      <text class="ff fix" x="40" y="260" text-anchor="end">13:</text>
+      <text class="ff fix" x="44" y="260"></text>
+      <text class="ff fix" x="40" y="280" text-anchor="end">14:</text>
+      <text class="ff fix" x="44" y="280">void swap(int *a, int *b)</text>
+      <text class="ff fix" x="40" y="300" text-anchor="end">15:</text>
+      <text class="ff fix" x="44" y="300">{</text>
+      <text class="ff fix" x="40" y="320" text-anchor="end">16:</text>
+      <text class="ff fix" x="84" y="320">int tmp;</text>
+      <text class="ff fix" x="40" y="340" text-anchor="end">17:</text>
+      <text class="ff fix" x="84" y="340">tmp = *a;</text>
+      <text class="ff fix" x="40" y="360" text-anchor="end">18:</text>
+      <text class="ff fix" x="84" y="360">*a = *b;</text>
+      <text class="ff fix" x="40" y="380" text-anchor="end">19:</text>
+      <text class="ff fix" x="84" y="380">*b = tmp;</text>
+      <text class="ff fix" x="40" y="400" text-anchor="end">20:</text>
+      <text class="ff fix" x="44" y="400">}</text>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_02" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[2] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_02">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff gray" x="600" y="125" width="120" height="25" />
+  <rect class="ff gray" x="600" y="150" width="120" height="25" />
+  <rect class="ff gray" x="600" y="175" width="120" height="25" />
+  <rect class="ff gray" x="600" y="200" width="120" height="25" />
+  </g>
+  <rect class="ff act sw3" x="0" y="60" width="240" height="25" />
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_03" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[3] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_03">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_02" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff gray" x="600" y="125" width="120" height="25" />
+  <rect class="ff gray" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <rect class="ff act sw3" x="0" y="80" width="300" height="44" />
+  <line class="ff" x1="300" y1="102" x2="550" y2="190" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(550, 190),rotate(24)"></use>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_04" class="page">
+<div class="pagetitle"><h3 class="pagetitle">[4] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_04">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_03" transform="translate(0, 0)"></rse>
+  </g>
+  <rect class="ff act sw3" x="0" y="140" width="240" height="25" />
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <path class="ff" d="M560,187 Q520,162 570,140" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(570, 140),rotate(-24)"></use>
+  <path class="ff" d="M560,212 Q520,187 570,165" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(570, 165),rotate(-24)"></use>
+  <line class="ff" x1="250" y1="152" x2="520" y2="152" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(520, 152)"></use>
+  <text class="ff" x="300" y="140">スタックにコピー(push)</text>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[5] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_05">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_03" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="260" width="280" height="25" />
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff" x="580" y="145">a</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff" x="580" y="170">b</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <line class="ff" x1="300" y1="273" x2="540" y2="160" />
+  <text class="ff" x="730" y="195">*a</text>
+  <text class="ff" x="730" y="220">*b</text>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 160),rotate(-22)"></use>
+  <text class="ff" x="320" y="240">仮引数をメモリに割り当て</text>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[6] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_06">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="280" width="260" height="45" />
+  <rect class="ff" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff" x="580" y="145">a</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff" x="580" y="170">b</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff" x="555" y="120">tmp</text>
+  <text class="ff" x="660" y="145" text-anchor="middle"></text>
+  <line class="ff" x1="300" y1="313" x2="540" y2="120" />
+  <text class="ff" x="730" y="195">*a</text>
+  <text class="ff" x="730" y="220">*b</text>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 120),rotate(-32)"></use>
+  <text class="ff" x="320" y="260">ローカル変数をメモリに割り当て</text>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[7] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_07">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="320" width="260" height="25" />
+  <rect class="ff" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff" x="580" y="145">a</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff" x="580" y="170">b</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff" x="555" y="120">tmp</text>
+  <text class="ff" x="660" y="120" text-anchor="middle">10</text>
+  <text class="ff" x="730" y="195">*a</text>
+  <text class="ff" x="730" y="220">*b</text>
+  <path class="ff" d="M540,187 Q500,155 540,112" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 112),rotate(-42)"></use>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_08">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="340" width="260" height="25" />
+  <rect class="ff" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">10→20</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff" x="580" y="145">a</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">kのアドレス</text>
+  <text class="ff" x="580" y="170">b</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff" x="555" y="120">tmp</text>
+  <text class="ff" x="660" y="120" text-anchor="middle">10</text>
+  <text class="ff" x="730" y="195">*a</text>
+  <text class="ff" x="730" y="220">*b</text>
+  <path class="ff" d="M540,212 Q520,200 540,187" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 187),rotate(-32)"></use>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_09" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[9] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_09">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="360" width="260" height="25" />
+  <rect class="ff" x="600" y="100" width="120" height="25" />
+  <rect class="ff" x="600" y="125" width="120" height="25" />
+  <rect class="ff" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle"><tspan style="fill:gray">10</tspan>→20</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">20→10</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff" x="580" y="145">a</text>
+  <text class="ff" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff" x="580" y="170">b</text>
+  <text class="ff" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff" x="555" y="120">tmp</text>
+  <text class="ff" x="660" y="120" text-anchor="middle">10</text>
+  <text class="ff" x="730" y="195">*a</text>
+  <text class="ff" x="730" y="220">*b</text>
+  <path class="ff" d="M540,112 Q500,160 540,212" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 212),rotate(42)"></use>
+</svg>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_10" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[10] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_10">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="380" width="260" height="25" />
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff gray" x="600" y="125" width="120" height="25" />
+  <rect class="ff gray" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">20</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">10</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff gray" x="580" y="145">a</text>
+  <text class="ff gray" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff gray" x="580" y="170">b</text>
+  <text class="ff gray" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff gray" x="555" y="120">tmp</text>
+  <text class="ff gray" x="660" y="120" text-anchor="middle">10</text>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_11" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[11] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_11">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="160" width="360" height="25" />
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff gray" x="600" y="125" width="120" height="25" />
+  <rect class="ff gray" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">20</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">10</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff gray" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff gray" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff gray" x="660" y="120" text-anchor="middle">10</text>
+  <line class="ff" x1="370" y1="172" x2="540" y2="200" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 200),rotate(12)"></use>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="clang14_12" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[12] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト４</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <g id="clang_pointer_arg1_12">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clang_pointer_arg1_05" transform="translate(0, 0)"></use>
+  </g>
+  <rect class="ff act sw3" x="0" y="160" width="360" height="25" />
+  <rect class="ff gray" x="600" y="100" width="120" height="25" />
+  <rect class="ff gray" x="600" y="125" width="120" height="25" />
+  <rect class="ff gray" x="600" y="150" width="120" height="25" />
+  <rect class="ff" x="600" y="175" width="120" height="25" />
+  <rect class="ff" x="600" y="200" width="120" height="25" />
+  <text class="ff" x="580" y="195">j</text>
+  <text class="ff" x="660" y="195" text-anchor="middle">20</text>
+  <text class="ff" x="580" y="220">k</text>
+  <text class="ff" x="660" y="220" text-anchor="middle">10</text>
+  <line class="ff" x1="600" y1="175" x2="560" y2="175" />
+  <text class="ff gray" x="660" y="145" text-anchor="middle">jのアドレス</text>
+  <text class="ff gray" x="660" y="170" text-anchor="middle">kのアドレス</text>
+  <text class="ff gray" x="660" y="120" text-anchor="middle">10</text>
+  <line class="ff" x1="370" y1="172" x2="540" y2="200" />
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowhead1_10R" transform="translate(540, 200),rotate(12)"></use>
+  <g transform="translate(450,280)">
+    <rect class="ff" x="0" y="0" width="120" height="60" />
+    <text class="ff" x="5" y="20">実行結果:</text>
+    <text class="ff fix" x="5" y="40">j=20, k=10</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("clang", "clangsub");
+</script>
+</body>
+</html>

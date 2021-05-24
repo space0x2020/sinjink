@@ -1,19 +1,20 @@
 #
 # html -> svg of moodle
 #
+TOPDIR=..
 PHP=php
 V=V1
-CPP=$(PHP) ../cmd/cppinclude.php
+CPP=$(PHP) $(TOPDIR)/cmd/cppinclude.php
 OPTDEFS=
-TOMOODLE=$(PHP) ../cmd/tomoodle.php
+TOMOODLE=$(PHP) $(TOPDIR)/cmd/tomoodle.php
 HTMLDIR=HTML
 MOODLEDIR=MOODLE
-STYLEORIGDIR=../styleorig
+STYLEORIGDIR=$(TOPDIR)/styleorig
 INCPATH=-I$(HTMLDIR) -I$(STYLEORIGDIR)
 STYLESHTML=$(HTMLDIR)/style.css
 STYLESMOODLE=$(MOODLEDIR)/style.css
 SVGCOMPONENTS=$(STYLEORIGDIR)/svg_components.svg
-SCRIPTORIGDIR=../script
+SCRIPTORIGDIR=$(TOPDIR)/script
 SCRIPTS=$(HTMLDIR)/changepage.js
 IMAGEDIR=images
 ENCODEDDIR=ENCODED

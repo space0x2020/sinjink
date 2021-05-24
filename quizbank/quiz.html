@@ -1,0 +1,1072 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>SELECT 相関副問い合わせ</title>
+</head>
+<body>
+<style type="text/css">
+<!--
+.basepane {background-color: lightgray;color:black;}
+-->
+</style>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+  </svg>
+</div>
+
+<div id="campus" class="basepane" >
+<div style="display:block">
+SELECT 相関副問い合わせ<br />
+<input type="button" id="B17_01" onclick="disppage(17, 1);" value="7" />
+<input type="button" id="B17_02" onclick="disppage(17, 2);" value="10" />
+<input type="button" id="B17_03" onclick="disppage(17, 3);" value="12" />
+<input type="button" id="B17_04" onclick="disppage(17, 4);" value="13" />
+<input type="button" id="B17_05" onclick="disppage(17, 5);" value="14" />
+<input type="button" id="B17_06" onclick="disppage(17, 6);" value="15" />
+<input type="button" id="B17_07" onclick="disppage(17, 7);" value="19" />
+<input type="button" id="B17_08" onclick="disppage(17, 8);" value="X8" />
+<input type="button" id="B17_09" onclick="disppage(17, 9);" value="X9" />
+<input type="button" id="B17_10" onclick="disppage(17, 10);" value="10" />
+<input type="button" id="B17_11" onclick="disppage(17, 11);" value="11" />
+<input type="button" id="B17_12" onclick="disppage(17, 12);" value="12(4)" />
+<input type="button" id="B17_13" onclick="disppage(17, 13);" value="13" />
+<input type="button" id="B17_14" onclick="disppage(17, 14);" value="14" />
+<input type="button" id="B17_15" onclick="disppage(17, 15);" value="15" />
+<input type="button" id="B17_16" onclick="disppage(17, 16);" value="16" />
+<input type="button" id="B17_17" onclick="disppage(17, 17);" value="17(5)" />
+</div>
+
+
+<div id="dbsql17_01" class="page" style="height:4000px;">
+<div class="pagetitle"><h3 class="pagetitle" style="color:black">[1] 中問０７</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="cquiz0_p01">
+    <text x="0" y="25">[項目間の関係]</text>
+    <g transform="translate(0,30)">
+      <text x="0" y="25">(1) 項目Xの値が与えられると、</text>
+      <text x="20" y="50">項目Yの値を一意に決めるこ</text>
+      <text x="20" y="75">とができる。</text>
+      <g id="cquiz07_p01" transform="translate(0,100)">
+        <rect style="fill:none;stroke:black" x="0" y="40" width="300" height="30" />
+        <line style="stroke:black" x1="100" y1="40" x2="100" y2="70" />
+        <line style="stroke:black" x1="200" y1="40" x2="200" y2="70" />
+        <text x="50" y="65" text-anchor="middle">X</text>
+        <text x="150" y="65" text-anchor="middle">Y</text>
+        <text x="250" y="65" text-anchor="middle">Z</text>
+        <path style="fill:none;stroke:black" d="M50,40 50,15 150,15 150,40" />
+        <g id="garrowheadc_10D" transform="translate(150,40)">
+          <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(360,30)">
+      <text x="0" y="25">(2) 項目Xと項目Yの二つの値</text>
+      <text x="20" y="50">が与えられると、項目Zの値を</text>
+      <text x="20" y="75">一意に決めることとができる。</text>
+      <g id="cquiz07_p02" transform="translate(0,100)">
+        <rect style="fill:none;stroke:black" x="0" y="40" width="300" height="30" />
+        <line style="stroke:black" x1="100" y1="40" x2="100" y2="70" />
+        <line style="stroke:black" x1="200" y1="40" x2="200" y2="70" />
+        <text x="50" y="65" text-anchor="middle">X</text>
+        <text x="150" y="65" text-anchor="middle">Y</text>
+        <text x="250" y="65" text-anchor="middle">Z</text>
+        <path style="fill:none;stroke:black" d="M50,40 50,15 150,15 150,40" />
+        <path style="fill:none;stroke:black" d="M100,15 100,5 250,5 250,40" />
+        <g id="garrowheadc_10D" transform="translate(250,40)">
+          <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(0,240)">
+      <text x="0" y="25">[正規化するレコード]</text>
+      <g id="cquiz07_p02" transform="translate(20,40)">
+        <rect style="fill:none;stroke:black" x="0" y="40" width="500" height="30" />
+        <line style="stroke:black" x1="100" y1="40" x2="100" y2="70" />
+        <line style="stroke:black" x1="200" y1="40" x2="200" y2="70" />
+        <line style="stroke:black" x1="300" y1="40" x2="300" y2="70" />
+        <line style="stroke:black" x1="400" y1="40" x2="400" y2="70" />
+        <text x="50" y="63" text-anchor="middle">a</text>
+        <text x="150" y="63" text-anchor="middle">b</text>
+        <text x="250" y="63" text-anchor="middle">c</text>
+        <text x="350" y="63" text-anchor="middle">d</text>
+        <text x="450" y="63" text-anchor="middle">e</text>
+        <path style="fill:none;stroke:black" d="M80,40 80,15 150,15 150,40" />
+        <g id="garrowheadc_10D" transform="translate(150,40)">
+          <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+        </g>
+        <path style="fill:none;stroke:black" d="M50,40 50,7 250,7 250,40" />
+        <g id="garrowheadc_10D" transform="translate(250,40)">
+          <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+        </g>
+        <path style="fill:none;stroke:black" d="M20,40 20,0 350,0 350,40" />
+        <g id="garrowheadc_10D" transform="translate(350,40)">
+          <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+        </g>
+        <path style="fill:none;stroke:black" d="M150,70 150,95 250,95 250,70" />
+        <g id="garrowheadc_10D" transform="translate(250,70)">
+          <path style="fill:black" d="M5 10 0 0 -5 10 z" />
+        </g>
+        <path style="fill:none;stroke:black" d="M120,70 120,102 350,102 350,70" />
+        <path style="fill:none;stroke:black" d="M200,102 200,110 450,110 450,70" />
+        <g id="garrowheadc_10D" transform="translate(450,70)">
+          <path style="fill:black" d="M5 10 0 0 -5 10 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="70" viewBox="0 0 500 70">
+  <g id="cquiz07_a01">
+    <text x="5" y="25">ア</text>
+    <g transform="translate(40,0)")>
+      <rect style="fill:none;stroke:black" x="0" y="0" width="70" height="30" />
+      <text x="35" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="70" y="0" width="70" height="30" />
+      <text x="105" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="140" y="0" width="70" height="30" />
+      <text x="175" y="23" text-anchor="middle">c</text>
+      <rect style="fill:none;stroke:black" x="210" y="0" width="70" height="30" />
+      <text x="245" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="320" y="0" width="70" height="30" />
+      <text x="355" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="390" y="0" width="70" height="30" />
+      <text x="425" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="460" y="0" width="70" height="30" />
+      <text x="495" y="23" text-anchor="middle">e</text>
+    </g>
+  </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="70" viewBox="0 0 800 70">
+  <g id="cquiz07_a02">
+    <text x="5" y="25">イ</text>
+    <g transform="translate(40,0)")>
+      <rect style="fill:none;stroke:black" x="0" y="0" width="70" height="30" />
+      <text x="35" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="70" y="0" width="70" height="30" />
+      <text x="105" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="140" y="0" width="70" height="30" />
+      <text x="175" y="23" text-anchor="middle">c</text>
+      <rect style="fill:none;stroke:black" x="210" y="0" width="70" height="30" />
+      <text x="245" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="320" y="0" width="70" height="30" />
+      <text x="355" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="390" y="0" width="70" height="30" />
+      <text x="425" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="460" y="0" width="70" height="30" />
+      <text x="495" y="23" text-anchor="middle">e</text>
+      <rect style="fill:none;stroke:black" x="570" y="0" width="70" height="30" />
+      <text x="605" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="640" y="0" width="70" height="30" />
+      <text x="675" y="23" text-anchor="middle">e</text>
+    </g>
+  </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="70" viewBox="0 0 600 70">
+  <g id="cquiz07_a03">
+    <text x="5" y="25">ウ</text>
+    <g transform="translate(40,0)")>
+      <rect style="fill:none;stroke:black" x="0" y="0" width="70" height="30" />
+      <text x="35" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="70" y="0" width="70" height="30" />
+      <text x="105" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="140" y="0" width="70" height="30" />
+      <text x="175" y="23" text-anchor="middle">d</text>
+
+      <rect style="fill:none;stroke:black" x="250" y="0" width="70" height="30" />
+      <text x="275" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="320" y="0" width="70" height="30" />
+      <text x="355" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="390" y="0" width="70" height="30" />
+      <text x="425" y="23" text-anchor="middle">c</text>
+      <rect style="fill:none;stroke:black" x="460" y="0" width="70" height="30" />
+      <text x="495" y="23" text-anchor="middle">e</text>
+    </g>
+  </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="70" viewBox="0 0 700 70">
+  <g id="cquiz07_a04">
+    <text x="5" y="25">エ</text>
+    <g transform="translate(40,0)")>
+      <rect style="fill:none;stroke:black" x="0" y="0" width="70" height="30" />
+      <text x="35" y="23" text-anchor="middle">a</text>
+      <rect style="fill:none;stroke:black" x="70" y="0" width="70" height="30" />
+      <text x="105" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="140" y="0" width="70" height="30" />
+      <text x="175" y="23" text-anchor="middle">d</text>
+
+      <rect style="fill:none;stroke:black" x="250" y="0" width="70" height="30" />
+      <text x="275" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="320" y="0" width="70" height="30" />
+      <text x="355" y="23" text-anchor="middle">c</text>
+
+      <rect style="fill:none;stroke:black" x="430" y="0" width="70" height="30" />
+      <text x="465" y="23" text-anchor="middle">b</text>
+      <rect style="fill:none;stroke:black" x="500" y="0" width="70" height="30" />
+      <text x="535" y="23" text-anchor="middle">d</text>
+      <rect style="fill:none;stroke:black" x="570" y="0" width="70" height="30" />
+      <text x="605" y="23" text-anchor="middle">e</text>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_02" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[2] 中問１０</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <g id="cquiz10">
+    <g id="cquiz10_1" transform="translate(20, 0)">
+      <text x="0" y="20">受注</text>
+      <g transform="translate(0,30)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">受注番号</tspan></text>
+      </g>
+      <g transform="translate(100,30)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="120" height="30" />
+        <text x="60" y="20" text-anchor="middle">受注年月日</text>
+      </g>
+    </g>
+    <g id="cquiz10_2" transform="translate(280, 0)">
+      <text x="0" y="20">商品</text>
+      <g transform="translate(0,30)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">商品番号</tspan></text>
+      </g>
+      <g transform="translate(100,30)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle">商品名称</text>
+      </g>
+      <g transform="translate(200,30)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle">商品単価</text>
+      </g>
+    </g>
+    <g id="cquiz10_3" transform="translate(0, 160)">
+      <g transform="translate(0,0)">
+        <text x="50" y="20" text-anchor="middle">受注明細</text>
+      </g>
+      <g transform="translate(100,0)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle"><tspan text-decoration="underline dashed">受注番号</tspan></text>
+      </g>
+      <g transform="translate(200,0)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle"><tspan text-decoration="underline dashed">商品番号</tspan></text>
+      </g>
+      <g transform="translate(300,0)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle">受注数量</text>
+      </g>
+      <g transform="translate(400,0)">
+        <rect style="fill:none;stroke:black" x="0" y="0" width="100" height="30" />
+        <text x="50" y="20" text-anchor="middle">受注金額</text>
+      </g>
+    </g>
+    <path style="fill:none;stroke:black" d="M70,60 70,100 150,100 150,160" />
+    <g id="garrowheadc_10D" transform="translate(150,160)">
+      <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+    </g>
+    <path style="fill:none;stroke:black" d="M330,60 330,100 250,100 250,160" />
+    <g id="garrowheadc_10D" transform="translate(250,160)">
+      <path style="fill:black" d="M5 -10 0 0 -5 -10 z" />
+    </g>
+  </g>
+</svg>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_03" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[3] 中問１２</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      path.d, line.d, rect.d, circle.d, ellipse.d {
+        stroke-dasharray: 4,4;
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+      }
+      text.ffs { /* 16pt */
+        fill: black; /*V2*/
+        font-size: 16;
+      }
+      text.ffss { /* 14pt */
+        fill: black; /*V2*/
+        font-size: 14;
+      }
+      text.ffsss { /* 12pt */
+        fill: black; /*V2*/
+        font-size: 12;
+      }
+    ]]></style>
+    <g id="garrowheadcw_10L">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadcw_10U">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadcw_10R">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+  </defs>
+  <g id="cquiz12">
+    <line class="ff" x1="50" y1="70" x2="500" y2="70" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(500, 70)"></use>
+    <text class="ffsss" x="500" y="65" text-anchor="middle">時間</text>
+    <text class="ffss" x="150" y="33" text-anchor="middle">チェックポイント</text>
+    <line class="ff d" x1="150" y1="50" x2="150" y2="255" />
+    <text class="ffss" x="435" y="33" text-anchor="middle">システム障害発生</text>
+    <line class="ff d" x1="435" y1="50" x2="435" y2="255" />
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(50, 105)"></use>
+    <line class="ff" x1="50" y1="105" x2="125" y2="105" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(125, 105)"></use>
+    <text class="ffsss" x="50" y="100" text-anchor="middle">開始</text>
+    <text class="ffsss" x="80" y="100" text-anchor="middle">T1</text>
+    <text class="ffsss" x="150" y="100" text-anchor="end">コミット</text>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(125, 140)"></use>
+    <line class="ff" x1="125" y1="140" x2="435" y2="140" />
+    <line class="ff d" x1="435" y1="140" x2="470" y2="140" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(470, 140)"></use>
+    <text class="ffsss" x="125" y="135" text-anchor="middle">開始</text>
+    <text class="ffsss" x="285" y="135" text-anchor="middle">T2</text>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(220, 175)"></use>
+    <line class="ff" x1="220" y1="175" x2="435" y2="175" />
+    <line class="ff d" x1="435" y1="175" x2="495" y2="175" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(495, 175)"></use>
+    <text class="ffsss" x="220" y="170" text-anchor="middle">開始</text>
+    <text class="ffsss" x="330" y="170" text-anchor="middle">T3</text>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(100, 210)"></use>
+    <line class="ff" x1="100" y1="210" x2="290" y2="210" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(290, 210)"></use>
+    <text class="ffsss" x="100" y="205" text-anchor="middle">開始</text>
+    <text class="ffsss" x="190" y="205" text-anchor="middle">T4</text>
+    <text class="ffsss" x="250" y="205">コミット</text>
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(185, 245)"></use>
+    <line class="ff" x1="185" y1="245" x2="375" y2="245" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(375, 245)"></use>
+    <text class="ffsss" x="185" y="240" text-anchor="middle">開始</text>
+    <text class="ffsss" x="255" y="240" text-anchor="middle">T5</text>
+    <text class="ffsss" x="375" y="240" text-anchor="middle">コミット</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_04" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">13</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+  </defs>
+  <g id="cquiz13">
+    <text class="ff" x="80" y="25" text-anchor="middle">Aの定義域</text>
+    <g id="cquiz13_Afig" transform="translate(0,40)">
+      <ellipse class="ff" cx="80" cy="60" rx="80" ry="60" stroke="lightgreen" />
+      <text class="ff s" x="40" y="30">a<tspan baseline-shift="sub" font-size=10">1</tspan></text>
+      <text class="ff s" x="110" y="60">a<tspan baseline-shift="sub" font-size=10">2</tspan></text>
+      <text class="ff s" x="80" y="90">a<tspan baseline-shift="sub" font-size=10">3</tspan></text>
+    </g>
+    <text class="ff" x="320" y="25" text-anchor="middle">Bの定義域</text>
+    <g id="cquiz13_Bfig" transform="translate(240,40)">
+      <ellipse class="ff" cx="80" cy="60" rx="80" ry="60" stroke="lightgreen" />
+      <text class="ff s" x="40" y="50">b<tspan baseline-shift="sub" font-size=10">1</tspan></text>
+      <text class="ff s" x="110" y="80">b<tspan baseline-shift="sub" font-size=10">2</tspan></text>
+    </g>
+    <text class="ff" x="200" y="190" text-anchor="middle">関係R</text>
+    <path class="ff" d="M60,70 Q200,40 275,85" />
+    <path class="ff" d="M130,100 Q190,60 275,85" />
+    <path class="ff" d="M100,130 Q200,150 345,115" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_05" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">中問１４</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="40" viewBox="0 0 800 40">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+    ]]></style>
+    <g id="garrowheadcw_10L">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadcw_10U">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadcw_10R">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+  </defs>
+  <g id="cquiz14" transform="translate(50,0)">
+    <rect class="ff" x="0" y="0" width="70" height="30" />
+    <text class="ff" x="35" y="20" text-anchor="middle">a</text>
+    <line class="ff" x1="70" y1="15" x2="120" y2="15" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(120, 15)"></use>
+
+    <rect class="ff" x="120" y="0" width="70" height="30" />
+    <text class="ff" x="155" y="20" text-anchor="middle">b</text>
+    <line class="ff" x1="190" y1="15" x2="240" y2="15" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(240, 15)"></use>
+
+    <rect class="ff" x="240" y="0" width="70" height="30" />
+    <text class="ff" x="275" y="20" text-anchor="middle">c</text>
+    <line class="ff" x1="310" y1="15" x2="360" y2="15" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(310, 15)"></use>
+
+    <rect class="ff" x="360" y="0" width="70" height="30" />
+    <text class="ff" x="395" y="20" text-anchor="middle">d</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_06" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">中問１５</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="40" viewBox="0 0 800 40">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+    ]]></style>
+    <g id="garrowheadcw_10L">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadcw_10U">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadcw_10R">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+  </defs>
+  <g id="cquiz15" transform="translate(50,0)">
+    <rect class="ff" x="0" y="0" width="70" height="30" />
+    <text class="ff" x="35" y="20" text-anchor="middle">部門</text>
+    <line class="ff" x1="70" y1="15" x2="200" y2="15" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10R" transform="translate(200, 15)"></use>
+
+    <rect class="ff" x="200" y="0" width="70" height="30" />
+    <text class="ff" x="235" y="20" text-anchor="middle">従業員</text>
+    <line class="ff" x1="400" y1="15" x2="270" y2="15" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10L" transform="translate(270, 15)"></use>
+
+    <rect class="ff" x="400" y="0" width="70" height="30" />
+    <text class="ff" x="435" y="20" text-anchor="middle">職種</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_07" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">中問１９</h3></div>
+<div class="pagebody">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+    <g id="garrowheadcw_10L">
+      <path class="ffw" d="M10 5 0 0 10 -5 z" />
+    </g>
+    <g id="garrowheadcw_10U">
+      <path class="ffw" d="M5 10 0 0 -5 10 z" />
+    </g>
+    <g id="garrowheadcw_10R">
+      <path class="ffw" d="M-10 -5 0 0 -10 5 z" />
+    </g>
+  </defs>
+  <g id="cquiz19" transform="translate(50,0)">
+    <g transform="translate(300,0)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#01：仕入</tspan></text>
+    </g>
+    <g transform="translate(300,30)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#02：仕入</tspan></text>
+    </g>
+    <g transform="translate(300,60)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#03：仕入</tspan></text>
+    </g>
+    <g transform="translate(300,90)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#04：仕入</tspan></text>
+    </g>
+    <g transform="translate(300,120)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#05：仕入</tspan></text>
+    </g>
+    <g transform="translate(300,150)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">#06：仕入</tspan></text>
+    </g>
+    <g transform="translate(150,30)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">11：仕入先</tspan></text>
+    </g>
+    <line class="ff" x1="250" y1="42.5" x2="300" y2="12.5" />
+    <line class="ff" x1="250" y1="42.5" x2="300" y2="42.5" />
+    <line class="ff" x1="250" y1="42.5" x2="300" y2="72.5" />
+    <g transform="translate(0,30)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">東京：地域</tspan></text>
+    </g>
+    <line class="ff" x1="100" y1="42.5" x2="150" y2="42.5" />
+    <g transform="translate(150,105)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">25：仕入先</tspan></text>
+    </g>
+    <line class="ff" x1="250" y1="117.5" x2="300" y2="102.5" />
+    <line class="ff" x1="250" y1="117.5" x2="300" y2="132.5" />
+    <g transform="translate(150,150)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">37：仕入先</tspan></text>
+    </g>
+    <line class="ff" x1="250" y1="162.5" x2="300" y2="162.5" />
+    <g transform="translate(0,127.5)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">大阪：地域</tspan></text>
+    </g>
+    <line class="ff" x1="100" y1="140" x2="150" y2="117.5" />
+    <line class="ff" x1="100" y1="140" x2="150" y2="162.5" />
+    <g transform="translate(450,0)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">136：部品</tspan></text>
+    </g>
+    <line class="ff" x1="400" y1="12.5" x2="450" y2="12.5" />
+    <line class="ff" x1="400" y1="102.5" x2="450" y2="12.5" />
+    <g transform="translate(450,75)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">205：部品</tspan></text>
+    </g>
+    <line class="ff" x1="400" y1="42.5" x2="450" y2="85" />
+    <line class="ff" x1="400" y1="132.5" x2="450" y2="90" />
+    <g transform="translate(450,150)">
+      <rect class="ff" x="0" y="0" width="100" height="25" />
+      <text class="ff" x="50" y="20" text-anchor="middle"><tspan text-decoration="underline">338：部品</tspan></text>
+    </g>
+    <line class="ff" x1="400" y1="72.5" x2="450" y2="162.5" />
+    <line class="ff" x1="400" y1="162.5" x2="450" y2="162.5" />
+  </g>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="30" viewBox="0 0 800 30">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+  </defs>
+  <g id="cquiz19_a01" transform="translate(0,0)">
+    <g transform="translate(0,0)">
+      <text class="ff" x="0" y="20">ア</text>
+      <rect class="ff" x="40" y="0" width="60" height="25" />
+      <text class="ff" x="70" y="20" text-anchor="middle">地域</text>
+      <text class="ff ss" x="103" y="10">1</text>
+      <line class="ff" x1="100" y1="12.5" x2="160" y2="12.5" />
+      <text class="ff ss" x="147" y="10">1</text>
+
+      <rect class="ff" x="160" y="0" width="60" height="25" />
+      <text class="ff" x="190" y="20" text-anchor="middle">仕入先</text>
+      <text class="ff ss" x="223" y="10">1</text>
+      <line class="ff" x1="220" y1="12.5" x2="280" y2="12.5" />
+      <text class="ff ss" x="267" y="10">*</text>
+
+      <rect class="ff" x="280" y="0" width="60" height="25" />
+      <text class="ff" x="310" y="20" text-anchor="middle">仕入</text>
+      <text class="ff ss" x="343" y="10">*</text>
+      <line class="ff" x1="340" y1="12.5" x2="400" y2="12.5" />
+      <text class="ff ss" x="387" y="10">1</text>
+
+      <rect class="ff" x="400" y="0" width="60" height="25" />
+      <text class="ff" x="430" y="20" text-anchor="middle">部品</text>
+    </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="30" viewBox="0 0 800 30">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+  </defs>
+  <g id="cquiz19_a02" transform="translate(0,0)">
+    <g transform="translate(0,0)">
+      <text class="ff" x="0" y="20">イ</text>
+      <rect class="ff" x="40" y="0" width="60" height="25" />
+      <text class="ff" x="70" y="20" text-anchor="middle">地域</text>
+      <text class="ff ss" x="103" y="10">1</text>
+      <line class="ff" x1="100" y1="12.5" x2="160" y2="12.5" />
+      <text class="ff ss" x="147" y="10">*</text>
+
+      <rect class="ff" x="160" y="0" width="60" height="25" />
+      <text class="ff" x="190" y="20" text-anchor="middle">仕入先</text>
+      <text class="ff ss" x="223" y="10">1</text>
+      <line class="ff" x1="220" y1="12.5" x2="280" y2="12.5" />
+      <text class="ff ss" x="267" y="10">*</text>
+
+      <rect class="ff" x="280" y="0" width="60" height="25" />
+      <text class="ff" x="310" y="20" text-anchor="middle">仕入</text>
+      <text class="ff ss" x="343" y="10">*</text>
+      <line class="ff" x1="340" y1="12.5" x2="400" y2="12.5" />
+      <text class="ff ss" x="387" y="10">1</text>
+
+      <rect class="ff" x="400" y="0" width="60" height="25" />
+      <text class="ff" x="430" y="20" text-anchor="middle">部品</text>
+    </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="30" viewBox="0 0 800 30">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+  </defs>
+  <g id="cquiz19_a03" transform="translate(0,0)">
+    <g transform="translate(0,0)">
+      <text class="ff" x="0" y="20">ウ</text>
+      <rect class="ff" x="40" y="0" width="60" height="25" />
+      <text class="ff" x="70" y="20" text-anchor="middle">地域</text>
+      <text class="ff ss" x="103" y="10">1</text>
+      <line class="ff" x1="100" y1="12.5" x2="160" y2="12.5" />
+      <text class="ff ss" x="147" y="10">*</text>
+
+      <rect class="ff" x="160" y="0" width="60" height="25" />
+      <text class="ff" x="190" y="20" text-anchor="middle">仕入先</text>
+      <text class="ff ss" x="223" y="10">*</text>
+      <line class="ff" x1="220" y1="12.5" x2="280" y2="12.5" />
+      <text class="ff ss" x="267" y="10">1</text>
+
+      <rect class="ff" x="280" y="0" width="60" height="25" />
+      <text class="ff" x="310" y="20" text-anchor="middle">仕入</text>
+      <text class="ff ss" x="343" y="10">1</text>
+      <line class="ff" x1="340" y1="12.5" x2="400" y2="12.5" />
+      <text class="ff ss" x="387" y="10">*</text>
+
+      <rect class="ff" x="400" y="0" width="60" height="25" />
+      <text class="ff" x="430" y="20" text-anchor="middle">部品</text>
+    </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="30" viewBox="0 0 800 30">
+  <defs>
+    <style type="text/css"><![CDATA[
+      path.ff, line.ff, rect.ff, circle.ff, ellipse.ff {
+        stroke: black; /*v2*/
+        fill: none;
+      }
+      path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
+        fill: black; /*V2*/
+      }
+      text.ff { /* 18pt */
+        fill: black; /*V2*/
+        font-size: 18;
+      }
+      text.s { /* 16pt */
+        font-size: 16;
+      }
+      text.ss { /* 14pt */
+        font-size: 14;
+      }
+    ]]></style>
+  </defs>
+  <g id="cquiz19_a04" transform="translate(0,0)">
+    <g transform="translate(0,0)">
+      <text class="ff" x="0" y="20">エ</text>
+      <rect class="ff" x="40" y="0" width="60" height="25" />
+      <text class="ff" x="70" y="20" text-anchor="middle">地域</text>
+      <text class="ff ss" x="103" y="10">*</text>
+      <line class="ff" x1="100" y1="12.5" x2="160" y2="12.5" />
+      <text class="ff ss" x="147" y="10">*</text>
+
+      <rect class="ff" x="160" y="0" width="60" height="25" />
+      <text class="ff" x="190" y="20" text-anchor="middle">仕入先</text>
+      <text class="ff ss" x="223" y="10">*</text>
+      <line class="ff" x1="220" y1="12.5" x2="280" y2="12.5" />
+      <text class="ff ss" x="267" y="10">1</text>
+
+      <rect class="ff" x="280" y="0" width="60" height="25" />
+      <text class="ff" x="310" y="20" text-anchor="middle">仕入</text>
+      <text class="ff ss" x="343" y="10">1</text>
+      <line class="ff" x1="340" y1="12.5" x2="400" y2="12.5" />
+      <text class="ff ss" x="387" y="10">*</text>
+
+      <rect class="ff" x="400" y="0" width="60" height="25" />
+      <text class="ff" x="430" y="20" text-anchor="middle">部品</text>
+    </g>
+</svg>
+
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_08" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[8] SELECT 相関副問い合わせ(3) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_8_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_7_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000002, 鈴木花子,320000,0001)</text>
+    <path class="ff" d="M300,100 Q320,100 320,120 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_09" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[9] SELECT 相関副問い合わせ(3) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_9_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_8_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s fix" x="40" y="270">SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="20" y="290">⇒</text>
+    <text class="ff s fix" x="40" y="290">SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
+    <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_10" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[10] SELECT 相関副問い合わせ(3) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_10_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_9_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 320000</text>
+    <rect class="ff" x="340" y="90" width="300" height="20" style="stroke-width:5;stroke:red" />
+    <rect class="ff" x="340" y="150" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_11" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[11] SELECT 相関副問い合わせ(3) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_11_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_10_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="350">(4) (3)で求まった結果を使って(1)で取り出した行が条件を満たしていれば、その行を選択する。</text>
+    <text class="ff s" x="20" y="370">(1)の給与の値: 320000 = (3)の結果:320000 → 選択(000002, 鈴木花子, 320000, 0001)</text>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_12" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[12] SELECT 相関副問い合わせ(4)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_12_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_2_fig" transform="translate(0, 0)"></use>
+    <rect class="ff" x="0" y="150" width="300" height="20" style="stroke-width:5;stroke:purple" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_13" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[13] SELECT 相関副問い合わせ(4) -2</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_13_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_12_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="220">(1) 外側の表から1行とりだす。 (000005, 高橋五郎,210000,0001)</text>
+    <path class="ff" d="M300,160 Q320,160 320,180 L320,200" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_15D" transform="translate(320, 200)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_14" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[14] SELECT 相関副問い合わせ(4) -3</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_14_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_13_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="250">(2) 取り出した行の部署コードを使ってサブクエリを実行</text>
+    <text class="ff s fix" x="40" y="270">SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード</text>
+    <text class="ff s fix" x="20" y="290">⇒</text>
+    <text class="ff s fix" x="40" y="290">SELECT MAX(b.給与) FROM 社員表 b WHERE b.部署コード = <tspan style="fill:red">'0001'</tspan></text>
+    <path class="ff" d="M470,220 Q470,230 480,230 Q530,230 530,240 L530,260" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10D" transform="translate(530, 260)"></use>
+    <path class="ff" d="M550,285 Q600,280 600,250 L600,240 L600,180" />
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#garrowheadcw_10U" transform="translate(600, 180)"></use>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_15" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[15] SELECT 相関副問い合わせ(4) -4</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+<div class="codelist">
+<pre class="codelist">
+SELECT * FROM 社員表 a WHERE a.給与 =
+    (SELECt MAX(b.給与) FROM 社員表 b WHERE b.部署コード = a.部署コード)
+</pre>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="subq2_15_fig">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#subq2_14_fig" transform="translate(0, 0)"></use>
+    <text class="ff s" x="0" y="320">(3) 副問合せの結果が求まる → 320000</text>
+    <rect class="ff" x="340" y="90" width="300" height="20" style="stroke-width:5;stroke:red" />
+    <rect class="ff" x="340" y="150" width="300" height="20" style="stroke-width:5;stroke:red" />
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_16" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[16] SELECT 相関副問い合わせ(4) -5</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+<div id="dbsql17_17" style="display:none;">
+<div class="pagetitle"><h3 class="pagetitle">[17] SELECT 相関副問い合わせ(5)</h3></div>
+<div class="pagebody">
+<p class="bplist">
+■副問合せが外側の表を参照する副問合せ
+</p>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("dbsql", "dbdqlsub");
+</script>
+</body>
+</html>

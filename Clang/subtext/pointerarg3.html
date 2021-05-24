@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>C Pointer Argument 3 swap</title>
+</head>
+<body>
+
+#include "style_svg.css"
+<div id="svgdefs" style="display:none;">
+  <svg>
+#include "svg_components.svg"
+  </svg>
+</div>
+
+<div id="campus" class="basepane" style="height:1800;">
+<div style="display:block">
+C Pointer Argument<br />
+<input type="button" id="B14_01" onclick="disppage(14, 1);" value="1" />
+</div>
+
+
+<div id="clang14_01" class="page" style="display:block">
+<div class="pagetitle"><h3 class="pagetitle">[1] </h3></div>
+<div class="pagebody">
+<p class="plist">ポインタ　リスト３</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <g id="clang_pointer_arg1">
+    <g id="clang_pointer_arg1_list" transform="translate(0, 0)">
+      <text class="ff fix" x="40" y="20" text-anchor="end">1:</text>
+      <text class="ff fix" x="44" y="20">#include &lt;stdio.h&gt;</text>
+      <text class="ff fix" x="40" y="40" text-anchor="end">2:</text>
+      <text class="ff fix" x="44" y="40">void swap(int a, int b);</text>
+      <text class="ff fix" x="40" y="60" text-anchor="end">3:</text>
+      <text class="ff fix" x="44" y="60"></text>
+      <text class="ff fix" x="40" y="80" text-anchor="end">4:</text>
+      <text class="ff fix" x="44" y="80">int main(void)</text>
+      <text class="ff fix" x="40" y="100" text-anchor="end">5:</text>
+      <text class="ff fix" x="44" y="100">{</text>
+      <text class="ff fix" x="40" y="120" text-anchor="end">6:</text>
+      <text class="ff fix" x="84" y="120">int j = 10, k = 20;</text>
+      <text class="ff fix" x="40" y="140" text-anchor="end">7:</text>
+      <text class="ff fix" x="84" y="140"></text>
+      <text class="ff fix" x="40" y="160" text-anchor="end">8:</text>
+      <text class="ff fix" x="84" y="160">swap(j, k);</text>
+      <text class="ff fix" x="40" y="180" text-anchor="end">9:</text>
+      <text class="ff fix" x="84" y="180">printf("j=%d, k=%d\n", j, k);</text>
+      <text class="ff fix" x="40" y="200" text-anchor="end">10:</text>
+      <text class="ff fix" x="84" y="200"></text>
+      <text class="ff fix" x="40" y="220" text-anchor="end">11:</text>
+      <text class="ff fix" x="84" y="220">return 0;</text>
+      <text class="ff fix" x="40" y="240" text-anchor="end">12:</text>
+      <text class="ff fix" x="44" y="240">}</text>
+      <text class="ff fix" x="40" y="260" text-anchor="end">13:</text>
+      <text class="ff fix" x="44" y="260"></text>
+      <text class="ff fix" x="40" y="280" text-anchor="end">14:</text>
+      <text class="ff fix" x="44" y="280">void swap(int a, int b)</text>
+      <text class="ff fix" x="40" y="300" text-anchor="end">15:</text>
+      <text class="ff fix" x="44" y="300">{</text>
+      <text class="ff fix" x="40" y="320" text-anchor="end">16:</text>
+      <text class="ff fix" x="84" y="320">int tmp;</text>
+      <text class="ff fix" x="40" y="340" text-anchor="end">17:</text>
+      <text class="ff fix" x="84" y="340">tmp = a;</text>
+      <text class="ff fix" x="40" y="360" text-anchor="end">18:</text>
+      <text class="ff fix" x="84" y="360">a = b;</text>
+      <text class="ff fix" x="40" y="380" text-anchor="end">19:</text>
+      <text class="ff fix" x="84" y="380">b = tmp;</text>
+      <text class="ff fix" x="40" y="400" text-anchor="end">20:</text>
+      <text class="ff fix" x="44" y="400">}</text>
+    </g>
+  </g>
+</svg>
+</div><!-- pagebody -->
+</div><!-- page -->
+
+
+
+
+</div><!-- campus -->
+#ifdef MOODLE
+<script text/script="javascript">
+#include "changepage.js"
+</script>
+#else
+<script src="changepage.js"></script>
+#endif
+<script text/script="javascript">
+  setpagename("clang", "clangsub");
+</script>
+</body>
+</html>

@@ -26,6 +26,10 @@
         stroke: lightblue;
         fill: none;
       }
+      path.gray, line.gray, rect.gray, circle.gray, ellipse.gray {
+        stroke: gray;
+        fill: none;
+      }
       path.ffw, line.ffw, rect.ffw, circle.ffw, ellipse.ffw {
 #ifdef V1
         fill: white; /*v1*/
@@ -91,6 +95,10 @@
         font-size: 18;
       }
       text.grey {
+        fill: gray;
+        font-size: 18;
+      }
+      text.gray {
         fill: gray;
         font-size: 18;
       }
